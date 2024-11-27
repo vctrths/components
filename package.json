@@ -11,6 +11,7 @@
     "typescript-plugin-css-modules": "^5.1.0"
   },
   "scripts": {
-    "dev": "ladle dev --stories=\"stories/*.stories.tsx\""
+    "dev": "ladle dev",
+    "build": "ladle build"
   }
 }
