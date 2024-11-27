@@ -1,6 +1,6 @@
-import {Slider} from '../src/Slider';
+import {Slider} from '../src/components/Slider'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Slider> = {
   component: Slider,
@@ -8,14 +8,14 @@ const meta: Meta<typeof Slider> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <Slider {...args} />;
+export const Example = (args: any) => <Slider {...args} />
 
 Example.args = {
   label: 'Range',
   defaultValue: [30, 60],
   thumbLabels: ['start', 'end']
-};
+}

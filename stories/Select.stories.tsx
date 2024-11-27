@@ -1,6 +1,6 @@
-import {Select, SelectItem} from '../src/Select';
+import {Select, SelectItem} from '../src/components/Select'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -8,9 +8,9 @@ const meta: Meta<typeof Select> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Select {...args}>
@@ -19,8 +19,8 @@ export const Example = (args: any) => (
     <SelectItem>Strawberry</SelectItem>
     <SelectItem>Vanilla</SelectItem>
   </Select>
-);
+)
 
 Example.args = {
   label: 'Ice cream flavor'
-};
+}

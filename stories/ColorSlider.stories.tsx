@@ -1,6 +1,6 @@
-import {ColorSlider} from '../src/ColorSlider';
+import {ColorSlider} from '../src/components/ColorSlider'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ColorSlider> = {
   component: ColorSlider,
@@ -8,14 +8,14 @@ const meta: Meta<typeof ColorSlider> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ColorSlider {...args} />;
+export const Example = (args: any) => <ColorSlider {...args} />
 
 Example.args = {
   label: 'Red Opacity',
   defaultValue: '#f00',
   channel: 'alpha'
-};
+}

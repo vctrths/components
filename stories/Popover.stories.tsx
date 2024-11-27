@@ -1,7 +1,7 @@
-import {Popover} from '../src/Popover';
-import {Button, DialogTrigger, Heading} from 'react-aria-components';
+import {Button, DialogTrigger, Heading} from 'react-aria-components'
+import {Popover} from '../src/components/Popover'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
@@ -9,9 +9,9 @@ const meta: Meta<typeof Popover> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <DialogTrigger>
@@ -21,4 +21,4 @@ export const Example = (args: any) => (
       <p>For help accessing your account, please contact support.</p>
     </Popover>
   </DialogTrigger>
-);
+)

@@ -1,4 +1,3 @@
-import {Dialog} from '../src/Dialog';
 import {
   Button,
   DialogTrigger,
@@ -7,9 +6,10 @@ import {
   Label,
   Modal,
   TextField
-} from 'react-aria-components';
+} from 'react-aria-components'
+import {Dialog} from '../src/components/Dialog'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,
@@ -17,9 +17,9 @@ const meta: Meta<typeof Dialog> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <DialogTrigger>
@@ -36,11 +36,11 @@ export const Example = (args: any) => (
             <Label>Last Name</Label>
             <Input />
           </TextField>
-          <Button slot="close" style={{ marginTop: 8 }}>
+          <Button slot="close" style={{marginTop: 8}}>
             Submit
           </Button>
         </form>
       </Dialog>
     </Modal>
   </DialogTrigger>
-);
+)

@@ -1,7 +1,7 @@
-import {RadioGroup} from '../src/RadioGroup';
-import {Radio} from 'react-aria-components';
+import {Radio} from 'react-aria-components'
+import {RadioGroup} from '../src/components/RadioGroup'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
@@ -9,9 +9,9 @@ const meta: Meta<typeof RadioGroup> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <RadioGroup {...args}>
@@ -19,8 +19,8 @@ export const Example = (args: any) => (
     <Radio value="baseball">Baseball</Radio>
     <Radio value="basketball">Basketball</Radio>
   </RadioGroup>
-);
+)
 
 Example.args = {
   label: 'Favorite sport'
-};
+}

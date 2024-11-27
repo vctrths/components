@@ -1,13 +1,13 @@
-import {Toolbar} from '../src/Toolbar';
 import {
   Button,
   Checkbox,
   Group,
   Separator,
   ToggleButton
-} from 'react-aria-components';
+} from 'react-aria-components'
+import {Toolbar} from '../src/components/Toolbar'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Toolbar> = {
   component: Toolbar,
@@ -15,9 +15,9 @@ const meta: Meta<typeof Toolbar> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Toolbar aria-label="Text formatting" {...args}>
@@ -48,4 +48,4 @@ export const Example = (args: any) => (
       Night Mode
     </Checkbox>
   </Toolbar>
-);
+)

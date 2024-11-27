@@ -1,7 +1,7 @@
-import {ToggleButtonGroup} from '../src/ToggleButtonGroup';
-import {ToggleButton} from 'react-aria-components';
+import {ToggleButton} from 'react-aria-components'
+import {ToggleButtonGroup} from '../src/components/ToggleButtonGroup'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ToggleButtonGroup> = {
   component: ToggleButtonGroup,
@@ -9,9 +9,9 @@ const meta: Meta<typeof ToggleButtonGroup> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <ToggleButtonGroup {...args}>
@@ -19,4 +19,4 @@ export const Example = (args: any) => (
     <ToggleButton id="center">Center</ToggleButton>
     <ToggleButton id="right">Right</ToggleButton>
   </ToggleButtonGroup>
-);
+)

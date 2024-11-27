@@ -1,7 +1,7 @@
-import {Column, Row, Table, TableHeader} from '../src/Table';
-import {Cell, TableBody} from 'react-aria-components';
+import {Cell, TableBody} from 'react-aria-components'
+import {Column, Row, Table, TableHeader} from '../src/components/Table'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -9,9 +9,9 @@ const meta: Meta<typeof Table> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Table aria-label="Files" {...args}>
@@ -38,9 +38,9 @@ export const Example = (args: any) => (
       </Row>
     </TableBody>
   </Table>
-);
+)
 
 Example.args = {
   onRowAction: null,
   selectionMode: 'multiple'
-};
+}

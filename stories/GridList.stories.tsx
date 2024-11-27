@@ -1,6 +1,6 @@
-import {GridList, GridListItem} from '../src/GridList';
+import {GridList, GridListItem} from '../src/components/GridList'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof GridList> = {
   component: GridList,
@@ -8,9 +8,9 @@ const meta: Meta<typeof GridList> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <GridList aria-label="Ice cream flavors" {...args}>
@@ -19,9 +19,9 @@ export const Example = (args: any) => (
     <GridListItem>Strawberry</GridListItem>
     <GridListItem>Vanilla</GridListItem>
   </GridList>
-);
+)
 
 Example.args = {
   onAction: null,
   selectionMode: 'multiple'
-};
+}

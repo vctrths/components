@@ -1,6 +1,6 @@
-import {ColorSwatch} from '../src/ColorSwatch';
+import {ColorSwatch} from '../src/components/ColorSwatch'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ColorSwatch> = {
   component: ColorSwatch,
@@ -8,12 +8,12 @@ const meta: Meta<typeof ColorSwatch> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ColorSwatch {...args} />;
+export const Example = (args: any) => <ColorSwatch {...args} />
 
 Example.args = {
   color: '#f00a'
-};
+}

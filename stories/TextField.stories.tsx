@@ -1,6 +1,6 @@
-import {TextField} from '../src/TextField';
+import {TextField} from '../src/components/TextField'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -8,12 +8,12 @@ const meta: Meta<typeof TextField> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <TextField {...args} />;
+export const Example = (args: any) => <TextField {...args} />
 
 Example.args = {
   label: 'Name'
-};
+}

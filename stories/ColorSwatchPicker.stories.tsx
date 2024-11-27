@@ -1,9 +1,9 @@
 import {
   ColorSwatchPicker,
   ColorSwatchPickerItem
-} from '../src/ColorSwatchPicker';
+} from '../src/components/ColorSwatchPicker'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ColorSwatchPicker> = {
   component: ColorSwatchPicker,
@@ -11,9 +11,9 @@ const meta: Meta<typeof ColorSwatchPicker> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <ColorSwatchPicker {...args}>
@@ -24,4 +24,4 @@ export const Example = (args: any) => (
     <ColorSwatchPickerItem color="#088" />
     <ColorSwatchPickerItem color="#008" />
   </ColorSwatchPicker>
-);
+)

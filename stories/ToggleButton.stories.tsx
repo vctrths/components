@@ -1,6 +1,6 @@
-import {ToggleButton} from '../src/ToggleButton';
+import {ToggleButton} from '../src/components/ToggleButton'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ToggleButton> = {
   component: ToggleButton,
@@ -8,9 +8,8 @@ const meta: Meta<typeof ToggleButton> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ToggleButton {...args}>Pin
-</ToggleButton>;
+export const Example = (args: any) => <ToggleButton {...args}>Pin</ToggleButton>

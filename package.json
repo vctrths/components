@@ -1,4 +1,6 @@
 {
+  "name": "@alinea/ui",
+  "type": "module",
   "devDependencies": {
     "@alinea/styler": "^1.0.3",
     "@ladle/react": "^4.1.2",

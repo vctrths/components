@@ -1,6 +1,6 @@
-import {Checkbox} from '../src/Checkbox';
+import {Checkbox} from '../src/components/Checkbox'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -8,9 +8,8 @@ const meta: Meta<typeof Checkbox> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <Checkbox {...args}>Unsubscribe
-</Checkbox>;
+export const Example = (args: any) => <Checkbox {...args}>Unsubscribe</Checkbox>

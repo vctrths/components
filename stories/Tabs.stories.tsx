@@ -1,7 +1,7 @@
-import {Tabs} from '../src/Tabs';
-import {Tab, TabList, TabPanel} from 'react-aria-components';
+import {Tab, TabList, TabPanel} from 'react-aria-components'
+import {Tabs} from '../src/components/Tabs'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -9,9 +9,9 @@ const meta: Meta<typeof Tabs> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Tabs {...args}>
@@ -20,14 +20,8 @@ export const Example = (args: any) => (
       <Tab id="MaR">Monarchy and Republic</Tab>
       <Tab id="Emp">Empire</Tab>
     </TabList>
-    <TabPanel id="FoR">
-      Arma virumque cano, Troiae qui primus ab oris.
-    </TabPanel>
-    <TabPanel id="MaR">
-      Senatus Populusque Romanus.
-    </TabPanel>
-    <TabPanel id="Emp">
-      Alea jacta est.
-    </TabPanel>
+    <TabPanel id="FoR">Arma virumque cano, Troiae qui primus ab oris.</TabPanel>
+    <TabPanel id="MaR">Senatus Populusque Romanus.</TabPanel>
+    <TabPanel id="Emp">Alea jacta est.</TabPanel>
   </Tabs>
-);
+)

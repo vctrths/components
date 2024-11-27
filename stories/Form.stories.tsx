@@ -1,13 +1,13 @@
-import {Form} from '../src/Form';
 import {
   Button,
   FieldError,
   Input,
   Label,
   TextField
-} from 'react-aria-components';
+} from 'react-aria-components'
+import {Form} from '../src/components/Form'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Form> = {
   component: Form,
@@ -15,9 +15,9 @@ const meta: Meta<typeof Form> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Form {...args}>
@@ -28,4 +28,4 @@ export const Example = (args: any) => (
     </TextField>
     <Button type="submit">Submit</Button>
   </Form>
-);
+)

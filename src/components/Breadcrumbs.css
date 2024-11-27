@@ -1,0 +1,55 @@
+@import "../theme.css";
+
+.react-aria-Breadcrumbs {
+  --breadcrumbs-fg: hsl(var(--fg));
+
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  .react-aria-Breadcrumb:not(:last-child)::after {
+    content: "›";
+    content: "›" / "";
+    alt: " ";
+    padding: 0 5px;
+  }
+
+  .react-aria-Link {
+    font: inherit;
+    outline: none;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--breadcrumbs-fg);
+
+    &[data-hovered] {
+      text-decoration: underline;
+    }
+
+    &[data-current] {
+      font-weight: bold;
+    }
+
+    &[data-focus-visible]:after {
+      content: "";
+      position: absolute;
+      inset: -2px -4px;
+      border-radius: 6px;
+      border: 2px solid hsl(var(--ring));
+    }
+  }
+
+  .react-aria-Link {
+    &[data-disabled] {
+      cursor: default;
+
+      &:not([data-current]) {
+        color: var(--text-color-disabled);
+      }
+    }
+  }
+}

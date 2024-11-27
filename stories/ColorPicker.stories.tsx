@@ -1,6 +1,6 @@
-import {ColorPicker} from '../src/ColorPicker';
+import {ColorPicker} from '../src/components/ColorPicker'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ColorPicker> = {
   component: ColorPicker,
@@ -8,13 +8,13 @@ const meta: Meta<typeof ColorPicker> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ColorPicker {...args} />;
+export const Example = (args: any) => <ColorPicker {...args} />
 
 Example.args = {
   label: 'Fill color',
   defaultValue: '#f00'
-};
+}

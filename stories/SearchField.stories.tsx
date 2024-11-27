@@ -1,6 +1,6 @@
-import {SearchField} from '../src/SearchField';
+import {SearchField} from '../src/components/SearchField'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
@@ -8,12 +8,12 @@ const meta: Meta<typeof SearchField> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <SearchField {...args} />;
+export const Example = (args: any) => <SearchField {...args} />
 
 Example.args = {
   label: 'Search'
-};
+}

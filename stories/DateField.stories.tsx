@@ -1,6 +1,6 @@
-import {DateField} from '../src/DateField';
+import {DateField} from '../src/components/DateField'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof DateField> = {
   component: DateField,
@@ -8,12 +8,12 @@ const meta: Meta<typeof DateField> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <DateField {...args} />;
+export const Example = (args: any) => <DateField {...args} />
 
 Example.args = {
   label: 'Event date'
-};
+}

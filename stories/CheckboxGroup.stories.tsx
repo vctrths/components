@@ -1,7 +1,7 @@
-import {Checkbox} from '../src/Checkbox';
-import {CheckboxGroup} from '../src/CheckboxGroup';
+import {Checkbox} from '../src/components/Checkbox'
+import {CheckboxGroup} from '../src/components/CheckboxGroup'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof CheckboxGroup> = {
   component: CheckboxGroup,
@@ -9,9 +9,9 @@ const meta: Meta<typeof CheckboxGroup> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <CheckboxGroup {...args}>
@@ -19,8 +19,8 @@ export const Example = (args: any) => (
     <Checkbox value="baseball">Baseball</Checkbox>
     <Checkbox value="basketball">Basketball</Checkbox>
   </CheckboxGroup>
-);
+)
 
 Example.args = {
   label: 'Favorite sports'
-};
+}

@@ -1,7 +1,7 @@
-import {MenuButton, MenuItem} from '../src/Menu';
-import {Menu} from 'react-aria-components';
+import {Menu} from 'react-aria-components'
+import {MenuButton, MenuItem} from '../src/components/Menu'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Menu> = {
   component: Menu,
@@ -9,9 +9,9 @@ const meta: Meta<typeof Menu> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <MenuButton label="Edit">
@@ -19,4 +19,4 @@ export const Example = (args: any) => (
     <MenuItem>Copy</MenuItem>
     <MenuItem>Paste</MenuItem>
   </MenuButton>
-);
+)

@@ -1,6 +1,6 @@
-import {ComboBox, ComboBoxItem} from '../src/ComboBox';
+import {ComboBox, ComboBoxItem} from '../src/components/ComboBox'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -8,9 +8,9 @@ const meta: Meta<typeof ComboBox> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <ComboBox {...args}>
@@ -19,8 +19,8 @@ export const Example = (args: any) => (
     <ComboBoxItem>Strawberry</ComboBoxItem>
     <ComboBoxItem>Vanilla</ComboBoxItem>
   </ComboBox>
-);
+)
 
 Example.args = {
   label: 'Ice cream flavor'
-};
+}

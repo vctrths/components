@@ -1,6 +1,6 @@
-import {ColorArea} from '../src/ColorArea';
+import {ColorArea} from '../src/components/ColorArea'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ColorArea> = {
   component: ColorArea,
@@ -8,12 +8,12 @@ const meta: Meta<typeof ColorArea> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ColorArea {...args} />;
+export const Example = (args: any) => <ColorArea {...args} />
 
 Example.args = {
   defaultValue: 'hsl(30, 100%, 50%)'
-};
+}

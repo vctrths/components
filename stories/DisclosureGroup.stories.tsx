@@ -1,12 +1,12 @@
-import {DisclosureGroup} from '../src/DisclosureGroup';
 import {
   Button,
   Disclosure,
   DisclosurePanel,
   Heading
-} from 'react-aria-components';
+} from 'react-aria-components'
+import {DisclosureGroup} from '../src/components/DisclosureGroup'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof DisclosureGroup> = {
   component: DisclosureGroup,
@@ -14,9 +14,9 @@ const meta: Meta<typeof DisclosureGroup> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <DisclosureGroup {...args}>
@@ -47,8 +47,8 @@ export const Example = (args: any) => (
       </DisclosurePanel>
     </Disclosure>
   </DisclosureGroup>
-);
+)
 
 Example.args = {
   defaultExpandedKeys: ['personal']
-};
+}

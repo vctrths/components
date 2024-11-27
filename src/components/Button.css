@@ -1,0 +1,89 @@
+@import "../theme.css";
+
+.react-aria-Button {
+  --button-color: hsl(var(--primary-fg));
+  --button-bg: hsl(var(--primary));
+  --button-border: hsl(var(--primary));
+  --button-border-color: hsla(0, 0%, 100%, 0.05);
+  --button-hover-overlay: hsla(0, 0%, 100%, 0.1);
+  --button-icon: hsl(var(--primary-fg) / 60%);
+
+  &[data-intent="secondary"] {
+    --button-color: hsl(var(--secondary-fg));
+    --button-bg: hsl(var(--secondary));
+  }
+
+  &[data-intent="danger"] {
+    --button-color: hsl(var(--danger-fg));
+    --button-bg: hsl(var(--danger));
+  }
+
+  &[data-intent="warning"] {
+    --button-color: hsl(var(--warning-fg));
+    --button-bg: hsl(var(--warning));
+  }
+
+  position: relative;
+  color: var(--button-color);
+  background-color: var(--button-bg);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  appearance: none;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0;
+  outline: none;
+  padding-bottom: calc(0.5rem - 1px);
+  padding-top: calc(0.5rem - 1px);
+  padding-left: calc(1rem - 1px);
+  padding-right: calc(1rem - 1px);
+  text-decoration: none;
+
+  &[data-size="small"] {
+    font-size: 0.75rem;
+    padding-bottom: calc(0.25rem - 1px);
+    padding-top: calc(0.25rem - 1px);
+    padding-left: calc(0.75rem - 1px);
+    padding-right: calc(0.75rem - 1px);
+  }
+
+  &[data-size="large"] {
+    font-size: 1rem;
+    padding-bottom: calc(0.75rem - 1px);
+    padding-top: calc(0.75rem - 1px);
+    padding-left: calc(1.25rem - 1px);
+    padding-right: calc(1.25rem - 1px);
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  &[data-hovered]:after {
+    background-color: var(--button-hover-overlay);
+  }
+
+  &[data-pressed] {
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.1);
+    background: var(--button-background-pressed);
+    border-color: var(--border-color-pressed);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  &[data-disabled] {
+    border-color: var(--border-color-disabled);
+    color: var(--text-color-disabled);
+  }
+}

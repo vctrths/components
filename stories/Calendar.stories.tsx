@@ -1,6 +1,6 @@
-import {Calendar} from '../src/Calendar';
+import {Calendar} from '../src/components/Calendar'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
@@ -8,10 +8,10 @@ const meta: Meta<typeof Calendar> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Calendar aria-label="Event date" {...args} />
-);
+)

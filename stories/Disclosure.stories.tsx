@@ -1,6 +1,6 @@
-import {Disclosure} from '../src/Disclosure';
+import {Disclosure} from '../src/components/Disclosure'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof Disclosure> = {
   component: Disclosure,
@@ -8,14 +8,14 @@ const meta: Meta<typeof Disclosure> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <Disclosure {...args}>Details on managing your account</Disclosure>
-);
+)
 
 Example.args = {
   title: 'Manage your account'
-};
+}

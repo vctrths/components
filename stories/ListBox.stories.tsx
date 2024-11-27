@@ -1,6 +1,6 @@
-import {ListBox, ListBoxItem} from '../src/ListBox';
+import {ListBox, ListBoxItem} from '../src/components/ListBox'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ListBox> = {
   component: ListBox,
@@ -8,9 +8,9 @@ const meta: Meta<typeof ListBox> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
 export const Example = (args: any) => (
   <ListBox aria-label="Ice cream flavor" {...args}>
@@ -19,9 +19,9 @@ export const Example = (args: any) => (
     <ListBoxItem>Strawberry</ListBoxItem>
     <ListBoxItem>Vanilla</ListBoxItem>
   </ListBox>
-);
+)
 
 Example.args = {
   onAction: null,
   selectionMode: 'single'
-};
+}

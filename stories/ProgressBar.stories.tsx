@@ -1,6 +1,6 @@
-import {ProgressBar} from '../src/ProgressBar';
+import {ProgressBar} from '../src/components/ProgressBar'
 
-import type {Meta} from '@storybook/react';
+import type {Meta} from '@storybook/react'
 
 const meta: Meta<typeof ProgressBar> = {
   component: ProgressBar,
@@ -8,13 +8,13 @@ const meta: Meta<typeof ProgressBar> = {
     layout: 'centered'
   },
   tags: ['autodocs']
-};
+}
 
-export default meta;
+export default meta
 
-export const Example = (args: any) => <ProgressBar {...args} />;
+export const Example = (args: any) => <ProgressBar {...args} />
 
 Example.args = {
   label: 'Loading…',
   value: 80
-};
+}
