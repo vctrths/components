@@ -1,4 +1,4 @@
-import {Link} from '../src/components/Link'
+import {Link} from '../src/todo/Link'
 
 import type {Meta} from '@storybook/react'
 

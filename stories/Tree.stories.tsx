@@ -6,7 +6,7 @@ import {
   TreeItemContent,
   TreeItemIndicator,
   TreeItemLabel
-} from '../src/components/Tree'
+} from '../src/todo/Tree'
 
 const renderItem = (item: FileNode): React.ReactNode => {
   return (

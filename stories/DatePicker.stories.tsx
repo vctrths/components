@@ -1,4 +1,4 @@
-import {DatePicker} from '../src/components/DatePicker'
+import {DatePicker} from '../src/todo/DatePicker'
 
 import type {Meta} from '@storybook/react'
 

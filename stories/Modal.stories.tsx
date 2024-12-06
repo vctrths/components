@@ -7,7 +7,7 @@ import {
   Label,
   TextField
 } from 'react-aria-components'
-import {Modal} from '../src/components/Modal'
+import {Modal} from '../src/todo/Modal'
 
 import type {Meta} from '@storybook/react'
 

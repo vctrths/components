@@ -1,4 +1,4 @@
-import {ProgressBar} from '../src/components/ProgressBar'
+import {ProgressBar} from '../src/todo/ProgressBar'
 
 import type {Meta} from '@storybook/react'
 

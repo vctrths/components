@@ -7,7 +7,7 @@ import {
   Modal,
   TextField
 } from 'react-aria-components'
-import {Dialog} from '../src/components/Dialog'
+import {Dialog} from '../src/todo/Dialog'
 
 import type {Meta} from '@storybook/react'
 

@@ -1,5 +1,5 @@
 import {ToggleButton} from 'react-aria-components'
-import {ToggleButtonGroup} from '../src/components/ToggleButtonGroup'
+import {ToggleButtonGroup} from '../src/todo/ToggleButtonGroup'
 
 import type {Meta} from '@storybook/react'
 

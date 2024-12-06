@@ -4,7 +4,7 @@ import {
   DisclosurePanel,
   Heading
 } from 'react-aria-components'
-import {DisclosureGroup} from '../src/components/DisclosureGroup'
+import {DisclosureGroup} from '../src/todo/DisclosureGroup'
 
 import type {Meta} from '@storybook/react'
 

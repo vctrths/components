@@ -1,4 +1,4 @@
-import {ColorArea} from '../src/components/ColorArea'
+import {ColorArea} from '../src/todo/ColorArea'
 
 import type {Meta} from '@storybook/react'
 

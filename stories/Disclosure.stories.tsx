@@ -1,4 +1,4 @@
-import {Disclosure} from '../src/components/Disclosure'
+import {Disclosure} from '../src/todo/Disclosure'
 
 import type {Meta} from '@storybook/react'
 

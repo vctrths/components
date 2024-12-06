@@ -5,7 +5,7 @@ import {
   Separator,
   ToggleButton
 } from 'react-aria-components'
-import {Toolbar} from '../src/components/Toolbar'
+import {Toolbar} from '../src/todo/Toolbar'
 
 import type {Meta} from '@storybook/react'
 

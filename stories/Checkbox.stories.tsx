@@ -1,4 +1,4 @@
-import {Checkbox} from '../src/components/Checkbox'
+import {Checkbox} from '../src/todo/Checkbox'
 
 import type {Meta} from '@storybook/react'
 

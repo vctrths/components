@@ -1,4 +1,4 @@
-import {ColorSwatch} from '../src/components/ColorSwatch'
+import {ColorSwatch} from '../src/todo/ColorSwatch'
 
 import type {Meta} from '@storybook/react'
 

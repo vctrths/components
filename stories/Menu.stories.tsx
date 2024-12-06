@@ -1,5 +1,5 @@
 import {Menu} from 'react-aria-components'
-import {MenuButton, MenuItem} from '../src/components/Menu'
+import {MenuButton, MenuItem} from '../src/todo/Menu'
 
 import type {Meta} from '@storybook/react'
 

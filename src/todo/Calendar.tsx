@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components'
 
 import './Calendar.css'
-import {Button} from './Button'
+import {Button} from '../components/Button'
 
 export interface CalendarProps<T extends DateValue>
   extends AriaCalendarProps<T> {

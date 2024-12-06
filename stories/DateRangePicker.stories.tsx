@@ -1,4 +1,4 @@
-import {DateRangePicker} from '../src/components/DateRangePicker'
+import {DateRangePicker} from '../src/todo/DateRangePicker'
 
 import type {Meta} from '@storybook/react'
 

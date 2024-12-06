@@ -1,4 +1,4 @@
-import {Calendar} from '../src/components/Calendar'
+import {Calendar} from '../src/todo/Calendar'
 
 import type {Meta} from '@storybook/react'
 

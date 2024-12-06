@@ -1,4 +1,4 @@
-import {ToggleButton} from '../src/components/ToggleButton'
+import {ToggleButton} from '../src/todo/ToggleButton'
 
 import type {Meta} from '@storybook/react'
 

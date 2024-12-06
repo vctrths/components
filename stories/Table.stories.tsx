@@ -1,5 +1,5 @@
 import {Cell, TableBody} from 'react-aria-components'
-import {Column, Row, Table, TableHeader} from '../src/components/Table'
+import {Column, Row, Table, TableHeader} from '../src/todo/Table'
 
 import type {Meta} from '@storybook/react'
 

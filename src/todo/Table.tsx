@@ -12,7 +12,7 @@ import {
   TableProps,
   useTableOptions
 } from 'react-aria-components';
-import {MyCheckbox} from './Checkbox';
+import {Checkbox} from './Checkbox';
 
 import './Table.css';
 
@@ -51,7 +51,7 @@ export function TableHeader<T extends object>(
         {allowsDragging && <AriaColumn />}
         {selectionBehavior === 'toggle' && (
           <AriaColumn>
-            {selectionMode === 'multiple' && <MyCheckbox slot="selection" />}
+            {selectionMode === 'multiple' && <Checkbox slot="selection" />}
           </AriaColumn>
         )}
         <Collection items={columns}>
@@ -77,7 +77,7 @@ export function Row<T extends object>(
         )}
         {selectionBehavior === 'toggle' && (
           <Cell>
-            <MyCheckbox slot="selection" />
+            <Checkbox slot="selection" />
           </Cell>
         )}
         <Collection items={columns}>

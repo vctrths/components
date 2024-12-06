@@ -1,4 +1,4 @@
-import {Slider} from '../src/components/Slider'
+import {Slider} from '../src/todo/Slider'
 
 import type {Meta} from '@storybook/react'
 

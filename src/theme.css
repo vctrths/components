@@ -5,74 +5,57 @@
 }
 
 :root {
-  --light: 223.81 0% 98%;
-  --dark: 239.95 9% 6%;
-  --bg: 0 0% 100%;
-  --fg: 239.93 9% 4%;
-  --primary: 216.77 100% 50%;
-  --primary-fg: 0 0% 100%;
-  --secondary: 240 5.88% 90%;
-  --secondary-fg: 240.01 6% 10%;
-  --tertiary: 0 0% 100%;
-  --tertiary-fg: 240 4% 16%;
-  --overlay: 0 0% 100%;
-  --overlay-fg: 239.93 9% 4%;
-  --muted: 240 5.88% 90%;
-  --muted-fg: 240 4% 41%;
-  --accent: 216.77 100% 50%;
-  --accent-fg: 0 0% 100%;
-  --accent-subtle: 216.92 99% 97%;
-  --accent-subtle-fg: 216.74 100% 40%;
-  --success: 161.17 91% 31%;
-  --success-fg: 151.77 82% 96%;
-  --info: 205.77 100% 50%;
-  --info-fg: 0 0% 100%;
-  --danger: 0.01 72% 51%;
-  --danger-fg: 360 86% 97%;
-  --warning: 43.2 96% 56.99%;
-  --warning-fg: 20.91 91% 14.1%;
-  --border: 240 6% 90%;
-  --input: 240 6% 90%;
-  --ring: var(--primary);
-  --toggle: 240.01 5% 84%;
-  --radius: 0.5rem;
-  --primary-chart: 216.74 100% 45%;
-  --secondary-chart: 219.83 100% 77%;
-  --tertiary-chart: 216.01 92% 60%;
-  --highlight-chart: 210 98% 78%;
-  --accent-chart: 210 98% 78%;
+  --background-color: #f8f8f8;
+  --gray-50: #ffffff;
+  --gray-100: #d0d0d0;
+  --gray-200: #afafaf;
+  --gray-300: #8f8f8f;
+  --gray-400: #717171;
+  --gray-500: #555555;
+  --gray-600: #393939;
+  --purple-100: #d5c9fa;
+  --purple-200: #b8a3f6;
+  --purple-300: #997cf2;
+  --purple-400: #7a54ef;
+  --purple-500: #582ddc;
+  --purple-600: #3c1e95;
+  --red-100: #f7c4ba;
+  --red-200: #f29887;
+  --red-300: #eb664d;
+  --red-400: #de2300;
+  --red-500: #a81b00;
+  --red-600: #731200;
+  --highlight-hover: rgb(0 0 0 / 0.07);
+  --highlight-pressed: rgb(0 0 0 / 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: 0 0% 0%;
-    --fg: 223.81 0% 98%;
-    --primary: 216.04 98% 52%;
-    --primary-fg: 0 0% 100%;
-    --secondary: 239.99 6% 11%;
-    --secondary-fg: 223.81 0% 98%;
-    --tertiary: 240.02 10% 5.35%;
-    --tertiary-fg: 239.99 4% 96%;
-    --accent: 216.04 98% 52%;
-    --accent-fg: 0 0% 100%;
-    --accent-subtle: 215.99 94% 6%;
-    --accent-subtle-fg: 204.92 100% 77%;
-    --overlay: 240.03 6% 6%;
-    --overlay-fg: 223.81 0% 98%;
-    --muted: 239.95 3% 16%;
-    --muted-fg: 240 5.03% 64.9%;
-    --info: 205.77 100% 50%;
-    --info-fg: 0 0% 100%;
-    --success: 161.17 91% 31%;
-    --success-fg: 151.77 82% 96%;
-    --ring: var(--primary);
-    --toggle: 239.99 5% 26%;
-    --border: 240.01 7.1% 15%;
-    --input: 239.95 3% 16%;
-    --primary-chart: 221.19 83% 53%;
-    --secondary-chart: 211.99 95% 68%;
-    --tertiary-chart: 216.01 92% 60%;
-    --highlight-chart: 210 98% 78%;
-    --accent-chart: 212 96% 87%;
-  }
+:root {
+  --focus-ring-color: var(--purple-400);
+  --text-color: var(--gray-600);
+  --text-color-base: var(--gray-500);
+  --text-color-hover: var(--gray-600);
+  --text-color-disabled: var(--gray-200);
+  --text-color-placeholder: var(--gray-400);
+  --link-color: var(--purple-500);
+  --link-color-secondary: var(--gray-500);
+  --link-color-pressed: var(--purple-600);
+  --border-color: var(--gray-300);
+  --border-color-hover: var(--gray-400);
+  --border-color-pressed: var(--gray-400);
+  --border-color-disabled: var(--gray-100);
+  --field-background: var(--gray-50);
+  --field-text-color: var(--gray-600);
+  --overlay-background: var(--gray-50);
+  --button-background: var(--gray-50);
+  --button-background-pressed: var(--background-color);
+  /* these colors are the same between light and dark themes
+   * to ensure contrast with the foreground color */
+  --highlight-background: #6f46ed; /* purple-300 from dark theme, 3.03:1 against background-color */
+  --highlight-background-pressed: #522acd; /* purple-200 from dark theme */
+  --highlight-background-invalid: #cc2000; /* red-300 from dark theme */
+  --highlight-foreground: white; /* 5.56:1 against highlight-background */
+  --highlight-foreground-pressed: #ddd;
+  --highlight-overlay: rgb(from #6f46ed r g b / 15%);
+  --invalid-color: var(--red-400);
+  --invalid-color-pressed: var(--red-500);
 }

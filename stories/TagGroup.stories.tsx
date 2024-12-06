@@ -1,4 +1,4 @@
-import {Tag, TagGroup} from '../src/components/TagGroup'
+import {Tag, TagGroup} from '../src/todo/TagGroup'
 
 import type {Meta} from '@storybook/react'
 

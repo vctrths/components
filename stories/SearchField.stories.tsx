@@ -1,4 +1,4 @@
-import {SearchField} from '../src/components/SearchField'
+import {SearchField} from '../src/todo/SearchField'
 
 import type {Meta} from '@storybook/react'
 

@@ -1,4 +1,4 @@
-import {NumberField} from '../src/components/NumberField'
+import {NumberField} from '../src/todo/NumberField'
 
 import type {Meta} from '@storybook/react'
 

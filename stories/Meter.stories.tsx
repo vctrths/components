@@ -1,4 +1,4 @@
-import {Meter} from '../src/components/Meter'
+import {Meter} from '../src/todo/Meter'
 
 import type {Meta} from '@storybook/react'
 

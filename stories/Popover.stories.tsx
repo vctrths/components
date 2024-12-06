@@ -1,5 +1,5 @@
 import {Button, DialogTrigger, Heading} from 'react-aria-components'
-import {Popover} from '../src/components/Popover'
+import {Popover} from '../src/todo/Popover'
 
 import type {Meta} from '@storybook/react'
 

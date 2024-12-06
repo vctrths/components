@@ -1,5 +1,5 @@
 import {Breadcrumb, Link} from 'react-aria-components'
-import {Breadcrumbs} from '../src/components/Breadcrumbs'
+import {Breadcrumbs} from '../src/todo/Breadcrumbs'
 
 export const Example = (args: any) => (
   <Breadcrumbs {...args}>

@@ -1,4 +1,4 @@
-import {ComboBox, ComboBoxItem} from '../src/components/ComboBox'
+import {ComboBox, ComboBoxItem} from '../src/todo/ComboBox'
 
 import type {Meta} from '@storybook/react'
 

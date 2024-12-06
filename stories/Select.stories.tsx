@@ -1,4 +1,4 @@
-import {Select, SelectItem} from '../src/components/Select'
+import {Select, SelectItem} from '../src/todo/Select'
 
 import type {Meta} from '@storybook/react'
 

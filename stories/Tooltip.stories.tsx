@@ -1,5 +1,5 @@
 import {Button, TooltipTrigger} from 'react-aria-components'
-import {Tooltip} from '../src/components/Tooltip'
+import {Tooltip} from '../src/todo/Tooltip'
 
 import type {Meta} from '@storybook/react'
 

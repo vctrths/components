@@ -1,7 +1,7 @@
 import {
   ColorSwatchPicker,
   ColorSwatchPickerItem
-} from '../src/components/ColorSwatchPicker'
+} from '../src/todo/ColorSwatchPicker'
 
 import type {Meta} from '@storybook/react'
 

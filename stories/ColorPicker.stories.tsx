@@ -1,4 +1,4 @@
-import {ColorPicker} from '../src/components/ColorPicker'
+import {ColorPicker} from '../src/todo/ColorPicker'
 
 import type {Meta} from '@storybook/react'
 

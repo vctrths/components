@@ -1,5 +1,5 @@
 import {Tab, TabList, TabPanel} from 'react-aria-components'
-import {Tabs} from '../src/components/Tabs'
+import {Tabs} from '../src/todo/Tabs'
 
 import type {Meta} from '@storybook/react'
 

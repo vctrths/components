@@ -1,4 +1,4 @@
-import {ListBox, ListBoxItem} from '../src/components/ListBox'
+import {ListBox, ListBoxItem} from '../src/todo/ListBox'
 
 import type {Meta} from '@storybook/react'
 

@@ -1,4 +1,4 @@
-import {ColorWheel} from '../src/components/ColorWheel'
+import {ColorWheel} from '../src/todo/ColorWheel'
 
 import type {Meta} from '@storybook/react'
 

@@ -1,4 +1,4 @@
-import {Switch} from '../src/components/Switch'
+import {Switch} from '../src/todo/Switch'
 
 import type {Meta} from '@storybook/react'
 

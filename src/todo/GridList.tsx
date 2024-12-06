@@ -6,7 +6,7 @@ import {
 } from 'react-aria-components'
 import {Checkbox} from './Checkbox'
 import './GridList.css'
-import {Button} from './Button'
+import {Button} from '../components/Button'
 
 export function GridList<T extends object>({
   children,

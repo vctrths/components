@@ -1,4 +1,4 @@
-import {ColorField} from '../src/components/ColorField'
+import {ColorField} from '../src/todo/ColorField'
 
 import type {Meta} from '@storybook/react'
 

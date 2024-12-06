@@ -1,4 +1,4 @@
-import {ColorSlider} from '../src/components/ColorSlider'
+import {ColorSlider} from '../src/todo/ColorSlider'
 
 import type {Meta} from '@storybook/react'
 
