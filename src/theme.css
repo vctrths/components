@@ -47,10 +47,10 @@
 
 :root {
   --focus-ring-color: var(--indigo-500);
-  --text-color: var(--gray-600);
+  --text-color: var(--gray-700);
   --text-color-base: var(--gray-500);
   --text-color-hover: var(--gray-600);
-  --text-color-disabled: var(--gray-200);
+  --text-color-disabled: var(--gray-300);
   --text-color-placeholder: var(--gray-400);
   --link-color: var(--indigo-500);
   --link-color-secondary: var(--gray-500);
@@ -61,7 +61,7 @@
   --border-color-disabled: var(--gray-100);
   --field-background: var(--gray-50);
   --field-text-color: var(--gray-600);
-  --overlay-background: var(--gray-50);
+  --overlay-background: var(--gray-200);
 
   --primary-color: var(--gray-50);
   --primary-background: var(--indigo-500);
@@ -81,22 +81,25 @@
 
   /* these colors are the same between light and dark themes
    * to ensure contrast with the foreground color */
-  --highlight-background: #6b8eef;
-  --highlight-background-pressed: #3f61e8;
+  --highlight-background: var(--indigo-500);
+  --highlight-background-pressed: var(--indigo-600);
   --highlight-background-invalid: #cc2000;
   --highlight-foreground: white;
   --highlight-foreground-pressed: #ddd;
-  --highlight-overlay: rgb(from #6b8eef r g b / 15%);
+  --highlight-overlay: rgb(from #3f61e8 r g b / 25%);
   --invalid-color: var(--danger-500);
-  --invalid-color-pressed: var(--danger-400);
+  --invalid-color-pressed: var(--danger-600);
+  --invalid-overlay: rgb(from #f44336 r g b / 25%);
 }
 
 :root[data-theme="dark"] {
+  --ladle-bg-color-primary: #1d232a;
+
   --focus-ring-color: var(--indigo-500);
   --text-color: var(--gray-400);
   --text-color-base: var(--gray-500);
   --text-color-hover: var(--gray-400);
-  --text-color-disabled: var(--gray-800);
+  --text-color-disabled: var(--gray-700);
   --text-color-placeholder: var(--gray-600);
   --link-color: var(--indigo-500);
   --link-color-secondary: var(--gray-500);
@@ -104,10 +107,10 @@
   --border-color: var(--gray-700);
   --border-color-hover: var(--gray-600);
   --border-color-pressed: var(--gray-600);
-  --border-color-disabled: var(--gray-900);
+  --border-color-disabled: var(--gray-800);
   --field-background: var(--gray-900);
   --field-text-color: var(--gray-400);
-  --overlay-background: var(--gray-900);
+  --overlay-background: var(--gray-800);
 
   --secondary-color: var(--gray-100);
   --secondary-background: var(--gray-900);
