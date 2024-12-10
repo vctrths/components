@@ -1,18 +1,6 @@
 import {Cell, TableBody} from 'react-aria-components'
 import {Column, Row, Table, TableHeader} from '../src/todo/Table'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Table> = {
-  component: Table,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <Table aria-label="Files" {...args}>
     <TableHeader>

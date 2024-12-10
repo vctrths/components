@@ -1,17 +1,5 @@
 import {Select, SelectItem} from '../src/todo/Select'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Select> = {
-  component: Select,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <Select {...args}>
     <SelectItem>Chocolate</SelectItem>

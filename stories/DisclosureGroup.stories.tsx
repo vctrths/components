@@ -6,18 +6,6 @@ import {
 } from 'react-aria-components'
 import {DisclosureGroup} from '../src/todo/DisclosureGroup'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof DisclosureGroup> = {
-  component: DisclosureGroup,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <DisclosureGroup {...args}>
     <Disclosure id="personal">
