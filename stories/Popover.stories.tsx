@@ -1,18 +1,6 @@
 import {Button, DialogTrigger, Heading} from 'react-aria-components'
 import {Popover} from '../src/todo/Popover'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Popover> = {
-  component: Popover,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <DialogTrigger>
     <Button aria-label="Help">ⓘ</Button>

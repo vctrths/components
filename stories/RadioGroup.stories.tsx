@@ -1,18 +1,6 @@
 import {Radio} from 'react-aria-components'
 import {RadioGroup} from '../src/todo/RadioGroup'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof RadioGroup> = {
-  component: RadioGroup,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <RadioGroup {...args}>
     <Radio value="soccer">Soccer</Radio>

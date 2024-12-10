@@ -1,18 +1,6 @@
 import {Tab, TabList, TabPanel} from 'react-aria-components'
 import {Tabs} from '../src/todo/Tabs'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Tabs> = {
-  component: Tabs,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <Tabs {...args}>
     <TabList aria-label="History of Ancient Rome">

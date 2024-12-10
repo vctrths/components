@@ -7,18 +7,6 @@ import {
 } from 'react-aria-components'
 import {Toolbar} from '../src/todo/Toolbar'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Toolbar> = {
-  component: Toolbar,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <Toolbar aria-label="Text formatting" {...args}>
     <Group aria-label="Style">

@@ -9,18 +9,6 @@ import {
 } from 'react-aria-components'
 import {Modal} from '../src/todo/Modal'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Modal> = {
-  component: Modal,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <DialogTrigger>
     <Button>Sign up…</Button>

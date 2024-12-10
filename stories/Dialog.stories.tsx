@@ -9,18 +9,6 @@ import {
 } from 'react-aria-components'
 import {Dialog} from '../src/todo/Dialog'
 
-import type {Meta} from '@storybook/react'
-
-const meta: Meta<typeof Dialog> = {
-  component: Dialog,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
-}
-
-export default meta
-
 export const Example = (args: any) => (
   <DialogTrigger>
     <Button>Sign up…</Button>
