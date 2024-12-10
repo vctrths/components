@@ -1,6 +1,5 @@
 import {Button} from '../src/components/Button'
 
-
 export const Appearance = () => {
   return (
     <div style={{display: 'flex', alignItems: 'flex-start', gap: 10}}>
@@ -14,10 +13,16 @@ export const Appearance = () => {
 export const Intents = ({isDisabled}: {isDisabled: boolean}) => {
   return (
     <div style={{display: 'flex', gap: 10}}>
-      <Button intent="primary" isDisabled={isDisabled}>Primary</Button>
-      <Button intent="secondary" isDisabled={isDisabled}>Secondary</Button>
-      <Button intent="danger" isDisabled={isDisabled}>Danger</Button>
-      <Button intent="warning" isDisabled={isDisabled}>Warning</Button>
+      <Button isDisabled={isDisabled}>Primary</Button>
+      <Button intent="secondary" isDisabled={isDisabled}>
+        Secondary
+      </Button>
+      <Button intent="danger" isDisabled={isDisabled}>
+        Danger
+      </Button>
+      <Button intent="warning" isDisabled={isDisabled}>
+        Warning
+      </Button>
     </div>
   )
 }

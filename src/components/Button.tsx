@@ -5,10 +5,9 @@ import {
 import './Button.css'
 
 export interface ButtonProps extends ButtonPrimitiveProps {
-  intent?: 'primary' | 'secondary' | 'danger' | 'warning'
-  size?: 'medium' | 'large' | 'square' | 'extra-small' | 'small'
-  shape?: 'circle' | 'plain' | 'default'
   appearance?: 'solid' | 'outline' | 'plain'
+  intent?: 'primary' | 'secondary' | 'danger' | 'warning'
+  size?: 'small' | 'medium' | 'large'
 }
 
 export function Button({intent, size, appearance, ...props}: ButtonProps) {
