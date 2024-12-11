@@ -8,7 +8,7 @@ if (!semver) {
   console.log('Usage: bun release <semver>')
 } else {
   const version = semver.startsWith('v') ? semver : `v${semver}`
-  pkg.version = semver.slice(1)
+  pkg.version = version.slice(1)
   await write('package.json', `${JSON.stringify(pkg, null, 2)}\n`)
   execSync('git add .', {stdio: 'inherit'})
   execSync(`git commit -m "${version}"`, {stdio: 'inherit'})
