@@ -27,7 +27,7 @@
     "esbuild": "^0.24.0"
   },
   "scripts": {
-    "bump": "bun bump.ts",
+    "release": "bun release.ts",
     "dev": "ladle dev",
     "build": "ladle build",
     "prepublishOnly": "rm -rf dist && tsc -p tsconfig.d.json && bun build.ts"
