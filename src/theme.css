@@ -47,7 +47,7 @@
 
 :root {
   --focus-ring-color: var(--indigo-500);
-  --text-color: var(--gray-700);
+  --text-color: var(--gray-800);
   --text-color-base: var(--gray-500);
   --text-color-hover: var(--gray-600);
   --text-color-disabled: var(--gray-300);
@@ -70,23 +70,19 @@
 
   --secondary-color: var(--gray-900);
   --secondary-background: var(--gray-100);
-  --secondary-background-pressed: var(--gray-200);
-
-  --danger-color: var(--gray-50);
-  --danger-background: var(--danger-400);
-  --danger-background-pressed: var(--danger-500);
-
-  --warning-color: var(--gray-900);
-  --warning-background: var(--warning-400);
-  --warning-background-pressed: var(--warning-500);
+  --secondary-background-hovered: var(--gray-200);
+  --secondary-background-pressed: var(--gray-300);
 
   /* these colors are the same between light and dark themes
    * to ensure contrast with the foreground color */
   --highlight-background: var(--indigo-500);
-  --highlight-background-pressed: var(--indigo-600);
+  --highlight-background-hovered: var(--indigo-600);
+  --highlight-background-pressed: var(--indigo-700);
+  --highlight-background-disabled: var(--indigo-100);
   --highlight-background-invalid: #cc2000;
   --highlight-foreground: white;
   --highlight-foreground-pressed: #ddd;
+  --highlight-foreground-disabled: var(--indigo-400);
   --highlight-overlay: rgb(from #3f61e8 r g b / 20%);
   --invalid-color: var(--danger-500);
   --invalid-color-pressed: var(--danger-600);
