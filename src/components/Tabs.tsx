@@ -6,6 +6,6 @@ export interface TabsProps extends RACTabsProps {
   variant?: 'line' | 'subtle' | 'enclosed'
 }
 
-export function Tabs({variant, ...props}: TabsProps) {
+export function Tabs({variant = 'line', ...props}: TabsProps) {
   return <RACTabs data-variant={variant} {...props} />
 }
