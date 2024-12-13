@@ -1,8 +1,18 @@
-import {Link} from '../src/todo/Link.tsx'
+import {Link} from '../src/components/Link.tsx'
 
-export const Example = (args: any) => <Link {...args}>The missing link</Link>
-
-Example.args = {
-  href: 'https://www.imdb.com/title/tt6348138/',
-  target: '_blank'
-}
+export const Variants = () => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }}
+  >
+    <Link href="https://google.com" target="_blank">
+      Default link (plain)
+    </Link>
+    <Link href="https://google.com" target="_blank" variant="underline">
+      Underline link
+    </Link>
+  </div>
+)

@@ -1,6 +1,7 @@
 export * from './components/Button.tsx'
 export * from './components/Checkbox.tsx'
 export * from './components/CheckboxGroup.tsx'
+export * from './components/Link.tsx'
 export * from './components/RadioGroup.tsx'
 export * from './components/Table.tsx'
 export * from './components/Tabs.tsx'
