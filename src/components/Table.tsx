@@ -12,12 +12,16 @@ import {
   type TableProps,
   useTableOptions
 } from 'react-aria-components'
-import {Checkbox} from '../components/Checkbox.tsx'
+import {Checkbox} from './Checkbox.tsx'
 
 import './Table.css'
 
-export function Table(props: TableProps) {
-  return <AriaTable {...props} />
+export function Table(
+  props: TableProps & {
+    striped?: boolean
+  }
+) {
+  return <AriaTable data-striped={props.striped} {...props} />
 }
 
 export function Column(props: ColumnProps) {
