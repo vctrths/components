@@ -27,7 +27,7 @@
   }
 
   [data-variant="enclosed"] & {
-    background-color: var(--gray-100);
+    background-color: var(--background-color);
     border-radius: 8px;
     padding: 4px;
   }
@@ -80,7 +80,7 @@
 
     [data-variant="subtle"] &,
     [data-variant="enclosed"] & {
-      background-color: var(--gray-100);
+      background-color: var(--background-color-hover);
     }
   }
 

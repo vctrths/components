@@ -2,13 +2,17 @@
 
 .react-aria-TextField {
   .react-aria-Label {
-    color: var(--text-color);
     font-size: 13px;
     font-weight: 600;
     display: block;
     padding-bottom: 4px;
     transition: var(--transition);
     transition-property: color;
+  }
+
+  .react-aria-Label,
+  .react-aria-Text {
+    color: var(--text-color);
   }
 
   &:has([data-focused]) {
