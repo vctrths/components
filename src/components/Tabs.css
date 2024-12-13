@@ -45,33 +45,38 @@
   transition: var(--transition);
   forced-color-adjust: none;
 
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--highlight-background);
-    transform-origin: bottom right;
-    transform: scaleX(0);
-    transition: var(--transition);
-    transition-property: transform;
+  [data-variant="line"] & {
+    padding: 16px 8px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--border-color);
+      transform-origin: bottom right;
+      transform: scaleX(0);
+      transition: var(--transition);
+      transition-property: background, opacity, transform;
+    }
   }
 
   [data-variant="subtle"] &,
   [data-variant="enclosed"] & {
     padding: 8px 16px;
     border-radius: 8px;
-
-    &:before {
-      display: none;
-    }
   }
 
   &[data-hovered],
   &[data-focused] {
     color: var(--text-color-hover);
+
+    [data-variant="line"] &:before {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
 
     [data-variant="subtle"] &,
     [data-variant="enclosed"] & {
@@ -82,15 +87,16 @@
   &[data-selected] {
     color: var(--text-color);
 
+    [data-variant="line"] &:before {
+      background-color: var(--highlight-background);
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+
     [data-variant="subtle"] &,
     [data-variant="enclosed"] & {
       color: var(--indigo-500);
       background-color: var(--indigo-100);
-    }
-
-    &:before {
-      transform-origin: bottom left;
-      transform: scaleX(1);
     }
   }
 
@@ -101,12 +107,8 @@
     }
   }
 
-  &[data-focus-visible]:after {
-    content: "";
-    position: absolute;
-    inset: 4px;
-    border-radius: 4px;
-    border: 2px solid var(--focus-ring-color);
+  &[data-focus-visible] {
+    outline: 2px solid var(--focus-ring-color);
   }
 }
 
@@ -115,6 +117,10 @@
   padding: 10px;
   border-radius: 4px;
   outline: none;
+
+  [data-orientation="vertical"] & {
+    margin-top: 0;
+  }
 
   &[data-focus-visible] {
     outline: 2px solid var(--focus-ring-color);
@@ -130,10 +136,25 @@
 .react-aria-TabList {
   &[data-orientation="vertical"] {
     flex-direction: column;
-    border-inline-end: 1px solid gray;
 
     .react-aria-Tab {
-      border-inline-end: 3px solid var(--border-color, transparent);
+      padding: 8px 16px;
+      &:before {
+        left: auto;
+        bottom: auto;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        transform: none;
+        opacity: 0;
+      }
+
+      &[data-hovered]:before,
+      &[data-focused]:before,
+      &[data-selected]:before {
+        opacity: 1;
+      }
     }
   }
 }
