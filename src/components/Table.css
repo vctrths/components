@@ -18,6 +18,7 @@
 
   .alinea-TableHeader {
     color: var(--text-color);
+    font-size: 14px;
 
     & tr:last-child .alinea-Column {
       border-bottom: 1px solid var(--border-color);
@@ -46,9 +47,12 @@
     }
 
     &[data-selected] {
-      background: var(--highlight-background);
-      color: var(--highlight-foreground);
+      background: var(--selected-background);
       --focus-ring-color: var(--highlight-foreground);
+
+      .alinea-Row-Indicator {
+        background-color: var(--highlight-background);
+      }
 
       &[data-focus-visible],
       .alinea-Cell[data-focus-visible] {
@@ -206,6 +210,15 @@
       outline: 2px solid var(--focus-ring-color);
     }
   }
+}
+
+.alinea-Row-Indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: transparent;
 }
 
 .alinea-DropIndicator[data-drop-target] {

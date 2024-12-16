@@ -105,6 +105,7 @@ export function Row<T extends object>({
       )}
       {selectionBehavior === 'toggle' && (
         <Cell className="alinea-Cell">
+          <span aria-hidden className={clsx('alinea-Row-Indicator')} />
           <Checkbox slot="selection" />
         </Cell>
       )}

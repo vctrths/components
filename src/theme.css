@@ -78,6 +78,10 @@
   --highlight-foreground-pressed: #ddd;
   --highlight-foreground-disabled: var(--indigo-400);
   --highlight-overlay: rgb(from #3f61e8 r g b / 20%);
+
+  --selected-background: var(--indigo-50);
+  --selected-foreground: var(--indigo-500);
+
   --invalid-color: var(--danger-500);
   --invalid-color-pressed: var(--danger-600);
   --invalid-overlay: rgb(from #f44336 r g b / 20%);

@@ -1,3 +1,6 @@
+'use client'
+
+import {useAsyncList} from 'react-stately'
 import {
   Cell,
   Column,
@@ -57,6 +60,91 @@ export const Example = () => (
   </div>
 )
 
+export const Selection = () => (
+  <Table aria-label="Table" selectionMode="multiple">
+    {columns?.length > 0 && (
+      <TableHeader>
+        {columns.map(column => (
+          <Column isRowHeader key={column.id}>
+            {column.title}
+          </Column>
+        ))}
+      </TableHeader>
+    )}
+    <TableBody renderEmptyState={() => <p>No results found.</p>}>
+      {items?.length > 0 &&
+        items.map(item => (
+          <Row key={item.id}>
+            <Cell>{item.name}</Cell>
+            <Cell>{item.type}</Cell>
+            <Cell>{item.date_modified}</Cell>
+          </Row>
+        ))}
+    </TableBody>
+  </Table>
+)
+
+type TableItem = {
+  id: string
+  name: string
+  type: string
+  date_modified: string
+}
+
+export const Sorting = () => {
+  const list = useAsyncList<TableItem>({
+    async load() {
+      return {items}
+    },
+    async sort({items, sortDescriptor}) {
+      return {
+        items: items.sort((a, b) => {
+          const first = a[sortDescriptor.column as keyof TableItem]
+          const second = b[sortDescriptor.column as keyof TableItem]
+          let cmp =
+            (Number.parseInt(first) || first) <
+            (Number.parseInt(second) || second)
+              ? -1
+              : 1
+          if (sortDescriptor.direction === 'descending') {
+            cmp *= -1
+          }
+          return cmp
+        })
+      }
+    }
+  })
+  return (
+    <Table
+      aria-label="Table"
+      sortDescriptor={list.sortDescriptor}
+      onSortChange={list.sort}
+    >
+      {columns?.length > 0 && (
+        <TableHeader>
+          {columns.map(column => (
+            <Column id={column.id} isRowHeader allowsSorting key={column.id}>
+              {column.title}
+            </Column>
+          ))}
+        </TableHeader>
+      )}
+      <TableBody
+        items={list.items}
+        renderEmptyState={() => <p>No results found.</p>}
+      >
+        {item => (
+          <Row id={item.name} key={item.id}>
+            <Cell>{item.name}</Cell>
+            <Cell>{item.type}</Cell>
+            <Cell>{item.date_modified}</Cell>
+          </Row>
+        )}
+      </TableBody>
+    </Table>
+  )
+}
+
 const columns = [
   {id: 'name', title: 'Name', allowSorting: true},
   {id: 'type', title: 'Type', allowSorting: true},
@@ -64,12 +152,17 @@ const columns = [
 ]
 
 const items = [
-  {id: 1, name: 'Games', type: 'File folder', date_modified: '6/7/2020'},
+  {id: 'games', name: 'Games', type: 'File folder', date_modified: '6/7/2020'},
   {
-    id: 2,
+    id: 'program_files',
     name: 'Program Files',
     type: 'File folder',
     date_modified: '4/7/2021'
   },
-  {id: 3, name: 'bootmgr', type: 'System file', date_modified: '11/20/2010'}
+  {
+    id: 'bootmgr',
+    name: 'Bootmgr',
+    type: 'System file',
+    date_modified: '11/20/2010'
+  }
 ]
