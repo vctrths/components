@@ -6,12 +6,28 @@
   gap: 2px;
   font-size: small;
   color: var(--text-color);
+  
+  [slot="description"] {
+    font-size: 12px;
+  }
+
+  [slot="errorMessage"] {
+    font-size: 12px;
+    color: var(--invalid-color);
+  }
 }
 
 .alinea-TagList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
+  .alinea-Tag {
+    &[data-disabled] {
+      border-color: var(--border-color-disabled);
+      color: var(--text-color-disabled);
+    }
+  }
 }
 
 .alinea-Tag {
@@ -86,25 +102,5 @@
   &[data-href] {
     text-decoration: none;
     cursor: pointer;
-  }
-}
-
-.alinea-TagList {
-  .alinea-Tag {
-    &[data-disabled] {
-      border-color: var(--border-color-disabled);
-      color: var(--text-color-disabled);
-    }
-  }
-}
-
-.alinea-TagGroup {
-  [slot="description"] {
-    font-size: 12px;
-  }
-
-  [slot="errorMessage"] {
-    font-size: 12px;
-    color: var(--invalid-color);
   }
 }
