@@ -20,11 +20,12 @@ const externalize: Plugin = {
     })
     const cssFiles: Array<string> = []
     build.onLoad({filter: /\.css$/}, ({path}) => {
-      cssFiles.push(relative(process.cwd(), path))
+      cssFiles.push(relative(process.cwd(), path).replaceAll('\\', '/'))
       return {contents: ''}
     })
     build.onEnd(async () => {
       const res = await build.esbuild.build({
+        target: ['safari14'],
         stdin: {
           contents: `${cssFiles.map(path => `@import './${path}';`).join('\n')}`,
           loader: 'css',
@@ -46,5 +47,5 @@ await build({
   entryPoints: entries.filter(entry => !entry.includes('todo')),
   outdir: 'dist',
   bundle: true,
-  plugins: [externalize]
+  plugins: [externalize],
 }).catch(() => process.exit(1))

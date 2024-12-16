@@ -1,6 +1,6 @@
 import {
-  CheckboxGroup as AriaCheckboxGroup,
-  type CheckboxGroupProps as AriaCheckboxGroupProps,
+  CheckboxGroup as CheckboxGroupPrimitive,
+  type CheckboxGroupProps as CheckboxPrimitiveGroupProps,
   FieldError,
   Label,
   Text,
@@ -8,9 +8,9 @@ import {
 } from 'react-aria-components'
 
 import './CheckboxGroup.css'
+import clsx from 'clsx'
 
-export interface CheckboxGroupProps
-  extends Omit<AriaCheckboxGroupProps, 'children'> {
+export interface CheckboxGroupProps extends CheckboxPrimitiveGroupProps {
   children?: React.ReactNode
   label?: string
   description?: string
@@ -25,11 +25,14 @@ export function CheckboxGroup({
   ...props
 }: CheckboxGroupProps) {
   return (
-    <AriaCheckboxGroup {...props}>
+    <CheckboxGroupPrimitive
+      {...props}
+      className={clsx('alinea-CheckboxGroup', props.className)}
+    >
       {label && <Label>{label}</Label>}
       {children}
       {description && <Text slot="description">{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
-    </AriaCheckboxGroup>
+      <FieldError className="alinea-FieldError">{errorMessage}</FieldError>
+    </CheckboxGroupPrimitive>
   )
 }

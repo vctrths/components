@@ -1,12 +1,12 @@
 @import "../theme.css";
 
-.react-aria-CheckboxGroup {
+.alinea-CheckboxGroup {
   display: flex;
   flex-direction: column;
   gap: 0.571rem;
   color: var(--text-color);
 
-  .react-aria-FieldError {
+  .alinea-FieldError {
     font-size: 12px;
     color: var(--invalid-color);
   }

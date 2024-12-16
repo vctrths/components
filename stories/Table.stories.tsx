@@ -1,5 +1,11 @@
-import {Cell, TableBody} from 'react-aria-components'
-import {Column, Row, Table, TableHeader} from '../src/components/Table.tsx'
+import {
+  Cell,
+  Column,
+  Row,
+  Table,
+  TableBody,
+  TableHeader
+} from '../src/components/Table.tsx'
 
 export const Example = () => (
   <div

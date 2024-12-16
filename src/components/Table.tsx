@@ -1,63 +1,86 @@
+import clsx from 'clsx'
 import {
-  Column as AriaColumn,
-  Row as AriaRow,
-  Table as AriaTable,
-  TableHeader as AriaTableHeader,
-  Button,
-  Cell,
+  Cell as CellPrimitive,
+  type CellProps,
   Collection,
+  Column as ColumnPrimitive,
   type ColumnProps,
+  Row as RowPrimitive,
   type RowProps,
+  TableBody as TableBodyPrimitive,
+  type TableBodyProps,
+  TableHeader as TableHeaderPrimitive,
   type TableHeaderProps,
+  Table as TablePrimitive,
   type TableProps,
   useTableOptions
 } from 'react-aria-components'
 import {Checkbox} from './Checkbox.tsx'
-
 import './Table.css'
+import {Button} from './Button.tsx'
+
+export type {
+  TableProps,
+  ColumnProps,
+  RowProps,
+  CellProps,
+  TableBodyProps
+} from 'react-aria-components'
 
 export function Table(
   props: TableProps & {
     striped?: boolean
   }
 ) {
-  return <AriaTable data-striped={props.striped} {...props} />
+  return (
+    <TablePrimitive
+      data-striped={props.striped}
+      {...props}
+      className={clsx('alinea-Table', props.className)}
+    />
+  )
 }
 
 export function Column(props: ColumnProps) {
   return (
-    <AriaColumn {...props}>
+    <ColumnPrimitive
+      {...props}
+      className={clsx('alinea-Column', props.className)}
+    >
       {({allowsSorting, sortDirection}) => (
         <>
           {props.children}
           {allowsSorting && (
-            <span aria-hidden="true" className="sort-indicator">
+            <span aria-hidden="true" className="alinea-Column-sortIndicator">
               {sortDirection === 'ascending' ? '▲' : '▼'}
             </span>
           )}
         </>
       )}
-    </AriaColumn>
+    </ColumnPrimitive>
   )
 }
 
 export function TableHeader<T extends object>({
   columns,
-  children
+  children,
+  ...props
 }: TableHeaderProps<T>) {
   const {selectionBehavior, selectionMode, allowsDragging} = useTableOptions()
 
   return (
-    <AriaTableHeader>
+    <TableHeaderPrimitive
+      className={clsx('alinea-TableHeader', props.className)}
+    >
       {/* Add extra columns for drag and drop and selection. */}
-      {allowsDragging && <AriaColumn />}
+      {allowsDragging && <ColumnPrimitive className="alinea-Column" />}
       {selectionBehavior === 'toggle' && (
-        <AriaColumn>
+        <ColumnPrimitive className="alinea-Column">
           {selectionMode === 'multiple' && <Checkbox slot="selection" />}
-        </AriaColumn>
+        </ColumnPrimitive>
       )}
       <Collection items={columns}>{children}</Collection>
-    </AriaTableHeader>
+    </TableHeaderPrimitive>
   )
 }
 
@@ -65,23 +88,45 @@ export function Row<T extends object>({
   id,
   columns,
   children,
-  ...otherProps
+  ...props
 }: RowProps<T>) {
   const {selectionBehavior, allowsDragging} = useTableOptions()
 
   return (
-    <AriaRow id={id} {...otherProps}>
+    <RowPrimitive
+      id={id}
+      {...props}
+      className={clsx('alinea-Row', props.className)}
+    >
       {allowsDragging && (
-        <Cell>
+        <Cell className="alinea-Cell">
           <Button slot="drag">≡</Button>
         </Cell>
       )}
       {selectionBehavior === 'toggle' && (
-        <Cell>
+        <Cell className="alinea-Cell">
           <Checkbox slot="selection" />
         </Cell>
       )}
       <Collection items={columns}>{children}</Collection>
-    </AriaRow>
+    </RowPrimitive>
+  )
+}
+
+export function Cell(props: CellProps) {
+  return (
+    <CellPrimitive
+      {...props}
+      className={clsx('alinea-Cell', props.className)}
+    />
+  )
+}
+
+export function TableBody<T extends object>(props: TableBodyProps<T>) {
+  return (
+    <TableBodyPrimitive<T>
+      {...props}
+      className={clsx('alinea-TableBody', props.className)}
+    />
   )
 }

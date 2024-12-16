@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.react-aria-Table {
+.alinea-Table {
   outline: none;
   border-spacing: 0;
   max-width: 100%;
@@ -16,16 +16,16 @@
     outline-offset: -1px;
   }
 
-  .react-aria-TableHeader {
+  .alinea-TableHeader {
     color: var(--text-color);
 
-    & tr:last-child .react-aria-Column {
+    & tr:last-child .alinea-Column {
       border-bottom: 1px solid var(--border-color);
       cursor: default;
     }
   }
 
-  .react-aria-Row {
+  .alinea-Row {
     outline: none;
     cursor: default;
     color: var(--text-color);
@@ -51,7 +51,7 @@
       --focus-ring-color: var(--highlight-foreground);
 
       &[data-focus-visible],
-      .react-aria-Cell[data-focus-visible] {
+      .alinea-Cell[data-focus-visible] {
         outline-offset: -4px;
       }
     }
@@ -61,8 +61,8 @@
     }
   }
 
-  .react-aria-Cell,
-  .react-aria-Column {
+  .alinea-Cell,
+  .alinea-Column {
     padding: 8px;
     text-align: left;
     outline: none;
@@ -77,33 +77,33 @@
     }
   }
 
-  .react-aria-Cell {
+  .alinea-Cell {
     transform: translateZ(0);
   }
 }
 
-:where(.react-aria-Row) .react-aria-Checkbox {
+:where(.alinea-Row) .alinea-Checkbox {
   --selected-color: var(--highlight-foreground);
   --selected-color-pressed: var(--highlight-foreground-pressed);
   --checkmark-color: var(--highlight-background);
   --background-color: var(--highlight-background);
 }
 
-.react-aria-Row[data-href] {
+.alinea-Row[data-href] {
   cursor: pointer;
 }
 
-.react-aria-Column {
-  .sort-indicator {
+.alinea-Column {
+  .alinea-Column-sortIndicator {
     padding: 0 2px;
   }
 
-  &:not([data-sort-direction]) .sort-indicator {
+  &:not([data-sort-direction]) .alinea-Column-sortIndicator {
     visibility: hidden;
   }
 }
 
-.react-aria-TableBody {
+.alinea-TableBody {
   &[data-empty] {
     font-size: 14px;
     text-align: center;
@@ -111,7 +111,7 @@
   }
 }
 
-.react-aria-ResizableTableContainer {
+.alinea-ResizableTableContainer {
   max-width: 400px;
   overflow: auto;
   position: relative;
@@ -119,12 +119,12 @@
   border-radius: 6px;
   background: var(--background-color);
 
-  .react-aria-Table {
+  .alinea-Table {
     border: none;
   }
 
   .column-name,
-  .react-aria-Button {
+  .alinea-Button {
     --background-color: var(--overlay-background);
     flex: 1;
     font: inherit;
@@ -148,7 +148,7 @@
     }
   }
 
-  .react-aria-ColumnResizer {
+  .alinea-ColumnResizer {
     width: 15px;
     background-color: grey;
     height: 25px;
@@ -182,15 +182,15 @@
     }
   }
 
-  .react-aria-Column,
-  .react-aria-Cell {
+  .alinea-Column,
+  .alinea-Cell {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
-.react-aria-Row {
+.alinea-Row {
   &[data-dragging] {
     opacity: 0.6;
     transform: translateZ(0);
@@ -208,28 +208,28 @@
   }
 }
 
-.react-aria-DropIndicator[data-drop-target] {
+.alinea-DropIndicator[data-drop-target] {
   outline: 1px solid var(--highlight-background);
   transform: translateZ(0);
 }
 
-.react-aria-Table[data-drop-target] {
+.alinea-Table[data-drop-target] {
   outline: 2px solid var(--highlight-background);
   outline-offset: -1px;
   background: var(--highlight-overlay);
 }
 
-.react-aria-Row[data-drop-target] {
+.alinea-Row[data-drop-target] {
   outline: 2px solid var(--highlight-background);
   background: var(--highlight-overlay);
 }
 
-.react-aria-DropIndicator[data-drop-target] {
+.alinea-DropIndicator[data-drop-target] {
   outline: 1px solid var(--highlight-background);
   transform: translateZ(0);
 }
 
-.react-aria-Cell img {
+.alinea-Cell img {
   height: 30px;
   width: 30px;
   object-fit: cover;

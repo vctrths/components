@@ -1,3 +1,4 @@
+import {IcRoundRefresh} from 'alinea/ui/icons/IcRoundRefresh'
 import type {CSSProperties} from 'react'
 import {Button} from '../src/components/Button.tsx'
 
@@ -8,7 +9,7 @@ const styleStack: CSSProperties = {
   gap: 10
 }
 
-export const All = () => {
+export function All() {
   return (
     <div
       style={{
@@ -38,7 +39,7 @@ export const All = () => {
   )
 }
 
-export const Appearance = () => {
+export function Appearance() {
   return (
     <div style={{display: 'flex', alignItems: 'flex-start', gap: 10}}>
       <Button>Solid</Button>
@@ -48,7 +49,7 @@ export const Appearance = () => {
   )
 }
 
-export const Intents = ({isDisabled}: {isDisabled: boolean}) => {
+export function Intents({isDisabled}: {isDisabled: boolean}) {
   return (
     <div style={{display: 'flex', gap: 10}}>
       <Button isDisabled={isDisabled}>Primary</Button>
@@ -69,12 +70,23 @@ Intents.args = {
   isDisabled: false
 }
 
-export const Sizes = () => {
+export function Sizes() {
   return (
     <div style={{display: 'flex', alignItems: 'flex-start', gap: 10}}>
       <Button size="small">Small</Button>
       <Button>Medium</Button>
       <Button size="large">Large</Button>
+    </div>
+  )
+}
+
+export function WithIcon() {
+  return (
+    <div style={styleStack}>
+      <Button>
+        <IcRoundRefresh data-slot="icon" />
+        With icon
+      </Button>
     </div>
   )
 }

@@ -1,5 +1,4 @@
-import {Tab, TabList, TabPanel} from 'react-aria-components'
-import {Tabs} from '../src/components/Tabs.tsx'
+import {Tab, TabList, TabPanel, Tabs} from '../src/components/Tabs.tsx'
 
 export const Variants = () => (
   <div

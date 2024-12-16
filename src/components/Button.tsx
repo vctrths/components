@@ -3,6 +3,7 @@ import {
   type ButtonProps as ButtonPrimitiveProps
 } from 'react-aria-components'
 import './Button.css'
+import clsx from 'clsx'
 
 export interface ButtonProps extends ButtonPrimitiveProps {
   appearance?: 'solid' | 'outline' | 'plain'
@@ -17,6 +18,7 @@ export function Button({intent, size, appearance, ...props}: ButtonProps) {
       data-size={size}
       data-appearance={appearance}
       {...props}
+      className={clsx('alinea-Button', props.className)}
     />
   )
 }

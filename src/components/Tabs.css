@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.react-aria-Tabs {
+.alinea-Tabs {
   display: flex;
   color: var(--text-color);
 
@@ -13,7 +13,7 @@
   }
 }
 
-.react-aria-TabList {
+.alinea-TabList {
   display: flex;
 
   &[data-orientation="horizontal"] {
@@ -33,7 +33,7 @@
   }
 }
 
-.react-aria-Tab {
+.alinea-Tab {
   outline: none;
   cursor: pointer;
   position: relative;
@@ -112,7 +112,7 @@
   }
 }
 
-.react-aria-TabPanel {
+.alinea-TabPanel {
   margin-top: 4px;
   padding: 10px;
   border-radius: 4px;
@@ -127,17 +127,17 @@
   }
 }
 
-.react-aria-Tabs {
+.alinea-Tabs {
   &[data-orientation="vertical"] {
     flex-direction: row;
   }
 }
 
-.react-aria-TabList {
+.alinea-TabList {
   &[data-orientation="vertical"] {
     flex-direction: column;
 
-    .react-aria-Tab {
+    .alinea-Tab {
       padding: 8px 16px;
       &:before {
         left: auto;
@@ -159,7 +159,7 @@
   }
 }
 
-.react-aria-Tab {
+.alinea-Tab {
   &[data-disabled] {
     color: var(--text-color-disabled);
     &[data-selected] {
@@ -168,7 +168,7 @@
   }
 }
 
-.react-aria-Tab[href] {
+.alinea-Tab[href] {
   text-decoration: none;
   cursor: pointer;
 }

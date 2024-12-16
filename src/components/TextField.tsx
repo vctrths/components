@@ -1,17 +1,17 @@
 import {
-  TextField as AriaTextField,
-  type TextFieldProps as AriaTextFieldProps,
   FieldError,
   Input,
   Label,
   Text,
   TextArea,
+  TextField as TextFieldPrimitive,
+  type TextFieldProps as TextFieldPrimitiveProps,
   type ValidationResult
 } from 'react-aria-components'
-
 import './TextField.css'
+import clsx from 'clsx'
 
-export interface TextFieldProps extends AriaTextFieldProps {
+export interface TextFieldProps extends TextFieldPrimitiveProps {
   label?: string
   placeholder?: string
   description?: string
@@ -27,11 +27,20 @@ export function TextField({
   ...props
 }: TextFieldProps) {
   return (
-    <AriaTextField {...props}>
-      <Label>{label + (props.isRequired ? ' *' : '')}</Label>
-      {isTextarea ? <TextArea /> : <Input />}
+    <TextFieldPrimitive
+      {...props}
+      className={clsx('alinea-TextField', props.className)}
+    >
+      <Label className="alinea-Label">
+        {label + (props.isRequired ? ' *' : '')}
+      </Label>
+      {isTextarea ? (
+        <TextArea className="alinea-TextArea" />
+      ) : (
+        <Input className="alinea-Input" />
+      )}
       {description && <Text slot="description">{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
-    </AriaTextField>
+      <FieldError className="alinea-FieldError">{errorMessage}</FieldError>
+    </TextFieldPrimitive>
   )
 }

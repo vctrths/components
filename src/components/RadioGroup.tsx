@@ -6,8 +6,20 @@ import {
   Text,
   type ValidationResult
 } from 'react-aria-components'
-
+import {Radio as RadioPrimitive, type RadioProps} from 'react-aria-components'
 import './RadioGroup.css'
+import clsx from 'clsx'
+
+export type {RadioProps} from 'react-aria-components'
+
+export function Radio(props: RadioProps) {
+  return (
+    <RadioPrimitive
+      {...props}
+      className={clsx('alinea-Radio', props.className)}
+    />
+  )
+}
 
 export interface RadioGroupProps extends Omit<AriaRadioGroupProps, 'children'> {
   children?: React.ReactNode
@@ -24,11 +36,14 @@ export function RadioGroup({
   ...props
 }: RadioGroupProps) {
   return (
-    <AriaRadioGroup {...props}>
+    <AriaRadioGroup
+      {...props}
+      className={clsx('alinea-RadioGroup', props.className)}
+    >
       <Label>{label}</Label>
       {children}
       {description && <Text slot="description">{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      <FieldError className="alinea-FieldError">{errorMessage}</FieldError>
     </AriaRadioGroup>
   )
 }

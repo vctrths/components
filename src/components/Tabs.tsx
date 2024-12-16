@@ -1,11 +1,51 @@
-import {Tabs as RACTabs} from 'react-aria-components'
-import type {TabsProps as RACTabsProps} from 'react-aria-components'
+import {
+  TabList as TabListPrimitive,
+  type TabListProps,
+  TabPanel as TabPanelPrimitive,
+  type TabPanelProps,
+  Tab as TabPrimitive,
+  type TabProps,
+  Tabs as TabsPrimitive
+} from 'react-aria-components'
+import type {TabsProps as TabsPrimitiveProps} from 'react-aria-components'
 import './Tabs.css'
+import clsx from 'clsx'
 
-export interface TabsProps extends RACTabsProps {
+export type {TabProps, TabListProps, TabPanelProps} from 'react-aria-components'
+
+export interface TabsProps extends TabsPrimitiveProps {
   variant?: 'line' | 'subtle' | 'enclosed'
 }
 
 export function Tabs({variant = 'line', ...props}: TabsProps) {
-  return <RACTabs data-variant={variant} {...props} />
+  return (
+    <TabsPrimitive
+      data-variant={variant}
+      {...props}
+      className={clsx('alinea-Tabs', props.className)}
+    />
+  )
+}
+
+export function Tab(props: TabProps) {
+  return (
+    <TabPrimitive {...props} className={clsx('alinea-Tab', props.className)} />
+  )
+}
+
+export function TabList<T extends object>(props: TabListProps<T>) {
+  return (
+    <TabListPrimitive<T>
+      {...props}
+      className={clsx('alinea-TabList', props.className)}
+    />
+  )
+}
+export function TabPanel(props: TabPanelProps) {
+  return (
+    <TabPanelPrimitive
+      {...props}
+      className={clsx('alinea-TabPanel', props.className)}
+    />
+  )
 }

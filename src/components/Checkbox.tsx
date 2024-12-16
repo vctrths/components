@@ -1,16 +1,26 @@
 import {
-  Checkbox as AriaCheckbox,
+  Checkbox as CheckboxPrimitive,
   type CheckboxProps
 } from 'react-aria-components'
 import './Checkbox.css'
+import clsx from 'clsx'
+
+export type {CheckboxProps} from 'react-aria-components'
 
 export function Checkbox({children, ...props}: CheckboxProps) {
   return (
-    <AriaCheckbox {...props}>
+    <CheckboxPrimitive
+      {...props}
+      className={clsx('alinea-Checkbox', props.className)}
+    >
       {({isIndeterminate}) => (
         <>
-          <div className="checkbox">
-            <svg viewBox="0 0 18 18" aria-hidden="true">
+          <div className="alinea-Checkbox-box">
+            <svg
+              className="alinea-Checkbox-mark"
+              viewBox="0 0 18 18"
+              aria-hidden="true"
+            >
               {isIndeterminate ? (
                 <rect x={1} y={7.5} width={15} height={3} />
               ) : (
@@ -21,6 +31,6 @@ export function Checkbox({children, ...props}: CheckboxProps) {
           {children}
         </>
       )}
-    </AriaCheckbox>
+    </CheckboxPrimitive>
   )
 }
