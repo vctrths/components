@@ -42,13 +42,13 @@ export function TagGroup<T extends object>({
       data-intent={intent}
       data-shape={shape}
       {...props}
-      className={clsx('alinea-TagGroup', props.className)}
+      className={clsx('alinea-rac-TagGroup', props.className)}
     >
       <Label>{label}</Label>
       <TagList
         items={items}
         renderEmptyState={renderEmptyState}
-        className={clsx('alinea-TagList')}
+        className={clsx('alinea-rac-TagList')}
       >
         {children}
       </TagList>
@@ -64,7 +64,7 @@ export function Tag({children, ...props}: TagProps) {
     <AriaTag
       textValue={textValue}
       {...props}
-      className={clsx('alinea-Tag', props.className)}
+      className={clsx('alinea-rac-Tag', props.className)}
     >
       {args => {
         const inner = typeof children === 'function' ? children(args) : children

@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.alinea-Table {
+.alinea-rac-Table {
   outline: none;
   border-spacing: 0;
   max-width: 100%;
@@ -16,25 +16,30 @@
     outline-offset: -1px;
   }
 
-  .alinea-TableHeader {
+  .alinea-rac-TableHeader {
     color: var(--text-color);
     font-size: 14px;
 
-    & tr:last-child .alinea-Column {
+    & tr:last-child .alinea-rac-Column {
       border-bottom: 1px solid var(--border-color);
       cursor: default;
     }
   }
 
-  .alinea-Row {
+  .alinea-rac-Row {
     outline: none;
     cursor: default;
     color: var(--text-color);
     font-size: 14px;
     position: relative;
 
-    [data-striped] &:nth-child(odd) {
+    [data-striped]:nth-child(odd) {
       background-color: var(--background-color);
+
+      .alinea-rac-Cell,
+      .alinea-rac-Column {
+        padding-block: 12px;
+      }
     }
 
     &[data-focus-visible] {
@@ -50,12 +55,12 @@
       background: var(--selected-background);
       --focus-ring-color: var(--highlight-foreground);
 
-      .alinea-Row-Indicator {
+      .alinea-rac-Row-Indicator {
         background-color: var(--highlight-background);
       }
 
       &[data-focus-visible],
-      .alinea-Cell[data-focus-visible] {
+      .alinea-rac-Cell[data-focus-visible] {
         outline-offset: -4px;
       }
     }
@@ -65,15 +70,11 @@
     }
   }
 
-  .alinea-Cell,
-  .alinea-Column {
+  .alinea-rac-Cell,
+  .alinea-rac-Column {
     padding: 8px;
     text-align: left;
     outline: none;
-
-    [data-striped] & {
-      padding-block: 12px;
-    }
 
     &[data-focus-visible] {
       outline: 2px solid var(--focus-ring-color);
@@ -81,33 +82,33 @@
     }
   }
 
-  .alinea-Cell {
+  .alinea-rac-Cell {
     transform: translateZ(0);
   }
 }
 
-:where(.alinea-Row) .alinea-Checkbox {
+:where(.alinea-rac-Row) .alinea-rac-Checkbox {
   --selected-color: var(--highlight-foreground);
   --selected-color-pressed: var(--highlight-foreground-pressed);
   --checkmark-color: var(--highlight-background);
   --background-color: var(--highlight-background);
 }
 
-.alinea-Row[data-href] {
+.alinea-rac-Row[data-href] {
   cursor: pointer;
 }
 
-.alinea-Column {
-  .alinea-Column-sortIndicator {
+.alinea-rac-Column {
+  .alinea-rac-Column-sortIndicator {
     padding: 0 2px;
   }
 
-  &:not([data-sort-direction]) .alinea-Column-sortIndicator {
+  &:not([data-sort-direction]) .alinea-rac-Column-sortIndicator {
     visibility: hidden;
   }
 }
 
-.alinea-TableBody {
+.alinea-rac-TableBody {
   &[data-empty] {
     font-size: 14px;
     text-align: center;
@@ -115,7 +116,7 @@
   }
 }
 
-.alinea-ResizableTableContainer {
+.alinea-rac-ResizableTableContainer {
   max-width: 400px;
   overflow: auto;
   position: relative;
@@ -123,12 +124,12 @@
   border-radius: 6px;
   background: var(--background-color);
 
-  .alinea-Table {
+  .alinea-rac-Table {
     border: none;
   }
 
   .column-name,
-  .alinea-Button {
+  .alinea-rac-Button {
     --background-color: var(--overlay-background);
     flex: 1;
     font: inherit;
@@ -152,7 +153,7 @@
     }
   }
 
-  .alinea-ColumnResizer {
+  .alinea-rac-ColumnResizer {
     width: 15px;
     background-color: grey;
     height: 25px;
@@ -186,15 +187,15 @@
     }
   }
 
-  .alinea-Column,
-  .alinea-Cell {
+  .alinea-rac-Column,
+  .alinea-rac-Cell {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
-.alinea-Row {
+.alinea-rac-Row {
   &[data-dragging] {
     opacity: 0.6;
     transform: translateZ(0);
@@ -212,7 +213,7 @@
   }
 }
 
-.alinea-Row-Indicator {
+.alinea-rac-Row-Indicator {
   position: absolute;
   top: 0;
   left: 0;
@@ -221,28 +222,28 @@
   background-color: transparent;
 }
 
-.alinea-DropIndicator[data-drop-target] {
+.alinea-rac-DropIndicator[data-drop-target] {
   outline: 1px solid var(--highlight-background);
   transform: translateZ(0);
 }
 
-.alinea-Table[data-drop-target] {
+.alinea-rac-Table[data-drop-target] {
   outline: 2px solid var(--highlight-background);
   outline-offset: -1px;
   background: var(--highlight-overlay);
 }
 
-.alinea-Row[data-drop-target] {
+.alinea-rac-Row[data-drop-target] {
   outline: 2px solid var(--highlight-background);
   background: var(--highlight-overlay);
 }
 
-.alinea-DropIndicator[data-drop-target] {
+.alinea-rac-DropIndicator[data-drop-target] {
   outline: 1px solid var(--highlight-background);
   transform: translateZ(0);
 }
 
-.alinea-Cell img {
+.alinea-rac-Cell img {
   height: 30px;
   width: 30px;
   object-fit: cover;

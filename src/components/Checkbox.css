@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.alinea-Checkbox {
+.alinea-rac-Checkbox {
   --selected-color: var(--highlight-background);
   --selected-color-pressed: var(--highlight-background-pressed);
   --checkmark-color: var(--highlight-foreground);
@@ -13,7 +13,7 @@
   color: var(--text-color);
   forced-color-adjust: none;
 
-  .alinea-Checkbox-box {
+  .alinea-rac-Checkbox-box {
     width: 16px;
     height: 16px;
     border: 1px solid var(--border-color);
@@ -25,7 +25,7 @@
     transition-property: background, border, box-shadow;
   }
 
-  .alinea-Checkbox-mark {
+  .alinea-rac-Checkbox-mark {
     width: 1rem;
     height: 1rem;
     fill: none;
@@ -36,59 +36,59 @@
     transition: var(--transition);
   }
 
-  &[data-hovered] .alinea-Checkbox-box {
+  &[data-hovered] .alinea-rac-Checkbox-box {
     border-color: var(--border-color-hover);
     box-shadow: 0 0 0 4px var(--box-shadow-color);
   }
 
-  &[data-focus-visible] .alinea-Checkbox-box {
+  &[data-focus-visible] .alinea-rac-Checkbox-box {
     outline: 2px solid var(--border-color);
     outline-offset: 2px;
   }
 
   &[data-selected],
   &[data-indeterminate] {
-    .alinea-Checkbox-box {
+    .alinea-rac-Checkbox-box {
       border-color: var(--selected-color);
       background: var(--selected-color);
     }
 
-    &[data-hovered] .alinea-Checkbox-box {
+    &[data-hovered] .alinea-rac-Checkbox-box {
       box-shadow: 0 0 0 4px var(--highlight-overlay);
     }
 
-    &[data-focus-visible] .alinea-Checkbox-box {
+    &[data-focus-visible] .alinea-rac-Checkbox-box {
       outline-color: var(--selected-color);
     }
 
-    .alinea-Checkbox-mark {
+    .alinea-rac-Checkbox-mark {
       stroke-dashoffset: 44;
     }
   }
 
   &[data-indeterminate] {
-    & .alinea-Checkbox-mark {
+    & .alinea-rac-Checkbox-mark {
       stroke: none;
       fill: var(--checkmark-color);
     }
   }
 
   &[data-invalid] {
-    .alinea-Checkbox-box {
+    .alinea-rac-Checkbox-box {
       border-color: var(--invalid-color);
     }
 
-    &[data-hovered] .alinea-Checkbox-box {
+    &[data-hovered] .alinea-rac-Checkbox-box {
       box-shadow: 0 0 0 4px var(--invalid-overlay);
     }
 
-    &[data-focus-visible] .alinea-Checkbox-box {
+    &[data-focus-visible] .alinea-rac-Checkbox-box {
       outline-color: var(--invalid-color);
     }
 
     &[data-selected],
     &[data-indeterminate] {
-      .alinea-Checkbox-box {
+      .alinea-rac-Checkbox-box {
         background: var(--invalid-color);
       }
     }

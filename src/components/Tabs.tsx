@@ -22,14 +22,17 @@ export function Tabs({variant = 'line', ...props}: TabsProps) {
     <TabsPrimitive
       data-variant={variant}
       {...props}
-      className={clsx('alinea-Tabs', props.className)}
+      className={clsx('alinea-rac-Tabs', props.className)}
     />
   )
 }
 
 export function Tab(props: TabProps) {
   return (
-    <TabPrimitive {...props} className={clsx('alinea-Tab', props.className)} />
+    <TabPrimitive
+      {...props}
+      className={clsx('alinea-rac-Tab', props.className)}
+    />
   )
 }
 
@@ -37,7 +40,7 @@ export function TabList<T extends object>(props: TabListProps<T>) {
   return (
     <TabListPrimitive<T>
       {...props}
-      className={clsx('alinea-TabList', props.className)}
+      className={clsx('alinea-rac-TabList', props.className)}
     />
   )
 }
@@ -45,7 +48,7 @@ export function TabPanel(props: TabPanelProps) {
   return (
     <TabPanelPrimitive
       {...props}
-      className={clsx('alinea-TabPanel', props.className)}
+      className={clsx('alinea-rac-TabPanel', props.className)}
     />
   )
 }

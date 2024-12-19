@@ -14,7 +14,7 @@ export function Link({variant, ...props}: LinkProps) {
     <RACLink
       data-variant={variant}
       {...props}
-      className={clsx('alinea-Link', props.className)}
+      className={clsx('alinea-rac-Link', props.className)}
     />
   )
 }

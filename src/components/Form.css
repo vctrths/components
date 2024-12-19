@@ -1,12 +1,12 @@
 @import "../theme.css";
 
-.alinea-Form {
+.alinea-rac-Form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* .alinea-Form [role="alert"] {
+/* .alinea-rac-Form [role="alert"] {
   border: 2px solid var(--invalid-color);
   background: var(--overlay-background);
   border-radius: 6px;

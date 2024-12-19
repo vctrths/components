@@ -19,7 +19,7 @@ export function Button({intent, size, appearance, ...props}: ButtonProps) {
       data-size={size}
       data-appearance={appearance}
       {...props}
-      className={clsx('alinea-Button', props.className)}
+      className={clsx('alinea-rac-Button', props.className)}
     />
   )
 }

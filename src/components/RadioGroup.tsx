@@ -16,7 +16,7 @@ export function Radio(props: RadioProps) {
   return (
     <RadioPrimitive
       {...props}
-      className={clsx('alinea-Radio', props.className)}
+      className={clsx('alinea-rac-Radio', props.className)}
     />
   )
 }
@@ -38,12 +38,12 @@ export function RadioGroup({
   return (
     <AriaRadioGroup
       {...props}
-      className={clsx('alinea-RadioGroup', props.className)}
+      className={clsx('alinea-rac-RadioGroup', props.className)}
     >
       <Label>{label}</Label>
       {children}
       {description && <Text slot="description">{description}</Text>}
-      <FieldError className="alinea-FieldError">{errorMessage}</FieldError>
+      <FieldError className="alinea-rac-FieldError">{errorMessage}</FieldError>
     </AriaRadioGroup>
   )
 }

@@ -27,12 +27,12 @@ export function CheckboxGroup({
   return (
     <CheckboxGroupPrimitive
       {...props}
-      className={clsx('alinea-CheckboxGroup', props.className)}
+      className={clsx('alinea-rac-CheckboxGroup', props.className)}
     >
       {label && <Label>{label}</Label>}
       {children}
       {description && <Text slot="description">{description}</Text>}
-      <FieldError className="alinea-FieldError">{errorMessage}</FieldError>
+      <FieldError className="alinea-rac-FieldError">{errorMessage}</FieldError>
     </CheckboxGroupPrimitive>
   )
 }

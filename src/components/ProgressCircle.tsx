@@ -15,14 +15,14 @@ export function ProgressCircle({className, ...props}: ProgressCircleProps) {
   return (
     <ProgressBar
       {...props}
-      className={clsx('alinea-ProgressCircle', className)}
+      className={clsx('alinea-rac-ProgressCircle', className)}
     >
       {({percentage, isIndeterminate}) => (
         <svg
           viewBox="0 0 24 24"
           fill="none"
           data-slot="icon"
-          className="alinea-ProgressCircle-icon"
+          className="alinea-rac-ProgressCircle-icon"
         >
           <circle
             cx={c}
@@ -44,7 +44,7 @@ export function ProgressCircle({className, ...props}: ProgressCircleProps) {
               strokeDashoffset={100 - (percentage ?? 0)}
               strokeLinecap="round"
               transform="rotate(-90)"
-              className="alinea-ProgressCircle-icon-circle"
+              className="alinea-rac-ProgressCircle-icon-circle"
             />
           ) : (
             <circle
@@ -57,7 +57,7 @@ export function ProgressCircle({className, ...props}: ProgressCircleProps) {
               strokeDasharray="100 200"
               strokeDashoffset={100 - 30}
               strokeLinecap="round"
-              className="alinea-ProgressCircle-icon-circle"
+              className="alinea-rac-ProgressCircle-icon-circle"
               data-indeterminate
             />
           )}

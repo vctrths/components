@@ -7,7 +7,7 @@ export function Form(props: FormProps) {
   return (
     <FormPrimitive
       {...props}
-      className={clsx('alinea-Form', props.className)}
+      className={clsx('alinea-rac-Form', props.className)}
     />
   )
 }

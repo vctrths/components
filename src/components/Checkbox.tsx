@@ -11,13 +11,13 @@ export function Checkbox({children, ...props}: CheckboxProps) {
   return (
     <CheckboxPrimitive
       {...props}
-      className={clsx('alinea-Checkbox', props.className)}
+      className={clsx('alinea-rac-Checkbox', props.className)}
     >
       {({isIndeterminate}) => (
         <>
-          <div className="alinea-Checkbox-box">
+          <div className="alinea-rac-Checkbox-box">
             <svg
-              className="alinea-Checkbox-mark"
+              className="alinea-rac-Checkbox-mark"
               viewBox="0 0 18 18"
               aria-hidden="true"
             >

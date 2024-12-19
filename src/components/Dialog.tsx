@@ -11,7 +11,7 @@ export function Dialog(props: DialogProps) {
   return (
     <DialogPrimitive
       {...props}
-      className={clsx('alinea-Dialog', props.className)}
+      className={clsx('alinea-rac-Dialog', props.className)}
     />
   )
 }
@@ -19,5 +19,5 @@ export function Dialog(props: DialogProps) {
 export function DialogFooter(
   props: PropsWithChildren<HTMLAttributes<HTMLDivElement>>
 ) {
-  return <div {...props} className="alinea-DialogFooter" />
+  return <div {...props} className="alinea-rac-DialogFooter" />
 }

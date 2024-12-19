@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.alinea-Tabs {
+.alinea-rac-Tabs {
   display: flex;
   color: var(--text-color);
 
@@ -13,7 +13,7 @@
   }
 }
 
-.alinea-TabList {
+.alinea-rac-TabList {
   display: flex;
 
   &[data-orientation="horizontal"] {
@@ -33,7 +33,7 @@
   }
 }
 
-.alinea-Tab {
+.alinea-rac-Tab {
   outline: none;
   cursor: pointer;
   position: relative;
@@ -112,7 +112,7 @@
   }
 }
 
-.alinea-TabPanel {
+.alinea-rac-TabPanel {
   margin-top: 4px;
   padding: 10px;
   border-radius: 4px;
@@ -127,17 +127,17 @@
   }
 }
 
-.alinea-Tabs {
+.alinea-rac-Tabs {
   &[data-orientation="vertical"] {
     flex-direction: row;
   }
 }
 
-.alinea-TabList {
+.alinea-rac-TabList {
   &[data-orientation="vertical"] {
     flex-direction: column;
 
-    .alinea-Tab {
+    .alinea-rac-Tab {
       padding: 8px 16px;
       &:before {
         left: auto;
@@ -159,7 +159,7 @@
   }
 }
 
-.alinea-Tab {
+.alinea-rac-Tab {
   &[data-disabled] {
     color: var(--text-color-disabled);
     &[data-selected] {
@@ -168,7 +168,7 @@
   }
 }
 
-.alinea-Tab[href] {
+.alinea-rac-Tab[href] {
   text-decoration: none;
   cursor: pointer;
 }

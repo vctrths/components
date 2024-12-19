@@ -1,13 +1,8 @@
 import {Tab, TabList, TabPanel, Tabs} from '../src/components/Tabs.tsx'
+import {Stack} from './Stack.tsx'
 
 export const Variants = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 32
-    }}
-  >
+  <Stack gap={32}>
     <Tabs>
       <TabList>
         <Tab id="tab1">Tab 1</Tab>
@@ -56,7 +51,7 @@ export const Variants = () => (
         Proin rhoncus, nunc eu venenatis convallis, arcu sagittis risus.
       </TabPanel>
     </Tabs>
-  </div>
+  </Stack>
 )
 
 export const Orientation = () => (

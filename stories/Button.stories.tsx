@@ -1,9 +1,15 @@
 'use client'
 
 import {IcRoundRefresh} from 'alinea/ui/icons/IcRoundRefresh'
-import {type CSSProperties, useState} from 'react'
+import {
+  type CSSProperties,
+  type HTMLAttributes,
+  type PropsWithChildren,
+  useState
+} from 'react'
 import {Button} from '../src/components/Button.tsx'
 import {ProgressCircle} from '../src/components/ProgressCircle.tsx'
+import {Stack} from './Stack.tsx'
 
 const styleStack: CSSProperties = {
   display: 'flex',
@@ -12,49 +18,47 @@ const styleStack: CSSProperties = {
   gap: 10
 }
 
+const HStack = (props: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) => (
+  <Stack {...props} direction="row" wrap="wrap" align="flex-start" />
+)
+
 export function All() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 10
-      }}
-    >
-      <div style={styleStack}>
+    <Stack>
+      <HStack>
         <Button>Solid</Button>
         <Button isDisabled>Solid disabled</Button>
         <Button appearance="outline">Outline</Button>
         <Button appearance="outline" isDisabled>
           Outline disabled
         </Button>
-      </div>
-      <div style={styleStack}>
+      </HStack>
+      <HStack>
         <Button intent="secondary">Solid secondary</Button>
         <Button appearance="outline" intent="secondary">
           Outline secondary
         </Button>
-      </div>
-      <div style={styleStack}>
+      </HStack>
+      <HStack>
         <Button appearance="plain">Plain</Button>
-      </div>
-    </div>
+      </HStack>
+    </Stack>
   )
 }
 
 export function Appearance() {
   return (
-    <div style={{display: 'flex', alignItems: 'flex-start', gap: 10}}>
+    <Stack>
       <Button>Solid</Button>
       <Button appearance="outline">Outline</Button>
       <Button appearance="plain">Plain</Button>
-    </div>
+    </Stack>
   )
 }
 
 export function Intents({isDisabled}: {isDisabled: boolean}) {
   return (
-    <div style={{display: 'flex', gap: 10}}>
+    <Stack>
       <Button isDisabled={isDisabled}>Primary</Button>
       <Button intent="secondary" isDisabled={isDisabled}>
         Secondary
@@ -65,7 +69,7 @@ export function Intents({isDisabled}: {isDisabled: boolean}) {
       <Button intent="warning" isDisabled={isDisabled}>
         Warning
       </Button>
-    </div>
+    </Stack>
   )
 }
 
@@ -75,11 +79,11 @@ Intents.args = {
 
 export function Sizes() {
   return (
-    <div style={{display: 'flex', alignItems: 'flex-start', gap: 10}}>
+    <Stack>
       <Button size="small">Small</Button>
       <Button>Medium</Button>
       <Button size="large">Large</Button>
-    </div>
+    </Stack>
   )
 }
 
@@ -94,7 +98,7 @@ export function Icons() {
   }
 
   return (
-    <div style={styleStack}>
+    <HStack>
       <Button>
         <IcRoundRefresh data-slot="icon" />
         With icon
@@ -121,6 +125,6 @@ export function Icons() {
           Loading...
         </>
       </Button>
-    </div>
+    </HStack>
   )
 }

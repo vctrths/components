@@ -10,7 +10,7 @@ export function Modal(props: ModalOverlayProps) {
   return (
     <ModalPrimitive
       {...props}
-      className={clsx('alinea-Modal', props.className)}
+      className={clsx('alinea-rac-Modal', props.className)}
     />
   )
 }

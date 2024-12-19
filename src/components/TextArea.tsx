@@ -1,39 +1,37 @@
 import clsx from 'clsx'
 import {
   FieldError,
-  Input,
   Label,
   Text,
+  TextArea as TextAreaPrimitive,
   TextField as TextFieldPrimitive,
   type TextFieldProps as TextFieldPrimitiveProps,
   type ValidationResult
 } from 'react-aria-components'
 
-import './TextField.css'
-export interface TextFieldProps extends TextFieldPrimitiveProps {
+export interface TextAreaProps extends TextFieldPrimitiveProps {
+  autoSize?: boolean
   label?: string
   placeholder?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-export function TextField({
+export function TextArea({
   label,
   description,
   errorMessage,
   ...props
-}: TextFieldProps) {
+}: TextAreaProps) {
   return (
     <TextFieldPrimitive
       {...props}
       className={clsx('alinea-rac-TextField', props.className)}
     >
-      {label && (
-        <Label className="alinea-rac-Label">
-          {label + (props.isRequired ? ' *' : '')}
-        </Label>
-      )}
-      <Input className="alinea-rac-Input" />
+      <Label className="alinea-rac-Label">
+        {label + (props.isRequired ? ' *' : '')}
+      </Label>
+      <TextAreaPrimitive className="alinea-rac-TextArea" />
       {description && <Text slot="description">{description}</Text>}
       <FieldError className="alinea-rac-FieldError">{errorMessage}</FieldError>
     </TextFieldPrimitive>

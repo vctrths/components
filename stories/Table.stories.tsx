@@ -9,16 +9,10 @@ import {
   TableBody,
   TableHeader
 } from '../src/components/Table.tsx'
+import {Stack} from './Stack.tsx'
 
 export const Example = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      gap: 32
-    }}
-  >
+  <Stack gap={32}>
     <Table aria-label="Table" striped>
       {columns?.length > 0 && (
         <TableHeader>
@@ -57,7 +51,7 @@ export const Example = () => (
           ))}
       </TableBody>
     </Table>
-  </div>
+  </Stack>
 )
 
 export const Selection = () => (

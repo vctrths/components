@@ -1,7 +1,7 @@
 @import "../theme.css";
 
-.alinea-TextField {
-  .alinea-Label {
+.alinea-rac-TextField {
+  .alinea-rac-Label {
     font-size: 13px;
     font-weight: 600;
     display: block;
@@ -10,19 +10,19 @@
     transition-property: color;
   }
 
-  .alinea-Label,
-  .alinea-Text {
+  .alinea-rac-Label,
+  .alinea-rac-Text {
     color: var(--text-color);
   }
 
   &:has([data-focused]) {
-    .alinea-Label {
+    .alinea-rac-Label {
       color: var(--text-color-focused);
     }
   }
 
-  .alinea-Input,
-  .alinea-TextArea {
+  .alinea-rac-Input,
+  .alinea-rac-TextArea {
     font: inherit;
     outline: none;
     width: 100%;
@@ -45,19 +45,19 @@
     }
   }
 
-  .alinea-TextArea {
+  .alinea-rac-TextArea {
     resize: vertical;
   }
 
-  .alinea-Input,
-  .alinea-TextArea {
+  .alinea-rac-Input,
+  .alinea-rac-TextArea {
     &[data-invalid] {
       border-color: var(--invalid-color);
       box-shadow: 0 0 0 4px var(--invalid-overlay);
     }
   }
 
-  .alinea-FieldError {
+  .alinea-rac-FieldError {
     font-size: 12px;
     color: var(--invalid-color);
   }
@@ -66,8 +66,8 @@
     font-size: 12px;
   }
 
-  .alinea-Input,
-  .alinea-TextArea {
+  .alinea-rac-Input,
+  .alinea-rac-TextArea {
     &[data-disabled] {
       border-color: var(--border-color-disabled);
       color: var(--text-color-disabled);

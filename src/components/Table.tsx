@@ -36,7 +36,7 @@ export function Table(
     <TablePrimitive
       data-striped={props.striped}
       {...props}
-      className={clsx('alinea-Table', props.className)}
+      className={clsx('alinea-rac-Table', props.className)}
     />
   )
 }
@@ -45,13 +45,16 @@ export function Column(props: ColumnProps) {
   return (
     <ColumnPrimitive
       {...props}
-      className={clsx('alinea-Column', props.className)}
+      className={clsx('alinea-rac-Column', props.className)}
     >
       {({allowsSorting, sortDirection}) => (
         <>
           {props.children}
           {allowsSorting && (
-            <span aria-hidden="true" className="alinea-Column-sortIndicator">
+            <span
+              aria-hidden="true"
+              className="alinea-rac-Column-sortIndicator"
+            >
               {sortDirection === 'ascending' ? '▲' : '▼'}
             </span>
           )}
@@ -70,12 +73,12 @@ export function TableHeader<T extends object>({
 
   return (
     <TableHeaderPrimitive
-      className={clsx('alinea-TableHeader', props.className)}
+      className={clsx('alinea-rac-TableHeader', props.className)}
     >
       {/* Add extra columns for drag and drop and selection. */}
-      {allowsDragging && <ColumnPrimitive className="alinea-Column" />}
+      {allowsDragging && <ColumnPrimitive className="alinea-rac-Column" />}
       {selectionBehavior === 'toggle' && (
-        <ColumnPrimitive className="alinea-Column">
+        <ColumnPrimitive className="alinea-rac-Column">
           {selectionMode === 'multiple' && <Checkbox slot="selection" />}
         </ColumnPrimitive>
       )}
@@ -96,16 +99,16 @@ export function Row<T extends object>({
     <RowPrimitive
       id={id}
       {...props}
-      className={clsx('alinea-Row', props.className)}
+      className={clsx('alinea-rac-Row', props.className)}
     >
       {allowsDragging && (
-        <Cell className="alinea-Cell">
+        <Cell className="alinea-rac-Cell">
           <Button slot="drag">≡</Button>
         </Cell>
       )}
       {selectionBehavior === 'toggle' && (
-        <Cell className="alinea-Cell">
-          <span aria-hidden className={clsx('alinea-Row-Indicator')} />
+        <Cell className="alinea-rac-Cell">
+          <span aria-hidden className={clsx('alinea-rac-Row-Indicator')} />
           <Checkbox slot="selection" />
         </Cell>
       )}
@@ -118,7 +121,7 @@ export function Cell(props: CellProps) {
   return (
     <CellPrimitive
       {...props}
-      className={clsx('alinea-Cell', props.className)}
+      className={clsx('alinea-rac-Cell', props.className)}
     />
   )
 }
@@ -127,7 +130,7 @@ export function TableBody<T extends object>(props: TableBodyProps<T>) {
   return (
     <TableBodyPrimitive<T>
       {...props}
-      className={clsx('alinea-TableBody', props.className)}
+      className={clsx('alinea-rac-TableBody', props.className)}
     />
   )
 }

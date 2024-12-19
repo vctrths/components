@@ -7,6 +7,7 @@ import {
   Tag,
   TagGroup
 } from '../src/components/TagGroup.tsx'
+import {Stack} from './Stack.tsx'
 
 const intents: IntentProps[] = ['primary', 'secondary']
 const shapes: ShapeProps[] = ['square', 'circle']
@@ -19,19 +20,13 @@ const items = [
 ]
 
 export const Intents = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10
-    }}
-  >
+  <Stack>
     {intents.map(intent => (
       <TagGroup items={items} label={intent} intent={intent} key={intent}>
         {item => <Tag>{item.name}</Tag>}
       </TagGroup>
     ))}
-  </div>
+  </Stack>
 )
 
 export const Selection = () => {
@@ -45,13 +40,7 @@ export const Selection = () => {
   })
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 10
-      }}
-    >
+    <Stack>
       <TagGroup items={list.items} label="Ice cream flavor">
         {item => <Tag>{item.name}</Tag>}
       </TagGroup>
@@ -64,22 +53,16 @@ export const Selection = () => {
       >
         {item => <Tag>{item.name}</Tag>}
       </TagGroup>
-    </div>
+    </Stack>
   )
 }
 
 export const Shape = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10
-    }}
-  >
+  <Stack>
     {shapes.map(shape => (
       <TagGroup items={items} label={shape} shape={shape} key={shape}>
         {item => <Tag>{item.name}</Tag>}
       </TagGroup>
     ))}
-  </div>
+  </Stack>
 )

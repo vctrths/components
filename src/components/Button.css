@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.alinea-Button {
+.alinea-rac-Button {
   --button-color: var(--highlight-foreground);
   --button-bg: var(--highlight-background);
   --button-border: transparent;

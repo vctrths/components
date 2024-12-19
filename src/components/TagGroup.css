@@ -1,12 +1,12 @@
 @import "../theme.css";
 
-.alinea-TagGroup {
+.alinea-rac-TagGroup {
   display: flex;
   flex-direction: column;
   gap: 2px;
   font-size: small;
   color: var(--text-color);
-  
+
   [slot="description"] {
     font-size: 12px;
   }
@@ -17,12 +17,12 @@
   }
 }
 
-.alinea-TagList {
+.alinea-rac-TagList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 
-  .alinea-Tag {
+  .alinea-rac-Tag {
     &[data-disabled] {
       border-color: var(--border-color-disabled);
       color: var(--text-color-disabled);
@@ -30,7 +30,7 @@
   }
 }
 
-.alinea-Tag {
+.alinea-rac-Tag {
   cursor: default;
   outline: none;
   display: flex;
