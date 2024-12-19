@@ -1,32 +1,79 @@
-import {
-  Button,
-  Dialog,
-  DialogTrigger,
-  Heading,
-  Input,
-  Label
-} from 'react-aria-components'
+import {DialogTrigger, Heading, Text} from 'react-aria-components'
+import {Button} from '../src/components/Button.tsx'
+import {Dialog, DialogFooter} from '../src/components/Dialog.tsx'
+import {Form} from '../src/components/Form.tsx'
+import {Modal} from '../src/components/Modal.tsx'
 import {TextField} from '../src/components/TextField.tsx'
-import {Modal} from '../src/todo/Modal.tsx'
+import {Stack} from './Stack.tsx'
 
-export const Example = (args: any) => (
-  <DialogTrigger>
-    <Button>Sign up…</Button>
-    <Modal {...args}>
-      <Dialog>
-        <form>
-          <Heading slot="title">Sign up</Heading>
-          <TextField autoFocus>
-            <Label>First Name:</Label>
-            <Input />
-          </TextField>
-          <TextField>
-            <Label>Last Name:</Label>
-            <Input />
-          </TextField>
-          <Button slot="close">Submit</Button>
-        </form>
-      </Dialog>
-    </Modal>
-  </DialogTrigger>
+export const Example = () => (
+  <Stack>
+    <DialogTrigger>
+      <Button>Click to open modal</Button>
+      <Modal>
+        <Dialog>
+          <Stack>
+            <Heading slot="title">Modal title</Heading>
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              egestas porta purus dignissim auctor. Pellentesque porttitor nec
+              tortor in porta. Curabitur ligula nunc, ullamcorper id risus id,
+              lacinia tempor tortor.
+            </Text>
+            <Button slot="close">Close modal</Button>
+          </Stack>
+        </Dialog>
+      </Modal>
+    </DialogTrigger>
+    <DialogTrigger>
+      <Button>Sign up</Button>
+      <Modal style={{width: 460}}>
+        <Dialog>
+          <Form>
+            <Heading slot="title">Sign up</Heading>
+            <TextField name="fname" isRequired label="First Name" autoFocus />
+            <TextField name="lname" isRequired label="Last Name" />
+            <DialogFooter>
+              <Button type="submit" slot="close">
+                Submit
+              </Button>
+            </DialogFooter>
+          </Form>
+        </Dialog>
+      </Modal>
+    </DialogTrigger>
+    <DialogTrigger>
+      <Button intent="danger">Delete entry</Button>
+      <Modal style={{width: 460}}>
+        <Dialog>
+          <Form>
+            <Heading slot="title">Delete entry</Heading>
+            <Text>
+              Are you sure you want to delete "Documents"? All contents will be
+              permanently destroyed.
+            </Text>
+            <TextField
+              name="delete_verification"
+              isRequired
+              label="To confirm, type 'DELETE' in the box below"
+            />
+            <DialogFooter
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: 8
+              }}
+            >
+              <Button type="submit" slot="close" intent="secondary">
+                Cancel
+              </Button>
+              <Button type="submit" slot="close" intent="danger" isDisabled>
+                Delete
+              </Button>
+            </DialogFooter>
+          </Form>
+        </Dialog>
+      </Modal>
+    </DialogTrigger>
+  </Stack>
 )

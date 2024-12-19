@@ -146,6 +146,13 @@
     color: var(--highlight-foreground-disabled);
     background-color: var(--highlight-background-disabled);
 
+    &[data-intent="danger"] {
+      cursor: not-allowed;
+      pointer-events: initial;
+      color: var(--danger-400);
+      background-color: var(--danger-50);
+    }
+
     &[data-appearance="outline"] {
       color: var(--indigo-200);
       border-color: var(--indigo-200);

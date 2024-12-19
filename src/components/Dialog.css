@@ -1,7 +1,6 @@
 @import "../theme.css";
-@import "./Modal.css";
 
-.react-aria-Dialog {
+.alinea-Dialog {
   outline: none;
   padding: 30px;
   max-height: inherit;
@@ -9,7 +8,11 @@
   overflow: auto;
 
   .react-aria-Heading[slot="title"] {
+    margin: 0;
     line-height: 1em;
-    margin-top: 0;
   }
+}
+
+.alinea-DialogFooter {
+  display: block;
 }

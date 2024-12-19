@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --gray-50: #fafafa;
   --gray-100: #f5f5f5;
