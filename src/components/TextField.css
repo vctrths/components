@@ -5,7 +5,7 @@
     font-size: 13px;
     font-weight: 600;
     display: block;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     transition: var(--transition);
     transition-property: color;
   }
