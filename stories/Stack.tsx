@@ -32,7 +32,7 @@ type StackOptions = {
 type StackProps = PropsWithChildren & StackOptions
 
 export const Stack = ({
-  align,
+  align = 'flex-start',
   direction = 'column',
   gap = 16,
   justify,
