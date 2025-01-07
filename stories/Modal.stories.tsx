@@ -10,7 +10,7 @@ export const Example = () => (
   <Stack>
     <DialogTrigger>
       <Button>Click to open modal</Button>
-      <Modal>
+      <Modal isDismissable>
         <Dialog>
           <Stack>
             <Heading slot="title">Modal title</Heading>
@@ -27,7 +27,7 @@ export const Example = () => (
     </DialogTrigger>
     <DialogTrigger>
       <Button>Sign up</Button>
-      <Modal style={{width: 460}}>
+      <Modal isDismissable style={{width: 460}}>
         <Dialog>
           <Form>
             <Heading slot="title">Sign up</Heading>
@@ -44,7 +44,7 @@ export const Example = () => (
     </DialogTrigger>
     <DialogTrigger>
       <Button intent="danger">Delete entry</Button>
-      <Modal style={{width: 460}}>
+      <Modal isDismissable style={{width: 460}}>
         <Dialog>
           <Form>
             <Heading slot="title">Delete entry</Heading>
