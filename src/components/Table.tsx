@@ -28,6 +28,15 @@ export type {
   TableBodyProps
 } from 'react-aria-components'
 
+export function TableOverflow(props: PropsWithChildren<{className?: string}>) {
+  return (
+    <div
+      {...props}
+      className={clsx('alinea-rac-TableOverflow', props.className)}
+    />
+  )
+}
+
 export function Table(
   props: TableProps & {
     striped?: boolean
