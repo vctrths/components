@@ -72,7 +72,7 @@
     }
 
     &[data-selected] {
-      background: var(--selected-background);
+      background: var(--highlight-overlay);
       --focus-ring-color: var(--highlight-foreground);
 
       .alinea-rac-Row-Indicator {
