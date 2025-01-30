@@ -1,4 +1,4 @@
-import {Select, SelectItem} from '../src/todo/Select.tsx'
+import {Select, SelectItem} from '../src/components/Select.tsx'
 
 export const Example = (args: any) => (
   <Select {...args}>

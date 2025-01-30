@@ -1,43 +1,44 @@
-@import "./ListBox.css";
-@import "./Popover.css";
+@import "../todo/ListBox.css";
+@import "../todo/Popover.css";
 
 @import "../theme.css";
 
-.react-aria-Select {
+.alinea-rac-Select {
   color: var(--text-color);
 
   .react-aria-Button {
-    box-shadow: 0 1px 2px rgba(0 0 0 / 0.1);
+    background: none;
+    font: inherit;
+    outline: none;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
-    font-size: 1.072rem;
-    padding: 0.286rem 0.286rem 0.286rem 0.571rem;
-    display: flex;
-    align-items: center;
-    max-width: 250px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    transition: var(--transition);
 
+    &[data-hovered],
     &[data-focus-visible] {
-      outline: 2px solid var(--focus-ring-color);
-      outline-offset: -1px;
+      border-color: var(--border-color-hover);
+    }
+
+    &[aria-expanded="true"] {
+      border-color: var(--highlight-background);
+      box-shadow: 0 0 0 4px var(--highlight-overlay);
     }
   }
 
   .react-aria-SelectValue {
     &[data-placeholder] {
-      font-style: italic;
       color: var(--text-color-placeholder);
     }
   }
 
   span[aria-hidden] {
     width: 1.5rem;
-    line-height: 1.375rem;
     margin-left: 1rem;
-    padding: 1px;
-    background: var(--highlight-background);
-    color: var(--highlight-foreground);
+    color: var(--text-color);
     forced-color-adjust: none;
-    border-radius: 4px;
-    font-size: 0.857rem;
   }
 }
 
@@ -57,6 +58,8 @@
   }
 
   .react-aria-ListBoxItem {
+    cursor: pointer;
+    font-size: 0.875rem;
     padding: 0.286rem 0.571rem 0.286rem 1.571rem;
 
     &[data-focus-visible] {
