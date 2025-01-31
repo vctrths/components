@@ -36,8 +36,8 @@
 
   &[data-appearance="outline"][data-intent="secondary"] {
     --button-color: var(--text-color);
-    --button-border: var(--background-color);
-    --button-hovered: var(--background-color);
+    --button-border: var(--border-color);
+    --button-hovered: var(--background-color-hover);
   }
 
   &[data-appearance="outline"][data-intent="danger"] {
@@ -114,8 +114,8 @@
 
     &[data-appearance="outline"][data-intent="secondary"] {
       color: var(--text-color);
-      border-color: var(--background-color);
-      background-color: var(--background-color);
+      border-color: var(--button-border);
+      background-color: var(--button-hovered);
     }
   }
 
