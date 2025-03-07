@@ -1,4 +1,3 @@
-import '../src/theme.css'
 import {Icon} from '../src/components/Icon.tsx'
 import {IcRoundAccountCircle} from '../src/icons/IcRoundAccountCircle.tsx'
 import {IcRoundArrowBack} from '../src/icons/IcRoundArrowBack.tsx'
@@ -26,7 +25,7 @@ import {IcRoundShare} from '../src/icons/IcRoundShare.tsx'
 import {IcRoundTextFields} from '../src/icons/IcRoundTextFields.tsx'
 import {Stack} from './Stack.tsx'
 
-export const Example = (args: any) => (
+export const Example = () => (
   <div style={{columns: 2}}>
     <Stack direction="row" align="center">
       <Icon icon={IcRoundKeyboardArrowDown} />
