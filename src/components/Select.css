@@ -21,6 +21,11 @@
     outline-color: var(--highlight-overlay);
   }
 
+  &:has(> .alinea-rac-SelectTrigger-button[data-disabled]) {
+    background-color: var(--field-background);
+    opacity: 0.5;
+  }
+
   .alinea-rac-Select[data-invalid="true"] & {
     border-color: var(--invalid-color);
     outline-color: var(--invalid-overlay);
@@ -135,10 +140,11 @@
   font-size: 0.875rem;
   padding: 0.4rem;
   padding-right: 2.4rem;
+  gap: 8px;
   display: flex;
+  align-items: center;
   outline: none;
   border-radius: 4px;
-  justify-content: space-between;
   position: relative;
 
   .alinea-rac-SelectItem-check {

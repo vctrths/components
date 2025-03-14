@@ -1,7 +1,13 @@
 import {useState} from 'react'
 import {Button} from '../src/components/Button.tsx'
+import {Icon} from '../src/components/Icon.tsx'
 import {Select, SelectItem} from '../src/components/Select.tsx'
 import {TextField} from '../src/components/TextField.tsx'
+import {IcRoundBrightness} from '../src/icons/IcRoundBrightness.tsx'
+import {IcRoundContentCopy} from '../src/icons/IcRoundContentCopy.tsx'
+import {IcRoundHome} from '../src/icons/IcRoundHome.tsx'
+import {IcRoundSearch} from '../src/icons/IcRoundSearch.tsx'
+import {IcRoundSettings} from '../src/icons/IcRoundSettings.tsx'
 import {Stack} from './Stack.tsx'
 
 export const Basic = () => {
@@ -11,6 +17,14 @@ export const Basic = () => {
     {id: 3, name: 'Figma'},
     {id: 4, name: 'InVision'},
     {id: 5, name: 'Sketch'}
+  ]
+
+  const iconOptions = [
+    {id: 1, icon: IcRoundBrightness, name: 'IcRoundBrightness'},
+    {id: 2, icon: IcRoundContentCopy, name: 'IcRoundContentCopy'},
+    {id: 3, icon: IcRoundHome, name: 'IcRoundHome'},
+    {id: 4, icon: IcRoundSearch, name: 'IcRoundSearch'},
+    {id: 5, icon: IcRoundSettings, name: 'IcRoundSettings'}
   ]
 
   const largeOptions = Array.from({length: 1000}, (_, i) => ({
@@ -71,16 +85,20 @@ export const Basic = () => {
         {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
       </Select>
 
-      <Select isDisabled items={softwareOptions} label="Select: isDisabled">
+      <Select items={softwareOptions} label="Design software" selectedKey={3}>
         {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
       </Select>
 
-      <Select items={softwareOptions} label="SelectItem: isDisabled">
-        {item => (
-          <SelectItem key={item.id} isDisabled={item.id === 1}>
-            {item.name}
-          </SelectItem>
-        )}
+      <Select items={softwareOptions} label="Select: isDisabled" isDisabled>
+        {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
+      </Select>
+
+      <Select
+        items={softwareOptions}
+        label="SelectItem: isDisabled"
+        disabledKeys={[2, 4]}
+      >
+        {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
       </Select>
 
       <form onSubmit={e => e.preventDefault()}>
@@ -97,6 +115,15 @@ export const Basic = () => {
           <Button type="submit">Submit</Button>
         </Stack>
       </form>
+
+      <Select items={iconOptions} label="Select with Icon">
+        {item => (
+          <SelectItem key={item.id}>
+            <Icon icon={item.icon} />
+            {item.name}
+          </SelectItem>
+        )}
+      </Select>
 
       <Select label="Large option list" items={largeOptions}>
         {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
