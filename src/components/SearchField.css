@@ -5,8 +5,7 @@
   border: 1px solid var(--border-color);
   border-radius: 6px;
   height: 1.75rem;
-  background: var(--field-background); 
-
+  background: var(--field-background);
 
   &:hover {
     outline: 2px solid var(--highlight-overlay);
@@ -43,6 +42,6 @@
     cursor: pointer;
     font-size: 1rem;
     outline: none;
-    padding-top: 4px;
+    padding: 4px 6px 0;
   }
 }
