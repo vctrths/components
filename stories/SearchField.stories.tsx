@@ -3,7 +3,6 @@ import {Stack} from './Stack.tsx'
 export const Example = () => (
   <Stack>
     <SearchField label="Search" />
-    <SearchField aria-label="Search" />
     <SearchField aria-label="Search" placeholder="Search..." />
     <SearchField label="Search: isReadOnly" isReadOnly={true} />
     <SearchField

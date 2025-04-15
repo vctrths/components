@@ -3,7 +3,7 @@
 .alinea-rac-SearchField {
   &:not(:has(input[readonly]), [data-disabled="true"], [data-invalid="true"]) {
     .alinea-rac-SearchField-field:hover {
-      outline: 2px solid var(--highlight-overlay);
+      border-color: var(--border-color-hover);
     }
   }
 
@@ -12,7 +12,7 @@
     border: 1px solid var(--border-color);
     border-radius: 6px;
     display: flex;
-    height: 39px;
+    height: 41px;
     overflow: hidden;
 
     &:focus-within {
@@ -73,12 +73,16 @@
     }
 
     .alinea-rac-SearchField-field-input[readonly],
+    .alinea-rac-SearchField-field-input[disabled],
+    .alinea-rac-SearchField-field-input[disabled]
+      + .alinea-rac-SearchField-field-clear,
     .alinea-rac-SearchField-field-input[readonly]
       + .alinea-rac-SearchField-field-clear {
       pointer-events: none;
       background-color: var(--field-background-disabled);
       color: var(--text-color-disabled);
       opacity: 1;
-    }
   }
+
+}
 }

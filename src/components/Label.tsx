@@ -12,6 +12,7 @@ export interface LabelSharedProps {
   description?: ReactNode
   errorMessage?: ReactNode | ((validation: ValidationResult) => ReactNode)
   isRequired?: boolean
+  isDisabled?: boolean
   icon?: ReactNode
   id?: string
 }
