@@ -7,28 +7,31 @@ import {
 } from 'react-aria-components'
 import './SearchField.css'
 import {IcRoundCancel} from '../icons/IcRoundCancel.tsx'
+import {Icon} from './Icon.tsx'
 import {Label, type LabelSharedProps, labelProps} from './Label.tsx'
 
 export interface SearchFieldProps
   extends SearchFieldPrimitiveProps,
-    LabelSharedProps {}
+    LabelSharedProps {
+  placeholder?: string
+}
 
 export function SearchField(props: SearchFieldProps) {
   return (
-    <Label {...labelProps(props)}>
-      <SearchFieldPrimitive
-        {...props}
-        className={clsx('alinea-rac-SearchField', props.className)}
-        data-invalid={props.isInvalid}
-        data-disabled={props.isDisabled}
-        data-readonly={props.isReadOnly}
-      >
-        <Input className="alinea-rac-SearchField-input" />
-        <Button className="alinea-rac-SearchField-clear">
-          <IcRoundCancel />
+    <SearchFieldPrimitive
+      {...props}
+      className={clsx('alinea-rac-SearchField', props.className)}
+    >
+      <Label {...labelProps(props)} />
+      <div className="alinea-rac-SearchField-field">
+        <Input className="alinea-rac-SearchField-field-input" />
+        <Button className="alinea-rac-SearchField-field-clear">
+          <Icon
+            icon={IcRoundCancel}
+            className="alinea-rac-SearchField-field-clear-icon"
+          />
         </Button>
-      </SearchFieldPrimitive>
-    </Label>
+      </div>
+    </SearchFieldPrimitive>
   )
 }
-

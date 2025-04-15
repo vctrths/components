@@ -1,3 +1,13 @@
 import {SearchField} from '../src/components/SearchField.tsx'
-
-export const Example = () => <SearchField label="Search" />
+import {Stack} from './Stack.tsx'
+export const Example = () => (
+  <Stack>
+    <SearchField label="Search" />
+    <SearchField aria-label="Search" />
+    <SearchField aria-label="Search" placeholder="Search..." />
+    <SearchField label="Search: isReadOnly" isReadOnly={true} />
+    <SearchField label="Search: isInvalid" isInvalid={true} />
+    <SearchField label="Search: isRequired" isRequired={true} />
+    <SearchField label="Search: isDisabled" isDisabled={true} />
+  </Stack>
+)
