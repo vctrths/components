@@ -226,7 +226,7 @@ export const Details = () => {
     <Stack align="normal">
       <Select label="Rich text options" items={richTextOptions}>
         {item => (
-          <SelectItem key={item.id}>
+          <SelectItem key={item.id} textValue={item.title}>
             <Stack gap={0}>
               <p style={{margin: 0}}>
                 <strong>{item.title}</strong>
