@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import {
   FieldError,
   Label as LabelPrimitive,
@@ -35,7 +36,7 @@ export function Label({
   if (!hasHeader && !errorMessage && !children) return null
 
   return (
-    <div className="alinea-rac-Label">
+    <div className={clsx('alinea-rac-Label', props.className)}>
       {hasHeader && (
         <header className="alinea-rac-Label-header">
           {hasTitle && (
