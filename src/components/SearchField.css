@@ -98,7 +98,7 @@
         background-color: var(--background-color);
       }
 
-      &-icon {
+      .alinea-rac-SearchField-field-clear-icon {
         position: relative;
       }
     }
