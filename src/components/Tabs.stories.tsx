@@ -137,3 +137,7 @@ export const overflow = () => (
     <TabPanel id="tab20">View system logs in this section.</TabPanel>
   </Tabs>
 )
+
+export default {
+  title: 'Components / Tabs'
+}

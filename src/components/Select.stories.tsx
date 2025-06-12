@@ -305,3 +305,7 @@ export const Dynamic = () => {
     </Stack>
   )
 }
+
+export default {
+  title: 'Components / Select'
+}

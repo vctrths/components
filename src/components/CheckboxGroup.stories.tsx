@@ -42,3 +42,7 @@ export const Example = (args: any) => (
     </form>
   </Stack>
 )
+
+export default {
+  title: 'Components / CheckboxGroup'
+}

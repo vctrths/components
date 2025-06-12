@@ -59,3 +59,7 @@ export const Shape = () => (
     ))}
   </Stack>
 )
+
+export default {
+  title: 'Components / TabGroup'
+}

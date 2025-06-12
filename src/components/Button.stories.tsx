@@ -168,3 +168,7 @@ export function Icons() {
     </HStack>
   )
 }
+
+export default {
+  title: 'Components / Button'
+}

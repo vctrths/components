@@ -10,3 +10,7 @@ export const Example = (args: any) => (
     </Popover>
   </DialogTrigger>
 )
+
+export default {
+  title: 'Components / Popover'
+}

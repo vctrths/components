@@ -311,3 +311,7 @@ const longitems = [
     date_modified: '5/5/2022'
   }
 ]
+
+export default {
+  title: 'Components / Table'
+}

@@ -113,3 +113,7 @@ export const file = () => {
     </DropZone>
   )
 }
+
+export default {
+  title: 'Components / Dropzone'
+}

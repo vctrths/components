@@ -102,3 +102,7 @@ export const Example = () => (
     ))}
   </div>
 )
+
+export default {
+  title: 'Components / Icon'
+}

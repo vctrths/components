@@ -126,3 +126,7 @@ export const Submenus = () => (
     </Menu>
   </Menu>
 )
+
+export default {
+  title: 'Components / Menu'
+}

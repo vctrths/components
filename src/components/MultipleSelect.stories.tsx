@@ -86,3 +86,7 @@ const fruits = [
   {id: 29, name: 'Salak'},
   {id: 30, name: 'Soursop'}
 ]
+
+export default {
+  title: 'Components / MultipleSelect'
+}

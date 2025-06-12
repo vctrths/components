@@ -10,7 +10,7 @@ import {
 
 const renderItem = (item: FileNode): React.ReactNode => {
   return (
-    <TreeItem key={item.id} textValue={item.title}>
+    <TreeItem key={item.id} textValue={item.title} hasChildItems>
       <TreeItemContent>
         {<TreeItemIndicator />}
         <TreeItemCheckbox />

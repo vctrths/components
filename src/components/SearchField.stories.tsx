@@ -48,3 +48,7 @@ export const Example = () => (
     />
   </Stack>
 )
+
+export default {
+  title: 'Components / SearchField'
+}

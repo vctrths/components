@@ -11,3 +11,7 @@ export const Variants = () => (
     </Link>
   </Stack>
 )
+
+export default {
+  title: 'Components / Link'
+}

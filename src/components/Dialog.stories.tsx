@@ -22,3 +22,7 @@ export const Example = () => (
     </Modal>
   </DialogTrigger>
 )
+
+export default {
+  title: 'Components / Dialog'
+}

@@ -1,6 +1,6 @@
 import {useMemo} from 'react'
-import {UNSTABLE_ListLayout, useDragAndDrop} from 'react-aria-components'
-import {UNSTABLE_Virtualizer} from 'react-aria-components'
+import {ListLayout, useDragAndDrop} from 'react-aria-components'
+import {Virtualizer} from 'react-aria-components'
 import {useListData} from 'react-stately'
 import {GridList, GridListItem} from './GridList.tsx'
 
@@ -24,12 +24,12 @@ export const Example = (args: any) => {
     }
   })
   const layout = useMemo(() => {
-    return new UNSTABLE_ListLayout({
+    return new ListLayout({
       rowHeight: 25
     })
   }, [])
   return (
-    <UNSTABLE_Virtualizer layout={layout}>
+    <Virtualizer layout={layout}>
       <GridList
         aria-label="Reorderable list"
         items={list.items}
@@ -37,6 +37,6 @@ export const Example = (args: any) => {
       >
         {item => <GridListItem>{item.name}</GridListItem>}
       </GridList>
-    </UNSTABLE_Virtualizer>
+    </Virtualizer>
   )
 }

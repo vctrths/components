@@ -77,3 +77,7 @@ export const Example = () => (
     </DialogTrigger>
   </Stack>
 )
+
+export default {
+  title: 'Components / Modal'
+}

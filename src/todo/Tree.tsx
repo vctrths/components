@@ -3,16 +3,16 @@ import type {
   TreeProps
 } from 'react-aria-components'
 import {
-  UNSTABLE_ListLayout as ListLayout,
-  UNSTABLE_TreeItemContent as TreeItemContentPrimitive,
-  UNSTABLE_TreeItem as TreeItemPrimitive,
-  UNSTABLE_Tree as TreePrimitive,
-  UNSTABLE_Virtualizer as Virtualizer
+  ListLayout,
+  TreeItemContent as TreeItemContentPrimitive,
+  TreeItem as TreeItemPrimitive,
+  Tree as TreePrimitive,
+  Virtualizer
 } from 'react-aria-components'
 import './Tree.css'
 import {type ComponentProps, useMemo} from 'react'
-import {Button} from '../components/Button.tsx'
-import {Checkbox} from '../components/Checkbox.tsx'
+import {Button} from './Button.tsx'
+import {Checkbox} from './Checkbox.tsx'
 
 export const Tree = <T extends object>({className, ...props}: TreeProps<T>) => {
   const layout = useMemo(() => {

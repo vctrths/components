@@ -100,3 +100,7 @@ export const Validation = () => {
     </I18nProvider>
   )
 }
+
+export default {
+  title: 'Components / NumberField'
+}

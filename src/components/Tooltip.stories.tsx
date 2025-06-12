@@ -71,3 +71,7 @@ export const DisabledButtonTooltip = () => (
     <Button isDisabled>🔒</Button>
   </Tooltip>
 )
+
+export default {
+  title: 'Components / Tooltip'
+}
