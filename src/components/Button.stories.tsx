@@ -1,5 +1,3 @@
-'use client'
-
 import {IcRoundRefresh} from 'alinea/ui/icons/IcRoundRefresh'
 import {
   type CSSProperties,

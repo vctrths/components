@@ -1,5 +1,3 @@
-'use client'
-
 import {I18nProvider} from 'react-aria-components'
 import {Stack} from '../stories/Stack.tsx'
 import {NumberField} from './NumberField.tsx'

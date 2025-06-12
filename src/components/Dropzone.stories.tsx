@@ -1,5 +1,3 @@
-'use client'
-
 import type {DropEvent} from '@react-types/shared'
 import {useState} from 'react'
 import {FileTrigger, Text} from 'react-aria-components'

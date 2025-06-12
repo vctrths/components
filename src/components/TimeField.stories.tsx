@@ -1,4 +1,3 @@
-'use client'
 import {Stack} from '../stories/Stack.tsx'
 import {Button} from './Button.tsx'
 import {TimeField} from './TimeField.tsx'
