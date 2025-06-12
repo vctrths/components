@@ -22,9 +22,6 @@
     },
     "./package.json": "./package.json"
   },
-  "peerDependencies": {
-    "react-aria-components": "1.x"
-  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@ladle/react": "^5.0.1",
@@ -35,7 +32,9 @@
     "esbuild": "^0.24.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "react-aria-components": "1.x",
+    "@react-aria/optimize-locales-plugin": "^1.1.5"
   },
   "scripts": {
     "release": "bun release.ts",
