@@ -22,24 +22,27 @@
     },
     "./package.json": "./package.json"
   },
+  "peerDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@ladle/react": "^5.0.1",
     "@types/bun": "^1.1.14",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
     "alinea": "^1.2.0",
+    "dtsroll": "^1.4.1",
     "esbuild": "^0.24.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "typescript": "^5.7.3",
     "react-aria-components": "1.x",
-    "@react-aria/optimize-locales-plugin": "^1.1.5"
+    "typescript": "^5.7.3"
   },
   "scripts": {
     "release": "bun release.ts",
-    "dev": "node ./node_modules/.bin/ladle serve",
+    "dev": "ladle serve",
     "build": "ladle build",
-    "prepublishOnly": "rm -rf dist && tsc -p tsconfig.d.json && bun build.ts"
+    "package": "bun package.ts",
+    "prepublishOnly": "bun package.ts"
   }
 }

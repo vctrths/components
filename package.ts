@@ -1,10 +1,30 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import {$, Glob} from 'bun'
 import {type Plugin, build} from 'esbuild'
-import fs from 'node:fs'
 
-const tsx = new Glob('src/**/*.tsx')
-const entries = [...tsx.scanSync()]
+await $`rm -rf dist`
+
+// Create type declarations
+await $`tsc`
+
+const glob = new Glob('dist/**/*.d.ts')
+const scannedFiles = await Array.fromAsync(glob.scan())
+// Replace css imports in d.ts files with empty strings
+for (const file of scannedFiles) {
+  const content = await Bun.file(file).text()
+  const updatedContent = content.replaceAll(/import '.*?\.css';/g, '')
+  await Bun.write(file, updatedContent)
+}
+
+// Bundle it
+await $`dtsroll dist/types/index.d.ts`
+
+// Remove unused d.ts files
+await $`cp dist/types/index.d.ts dist/index.d.ts`
+await $`rm -rf dist/types`
+
+// Create build
 const supportedLocales = new Set(['en-US'])
 
 const externalize: Plugin = {
@@ -12,14 +32,9 @@ const externalize: Plugin = {
   setup(build) {
     Bun.write('dist/empty.js', '')
     Bun.write('dist/empty.d.ts', '')
-    build.onResolve({filter: /.*/}, (args) => {
+    build.onResolve({filter: /.*/}, args => {
       if (args.kind === 'entry-point') return
       if (args.path.includes('.css')) return
-      if (args.path.endsWith('.tsx') || args.path.endsWith('.ts'))
-        return {
-          path: `${args.path.slice(0, args.path.lastIndexOf('.'))}.js`,
-          external: true
-        }
       const base = path.basename(args.path, '.mjs')
       if (base.match(/[a-z]{2}-[A-Z]{2}/)) {
         if (!supportedLocales.has(base)) {
@@ -42,8 +57,10 @@ const externalize: Plugin = {
     build.onStart(() => {
       modules = new Set()
     })
-    build.onLoad({filter: /\.css$/}, (args) => {
-      cssFiles.push(path.relative(process.cwd(), args.path).replaceAll('\\', '/'))
+    build.onLoad({filter: /\.css$/}, args => {
+      cssFiles.push(
+        path.relative(process.cwd(), args.path).replaceAll('\\', '/')
+      )
       return {contents: ''}
     })
     build.onEnd(async () => {
@@ -65,7 +82,7 @@ const externalize: Plugin = {
         const pkg = JSON.parse(
           fs.readFileSync(path.join(target, 'package.json'), 'utf-8')
         )
-        let licenseText: string = ''
+        let licenseText = ''
         try {
           licenseText = fs.readFileSync(path.join(target, 'LICENSE'), 'utf-8')
         } catch {}
@@ -95,19 +112,12 @@ const externalize: Plugin = {
   }
 }
 
-await $`rm -rf dist`
-
 await build({
   format: 'esm',
-  entryPoints: entries.filter(entry => !entry.includes('todo')),
+  entryPoints: ['src/index.tsx'],
   outdir: 'dist',
   bundle: true,
-  splitting: true,
-  plugins: [
-    externalize
-  ],
-  external: [
-    'react',
-    'react-dom'
-  ]
+  minify: true,
+  plugins: [externalize],
+  external: ['react', 'react-dom']
 }).catch(() => process.exit(1))
