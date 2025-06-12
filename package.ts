@@ -38,7 +38,7 @@ const externalize: Plugin = {
       const base = path.basename(args.path, '.mjs')
       if (base.match(/[a-z]{2}-[A-Z]{2}/)) {
         if (!supportedLocales.has(base)) {
-          return {path: path.resolve('dist/empty.js')}
+          return {path: 'clearme', namespace: 'empty'}
         }
       }
       if (args.resolveDir.includes('node_modules')) {
@@ -62,6 +62,9 @@ const externalize: Plugin = {
         path.relative(process.cwd(), args.path).replaceAll('\\', '/')
       )
       return {contents: ''}
+    })
+    build.onLoad({filter: /.*/, namespace: 'empty'}, args => {
+      return {contents: 'export default undefined', loader: 'js'}
     })
     build.onEnd(async () => {
       const res = await build.esbuild.build({
@@ -115,9 +118,17 @@ const externalize: Plugin = {
 await build({
   format: 'esm',
   entryPoints: ['src/index.tsx'],
+  banner: {
+    js: "'use client'\nimport '@alinea/components/css';"
+  },
   outdir: 'dist',
   bundle: true,
   minify: true,
   plugins: [externalize],
-  external: ['react', 'react-dom']
+  external: ['react', 'react-dom'],
+  alias: {
+    'use-sync-external-store/shim/index.js': `data:text/javascript,
+      export {useSyncExternalStore} from 'react'
+    `
+  }
 }).catch(() => process.exit(1))
