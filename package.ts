@@ -131,4 +131,7 @@ await build({
       export {useSyncExternalStore} from 'react'
     `
   }
-}).catch(() => process.exit(1))
+}).catch(err => {
+  console.error(err)
+  process.exit(1)
+})
