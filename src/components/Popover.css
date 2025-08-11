@@ -1,5 +1,5 @@
-
 @import "../theme.css";
+
 .alinea-rac-Popover {
   width: var(--trigger-width);
   &[data-clear] {
@@ -18,3 +18,4 @@
   border: 1px solid var(--border-color);
   background-color: var(--field-background);
 }
+
