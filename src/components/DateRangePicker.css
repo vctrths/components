@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-.alinea-rac-DatePicker {
+.alinea-rac-DateRangePicker {
   gap: 8px;
   display: flex;
   align-items: center;
@@ -17,9 +17,9 @@
 
   &[data-hovered] {
     border-color: var(--border-color-hover);
-    box-shadow: 0 0 0 4px var(--highlight-overlay);
   }
   &[data-focus-within] {
+    border-color: var(--highlight-background);
     border-color: var(--indigo-500);
     box-shadow: 0 0 0 4px var(--highlight-overlay);
   }
@@ -33,10 +33,16 @@
     opacity: 0.5;
   }
 
-  .alinea-rac-DatePicker-input {
+  .alinea-rac-DateRangePicker-inputs {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  .alinea-rac-DateRangePicker-input {
     display: flex;
 
-    .alinea-rac-DatePicker-input-segment {
+    .alinea-rac-DateRangePicker-input-segment {
       padding-inline: 1px;
 
       &[data-placeholder] {
@@ -53,7 +59,11 @@
     }
   }
 
-  .alinea-rac-DatePicker-trigger {
+  .alinea-rac-DateRangePicker-separator {
+    padding-inline: 4px;
+  }
+
+  .alinea-rac-DateRangePicker-trigger {
     cursor: pointer;
     border: none;
     width: 1.5em;
@@ -75,5 +85,3 @@
     }
   }
 }
-
-
