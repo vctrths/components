@@ -15,7 +15,6 @@
     border-radius: 6px;
     background-color: var(--field-background);
     transition: var(--transition);
-    width: fit-content;
 
     &:focus-within {
       border-color: var(--highlight-background);

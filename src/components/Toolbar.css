@@ -4,11 +4,9 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
-  width: fit-content;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 5px;
-
 
   &[data-orientation="horizontal"] {
     flex-direction: row;
@@ -24,7 +22,7 @@
 
   .alinea-rac-ToolbarGroup {
     display: flex;
-    gap: 8px; 
+    gap: 8px;
   }
   &[data-orientation="vertical"] {
     flex-direction: column;
@@ -51,7 +49,6 @@
 
 .alinea-rac-ToolbarSeparator {
   background-color: var(--border-color);
-  
+
   width: 1px;
 }
-
