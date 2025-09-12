@@ -1,9 +1,4 @@
-import {
-  type CSSProperties,
-  type HTMLAttributes,
-  type PropsWithChildren,
-  useState
-} from 'react'
+import {type HTMLAttributes, type PropsWithChildren, useState} from 'react'
 import {Stack} from '../stories/Stack.tsx'
 import {IcRoundAccountCircle} from '../stories/icons/IcRoundAccountCircle.tsx'
 import {IcRoundArchive} from '../stories/icons/IcRoundArchive.tsx'
@@ -15,15 +10,8 @@ import {IcRoundSettings} from '../stories/icons/IcRoundSettings.tsx'
 import {Button} from './Button.tsx'
 import {ProgressCircle} from './ProgressCircle.tsx'
 
-const styleStack: CSSProperties = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  alignItems: 'flex-start',
-  gap: 10
-}
-
 const HStack = (props: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) => (
-  <Stack {...props} direction="row" wrap="wrap" align="flex-start" />
+  <Stack {...props} direction="row" wrap="wrap" align="flex-end" />
 )
 
 export function All() {
@@ -84,10 +72,14 @@ Intents.args = {
 export function Sizes() {
   return (
     <Stack>
-      <Button>Medium</Button>
-      <Button>this is a medium button</Button>
-      <Button data-size="large">Large</Button>
-      <Button data-size="large">This is a large button</Button>
+      <HStack>
+        <Button size="small">Small</Button>
+        <Button>Medium</Button>
+        <Button size="large">Large</Button>
+      </HStack>
+      <div style={{maxWidth: '150px'}}>
+        <Button size="large">This is a large button with very long text</Button>
+      </div>
     </Stack>
   )
 }

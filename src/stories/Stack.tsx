@@ -28,6 +28,7 @@ type StackOptions = {
    * @type CSSProperties["flexWrap"]
    */
   wrap?: CSSProperties['flexWrap']
+  style?: CSSProperties
 }
 type StackProps = PropsWithChildren & StackOptions
 
@@ -37,10 +38,12 @@ export const Stack = ({
   gap = 16,
   justify,
   wrap,
+  style,
   ...props
 }: StackProps) => (
   <div
     style={{
+      ...style,
       display: 'flex',
       alignItems: align,
       flexDirection: direction,

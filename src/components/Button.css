@@ -61,17 +61,18 @@
 
   color: var(--button-color);
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 24px;
   text-decoration: none;
+  text-align: left;
   appearance: none;
   cursor: pointer;
   outline: none;
   position: relative;
   vertical-align: middle;
   background-color: var(--button-bg);
-  padding: 4px 16px;
-  border-radius: 6px;
+  padding: 4px 12px;
+  border-radius: 8px;
   border: 1px solid var(--button-border);
   transition: var(--transition);
   transition-property: background-color, border-color, color;
@@ -79,10 +80,13 @@
   align-items: center;
   gap: 6px;
 
+  &[data-size="small"] {
+    padding: 2px 10px;
+    line-height: 20px;
+  }
+
   &[data-size="large"] {
-    font-size: 14px;
-    padding: 7px 8px;
-    border-radius: 6px;
+    padding: 8px 14px;
   }
 
   &[data-size="square-petite"] {
