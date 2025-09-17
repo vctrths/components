@@ -86,10 +86,10 @@
 }
 
 .alinea-rac-SelectPopover {
-  width: var(--alinea-trigger-width);
+  width: var(--trigger-width);
 
   &[data-clear] {
-    width: calc(var(--alinea-trigger-width) + 40px);
+    width: calc(var(--trigger-width) + 40px);
   }
 
   .alinea-rac-SelectPopover-listbox {
@@ -125,6 +125,7 @@
   font-size: 18px;
   font-size: 14px;
   outline: none;
+  z-index: 0;
 
   &:after {
     content: "";
@@ -188,7 +189,7 @@
   }
 
   &[data-selected] {
-    font-weight: 600;
+    font-weight: 500;
     background: var(--alinea-border-color);
     color: var(--alinea-text-color);
     position: relative;

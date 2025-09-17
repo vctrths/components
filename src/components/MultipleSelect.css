@@ -2,6 +2,7 @@
 
 .alinea-rac-MultipleSelect {
   .alinea-rac-MultipleSelect-container {
+    box-sizing: border-box;
     gap: 8px;
     display: flex;
     flex-wrap: wrap;
@@ -162,7 +163,7 @@
   }
 
   &[data-selected] {
-    font-weight: 600;
+    font-weight: 500;
     background: var(--alinea-border-color);
     color: var(--alinea-text-color);
     position: relative;

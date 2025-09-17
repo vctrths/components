@@ -25,7 +25,7 @@
   }
 
   &[data-selected] {
-    font-weight: 600;
+    font-weight: 500;
     background: var(--alinea-gray-200);
     color: var(--alinea-text-color);
     position: relative;
@@ -44,7 +44,7 @@
 
 .alinea-rac-MenuHeader {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--alinea-text-color-base);
   padding: 4px 6px;
 }
