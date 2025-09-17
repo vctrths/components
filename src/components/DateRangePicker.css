@@ -1,89 +1,87 @@
 @import "../theme.css";
 
-@layer alinea {
-  .alinea-rac-DateRangePicker {
-    gap: 8px;
+.alinea-rac-DateRangePicker {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--alinea-border-color);
+  border-radius: 6px;
+  background-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--alinea-field-text-color);
+  transition: var(--alinea-transition);
+
+  &[data-hovered] {
+    border-color: var(--alinea-border-color-hover);
+  }
+  &[data-focus-within] {
+    border-color: var(--alinea-highlight-background);
+    border-color: var(--alinea-primary-500);
+    box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
+  }
+  &[data-invalid="true"] {
+    border: 1px solid var(--alinea-invalid-color);
+    outline: 3px solid var(--alinea-invalid-overlay);
+  }
+  &[data-disabled] {
+    pointer-events: none;
+    background-color: var(--alinea-background-color);
+    opacity: 0.5;
+  }
+
+  .alinea-rac-DateRangePicker-inputs {
+    gap: 4px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid var(--alinea-border-color);
-    border-radius: 6px;
+  }
+
+  .alinea-rac-DateRangePicker-input {
+    display: flex;
+
+    .alinea-rac-DateRangePicker-input-segment {
+      padding-inline: 1px;
+
+      &[data-placeholder] {
+        color: var(--alinea-text-color-placeholder);
+      }
+
+      &:focus {
+        outline: none;
+        caret-color: transparent;
+        color: var(--alinea-highlight-foreground);
+        border-radius: 4px;
+        background: var(--alinea-highlight-background);
+      }
+    }
+  }
+
+  .alinea-rac-DateRangePicker-separator {
+    padding-inline: 4px;
+  }
+
+  .alinea-rac-DateRangePicker-trigger {
+    cursor: pointer;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
     background-color: transparent;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--alinea-field-text-color);
+    margin-left: auto;
     transition: var(--alinea-transition);
+    color: var(--alinea-icon-color-plain);
+    font-size: inherit;
 
-    &[data-hovered] {
-      border-color: var(--alinea-border-color-hover);
-    }
+    &[data-hovered],
     &[data-focus-within] {
-      border-color: var(--alinea-highlight-background);
-      border-color: var(--alinea-primary-500);
-      box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
-    }
-    &[data-invalid="true"] {
-      border: 1px solid var(--alinea-invalid-color);
-      outline: 3px solid var(--alinea-invalid-overlay);
-    }
-    &[data-disabled] {
-      pointer-events: none;
       background-color: var(--alinea-background-color);
-      opacity: 0.5;
-    }
-
-    .alinea-rac-DateRangePicker-inputs {
-      gap: 4px;
-      display: flex;
-      align-items: center;
-    }
-
-    .alinea-rac-DateRangePicker-input {
-      display: flex;
-
-      .alinea-rac-DateRangePicker-input-segment {
-        padding-inline: 1px;
-
-        &[data-placeholder] {
-          color: var(--alinea-text-color-placeholder);
-        }
-
-        &:focus {
-          outline: none;
-          caret-color: transparent;
-          color: var(--alinea-highlight-foreground);
-          border-radius: 4px;
-          background: var(--alinea-highlight-background);
-        }
-      }
-    }
-
-    .alinea-rac-DateRangePicker-separator {
-      padding-inline: 4px;
-    }
-
-    .alinea-rac-DateRangePicker-trigger {
-      cursor: pointer;
-      border: none;
-      width: 1.5em;
-      height: 1.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 4px;
-      background-color: transparent;
-      margin-left: auto;
-      transition: var(--alinea-transition);
-      color: var(--alinea-icon-color-plain);
-      font-size: inherit;
-
-      &[data-hovered],
-      &[data-focus-within] {
-        background-color: var(--alinea-background-color);
-        color: var(--alinea-icon-color);
-      }
+      color: var(--alinea-icon-color);
     }
   }
 }

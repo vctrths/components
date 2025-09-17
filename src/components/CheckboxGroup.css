@@ -1,19 +1,17 @@
 @import "../theme.css";
 
-@layer alinea {
-  .alinea-rac-CheckboxGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.571rem;
-    color: var(--alinea-text-color);
+.alinea-rac-CheckboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.571rem;
+  color: var(--alinea-text-color);
 
-    .alinea-rac-FieldError {
-      font-size: 12px;
-      color: var(--alinea-invalid-color);
-    }
+  .alinea-rac-FieldError {
+    font-size: 12px;
+    color: var(--alinea-invalid-color);
+  }
 
-    [slot="description"] {
-      font-size: 12px;
-    }
+  [slot="description"] {
+    font-size: 12px;
   }
 }

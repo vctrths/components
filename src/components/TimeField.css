@@ -1,73 +1,71 @@
 @import "../theme.css";
 
-@layer alinea {
-  .alinea-rac-TimeField {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: var(--alinea-text-color);
-  }
+.alinea-rac-TimeField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--alinea-text-color);
+}
 
-  .alinea-rac-TimeField-input {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 12px;
-    border: 1px solid var(--alinea-border-color);
-    border-radius: 6px;
-    background: var(--alinea-field-background);
+.alinea-rac-TimeField-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: 1px solid var(--alinea-border-color);
+  border-radius: 6px;
+  background: var(--alinea-field-background);
 
-    white-space: nowrap;
-    transition: var(--alinea-transition);
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
+  white-space: nowrap;
+  transition: var(--alinea-transition);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
 
-  .alinea-rac-TimeField-input:focus-within {
-    border-color: var(--alinea-highlight-background);
-    box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
-    outline: none;
-  }
+.alinea-rac-TimeField-input:focus-within {
+  border-color: var(--alinea-highlight-background);
+  box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
+  outline: none;
+}
 
-  .alinea-rac-TimeField-segment {
-    padding: 4px;
-    font-variant-numeric: tabular-nums;
-    text-align: center;
-    color: var(--alinea-text-color);
-  }
+.alinea-rac-TimeField-segment {
+  padding: 4px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--alinea-text-color);
+}
 
-  .alinea-rac-TimeField-segment[data-type="literal"] {
-    padding: 0;
-  }
+.alinea-rac-TimeField-segment[data-type="literal"] {
+  padding: 0;
+}
 
-  .alinea-rac-TimeField-segment[data-placeholder] {
-    color: var(--alinea-text-color-placeholder);
-    font-style: italic;
-  }
+.alinea-rac-TimeField-segment[data-placeholder] {
+  color: var(--alinea-text-color-placeholder);
+  font-style: italic;
+}
 
-  .alinea-rac-TimeField-segment:focus {
-    color: var(--alinea-highlight-foreground);
-    background: var(--alinea-highlight-background);
-    outline: none;
-    border-radius: 4px;
-    caret-color: transparent;
-  }
+.alinea-rac-TimeField-segment:focus {
+  color: var(--alinea-highlight-foreground);
+  background: var(--alinea-highlight-background);
+  outline: none;
+  border-radius: 4px;
+  caret-color: transparent;
+}
 
-  .alinea-rac-TimeField-segment[data-invalid] {
-    color: var(--alinea-invalid-color);
-  }
+.alinea-rac-TimeField-segment[data-invalid] {
+  color: var(--alinea-invalid-color);
+}
 
-  .alinea-rac-TimeField-segment[data-invalid]:focus {
-    background: var(--alinea-highlight-background-invalid);
-    color: var(--alinea-highlight-foreground);
-  }
+.alinea-rac-TimeField-segment[data-invalid]:focus {
+  background: var(--alinea-highlight-background-invalid);
+  color: var(--alinea-highlight-foreground);
+}
 
-  .alinea-rac-TimeField .alinea-rac-FieldError {
-    font-size: 12px;
-    color: var(--alinea-invalid-color);
-  }
+.alinea-rac-TimeField .alinea-rac-FieldError {
+  font-size: 12px;
+  color: var(--alinea-invalid-color);
+}
 
-  .alinea-rac-TimeField [slot="description"] {
-    font-size: 12px;
-  }
+.alinea-rac-TimeField [slot="description"] {
+  font-size: 12px;
 }

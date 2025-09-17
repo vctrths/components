@@ -1,58 +1,56 @@
 @import "../theme.css";
 
-@layer alinea {
-  .alinea-rac-Label {
-    .alinea-rac-Label-header {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
-      gap: 4px 8px;
-      padding-bottom: 8px;
-      line-height: 1;
-    }
+.alinea-rac-Label {
+  .alinea-rac-Label-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px 8px;
+    padding-bottom: 8px;
+    line-height: 1;
+  }
 
-    .alinea-rac-Label-title {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+  .alinea-rac-Label-title {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
-    .alinea-rac-Label-icon {
-      font-size: 14px;
-      color: var(--alinea-text-color);
-    }
+  .alinea-rac-Label-icon {
+    font-size: 14px;
+    color: var(--alinea-text-color);
+  }
 
-    .alinea-rac-Label-label {
-      color: var(--alinea-text-color);
-      font-size: 13px;
-      font-weight: 600;
-      transition: var(--alinea-transition);
-      transition-property: color;
-    }
+  .alinea-rac-Label-label {
+    color: var(--alinea-text-color);
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--alinea-transition);
+    transition-property: color;
+  }
 
-    .alinea-rac-Label-description {
-      display: block;
-      max-width: 100%;
-      color: var(--alinea-text-color-base);
-      font-size: 12px;
-      line-height: 1.1;
-      font-weight: 400;
-      font-style: italic;
-      white-space: normal;
-      word-wrap: break-word;
-    }
+  .alinea-rac-Label-description {
+    display: block;
+    max-width: 100%;
+    color: var(--alinea-text-color-base);
+    font-size: 12px;
+    line-height: 1.1;
+    font-weight: 400;
+    font-style: italic;
+    white-space: normal;
+    word-wrap: break-word;
+  }
 
-    .alinea-rac-Label-error {
-      color: var(--alinea-danger-500);
-      font-size: 12px;
-      padding-top: 4px;
-    }
+  .alinea-rac-Label-error {
+    color: var(--alinea-danger-500);
+    font-size: 12px;
+    padding-top: 4px;
+  }
 
-    .alinea-rac-Label-required {
-      color: var(--alinea-danger-500);
-      font-size: 12px;
-    }
+  .alinea-rac-Label-required {
+    color: var(--alinea-danger-500);
+    font-size: 12px;
   }
 }

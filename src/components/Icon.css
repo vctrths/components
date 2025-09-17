@@ -1,9 +1,7 @@
-@layer alinea {
-  .alinea-rac-Icon {
-    display: block;
-    color: inherit;
-    fill: currentColor;
-    pointer-events: none;
-    flex-shrink: 0;
-  }
+.alinea-rac-Icon {
+  display: block;
+  color: inherit;
+  fill: currentColor;
+  pointer-events: none;
+  flex-shrink: 0;
 }
