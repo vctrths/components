@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: var(--alinea-visual-viewport-height);
+  height: var(--visual-viewport-height);
   padding: 20px;
   background: rgba(0 0 0 / 0.5);
   display: flex;
