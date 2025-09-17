@@ -46,7 +46,7 @@ await build({
   format: 'esm',
   entryPoints: ['src/index.ts'],
   banner: {
-    js: "'use client'\nimport '@alinea/components/css';"
+    js: "'use client';"
   },
   outdir: 'dist',
   bundle: true,
