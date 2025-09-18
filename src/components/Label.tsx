@@ -1,17 +1,16 @@
 import clsx from 'clsx'
 import {
-  FieldError,
   Label as LabelPrimitive,
-  type LabelProps as LabelPrimitiveProps,
-  type ValidationResult
+  type LabelProps as LabelPrimitiveProps
 } from 'react-aria-components'
 import './Label.css'
 import type {ReactNode} from 'react'
 
 export interface LabelSharedProps {
   label?: ReactNode
+  asLabel?: false
   description?: ReactNode
-  errorMessage?: ReactNode | ((validation: ValidationResult) => ReactNode)
+  errorMessage?: ReactNode
   isRequired?: boolean
   isDisabled?: boolean
   icon?: ReactNode
@@ -59,9 +58,7 @@ export function Label({
       )}
       {children}
       {errorMessage && (
-        <FieldError className="alinea-rac-Label-error">
-          {errorMessage}
-        </FieldError>
+        <div className="alinea-rac-Label-error">{errorMessage}</div>
       )}
     </div>
   )
