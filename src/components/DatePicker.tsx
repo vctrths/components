@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import {Calendar} from './Calendar.tsx'
 import {
   Button,
   DateInput,
@@ -10,11 +9,12 @@ import {
   Dialog,
   Group
 } from 'react-aria-components'
-import {IcRoundKeyboardArrowDown} from '../stories/icons/IcRoundKeyboardArrowDown.tsx'
+import {Calendar} from './Calendar.tsx'
 import {Icon} from './Icon.tsx'
 import {Label, type LabelSharedProps, labelProps} from './Label.tsx'
 import {Popover} from './Popover.tsx'
 import './DatePicker.css'
+import {IcRoundCalendarMonth} from '../stories/icons/IcRoundCalendarMonth.tsx'
 
 export interface DatePickerProps<T extends DateValue>
   extends DatePickerPrimitiveProps<T>,
@@ -37,7 +37,7 @@ export function DatePicker<T extends DateValue>(props: DatePickerProps<T>) {
             )}
           </DateInput>
           <Button className="alinea-rac-DatePicker-trigger">
-            <Icon icon={IcRoundKeyboardArrowDown} />
+            <Icon icon={IcRoundCalendarMonth} />
           </Button>
         </Group>
       </Label>

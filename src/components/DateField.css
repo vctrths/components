@@ -38,17 +38,21 @@
   .alinea-rac-DateField-input {
     .alinea-rac-DateField-input-segment {
       padding-inline: 1px;
+      transition: var(--alinea-transition);
 
       &[data-placeholder] {
         color: var(--alinea-text-color-placeholder);
       }
 
-      &:focus {
+      &[data-hovered] {
+        color: var(--alinea-text-color);
+      }
+
+      &[data-focused] {
         outline: none;
-        caret-color: transparent;
-        color: var(--alinea-highlight-foreground);
+        background-color: var(--alinea-highlight-overlay);
         border-radius: 4px;
-        background: var(--alinea-highlight-background);
+        color: var(--alinea-highlight-background);
       }
     }
   }

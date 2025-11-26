@@ -7,21 +7,22 @@
   justify-content: space-between;
   width: 100%;
   padding: 8px 10px;
+  background: var(--alinea-field-background);
   border: 1px solid var(--alinea-border-color);
   border-radius: 6px;
-  background-color: transparent;
+  outline: 4px solid transparent;
+  color: var(--alinea-field-text-color);
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--alinea-field-text-color);
   transition: var(--alinea-transition);
 
   &[data-hovered] {
     border-color: var(--alinea-border-color-hover);
+    outline-color: var(--alinea-box-shadow-color);
   }
-  &[data-focus-within] {
-    border-color: var(--alinea-highlight-background);
-    border-color: var(--alinea-primary-500);
-    box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
+  [data-open] & {
+    border-color: var(--alinea-highlight-border);
+    outline-color: var(--alinea-highlight-overlay);
   }
   &[data-invalid="true"] {
     border: 1px solid var(--alinea-invalid-color);
@@ -29,7 +30,8 @@
   }
   &[data-disabled] {
     pointer-events: none;
-    background-color: var(--alinea-background-color);
+    background-color: var(--alinea-field-background-disabled);
+    color: var(--alinea-text-color-disabled);
     opacity: 0.5;
   }
 
@@ -40,21 +42,23 @@
   }
 
   .alinea-rac-DateRangePicker-input {
-    display: flex;
-
     .alinea-rac-DateRangePicker-input-segment {
       padding-inline: 1px;
+      transition: var(--alinea-transition);
 
       &[data-placeholder] {
         color: var(--alinea-text-color-placeholder);
       }
 
-      &:focus {
+      &[data-hovered] {
+        color: var(--alinea-text-color);
+      }
+
+      &[data-focused] {
         outline: none;
-        caret-color: transparent;
-        color: var(--alinea-highlight-foreground);
+        background-color: var(--alinea-highlight-overlay);
         border-radius: 4px;
-        background: var(--alinea-highlight-background);
+        color: var(--alinea-highlight-background);
       }
     }
   }
@@ -65,23 +69,37 @@
 
   .alinea-rac-DateRangePicker-trigger {
     cursor: pointer;
+    background: none;
     border: none;
-    width: 1.5em;
-    height: 1.5em;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
-    background-color: transparent;
-    margin-left: auto;
     transition: var(--alinea-transition);
     color: var(--alinea-icon-color-plain);
-    font-size: inherit;
+    font-size: 16px;
+
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: var(--alinea-transition);
+    }
+
+    .alinea-rac-Icon {
+      position: relative;
+    }
 
     &[data-hovered],
     &[data-focus-within] {
-      background-color: var(--alinea-background-color);
       color: var(--alinea-icon-color);
+
+      &:before {
+        background-color: var(--alinea-background-color);
+      }
     }
   }
 }
