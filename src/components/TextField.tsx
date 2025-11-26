@@ -12,11 +12,17 @@ export interface TextFieldProps
   extends LabelSharedProps,
     TextFieldPrimitiveProps {
   multiline?: boolean
+  rows?: number
   placeholder?: string
   className?: string
 }
 
-export function TextField({multiline, className, ...props}: TextFieldProps) {
+export function TextField({
+  multiline,
+  rows,
+  className,
+  ...props
+}: TextFieldProps) {
   const hasValue =
     (props.value ?? props.placeholder ?? props.defaultValue) !== undefined
   if (multiline && !hasValue)
@@ -29,7 +35,7 @@ export function TextField({multiline, className, ...props}: TextFieldProps) {
             <div className="alinea-rac-TextField-multiline">
               <TextArea
                 className="alinea-rac-TextField-multiline-area"
-                rows={1}
+                rows={rows || 1}
               />
               <div
                 aria-hidden="true"

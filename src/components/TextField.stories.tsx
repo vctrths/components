@@ -21,6 +21,13 @@ export const Example = () => {
         value={text}
         onChange={setText}
       />
+      <TextField
+        multiline
+        label="Multiline rows={4} (with auto size)"
+        value={text}
+        onChange={setText}
+        rows={4}
+      />
       <h3 style={{marginBottom: 0}}>Description</h3>
       <TextField
         label="Short description"
