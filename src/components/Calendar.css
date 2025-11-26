@@ -1,92 +1,160 @@
 @import "../theme.css";
 
 .alinea-rac-Calendar {
+  --alinea-border-radius: 6px;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 
   .alinea-rac-Calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
     padding-bottom: 8px;
-    font-weight: bold;
-    color: var(--alinea-text-color);
   }
 
   .alinea-rac-Calendar-heading {
-    text-align: center;
-    font-weight: bold;
+    flex: 1;
+    margin: 0;
     font-size: 1rem;
+    text-align: center;
   }
 
   .alinea-rac-Calendar-button {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-    padding: 4px;
-    color: var(--alinea-icon-color);
-    transition: var(--alinea-transition);
-  }
-
-  .alinea-rac-Calendar-cell {
-    text-align: center;
-    padding: 6px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 4px;
-    font-size: 0.875rem;
+    background-color: transparent;
     transition: var(--alinea-transition);
-    cursor: pointer;
+    color: var(--alinea-icon-color);
+    font-size: 18px;
 
-    &[data-selected] {
-      background-color: var(--alinea-highlight-background);
-      color: var(--alinea-highlight-foreground);
-      font-weight: bold;
+    &[data-hovered],
+    &[data-focus-visible] {
+      background-color: var(--alinea-background-color);
+      color: var(--alinea-icon-color);
     }
 
     &[data-disabled] {
-      color: var(--alinea-text-color-disabled);
       cursor: not-allowed;
-    }
-
-    &[data-selection-start] {
-      background-color: var(--alinea-highlight-background);
-      border-start-start-radius: 6px;
-      border-end-start-radius: 6px;
-    }
-    &[data-selection-end] {
-      background-color: var(--alinea-highlight-background);
-      border-start-end-radius: 6px;
-      border-end-end-radius: 6px;
-    }
-  }
-
-  &:has(.alinea-rac-Calendar-cell[data-selection-start]) {
-    .alinea-rac-Calendar-cell {
-      &[data-selected] {
-        background-color: var(--alinea-calendar-highlight-overlay);
-        border-radius: 0;
-
-        &[data-selection-start] {
-          background-color: var(--alinea-highlight-background);
-          border-start-start-radius: 6px;
-          border-end-start-radius: 6px;
-        }
-        &[data-selection-end] {
-          background-color: var(--alinea-highlight-background);
-          border-start-end-radius: 6px;
-          border-end-end-radius: 6px;
-        }
-      }
+      color: var(--alinea-text-color-disabled);
+      opacity: 0.5;
     }
   }
 
   .alinea-rac-Calendar-grid {
-    border-spacing: 0px;
-    td {
-      padding: 0px;
-      padding-top: 4px;
+    border-spacing: 0 4px;
+  }
+
+  .alinea-rac-Calendar-cell {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--alinea-border-radius);
+    font-size: 0.875rem;
+    text-align: center;
+    transition: var(--alinea-transition);
+
+    &[data-today] {
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: var(--alinea-highlight-background);
+        position: absolute;
+        bottom: 4px;
+      }
+    }
+
+    &[data-hovered],
+    &[data-focus-visible] {
+      background-color: var(--alinea-background-color);
+    }
+
+    &[data-focus-visible] {
+      outline: 2px solid var(--alinea-border-color);
+      outline-offset: 2px;
+    }
+
+    &[data-selected] {
+      background-color: var(--alinea-highlight-background);
+      color: var(--alinea-highlight-foreground);
+    }
+
+    &[data-selected][data-today]:after {
+      background-color: var(--alinea-highlight-foreground);
+    }
+
+    &[data-selected][data-focus-visible] {
+      outline-color: var(--alinea-highlight-background);
+    }
+
+    &[data-disabled] {
+      cursor: not-allowed;
+      color: var(--alinea-text-color-disabled);
+      opacity: 0.5;
+    }
+
+    &[data-invalid] {
+      background-color: var(--invalid-color);
+      color: white;
+    }
+  }
+
+  &:has(.alinea-rac-Calendar-cell[data-selection-start]),
+  &:has(.alinea-rac-Calendar-cell[data-selection-end]) {
+    .alinea-rac-Calendar-cell {
+      &[data-selected] {
+        background-color: var(--alinea-highlight-overlay);
+        color: var(--alinea-highlight-background);
+        border-radius: 0;
+
+        &[data-selection-start],
+        &[data-selection-end] {
+          background-color: var(--alinea-highlight-background);
+          color: var(--alinea-highlight-foreground);
+        }
+
+        &[data-selection-start] {
+          border-start-start-radius: var(--alinea-border-radius);
+          border-end-start-radius: var(--alinea-border-radius);
+        }
+
+        &[data-selection-end] {
+          border-start-end-radius: var(--alinea-border-radius);
+          border-end-end-radius: var(--alinea-border-radius);
+        }
+      }
+    }
+
+    td:first-child {
+      .alinea-rac-Calendar-cell {
+        border-start-start-radius: var(--alinea-border-radius);
+        border-end-start-radius: var(--alinea-border-radius);
+      }
+    }
+
+    td:last-child {
+      .alinea-rac-Calendar-cell {
+        border-start-end-radius: var(--alinea-border-radius);
+        border-end-end-radius: var(--alinea-border-radius);
+      }
     }
   }
 }

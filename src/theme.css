@@ -60,7 +60,6 @@
   --alinea-invalid-overlay: rgb(from #f44336 r g b / 20%);
   --alinea-transition: 0.2s ease-out;
   --alinea-error-border-color-transparent: rgba(244, 67, 54, 0.5);
-  --alinea-calendar-highlight-overlay: rgb(from #3f61e8 r g b / 80%);
 }
 
 /* Light */
