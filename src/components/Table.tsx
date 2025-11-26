@@ -32,18 +32,34 @@ export type {
 
 export interface TableProps extends TablePrimitiveProps {
   striped?: boolean
-  overflow?: boolean
 }
 
 export function Table(props: TableProps) {
   return (
     <div
       className={clsx('alinea-rac-Table', props.className)}
-      data-overflow={props.overflow}
       data-striped={props.striped}
     >
       <TablePrimitive {...props} className="alinea-rac-Table-table" />
     </div>
+  )
+}
+
+export function TableHeader<T extends object>({
+  columns,
+  children
+}: TableHeaderProps<T>) {
+  const {selectionMode} = useTableOptions()
+
+  return (
+    <TableHeaderPrimitive className="alinea-rac-TableHeader">
+      {selectionMode === 'multiple' && (
+        <Column>
+          <Checkbox slot="selection" />
+        </Column>
+      )}
+      <Collection items={columns}>{children}</Collection>
+    </TableHeaderPrimitive>
   )
 }
 
@@ -77,22 +93,8 @@ export function Column(props: PropsWithChildren<ColumnProps>) {
   )
 }
 
-export function TableHeader<T extends object>({
-  columns,
-  children
-}: TableHeaderProps<T>) {
-  const {selectionMode} = useTableOptions()
-
-  return (
-    <TableHeaderPrimitive className="alinea-rac-TableHeader">
-      {selectionMode === 'multiple' && (
-        <Column>
-          <Checkbox slot="selection" />
-        </Column>
-      )}
-      <Collection items={columns}>{children}</Collection>
-    </TableHeaderPrimitive>
-  )
+export function TableBody<T extends object>(props: TableBodyProps<T>) {
+  return <TableBodyPrimitive<T> {...props} className="alinea-rac-TableBody" />
 }
 
 export function Row<T extends object>({
@@ -118,15 +120,12 @@ export function Row<T extends object>({
   )
 }
 
-export function Cell(props: CellProps) {
+export function Cell(props: CellProps & {nowrap?: boolean}) {
   return (
     <CellPrimitive
       {...props}
+      data-nowrap={props.nowrap}
       className={clsx('alinea-rac-Cell', props.className)}
     />
   )
-}
-
-export function TableBody<T extends object>(props: TableBodyProps<T>) {
-  return <TableBodyPrimitive<T> {...props} className="alinea-rac-TableBody" />
 }
