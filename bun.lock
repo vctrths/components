@@ -1,10 +1,8 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
-      "dependencies": {
-        "vite": "^7.1.9",
-      },
       "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@ladle/react": "^5.0.3",
