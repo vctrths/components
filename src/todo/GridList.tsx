@@ -2,10 +2,11 @@
 import {
   GridList as AriaGridList,
   GridListItem as AriaGridListItem,
-  type GridListItemProps,
-  type GridListProps
+  type GridListProps,
+  type GridListItemProps as RACGridListItemProps
 } from 'react-aria-components'
 import './GridList.css'
+import type {ReactNode} from 'react'
 import {Button} from '../components/Button.tsx'
 
 export function GridList<T extends object>({
@@ -22,7 +23,11 @@ export function GridList<T extends object>({
   )
 }
 
-export function GridListItem({children, ...props}: GridListItemProps) {
+export interface GridListItemProps extends RACGridListItemProps {
+  header?: ReactNode
+}
+
+export function GridListItem({children, header, ...props}: GridListItemProps) {
   const textValue = typeof children === 'string' ? children : undefined
   const {className, ...rest} = props
   return (
@@ -40,8 +45,9 @@ export function GridListItem({children, ...props}: GridListItemProps) {
                 ≡
               </Button>
             )}
-            {children}
+            {header}
           </header>
+          <div className="alinea-rac-ListItem-inner">{children}</div>
         </>
       )}
     </AriaGridListItem>

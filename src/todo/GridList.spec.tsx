@@ -1,5 +1,5 @@
 import {expect, test} from '@playwright/experimental-ct-react'
-import {GridList, GridListItem} from '../todo/GridList.tsx'
+import {GridList, GridListItem} from './GridList.tsx'
 
 interface GridItem {
   key: string

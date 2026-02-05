@@ -1,6 +1,8 @@
 import {useMemo} from 'react'
-import {ListLayout, Virtualizer, useDragAndDrop} from 'react-aria-components'
+import {useDragAndDrop} from 'react-aria-components'
 import {useListData} from 'react-stately'
+import {Elevation} from '../components/Elevation.tsx'
+import {TextField} from '../components/TextField.tsx'
 import {GridList, GridListItem} from './GridList.tsx'
 
 export const Example = (args: any) => {
@@ -27,25 +29,22 @@ export const Example = (args: any) => {
       }
     }
   })
-  const layout = useMemo(() => {
-    return new ListLayout({
-      rowHeight: 38
-    })
-  }, [])
   return (
-    <Virtualizer layout={layout} style={{height: 300}}>
+    <>
       <GridList
         aria-label="Reorderable list"
         items={list.items}
         dragAndDropHooks={dragAndDropHooks}
       >
         {item => (
-          <GridListItem id={item.key} textValue={item.name}>
-            {item.name}
+          <GridListItem id={item.key} textValue={item.name} header={item.name}>
+            <Elevation>
+              <TextField label="Text field" placeholder="Type here..." />
+            </Elevation>
           </GridListItem>
         )}
       </GridList>
-    </Virtualizer>
+    </>
   )
 }
 
