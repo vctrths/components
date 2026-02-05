@@ -9,37 +9,11 @@ import './GridList.css'
 import {type ReactNode, useEffect, useRef} from 'react'
 import {Button} from '../components/Button.tsx'
 
-function isInteractiveElement(element: Element | null): boolean {
-  if (!element) return false
-  const tagName = element.tagName.toLowerCase()
-  if (tagName === 'input' || tagName === 'textarea' || tagName === 'select') {
-    return true
-  }
-  if (element.hasAttribute('contenteditable')) {
-    return true
-  }
-  return false
-}
-
-function isInsideInteractiveElement(
-  element: Element | null,
-  boundary: Element | null
-): boolean {
-  let current = element
-  while (current && current !== boundary) {
-    if (isInteractiveElement(current)) {
-      return true
-    }
-    current = current.parentElement
-  }
-  return false
-}
-
-export function GridList<T extends object>({
-  children,
-  ...props
-}: GridListProps<T>) {
-  const ref = useRef<HTMLDivElement>(null)
+/**
+ * Prevents drag operations that start from the inner content area,
+ * allowing drags only from the header (where the drag handle lives).
+ */
+function useRestrictDragToHeader(ref: React.RefObject<HTMLElement | null>) {
   const mouseDownTargetRef = useRef<Element | null>(null)
 
   useEffect(() => {
@@ -47,32 +21,19 @@ export function GridList<T extends object>({
     if (!element) return
 
     function handleMouseDown(e: MouseEvent) {
-      // Track where the mousedown occurred so we can check it in dragstart
       mouseDownTargetRef.current = e.target as Element
     }
 
     function handleDragStart(e: DragEvent) {
-      // Check if the original mousedown was inside an interactive element
       const mouseDownTarget = mouseDownTargetRef.current
-      if (!mouseDownTarget) return
-
-      // Find the list item that contains this drag
-      const listItem = (e.target as Element).closest?.('.alinea-rac-ListItem')
-      if (listItem) {
-        const innerContainer = listItem.querySelector('.alinea-rac-ListItem-inner')
-        if (
-          innerContainer &&
-          innerContainer.contains(mouseDownTarget) &&
-          isInsideInteractiveElement(mouseDownTarget, innerContainer)
-        ) {
-          e.preventDefault()
-          e.stopPropagation()
-        }
+      // Block drag if it started from inside the inner content area
+      if (mouseDownTarget?.closest('.alinea-rac-ListItem-inner')) {
+        e.preventDefault()
+        e.stopPropagation()
       }
     }
 
     function handleMouseUp() {
-      // Clear the mousedown target
       mouseDownTargetRef.current = null
     }
 
@@ -84,21 +45,28 @@ export function GridList<T extends object>({
       element.removeEventListener('dragstart', handleDragStart, true)
       element.removeEventListener('mouseup', handleMouseUp, true)
     }
-  }, [])
+  }, [ref])
+}
+
+export function GridList<T extends object>({
+  children,
+  className,
+  ...props
+}: GridListProps<T>) {
+  const ref = useRef<HTMLDivElement>(null)
+  useRestrictDragToHeader(ref)
 
   return (
     <div ref={ref}>
-      <AriaGridList
-        {...props}
-        className={clsx('alinea-rac-List', props.className)}
-      >
+      <AriaGridList {...props} className={clsx('alinea-rac-List', className)}>
         {children}
       </AriaGridList>
     </div>
   )
 }
 
-export interface GridListItemProps extends Omit<RACGridListItemProps, 'children'> {
+export interface GridListItemProps
+  extends Omit<RACGridListItemProps, 'children'> {
   header?: ReactNode
   children?: ReactNode
 }
@@ -112,9 +80,8 @@ export function GridListItem({children, header, ...props}: GridListItemProps) {
       {...rest}
       className={clsx('alinea-rac-ListItem', className)}
     >
-      {({selectionMode, selectionBehavior, allowsDragging}) => (
+      {({allowsDragging}) => (
         <>
-          {/* Add elements for drag and drop and selection. */}
           <header>
             {allowsDragging && (
               <Button slot="drag" size="icon" appearance="plain">
