@@ -12,7 +12,12 @@ export interface ButtonProps extends ButtonPrimitiveProps {
   size?: 'small' | 'medium' | 'large' | 'square-petite' | 'icon'
 }
 
-export function Button({intent, size, appearance, ...props}: ButtonProps) {
+export function Button({
+  intent = 'primary',
+  size = 'medium',
+  appearance = 'solid',
+  ...props
+}: ButtonProps) {
   return (
     <ButtonPrimitive
       data-intent={intent}
