@@ -54,8 +54,12 @@ export function Intents({isDisabled}: {isDisabled: boolean}) {
       <HStack>
         <Button>Primary</Button>
         <Button appearance="outline">Primary</Button>
+        <Button appearance="plain">Primary</Button>
         <Button isDisabled>Primary</Button>
         <Button appearance="outline" isDisabled>
+          Primary
+        </Button>
+        <Button appearance="plain" isDisabled>
           Primary
         </Button>
       </HStack>
@@ -64,10 +68,16 @@ export function Intents({isDisabled}: {isDisabled: boolean}) {
         <Button intent="secondary" appearance="outline">
           Secondary
         </Button>
+        <Button intent="secondary" appearance="plain">
+          Secondary
+        </Button>
         <Button intent="secondary" isDisabled>
           Secondary
         </Button>
         <Button intent="secondary" appearance="outline" isDisabled>
+          Secondary
+        </Button>
+        <Button intent="secondary" appearance="plain" isDisabled>
           Secondary
         </Button>
       </HStack>
@@ -76,10 +86,16 @@ export function Intents({isDisabled}: {isDisabled: boolean}) {
         <Button intent="danger" appearance="outline">
           Danger
         </Button>
+        <Button intent="danger" appearance="plain">
+          Danger
+        </Button>
         <Button intent="danger" isDisabled>
           Danger
         </Button>
         <Button intent="danger" appearance="outline" isDisabled>
+          Danger
+        </Button>
+        <Button intent="danger" appearance="plain" isDisabled>
           Danger
         </Button>
       </HStack>
@@ -88,10 +104,16 @@ export function Intents({isDisabled}: {isDisabled: boolean}) {
         <Button intent="warning" appearance="outline">
           Warning
         </Button>
-        <Button intent="warning" isDisabled>
+        <Button intent="warning" appearance="plain">
+          Warning
+        </Button>
+        <Button intent="warning" appearance="plain" isDisabled>
           Warning
         </Button>
         <Button intent="warning" appearance="outline" isDisabled>
+          Warning
+        </Button>
+        <Button intent="warning" appearance="plain" isDisabled>
           Warning
         </Button>
       </HStack>
@@ -133,13 +155,13 @@ export function Icons() {
       <Button size="square-petite">
         <IcRoundRefresh data-slot="icon" />
       </Button>
-      <Button size="square-petite" appearance="outline">
+      <Button size="square-petite" appearance="outline" intent="secondary">
         <IcRoundRefresh data-slot="icon" />
       </Button>
-      <Button size="square-petite" appearance="plain">
+      <Button size="square-petite" appearance="plain" intent="secondary">
         <IcRoundRefresh data-slot="icon" />
       </Button>
-      <Button size="square-petite" appearance="plain">
+      <Button size="square-petite" appearance="plain" intent="secondary">
         <IcRoundRefresh data-slot="icon" />
       </Button>
       <Button onPress={handlePress}>
@@ -168,22 +190,22 @@ export function Icons() {
           border: '1px solid lightgray'
         }}
       >
-        <Button data-size="square-petite" appearance="active">
+        <Button size="square-petite" appearance="active">
           <IcRoundAccountCircle data-slot="icon" />
         </Button>
-        <Button data-size="square-petite" appearance="plain">
+        <Button size="square-petite" appearance="plain" intent="secondary">
           <IcRoundArchive data-slot="icon" />
         </Button>
-        <Button data-size="square-petite" appearance="plain">
+        <Button size="square-petite" appearance="plain" intent="secondary">
           <IcRoundHistory data-slot="icon" />
         </Button>
-        <Button data-size="square-petite" appearance="plain">
+        <Button size="square-petite" appearance="plain" intent="secondary">
           <IcRoundLanguage data-slot="icon" />
         </Button>
-        <Button data-size="square-petite" appearance="plain">
+        <Button size="square-petite" appearance="plain" intent="secondary">
           <IcRoundSearch data-slot="icon" />
         </Button>
-        <Button data-size="square-petite" appearance="plain">
+        <Button size="square-petite" appearance="plain" intent="secondary">
           <IcRoundSettings data-slot="icon" />
         </Button>
       </div>

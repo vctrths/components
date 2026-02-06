@@ -157,6 +157,10 @@
     &[data-appearance="outline"][data-hovered] {
       --alinea-button-bg: var(--alinea-button-hovered);
     }
+
+    &[data-appearance="plain"] {
+      --alinea-button-color: var(--alinea-highlight-background);
+    }
   }
 
   &[data-intent="secondary"] {
@@ -211,6 +215,10 @@
         --alinea-button-bg: var(--alinea-button-hovered);
       }
     }
+
+    &[data-appearance="plain"] {
+      --alinea-button-color: var(--alinea-text-color);
+    }
   }
 
   &[data-intent="danger"] {
@@ -243,6 +251,10 @@
 
     &[data-appearance="outline"][data-hovered] {
       --alinea-button-bg: var(--alinea-button-hovered);
+    }
+
+    &[data-appearance="plain"] {
+      --alinea-button-color: var(--alinea-danger-500);
     }
   }
 
@@ -277,5 +289,23 @@
     &[data-appearance="outline"][data-hovered] {
       --alinea-button-bg: var(--alinea-button-hovered);
     }
+
+    &[data-appearance="plain"] {
+      --alinea-button-color: var(--alinea-warning-600);
+    }
+  }
+
+  &[data-appearance="plain"] {
+    --alinea-button-bg: transparent;
+    --alinea-button-border: transparent;
+    --alinea-button-hovered: var(--alinea-background-color);
+    --alinea-button-pressed: var(--alinea-background-color-hover);
+  }
+
+  &[data-appearance="plain"][data-disabled] {
+    --alinea-button-color: var(--alinea-text-color-disabled);
+    --alinea-button-bg: transparent;
+    --alinea-button-hovered: transparent;
+    --alinea-button-pressed: transparent;
   }
 }
