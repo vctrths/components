@@ -35,20 +35,6 @@
   backdrop-filter: blur(2px);
 }
 
-.alinea-dashboard-headerStatusBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px 6px 2px 10px;
-  border-radius: 999px;
-  background: #e0fce7;
-}
-
-.alinea-dashboard-headerStatusBadge .alinea-rac-Button[data-size="icon"] {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
 .alinea-dashboard-story .alinea-rac-SidebarHeader {
   height: 49px;
   padding: 0 12px;

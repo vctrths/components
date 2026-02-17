@@ -327,12 +327,10 @@ export function Home() {
             Joining the Vercel Open Source Program
           </h1>
           <div style={{flex: 1}} />
-          <div className="alinea-dashboard-headerStatusBadge">
-            <StatusBadge>Published</StatusBadge>
-            <Button size="icon" appearance="plain" aria-label="More options">
-              <IcRoundMoreVert data-slot="icon" />
-            </Button>
-          </div>
+          <StatusBadge>Published</StatusBadge>
+          <Button size="icon" appearance="plain" aria-label="More options">
+            <IcRoundMoreVert data-slot="icon" />
+          </Button>
           {isRightSidebarCollapsed ? (
             <Button
               size="icon"
