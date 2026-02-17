@@ -210,7 +210,13 @@ export function Home() {
                 <MenuItem id="docs">Docs</MenuItem>
               </Menu>
             </div>
-            <Button size="icon" appearance="plain" aria-label="Search pages">
+            <Button
+              className="alinea-dashboard-solidIconButton"
+              size="icon"
+              appearance="solid"
+              intent="secondary"
+              aria-label="Search pages"
+            >
               <IcRoundSearch data-slot="icon" />
             </Button>
           </div>
@@ -242,7 +248,13 @@ export function Home() {
                 <MenuItem id="archived-pages">Archived</MenuItem>
               </Menu>
             </div>
-            <Button size="icon" appearance="plain" aria-label="Create new page">
+            <Button
+              className="alinea-dashboard-solidIconButton"
+              size="icon"
+              appearance="solid"
+              intent="secondary"
+              aria-label="Create new page"
+            >
               <IcRoundAddCircle data-slot="icon" />
             </Button>
           </div>
@@ -334,30 +346,8 @@ export function Home() {
         <div className="alinea-dashboard-tabs">
           <Tabs variant="subtle">
             <TabList>
-              <Tab id="document">
-                <span
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 6
-                  }}
-                >
-                  <IcRoundDescription style={{width: 16, height: 16}} />
-                  Document
-                </span>
-              </Tab>
-              <Tab id="metadata">
-                <span
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 6
-                  }}
-                >
-                  <IcRoundSettings style={{width: 16, height: 16}} />
-                  Metadata
-                </span>
-              </Tab>
+              <Tab id="document">Document</Tab>
+              <Tab id="metadata">Metadata</Tab>
             </TabList>
 
             <TabPanel id="document">

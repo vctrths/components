@@ -98,6 +98,20 @@
   height: 49px;
 }
 
+.alinea-rac-Button.alinea-dashboard-solidIconButton {
+  background-color: #fff;
+  border-color: var(--alinea-border-color);
+  color: var(--alinea-text-color);
+}
+
+.alinea-rac-Button.alinea-dashboard-solidIconButton[data-hovered] {
+  background-color: var(--alinea-field-background);
+}
+
+.alinea-rac-Button.alinea-dashboard-solidIconButton[data-pressed] {
+  background-color: var(--alinea-background-color-hover);
+}
+
 .alinea-dashboard-sidebarFooter {
   border-top: 1px solid var(--alinea-border-color);
   padding: 8px 12px;
