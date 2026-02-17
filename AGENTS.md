@@ -32,3 +32,7 @@ TypeScript and code style:
 - Always define a named `interface` for component props — never inline prop types.
 - Destructure props in function signatures rather than using `props.x`.
 - Prefer `function name()` declarations over `const name = () =>` for functions.
+
+When a component is done:
+- Move it and its css and story to `src/components`.
+- Update the story title in default export to `Components / <ComponentName>`.
