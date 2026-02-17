@@ -46,7 +46,8 @@ function StatusBadge({children}: {children: React.ReactNode}) {
         alignItems: 'center',
         gap: 6,
         fontSize: 'var(--alinea-font-size-base)',
-        color: '#16a34a'
+        color: '#0f4424',
+        fontWeight: 600
       }}
     >
       <Icon icon={IcRoundVisibility} style={{width: 16, height: 16}} />
