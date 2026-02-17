@@ -12,7 +12,7 @@
   border-radius: 4px;
   transition: box-shadow var(--alinea-transition);
   padding: 10px;
-  font-size: 13px;
+  font-size: var(--alinea-font-size-base);
   box-sizing: border-box;
 
   &:empty {

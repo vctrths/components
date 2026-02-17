@@ -8,7 +8,7 @@
   cursor: default;
   overflow: hidden;
   position: relative;
-  font-size: 13px;
+  font-size: var(--alinea-font-size-base);
 }
 
 .alinea-rac-ListItem {

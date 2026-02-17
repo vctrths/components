@@ -25,7 +25,7 @@
 
   .alinea-rac-Label-label {
     color: var(--alinea-text-color);
-    font-size: 13px;
+    font-size: var(--alinea-font-size-base);
     font-weight: 500;
     transition: var(--alinea-transition);
     transition-property: color;
@@ -35,7 +35,7 @@
     display: block;
     max-width: 100%;
     color: var(--alinea-text-color-base);
-    font-size: 12px;
+    font-size: var(--alinea-font-size-base);
     line-height: 1.1;
     font-weight: 400;
     font-style: italic;
@@ -45,12 +45,12 @@
 
   .alinea-rac-Label-error {
     color: var(--alinea-danger-500);
-    font-size: 12px;
+    font-size: var(--alinea-font-size-base);
     padding-top: 4px;
   }
 
   .alinea-rac-Label-required {
     color: var(--alinea-danger-500);
-    font-size: 12px;
+    font-size: var(--alinea-font-size-base);
   }
 }

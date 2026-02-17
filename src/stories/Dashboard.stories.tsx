@@ -45,7 +45,7 @@ function StatusBadge({children}: {children: React.ReactNode}) {
         display: 'inline-flex',
         alignItems: 'center',
         gap: 6,
-        fontSize: 'var(--alinea-font-size-base)',
+        fontSize: '14px',
         color: '#0f4424',
         fontWeight: 600
       }}
@@ -194,7 +194,7 @@ export function Home() {
                       width: '100%',
                       justifyContent: 'space-between',
                       fontWeight: 600,
-                      fontSize: 'var(--alinea-font-size-base)',
+                      fontSize: '14px',
                       padding: '4px 8px'
                     }}
                   >
@@ -223,7 +223,7 @@ export function Home() {
           </div>
         </SidebarHeader>
 
-        <SidebarBody style={{padding: '0 12px'}}>
+        <SidebarBody style={{padding: '0 16px'}}>
           <div className="alinea-dashboard-sidebarRow alinea-dashboard-sidebarSectionHeader">
             <div className="alinea-dashboard-sidebarRowMenu">
               <Menu
@@ -233,7 +233,7 @@ export function Home() {
                     style={{
                       width: '100%',
                       justifyContent: 'space-between',
-                      fontSize: 'var(--alinea-font-size-base)',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--alinea-text-color-base)',
                       padding: '4px 8px'
@@ -319,7 +319,7 @@ export function Home() {
           </Button>
           <h1
             style={{
-              fontSize: 'var(--alinea-font-size-base)',
+              fontSize: '14px',
               fontWeight: 600,
               margin: 0
             }}
@@ -328,9 +328,18 @@ export function Home() {
           </h1>
           <div style={{flex: 1}} />
           <StatusBadge>Published</StatusBadge>
-          <Button size="icon" appearance="plain" aria-label="More options">
-            <IcRoundMoreVert data-slot="icon" />
-          </Button>
+          <Menu
+            popoverProps={{placement: 'bottom end'}}
+            label={
+              <Button size="icon" appearance="plain" aria-label="More options">
+                <IcRoundMoreVert data-slot="icon" />
+              </Button>
+            }
+          >
+            <MenuItem id="duplicate">Duplicate</MenuItem>
+            <MenuItem id="unpublish">Unpublish</MenuItem>
+            <MenuItem id="delete">Delete</MenuItem>
+          </Menu>
           {isRightSidebarCollapsed ? (
             <Button
               size="icon"

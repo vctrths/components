@@ -28,7 +28,7 @@
     gap: 3px;
     padding: 5px 12px;
     padding-left: calc(8px + (var(--tree-item-level, 1) - 1) * 16px);
-    font-size: 13px;
+    font-size: var(--alinea-font-size-base);
     font-weight: 400;
     border-radius: 6px;
     background: transparent;
