@@ -1,74 +1,96 @@
 @import "../theme.css";
 
-.react-aria-Switch {
+.alinea-rac-Switch {
+  --alinea-selected-color: var(--alinea-highlight-background);
+
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.571rem;
-  font-size: 1.143rem;
+  font-size: 0.875rem;
+  line-height: 1;
   color: var(--alinea-text-color);
   forced-color-adjust: none;
 
-  .indicator {
+  .alinea-rac-Switch-track {
     width: 2rem;
     height: 1.143rem;
-    border: 2px solid var(--alinea-border-color);
-    background: var(--alinea-background-color);
+    border: 1px solid var(--alinea-border-color);
+    background: var(--alinea-field-background);
     border-radius: 1.143rem;
-    transition: all 200ms;
+    transition: var(--alinea-transition);
+    transition-property: background, border, box-shadow;
 
-    &:before {
+    &::before {
       content: "";
       display: block;
-      margin: 0.143rem;
+      margin: 2px;
       width: 0.857rem;
       height: 0.857rem;
-      background: var(--alinea-highlight-background);
-      border-radius: 16px;
-      transition: all 200ms;
+      background: var(--alinea-border-color-hover);
+      border-radius: 50%;
+      transition: var(--alinea-transition);
+      transition-property: background, transform;
     }
   }
 
-  &[data-pressed] .indicator {
-    border-color: var(--alinea-border-color-pressed);
+  &[data-hovered] .alinea-rac-Switch-track {
+    border-color: var(--alinea-border-color-hover);
+    box-shadow: 0 0 0 4px var(--alinea-box-shadow-color);
+  }
 
-    &:before {
-      background: var(--alinea-highlight-background-pressed);
-    }
+  &[data-focus-visible] .alinea-rac-Switch-track {
+    outline: 2px solid var(--alinea-border-color);
+    outline-offset: 2px;
   }
 
   &[data-selected] {
-    .indicator {
-      border-color: var(--alinea-highlight-background);
-      background: var(--alinea-highlight-background);
+    .alinea-rac-Switch-track {
+      background: var(--alinea-selected-color);
+      border-color: var(--alinea-selected-color);
 
-      &:before {
-        background: var(--alinea-field-background);
+      &::before {
+        background: var(--alinea-highlight-foreground);
         transform: translateX(100%);
       }
     }
 
-    &[data-pressed] {
-      .indicator {
-        border-color: var(--alinea-highlight-background-pressed);
-        background: var(--alinea-highlight-background-pressed);
-      }
+    &[data-hovered] .alinea-rac-Switch-track {
+      box-shadow: 0 0 0 4px var(--alinea-highlight-overlay);
+    }
+
+    &[data-focus-visible] .alinea-rac-Switch-track {
+      outline-color: var(--alinea-selected-color);
+    }
+
+    &[data-pressed] .alinea-rac-Switch-track {
+      background: var(--alinea-highlight-background-pressed);
+      border-color: var(--alinea-highlight-background-pressed);
     }
   }
 
-  &[data-focus-visible] .indicator {
-    outline: 2px solid var(--alinea-focus-ring-color);
-    outline-offset: 2px;
+  &[data-pressed] .alinea-rac-Switch-track {
+    border-color: var(--alinea-border-color-pressed);
+
+    &::before {
+      background: var(--alinea-border-color-pressed);
+    }
+  }
+
+  &[data-disabled],
+  &[data-readonly] {
+    pointer-events: none;
+    color: var(--alinea-text-color-disabled);
   }
 
   &[data-disabled] {
-    color: var(--alinea-text-color-disabled);
+    opacity: 0.5;
+  }
 
-    .indicator {
-      border-color: var(--alinea-border-color-disabled);
-
-      &:before {
-        background: var(--alinea-border-color-disabled);
-      }
+  &[data-readonly] {
+    .alinea-rac-Switch-track {
+      background: var(--alinea-border-color);
+      border-color: var(--alinea-border-color);
     }
   }
 }
