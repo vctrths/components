@@ -3,7 +3,7 @@
 .alinea-rac-Sidebar {
   display: flex;
   flex-direction: column;
-  background: var(--alinea-field-background);
+  background: var(--alinea-sidebar-background);
   border-right: 1px solid var(--alinea-border-color);
   overflow: auto;
 }
@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  border-bottom: 1px solid var(--alinea-border-color);
 }
 
 .alinea-rac-SidebarBody {

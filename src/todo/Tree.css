@@ -25,10 +25,10 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 3px;
     padding: 5px 12px;
-    padding-left: calc(12px + (var(--tree-item-level, 1) - 1) * 16px);
-    font-size: 14px;
+    padding-left: calc(8px + (var(--tree-item-level, 1) - 1) * 16px);
+    font-size: 13px;
     font-weight: 400;
     border-radius: 6px;
     background: transparent;
@@ -86,6 +86,7 @@
     /* Label text */
 
     [data-slot="label"] {
+      margin-left: 2px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -192,7 +193,7 @@
 
   .react-aria-DropIndicator[data-drop-target] {
     outline: 1px solid var(--alinea-highlight-background);
-    margin-left: calc(12px + (var(--tree-item-level, 1) - 1) * 16px);
+    margin-left: calc(8px + (var(--tree-item-level, 1) - 1) * 16px);
   }
 }
 
