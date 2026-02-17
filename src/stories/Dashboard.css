@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 250px 1fr;
   height: 100vh;
-  font-size: 13px;
+  font-size: var(--alinea-font-size-base);
   color: var(--alinea-text-color);
   background: var(--alinea-field-background);
 }
@@ -37,19 +37,15 @@
 .alinea-dashboard-tabs {
   padding: 12px 32px 0;
   min-height: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .alinea-dashboard-tabs > .alinea-rac-Tabs {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100%;
-  min-height: 0;
+  display: block;
 }
 
 .alinea-dashboard-tabs .alinea-rac-TabPanel {
-  min-height: 0;
-  overflow: auto;
+  overflow: visible;
 }
 
 .alinea-dashboard-form {
@@ -80,4 +76,9 @@
 
 .alinea-dashboard-sidebarSectionHeader {
   height: 49px;
+}
+
+.alinea-dashboard-sidebarFooter {
+  border-top: 1px solid var(--alinea-border-color);
+  padding: 8px 12px;
 }

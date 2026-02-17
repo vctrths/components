@@ -5,7 +5,12 @@ import {Icon} from '../components/Icon.tsx'
 import {Menu, MenuItem} from '../components/Menu.tsx'
 import {Tab, TabList, TabPanel, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
-import {Sidebar, SidebarBody, SidebarHeader} from '../todo/Sidebar.tsx'
+import {
+  Sidebar,
+  SidebarBody,
+  SidebarFooter,
+  SidebarHeader
+} from '../todo/Sidebar.tsx'
 import {Tree, TreeItem} from '../todo/Tree.tsx'
 import {IcOutlineDescription} from './icons/IcOutlineDescription.tsx'
 import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
@@ -34,7 +39,7 @@ function StatusBadge({children}: {children: React.ReactNode}) {
         display: 'inline-flex',
         alignItems: 'center',
         gap: 6,
-        fontSize: 13,
+        fontSize: 'var(--alinea-font-size-base)',
         color: '#16a34a'
       }}
     >
@@ -53,7 +58,7 @@ function LinkField({label, value}: {label: string; value: string}) {
     <div style={{display: 'flex', flexDirection: 'column', gap: 4, flex: 1}}>
       <span
         style={{
-          fontSize: 13,
+          fontSize: 'var(--alinea-font-size-base)',
           color: 'var(--alinea-text-color-base)',
           fontWeight: 500
         }}
@@ -84,7 +89,7 @@ function LinkField({label, value}: {label: string; value: string}) {
         <span
           style={{
             flex: 1,
-            fontSize: 14,
+            fontSize: 'var(--alinea-font-size-base)',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
@@ -127,7 +132,7 @@ export function Home() {
                       width: '100%',
                       justifyContent: 'space-between',
                       fontWeight: 600,
-                      fontSize: 12,
+                      fontSize: 'var(--alinea-font-size-base)',
                       padding: '4px 8px'
                     }}
                   >
@@ -157,7 +162,7 @@ export function Home() {
                     style={{
                       width: '100%',
                       justifyContent: 'space-between',
-                      fontSize: 12,
+                      fontSize: 'var(--alinea-font-size-base)',
                       fontWeight: 600,
                       color: 'var(--alinea-text-color-base)',
                       padding: '4px 8px'
@@ -184,37 +189,48 @@ export function Home() {
             defaultSelectedKeys={['blog-vercel']}
             defaultExpandedKeys={['blog']}
           >
-            <TreeItem id="index" title="index" icon={<IcRoundHome />} />
-            <TreeItem id="blog" title="Blog" icon={<IcOutlineDescription />}>
+            <TreeItem id="index" title="Index" icon={IcRoundHome} />
+            <TreeItem id="blog" title="Blog" icon={IcOutlineDescription}>
               <TreeItem
                 id="blog-vercel"
                 title="Joining the Vercel Open Sour..."
-                icon={<IcRoundDescription />}
+                icon={IcRoundDescription}
               />
               <TreeItem
                 id="blog-update"
                 title="A Long-Overdue Update"
-                icon={<IcRoundDescription />}
+                icon={IcRoundDescription}
               />
               <TreeItem
                 id="blog-rsc"
                 title="RSC support and instant depl..."
-                icon={<IcRoundDescription />}
+                icon={IcRoundDescription}
               />
               <TreeItem
                 id="blog-intro"
                 title="Introducing Alinea"
-                icon={<IcRoundDescription />}
+                icon={IcRoundDescription}
               />
             </TreeItem>
-            <TreeItem id="docs" title="docs" icon={<IcOutlineDescription />} />
-            <TreeItem
-              id="roadmap"
-              title="roadmap"
-              icon={<IcRoundDescription />}
-            />
+            <TreeItem id="docs" title="Docs" icon={IcOutlineDescription} />
+            <TreeItem id="roadmap" title="Roadmap" icon={IcRoundDescription} />
           </Tree>
         </SidebarBody>
+        <SidebarFooter className="alinea-dashboard-sidebarFooter">
+          <Button
+            appearance="plain"
+            style={{
+              width: '100%',
+              justifyContent: 'flex-start',
+              gap: 8,
+              fontSize: 'var(--alinea-font-size-base)',
+              color: 'var(--alinea-text-color-base)'
+            }}
+          >
+            <Icon icon={IcRoundSettings} data-slot="icon" />
+            User settings
+          </Button>
+        </SidebarFooter>
       </Sidebar>
 
       {/* Main content */}
@@ -224,7 +240,13 @@ export function Home() {
           <Button size="icon" appearance="plain" aria-label="Go back">
             <IcRoundArrowBack data-slot="icon" />
           </Button>
-          <h1 style={{fontSize: 14, fontWeight: 600, margin: 0}}>
+          <h1
+            style={{
+              fontSize: 'var(--alinea-font-size-base)',
+              fontWeight: 600,
+              margin: 0
+            }}
+          >
             Joining the Vercel Open Source Program
           </h1>
           <div style={{flex: 1}} />
@@ -297,7 +319,7 @@ export function Home() {
                 >
                   <legend
                     style={{
-                      fontSize: 13,
+                      fontSize: 'var(--alinea-font-size-base)',
                       fontWeight: 500,
                       color: 'var(--alinea-text-color-base)',
                       padding: '0 4px'

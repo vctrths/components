@@ -8,7 +8,7 @@
   border: 1px solid var(--alinea-border-color);
   outline: 4px solid transparent;
   border-radius: 6px;
-  font-size: 0.875rem;
+  font-size: var(--alinea-font-size-base);
   line-height: 1.5;
   min-width: 100px;
   text-align: left;
@@ -123,7 +123,7 @@
   background-color: transparent;
   color: var(--alinea-icon-color);
   font-size: 18px;
-  font-size: 14px;
+  font-size: var(--alinea-font-size-base);
   outline: none;
   z-index: 0;
 
@@ -158,7 +158,7 @@
 
 .alinea-rac-SelectItem {
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: var(--alinea-font-size-base);
   padding: 0.4rem;
 
   gap: 8px;

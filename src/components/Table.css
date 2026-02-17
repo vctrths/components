@@ -61,7 +61,7 @@
 .alinea-rac-TableHeader,
 .alinea-rac-TableBody {
   color: var(--alinea-text-color);
-  font-size: 14px;
+  font-size: var(--alinea-font-size-base);
 }
 
 .alinea-rac-Column,

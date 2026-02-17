@@ -18,7 +18,7 @@
 
   white-space: nowrap;
   transition: var(--alinea-transition);
-  font-size: 0.875rem;
+  font-size: var(--alinea-font-size-base);
   line-height: 1.5;
 }
 

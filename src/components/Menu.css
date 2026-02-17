@@ -6,7 +6,7 @@
 
 .alinea-rac-MenuItem {
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: var(--alinea-font-size-base);
   padding: 0.4rem;
   display: flex;
   outline: none;

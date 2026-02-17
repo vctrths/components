@@ -5,7 +5,7 @@
   cursor: pointer;
   position: relative;
   color: var(--alinea-link-color);
-  font-size: 14px;
+  font-size: var(--alinea-font-size-base);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 2px;

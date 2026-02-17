@@ -64,7 +64,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--alinea-border-radius);
-    font-size: 0.875rem;
+    font-size: var(--alinea-font-size-base);
     text-align: center;
     transition: var(--alinea-transition);
 

@@ -19,7 +19,7 @@
   }
 
   .alinea-rac-Label-icon {
-    font-size: 14px;
+    font-size: var(--alinea-font-size-base);
     color: var(--alinea-text-color);
   }
 

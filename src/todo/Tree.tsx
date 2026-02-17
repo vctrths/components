@@ -9,6 +9,7 @@ import {
   type TreeProps
 } from 'react-aria-components'
 import {Checkbox} from '../components/Checkbox.tsx'
+import {Icon, type IconProps} from '../components/Icon.tsx'
 import './Tree.css'
 import type {ReactNode} from 'react'
 
@@ -19,7 +20,7 @@ export function Tree<T extends object>(props: TreeProps<T>) {
 export interface TreeItemContentProps2
   extends Omit<AriaTreeItemContentProps, 'children'> {
   children?: ReactNode
-  icon?: ReactNode
+  icon?: IconProps['icon']
   suffix?: ReactNode
 }
 
@@ -45,7 +46,11 @@ export function TreeItemContent({
               <path d="M10 17l5-5-5-5v10z" />
             </svg>
           </Button>
-          {icon && <span data-slot="icon">{icon}</span>}
+          {icon && (
+            <span data-slot="icon">
+              <Icon icon={icon} />
+            </span>
+          )}
           <span data-slot="label">{children}</span>
           {suffix && <span data-slot="suffix">{suffix}</span>}
         </>
@@ -56,7 +61,7 @@ export function TreeItemContent({
 
 export interface TreeItemProps extends Partial<AriaTreeItemProps> {
   title: string
-  icon?: ReactNode
+  icon?: IconProps['icon']
   suffix?: ReactNode
 }
 

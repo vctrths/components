@@ -23,7 +23,7 @@
   border-radius: 4px;
   background-color: var(--alinea-primary-50);
   color: var(--alinea-primary-700);
-  font-size: 14px;
+  font-size: var(--alinea-font-size-base);
   transition: var(--alinea-transition);
   transition-property: background-color, border-color, color;
 
