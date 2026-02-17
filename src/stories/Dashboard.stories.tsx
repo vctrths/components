@@ -1,11 +1,11 @@
 import {parseDate} from '@internationalized/date'
-import {useState} from 'react'
 import {Button} from '../components/Button.tsx'
 import {DatePicker} from '../components/DatePicker.tsx'
 import {Icon} from '../components/Icon.tsx'
 import {SearchField} from '../components/SearchField.tsx'
 import {Tab, TabList, TabPanel, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
+import {Tree, TreeItem} from '../todo/Tree.tsx'
 import {IcOutlineDescription} from './icons/IcOutlineDescription.tsx'
 import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
 import {IcRoundArrowBack} from './icons/IcRoundArrowBack.tsx'
@@ -13,8 +13,6 @@ import {IcRoundClose} from './icons/IcRoundClose.tsx'
 import {IcRoundDescription} from './icons/IcRoundDescription.tsx'
 import {IcRoundEdit} from './icons/IcRoundEdit.tsx'
 import {IcRoundHome} from './icons/IcRoundHome.tsx'
-import {IcRoundKeyboardArrowDown} from './icons/IcRoundKeyboardArrowDown.tsx'
-import {IcRoundKeyboardArrowRight} from './icons/IcRoundKeyboardArrowRight.tsx'
 import {IcRoundLink} from './icons/IcRoundLink.tsx'
 import {IcRoundMoreVert} from './icons/IcRoundMoreVert.tsx'
 import {IcRoundOpenInNew} from './icons/IcRoundOpenInNew.tsx'
@@ -155,103 +153,6 @@ function NavIcon({
 }
 
 /* ------------------------------------------------------------------ */
-/*  Sidebar tree                                                      */
-/* ------------------------------------------------------------------ */
-
-interface TreeNodeData {
-  label: string
-  icon?: React.ComponentType
-  children?: TreeNodeData[]
-  active?: boolean
-}
-
-function TreeNode({node, depth = 0}: {node: TreeNodeData; depth?: number}) {
-  const [open, setOpen] = useState(
-    node.children ? node.children.some(hasActive) : false
-  )
-  const hasChildren = !!node.children?.length
-
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => hasChildren && setOpen(v => !v)}
-        style={{
-          all: 'unset',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-          padding: '5px 12px',
-          paddingLeft: 12 + depth * 16,
-          fontSize: 14,
-          borderRadius: 6,
-          background: node.active
-            ? 'var(--alinea-selected-background)'
-            : 'transparent',
-          color: node.active
-            ? 'var(--alinea-selected-foreground)'
-            : 'var(--alinea-text-color)',
-          fontWeight: node.active ? 500 : 400,
-          width: '100%',
-          boxSizing: 'border-box'
-        }}
-      >
-        {hasChildren ? (
-          <Icon
-            icon={open ? IcRoundKeyboardArrowDown : IcRoundKeyboardArrowRight}
-            style={{width: 16, height: 16, flexShrink: 0}}
-          />
-        ) : (
-          <span style={{width: 16, flexShrink: 0}} />
-        )}
-        <Icon
-          icon={node.icon || IcRoundDescription}
-          style={{width: 16, height: 16, flexShrink: 0, opacity: 0.6}}
-        />
-        <span
-          style={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap'
-          }}
-        >
-          {node.label}
-        </span>
-      </button>
-      {open &&
-        node.children?.map(child => (
-          <TreeNode key={child.label} node={child} depth={depth + 1} />
-        ))}
-    </>
-  )
-}
-
-function hasActive(node: TreeNodeData): boolean {
-  return node.active || (node.children?.some(hasActive) ?? false)
-}
-
-const tree: TreeNodeData[] = [
-  {label: 'index', icon: IcRoundHome},
-  {
-    label: 'Blog',
-    icon: IcOutlineDescription,
-    children: [
-      {label: 'Joining the Vercel Open Sour…', active: true},
-      {label: 'A Long-Overdue Update'},
-      {label: 'RSC support and instant depl…'},
-      {label: 'Introducing Alinea 🎉'}
-    ]
-  },
-  {
-    label: 'docs',
-    icon: IcOutlineDescription,
-    children: []
-  },
-  {label: 'roadmap', icon: IcRoundDescription}
-]
-
-/* ------------------------------------------------------------------ */
 /*  Link field (URL with action buttons)                              */
 /* ------------------------------------------------------------------ */
 
@@ -361,25 +262,47 @@ export function Home() {
         </div>
 
         <div style={{padding: '4px 12px 8px'}}>
-          <SearchField
-            placeholder="Search"
-            hasIcon
-            aria-label="Search pages"
-          />
+          <SearchField placeholder="Search" hasIcon aria-label="Search pages" />
         </div>
 
-        <nav
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 1,
-            padding: '0 8px'
-          }}
-        >
-          {tree.map(node => (
-            <TreeNode key={node.label} node={node} />
-          ))}
+        <nav style={{flex: 1, padding: '0 8px'}}>
+          <Tree
+            aria-label="Pages"
+            selectionMode="single"
+            selectionBehavior="replace"
+            defaultSelectedKeys={['blog-vercel']}
+            defaultExpandedKeys={['blog']}
+          >
+            <TreeItem id="index" title="index" icon={<IcRoundHome />} />
+            <TreeItem id="blog" title="Blog" icon={<IcOutlineDescription />}>
+              <TreeItem
+                id="blog-vercel"
+                title="Joining the Vercel Open Sour…"
+                icon={<IcRoundDescription />}
+              />
+              <TreeItem
+                id="blog-update"
+                title="A Long-Overdue Update"
+                icon={<IcRoundDescription />}
+              />
+              <TreeItem
+                id="blog-rsc"
+                title="RSC support and instant depl…"
+                icon={<IcRoundDescription />}
+              />
+              <TreeItem
+                id="blog-intro"
+                title="Introducing Alinea 🎉"
+                icon={<IcRoundDescription />}
+              />
+            </TreeItem>
+            <TreeItem id="docs" title="docs" icon={<IcOutlineDescription />} />
+            <TreeItem
+              id="roadmap"
+              title="roadmap"
+              icon={<IcRoundDescription />}
+            />
+          </Tree>
         </nav>
 
         <div style={{padding: 12}}>
