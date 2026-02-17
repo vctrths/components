@@ -15,7 +15,7 @@ import './ColorPicker.css'
 
 export interface ColorPickerProps extends AriaColorPickerProps {
   label?: string
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 export function ColorPicker({label, children, ...props}: ColorPickerProps) {
