@@ -29,4 +29,6 @@ Playwright component tests:
 
 TypeScript and code style:
 - Prefer `interface` over `type` when possible.
+- Always define a named `interface` for component props — never inline prop types.
+- Destructure props in function signatures rather than using `props.x`.
 - Prefer `function name()` declarations over `const name = () =>` for functions.

@@ -23,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "peerDependencies": {
-    "react-aria-components": "^1.14.0"
+    "react-aria-components": "^1.15.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

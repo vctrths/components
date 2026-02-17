@@ -19,7 +19,7 @@
         "vite": "^8.0.0-beta.14",
       },
       "peerDependencies": {
-        "react-aria-components": "^1.14.0",
+        "react-aria-components": "^1.15.1",
       },
     },
   },
