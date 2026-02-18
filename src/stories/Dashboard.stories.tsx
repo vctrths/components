@@ -294,12 +294,17 @@ export function Home() {
                       width: '100%',
                       justifyContent: 'space-between',
                       fontWeight: 600,
-                      fontSize: '14px',
+                      fontSize: '15px',
+                      color: 'var(--alinea-text-color)',
                       padding: '4px 8px'
                     }}
                   >
                     <span className="alinea-dashboard-workspaceLabel">
                       <AlineaLogo />
+                      <span
+                        className="alinea-dashboard-workspaceDivider"
+                        aria-hidden
+                      />
                       Alinea
                     </span>
                     <IcRoundKeyboardArrowDown data-slot="icon" />
@@ -367,7 +372,7 @@ export function Home() {
               >
                 <IcRoundAdd data-slot="icon" />
               </Button>
-              <Modal>
+              <Modal isDismissable>
                 <Dialog className="alinea-dashboard-createDialog">
                   <h2 className="alinea-dashboard-createDialogTitle">
                     Create new entry
@@ -403,12 +408,12 @@ export function Home() {
         </SidebarBody>
         <SidebarFooter className="alinea-dashboard-sidebarFooter">
           <Button
+            className="alinea-dashboard-footerButton"
             appearance="plain"
             style={{
               width: '100%',
               justifyContent: 'flex-start',
               gap: 8,
-              fontSize: 'var(--alinea-font-size-base)',
               color: 'var(--alinea-text-color-base)'
             }}
           >

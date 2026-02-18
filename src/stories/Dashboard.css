@@ -130,6 +130,7 @@
   width: 1em;
   height: 1em;
   font-size: 16px;
+  color: var(--alinea-highlight-background);
   flex-shrink: 0;
 }
 
@@ -208,7 +209,14 @@
 
 .alinea-dashboard-sidebarFooter {
   border-top: 1px solid var(--alinea-dashboard-faded-border);
-  padding: 12px var(--alinea-dashboard-sidebar-padding-x);
+  padding: 4px var(--alinea-dashboard-sidebar-padding-x);
+}
+
+.alinea-dashboard-footerButton {
+  min-height: 22px;
+  padding: 1px 6px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .alinea-dashboard-rightSidebar {
