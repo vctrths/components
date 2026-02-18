@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import {
   Tree as AriaTree,
   TreeItem as AriaTreeItem,
@@ -14,7 +15,18 @@ import './Tree.css'
 import type {ReactNode} from 'react'
 
 export function Tree<T extends object>(props: TreeProps<T>) {
-  return <AriaTree {...props} />
+  const {className, ...rest} = props
+  return (
+    <AriaTree
+      {...rest}
+      className={renderProps =>
+        clsx(
+          'alinea-rac-Tree',
+          typeof className === 'function' ? className(renderProps) : className
+        )
+      }
+    />
+  )
 }
 
 export interface TreeItemContentProps2
@@ -70,10 +82,20 @@ export function TreeItem({
   icon,
   suffix,
   children,
+  className,
   ...rest
 }: TreeItemProps) {
   return (
-    <AriaTreeItem textValue={title} {...rest}>
+    <AriaTreeItem
+      textValue={title}
+      {...rest}
+      className={renderProps =>
+        clsx(
+          'alinea-rac-TreeItem',
+          typeof className === 'function' ? className(renderProps) : className
+        )
+      }
+    >
       <TreeItemContent icon={icon} suffix={suffix}>
         {title}
       </TreeItemContent>

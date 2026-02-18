@@ -1,4 +1,4 @@
-.react-aria-Tree {
+.alinea-rac-Tree {
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -20,7 +20,7 @@
 
   /* ---- Tree item ---- */
 
-  .react-aria-TreeItem {
+  .alinea-rac-TreeItem {
     all: unset;
     cursor: pointer;
     display: flex;
@@ -39,7 +39,7 @@
 
     /* Chevron */
 
-    .react-aria-Button[slot="chevron"] {
+    [slot="chevron"] {
       all: unset;
       display: flex;
       align-items: center;
@@ -58,11 +58,11 @@
       }
     }
 
-    &[data-has-child-items] .react-aria-Button[slot="chevron"] {
+    &[data-has-child-items] [slot="chevron"] {
       visibility: visible;
     }
 
-    &[data-expanded] .react-aria-Button[slot="chevron"] svg {
+    &[data-expanded] [slot="chevron"] svg {
       rotate: 90deg;
     }
 
@@ -162,7 +162,7 @@
 
     /* Action buttons */
 
-    .react-aria-Button:not([slot]) {
+    button:not([slot]) {
       margin-left: auto;
       background: transparent;
       border: none;
@@ -184,13 +184,13 @@
 
   /* Drop indicator */
 
-  .react-aria-DropIndicator[data-drop-target] {
+  [data-drop-target][role="row"] {
     outline: 1px solid var(--alinea-highlight-background);
     margin-left: calc(8px + (var(--tree-item-level, 1) - 1) * 16px);
   }
 }
 
-.react-aria-Tree[data-drop-target] {
+.alinea-rac-Tree[data-drop-target] {
   outline: 2px solid var(--alinea-highlight-background);
   outline-offset: -1px;
   background: var(--alinea-highlight-overlay);

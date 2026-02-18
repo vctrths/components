@@ -147,6 +147,20 @@
   background: var(--alinea-dashboard-surface);
 }
 
+.alinea-dashboard-treeViewport {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.alinea-dashboard-tree {
+  height: 100%;
+  min-height: 0;
+  display: block;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
 .alinea-rac-Button.alinea-dashboard-solidIconButton {
   background-color: #fff;
   border-color: var(--alinea-dashboard-faded-border);

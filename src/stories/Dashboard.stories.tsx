@@ -1,10 +1,18 @@
 import {parseDate} from '@internationalized/date'
-import {useState} from 'react'
+import {memo, useMemo, useState} from 'react'
+import {
+  Button as AriaButton,
+  Collection,
+  ListLayout,
+  TreeItem as AriaTreeItem,
+  TreeItemContent as AriaTreeItemContent,
+  Virtualizer
+} from 'react-aria-components'
 import {Button} from '../components/Button.tsx'
 import {DatePicker} from '../components/DatePicker.tsx'
 import {Dialog, DialogTrigger} from '../components/Dialog.tsx'
 import {Elevation} from '../components/Elevation.tsx'
-import {Icon} from '../components/Icon.tsx'
+import {Icon, type IconProps} from '../components/Icon.tsx'
 import {Label} from '../components/Label.tsx'
 import {Menu, MenuItem} from '../components/Menu.tsx'
 import {Modal} from '../components/Modal.tsx'
@@ -16,7 +24,7 @@ import {
   SidebarFooter,
   SidebarHeader
 } from '../todo/Sidebar.tsx'
-import {Tree, TreeItem} from '../todo/Tree.tsx'
+import {Tree} from '../todo/Tree.tsx'
 import {IcOutlineDescription} from './icons/IcOutlineDescription.tsx'
 import {IcRoundAdd} from './icons/IcRoundAdd.tsx'
 import {IcRoundArrowBack} from './icons/IcRoundArrowBack.tsx'
@@ -172,12 +180,102 @@ const historyEntries: HistoryEntry[] = [
   }
 ]
 
+interface PageEntry {
+  id: string
+  title: string
+}
+
+const blogEntries: PageEntry[] = Array.from({length: 500}, (_, index) => {
+  const number = index + 1
+  return {
+    id: `blog-entry-${number}`,
+    title: `Blog entry ${number.toString().padStart(3, '0')}`
+  }
+})
+
+interface DashboardTreeEntry {
+  id: string
+  title: string
+  icon?: IconProps['icon']
+  children?: DashboardTreeEntry[]
+}
+
+const pageTreeEntries: DashboardTreeEntry[] = [
+  {id: 'index', title: 'Index', icon: IcRoundHome},
+  {
+    id: 'blog',
+    title: 'Blog',
+    icon: IcOutlineDescription,
+    children: blogEntries.map(entry => ({
+      id: entry.id,
+      title: entry.title,
+      icon: IcRoundDescription
+    }))
+  },
+  {id: 'docs', title: 'Docs', icon: IcOutlineDescription},
+  {id: 'roadmap', title: 'Roadmap', icon: IcRoundDescription}
+]
+
+function renderTreeEntry(entry: DashboardTreeEntry) {
+  return (
+    <AriaTreeItem
+      id={entry.id}
+      textValue={entry.title}
+      className="alinea-rac-TreeItem"
+    >
+      <AriaTreeItemContent>
+        <AriaButton slot="chevron">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 17l5-5-5-5v10z" />
+          </svg>
+        </AriaButton>
+        {entry.icon ? (
+          <span data-slot="icon">
+            <Icon icon={entry.icon} />
+          </span>
+        ) : null}
+        <span data-slot="label">{entry.title}</span>
+      </AriaTreeItemContent>
+      {entry.children ? (
+        <Collection items={entry.children}>{renderTreeEntry}</Collection>
+      ) : null}
+    </AriaTreeItem>
+  )
+}
+
+interface DashboardPageTreeProps {
+  items: DashboardTreeEntry[]
+}
+
+const DashboardPageTree = memo(function DashboardPageTree({
+  items
+}: DashboardPageTreeProps) {
+  return (
+    <div className="alinea-dashboard-treeViewport">
+      <Virtualizer layout={ListLayout} layoutOptions={{rowHeight: 31}}>
+        <Tree
+          className="alinea-dashboard-tree"
+          aria-label="Pages"
+          items={items}
+          selectionMode="single"
+          selectionBehavior="replace"
+          defaultSelectedKeys={['blog-entry-237']}
+          defaultExpandedKeys={['blog']}
+        >
+          {renderTreeEntry}
+        </Tree>
+      </Virtualizer>
+    </div>
+  )
+})
+
 /* ------------------------------------------------------------------ */
 /*  Dashboard story                                                   */
 /* ------------------------------------------------------------------ */
 
 export function Home() {
   const [isRightSidebarCollapsed, setIsRightSidebarCollapsed] = useState(false)
+  const treeItems = useMemo(() => pageTreeEntries, [])
 
   return (
     <div
@@ -225,7 +323,15 @@ export function Home() {
           </div>
         </SidebarHeader>
 
-        <SidebarBody style={{padding: '0 var(--alinea-dashboard-content-padding-x)'}}>
+        <SidebarBody
+          style={{
+            padding: '0 var(--alinea-dashboard-sidebar-padding-x)',
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: 0,
+            overflow: 'hidden'
+          }}
+        >
           <div className="alinea-dashboard-sidebarRow alinea-dashboard-sidebarSectionHeader">
             <div className="alinea-dashboard-sidebarRowMenu">
               <Menu
@@ -293,39 +399,7 @@ export function Home() {
               </Modal>
             </DialogTrigger>
           </div>
-          <Tree
-            aria-label="Pages"
-            selectionMode="single"
-            selectionBehavior="replace"
-            defaultSelectedKeys={['blog-vercel']}
-            defaultExpandedKeys={['blog']}
-          >
-            <TreeItem id="index" title="Index" icon={IcRoundHome} />
-            <TreeItem id="blog" title="Blog" icon={IcOutlineDescription}>
-              <TreeItem
-                id="blog-vercel"
-                title="Joining the Vercel Open Sour..."
-                icon={IcRoundDescription}
-              />
-              <TreeItem
-                id="blog-update"
-                title="A Long-Overdue Update"
-                icon={IcRoundDescription}
-              />
-              <TreeItem
-                id="blog-rsc"
-                title="RSC support and instant depl..."
-                icon={IcRoundDescription}
-              />
-              <TreeItem
-                id="blog-intro"
-                title="Introducing Alinea"
-                icon={IcRoundDescription}
-              />
-            </TreeItem>
-            <TreeItem id="docs" title="Docs" icon={IcOutlineDescription} />
-            <TreeItem id="roadmap" title="Roadmap" icon={IcRoundDescription} />
-          </Tree>
+          <DashboardPageTree items={treeItems} />
         </SidebarBody>
         <SidebarFooter className="alinea-dashboard-sidebarFooter">
           <Button
