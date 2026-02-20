@@ -2,10 +2,10 @@ import {parseDate} from '@internationalized/date'
 import {memo, useMemo, useState} from 'react'
 import {
   Button as AriaButton,
-  Collection,
-  ListLayout,
   TreeItem as AriaTreeItem,
   TreeItemContent as AriaTreeItemContent,
+  Collection,
+  ListLayout,
   Virtualizer
 } from 'react-aria-components'
 import {Button} from '../components/Button.tsx'
@@ -31,10 +31,10 @@ import {IcRoundArrowBack} from './icons/IcRoundArrowBack.tsx'
 import {IcRoundClose} from './icons/IcRoundClose.tsx'
 import {IcRoundDescription} from './icons/IcRoundDescription.tsx'
 import {IcRoundEdit} from './icons/IcRoundEdit.tsx'
-import {IcRoundHome} from './icons/IcRoundHome.tsx'
 import {IcRoundHistory} from './icons/IcRoundHistory.tsx'
-import {IcRoundKeyboardArrowLeft} from './icons/IcRoundKeyboardArrowLeft.tsx'
+import {IcRoundHome} from './icons/IcRoundHome.tsx'
 import {IcRoundKeyboardArrowDown} from './icons/IcRoundKeyboardArrowDown.tsx'
+import {IcRoundKeyboardArrowLeft} from './icons/IcRoundKeyboardArrowLeft.tsx'
 import {IcRoundKeyboardArrowRight} from './icons/IcRoundKeyboardArrowRight.tsx'
 import {IcRoundLink} from './icons/IcRoundLink.tsx'
 import {IcRoundMoreVert} from './icons/IcRoundMoreVert.tsx'
@@ -48,18 +48,13 @@ import './Dashboard.css'
 /*  Small helpers                                                     */
 /* ------------------------------------------------------------------ */
 
-function StatusBadge({children}: {children: React.ReactNode}) {
+interface StatusBadgeProps {
+  children: React.ReactNode
+}
+
+function StatusBadge({children}: StatusBadgeProps) {
   return (
-    <span
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 6,
-        fontSize: '14px',
-        color: '#0f4424',
-        fontWeight: 600
-      }}
-    >
+    <span className="alinea-dashboard-statusBadge">
       <Icon icon={IcRoundVisibility} style={{width: 16, height: 16}} />
       {children}
     </span>
@@ -70,7 +65,12 @@ function StatusBadge({children}: {children: React.ReactNode}) {
 /*  Link field (URL with action buttons)                              */
 /* ------------------------------------------------------------------ */
 
-function LinkField({label, value}: {label: string; value: string}) {
+interface LinkFieldProps {
+  label: string
+  value: string
+}
+
+function LinkField({label, value}: LinkFieldProps) {
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 4, flex: 1}}>
       <span
@@ -317,7 +317,6 @@ export function Home() {
               </Menu>
             </div>
             <Button
-              className="alinea-dashboard-solidIconButton alinea-dashboard-searchIconButton"
               size="icon"
               appearance="outline"
               intent="secondary"
@@ -338,7 +337,6 @@ export function Home() {
         >
           <div className="alinea-dashboard-sidebarRow alinea-dashboard-sidebarSectionHeader">
             <Button
-              className="alinea-dashboard-solidIconButton alinea-dashboard-searchIconButton"
               size="icon"
               appearance="outline"
               intent="secondary"
@@ -372,7 +370,6 @@ export function Home() {
             </div>
             <DialogTrigger>
               <Button
-                className="alinea-dashboard-solidIconButton alinea-dashboard-createIconButton"
                 size="icon"
                 appearance="solid"
                 intent="primary"
@@ -397,13 +394,14 @@ export function Home() {
                       label="Slug path"
                       placeholder="my-new-page"
                     />
-                    <TextField
-                      label="Parent path"
-                      placeholder="blog"
-                    />
+                    <TextField label="Parent path" placeholder="blog" />
                   </div>
                   <div className="alinea-dashboard-createDialogActions">
-                    <Button slot="close" appearance="outline" intent="secondary">
+                    <Button
+                      slot="close"
+                      appearance="outline"
+                      intent="secondary"
+                    >
                       Cancel
                     </Button>
                     <Button slot="close">Create</Button>
@@ -436,7 +434,6 @@ export function Home() {
         {/* Top bar */}
         <header className="alinea-dashboard-header">
           <Button
-            className="alinea-dashboard-solidIconButton alinea-dashboard-searchIconButton"
             size="icon"
             appearance="outline"
             intent="secondary"
@@ -444,39 +441,38 @@ export function Home() {
           >
             <IcRoundArrowBack data-slot="icon" />
           </Button>
-          <h1
-            style={{
-              fontSize: '14px',
-              fontWeight: 600,
-              margin: 0
-            }}
-          >
+          <h1 className="alinea-dashboard-pageTitle">
             Joining the Vercel Open Source Program
           </h1>
-          <div style={{flex: 1}} />
-          <StatusBadge>Published</StatusBadge>
-          <Menu
-            popoverProps={{placement: 'bottom end'}}
-            label={
-              <Button size="icon" appearance="plain" aria-label="More options">
-                <IcRoundMoreVert data-slot="icon" />
-              </Button>
-            }
-          >
-            <MenuItem id="duplicate">Duplicate</MenuItem>
-            <MenuItem id="unpublish">Unpublish</MenuItem>
-            <MenuItem id="delete">Delete</MenuItem>
-          </Menu>
-          {isRightSidebarCollapsed ? (
-            <Button
-              size="icon"
-              appearance="plain"
-              aria-label="Expand right sidebar"
-              onPress={() => setIsRightSidebarCollapsed(false)}
+          <div className="alinea-dashboard-headerActions">
+            <StatusBadge>Published</StatusBadge>
+            <Menu
+              popoverProps={{placement: 'bottom end'}}
+              label={
+                <Button
+                  size="icon"
+                  appearance="plain"
+                  aria-label="More options"
+                >
+                  <IcRoundMoreVert data-slot="icon" />
+                </Button>
+              }
             >
-              <IcRoundKeyboardArrowLeft data-slot="icon" />
-            </Button>
-          ) : null}
+              <MenuItem id="duplicate">Duplicate</MenuItem>
+              <MenuItem id="unpublish">Unpublish</MenuItem>
+              <MenuItem id="delete">Delete</MenuItem>
+            </Menu>
+            {isRightSidebarCollapsed ? (
+              <Button
+                size="icon"
+                appearance="plain"
+                aria-label="Expand right sidebar"
+                onPress={() => setIsRightSidebarCollapsed(false)}
+              >
+                <IcRoundKeyboardArrowLeft data-slot="icon" />
+              </Button>
+            ) : null}
+          </div>
         </header>
 
         {/* Tabs */}
@@ -489,67 +485,69 @@ export function Home() {
 
             <TabPanel id="document">
               <div className="alinea-dashboard-form">
-                {/* Title & Path */}
-                <div className="alinea-dashboard-twoCol">
-                  <TextField
-                    label="Title"
-                    isRequired
-                    defaultValue="Joining the Vercel Open Source Program"
-                  />
-                  <TextField
-                    label="Path"
-                    isRequired
-                    defaultValue="vercel-open-source-program"
+                <div className="alinea-dashboard-formSection">
+                  <div className="alinea-dashboard-twoCol">
+                    <TextField
+                      label="Title"
+                      isRequired
+                      defaultValue="Joining the Vercel Open Source Program"
+                    />
+                    <TextField
+                      label="Path"
+                      isRequired
+                      defaultValue="vercel-open-source-program"
+                    />
+                  </div>
+                </div>
+
+                <div className="alinea-dashboard-formSection">
+                  <DatePicker
+                    label="Publish date"
+                    defaultValue={parseDate('2025-11-08')}
                   />
                 </div>
 
-                {/* Publish date */}
-                <DatePicker
-                  label="Publish date"
-                  defaultValue={parseDate('2025-11-08')}
-                />
-
-                {/* Author object */}
-                <div>
-                  <Label label="Author" />
-                  <Elevation style={{padding: 16}}>
-                    <div
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 16
-                      }}
-                    >
-                      <div className="alinea-dashboard-twoCol">
-                        <TextField label="Name" defaultValue="Ben Merckx" />
+                <div className="alinea-dashboard-formSection">
+                  <div className="alinea-dashboard-elevatedCard">
+                    <Label label="Author profile" />
+                    <Elevation style={{padding: 16}}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 16
+                        }}
+                      >
+                        <div className="alinea-dashboard-twoCol">
+                          <TextField label="Name" defaultValue="Ben Merckx" />
+                          <LinkField
+                            label="Url"
+                            value="https://github.com/benmerc..."
+                          />
+                        </div>
                         <LinkField
-                          label="Url"
-                          value="https://github.com/benmerc..."
+                          label="Avatar url"
+                          value="https://avatars.githubusercontent.com/u/10584189?v=4&s=48"
                         />
                       </div>
-                      <LinkField
-                        label="Avatar url"
-                        value="https://avatars.githubusercontent.com/u/10584189?v=4&s=48"
-                      />
-                    </div>
-                  </Elevation>
+                    </Elevation>
+                  </div>
                 </div>
 
-                {/* Short introduction */}
-                <TextField
-                  label="Short introduction"
-                  multiline
-                  rows={3}
-                  defaultValue="We're honored that Alinea CMS is part of the Vercel Open Source Program - Summer 2025 cohort. This recognition supports our mission to offer a clean, Git-based CMS built for Next.js."
-                />
-
-                {/* Body */}
-                <TextField
-                  label="Body"
-                  multiline
-                  rows={4}
-                  defaultValue="We are pleased to share that Alinea CMS has been selected for the Vercel Open Source Program - Summer 2025 cohort. This program supports open source maintainers with the resources, infrastructure,"
-                />
+                <div className="alinea-dashboard-formSection">
+                  <TextField
+                    label="Short introduction"
+                    multiline
+                    rows={3}
+                    defaultValue="We're honored that Alinea CMS is part of the Vercel Open Source Program - Summer 2025 cohort. This recognition supports our mission to offer a clean, Git-based CMS built for Next.js."
+                  />
+                  <TextField
+                    label="Body"
+                    multiline
+                    rows={4}
+                    defaultValue="We are pleased to share that Alinea CMS has been selected for the Vercel Open Source Program - Summer 2025 cohort. This program supports open source maintainers with the resources, infrastructure,"
+                  />
+                </div>
               </div>
             </TabPanel>
 
@@ -598,10 +596,15 @@ export function Home() {
               <TabPanel id="history">
                 <div className="alinea-dashboard-historyTimeline">
                   {historyEntries.map(entry => (
-                    <div key={entry.id} className="alinea-dashboard-historyItem">
+                    <div
+                      key={entry.id}
+                      className="alinea-dashboard-historyItem"
+                    >
                       <div className="alinea-dashboard-historyDot" />
                       <div className="alinea-dashboard-historyContent">
-                        <p className="alinea-dashboard-historyTitle">{entry.title}</p>
+                        <p className="alinea-dashboard-historyTitle">
+                          {entry.title}
+                        </p>
                         <p className="alinea-dashboard-historyMeta">
                           {entry.changedBy} - {entry.changedAt}
                         </p>

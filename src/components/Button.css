@@ -90,6 +90,21 @@
       background-color: var(--alinea-highlight-overlay);
       color: var(--alinea-highlight-background);
     }
+
+    &[data-appearance="outline"] {
+      background-color: transparent;
+      border-color: var(--alinea-border-color);
+      color: var(--alinea-text-color-base);
+    }
+
+    &[data-appearance="outline"][data-hovered] {
+      background-color: transparent;
+      color: var(--alinea-text-color);
+    }
+
+    &[data-appearance="outline"][data-pressed] {
+      background-color: transparent;
+    }
   }
 
   &[data-size="square-petite"] {

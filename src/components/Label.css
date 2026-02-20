@@ -24,7 +24,7 @@
   }
 
   .alinea-rac-Label-label {
-    color: var(--alinea-text-color);
+    color: var(--alinea-text-color-base);
     font-size: var(--alinea-font-size-base);
     font-weight: 500;
     transition: var(--alinea-transition);

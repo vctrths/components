@@ -2,6 +2,7 @@ import {type HTMLAttributes, type PropsWithChildren, useState} from 'react'
 import {Stack} from '../stories/Stack.tsx'
 import {IcRoundAccountCircle} from '../stories/icons/IcRoundAccountCircle.tsx'
 import {IcRoundArchive} from '../stories/icons/IcRoundArchive.tsx'
+import {IcRoundClose} from '../stories/icons/IcRoundClose.tsx'
 import {IcRoundHistory} from '../stories/icons/IcRoundHistory.tsx'
 import {IcRoundLanguage} from '../stories/icons/IcRoundLanguage.tsx'
 import {IcRoundRefresh} from '../stories/icons/IcRoundRefresh.tsx'
@@ -210,6 +211,58 @@ export function Icons() {
         </Button>
       </div>
     </HStack>
+  )
+}
+
+export function IconSize() {
+  return (
+    <Stack>
+      <HStack>
+        <Button size="icon">
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="outline">
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="plain">
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="active">
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+      </HStack>
+      <HStack>
+        <Button size="icon" intent="secondary">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="secondary" appearance="outline">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="secondary" appearance="plain">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="danger">
+          <IcRoundClose data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="danger" appearance="outline">
+          <IcRoundClose data-slot="icon" />
+        </Button>
+      </HStack>
+      <HStack>
+        <Button size="icon" isDisabled>
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="outline" isDisabled>
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="plain" isDisabled>
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="secondary" appearance="outline" isDisabled>
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+      </HStack>
+    </Stack>
   )
 }
 
