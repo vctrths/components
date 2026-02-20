@@ -9,17 +9,16 @@
     var(--alinea-border-color) 45%,
     transparent
   );
-  --alinea-dashboard-surface: #fff;
+  --alinea-dashboard-surface: var(--alinea-background-color);
   --alinea-dashboard-left-sidebar-surface: color-mix(
     in oklab,
-    var(--alinea-background-color) 82%,
-    white
+    var(--alinea-sidebar-background) 80%,
+    var(--alinea-background-color)
   );
   --alinea-dashboard-header-height: 56px;
   --alinea-dashboard-sidebar-padding-x: 16px;
   --alinea-dashboard-content-padding-x: 32px;
   --alinea-dashboard-content-padding-y: 28px;
-  --alinea-field-text-color: var(--alinea-gray-800);
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr) 300px;
   height: 100vh;
@@ -30,6 +29,12 @@
 
 .alinea-dashboard-story--rightCollapsed {
   grid-template-columns: 320px minmax(0, 1fr) 0;
+}
+
+:root[data-theme="dark"] .alinea-dashboard-story,
+.alinea-Viewport-is-dark .alinea-dashboard-story {
+  --alinea-dashboard-surface: var(--alinea-sidebar-background);
+  --alinea-dashboard-left-sidebar-surface: var(--alinea-background-color);
 }
 
 .alinea-dashboard-main {
@@ -257,9 +262,21 @@
 }
 
 .alinea-dashboard-rightSidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
   border-left: 0;
   min-width: 0;
   background: var(--alinea-dashboard-surface);
+}
+
+.alinea-dashboard-rightSidebar > .alinea-rac-Tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 .alinea-dashboard-rightSidebarHeader {
@@ -284,7 +301,19 @@
 }
 
 .alinea-dashboard-rightSidebarBody {
+  display: flex;
+  flex-direction: column;
+  background: var(--alinea-dashboard-surface);
+  flex: 1;
+  min-height: 0;
   padding: 16px;
+}
+
+.alinea-dashboard-rightSidebarBody .alinea-rac-TabPanel {
+  flex: 1;
+  margin-top: 0;
+  padding: 0;
+  min-height: 0;
 }
 
 .alinea-dashboard-tabLabel {
