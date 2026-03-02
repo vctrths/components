@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import "./Toolbar.css"
+import './Toolbar.css'
 import type {
   GroupProps,
   SeparatorProps,
