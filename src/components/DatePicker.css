@@ -4,7 +4,6 @@
   gap: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   padding: 8px 10px;
   background: var(--alinea-field-background);
@@ -20,7 +19,8 @@
     border-color: var(--alinea-border-color-hover);
     outline-color: var(--alinea-box-shadow-color);
   }
-  [data-open] & {
+  [data-open] &,
+  [data-focus-within] & {
     border-color: var(--alinea-highlight-border);
     outline-color: var(--alinea-highlight-overlay);
   }
@@ -34,8 +34,10 @@
     color: var(--alinea-text-color-disabled);
     opacity: 0.5;
   }
-
   .alinea-rac-DatePicker-input {
+    flex: 1;
+    min-width: 0;
+
     .alinea-rac-DatePicker-input-segment {
       padding-inline: 1px;
       transition: var(--alinea-transition);
@@ -84,12 +86,18 @@
     }
 
     &[data-hovered],
-    &[data-focus-within] {
+    &[data-focus-within],
+    &[data-focused] {
+      outline: none;
       color: var(--alinea-icon-color);
 
       &:before {
-        background-color: var(--alinea-background-color);
+        background-color: var(--alinea-border-color);
       }
+    }
+
+    [data-open] & {
+      color: var(--alinea-icon-color-active);
     }
   }
 }
