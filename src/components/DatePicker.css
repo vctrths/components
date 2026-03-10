@@ -18,6 +18,7 @@
   &[data-hovered] {
     border-color: var(--alinea-border-color-hover);
     outline-color: var(--alinea-box-shadow-color);
+    cursor: pointer;
   }
   [data-open] &,
   [data-focus-within] & {
