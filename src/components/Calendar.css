@@ -53,20 +53,28 @@
   }
 
   .alinea-rac-Calendar-grid {
+    /* border-spacing: 4px 8px; */
     border-spacing: 0 4px;
+    font-size: var(--alinea-font-size-base);
+  }
+
+  .react-aria-CalendarHeaderCell {
+    font-weight: 700;
+    opacity: 0.6;
   }
 
   .alinea-rac-Calendar-cell {
     cursor: pointer;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--alinea-border-radius);
-    font-size: var(--alinea-font-size-base);
+    font-size: calc(var(--alinea-font-size-base) + 0.1rem);
     text-align: center;
     transition: var(--alinea-transition);
+    transition: outline 0s;
 
     &[data-today] {
       position: relative;
@@ -88,8 +96,9 @@
     }
 
     &[data-focus-visible] {
+      /* outline: none; */
       outline: 2px solid var(--alinea-border-color);
-      outline-offset: 2px;
+      outline-offset: -2px;
     }
 
     &[data-selected] {
