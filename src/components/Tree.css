@@ -24,7 +24,6 @@
   /* ---- Tree item ---- */
 
   .alinea-rac-TreeItem {
-    all: unset;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -42,7 +41,6 @@
     /* Chevron */
 
     [slot="chevron"] {
-      all: unset;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -152,7 +150,6 @@
     }
 
     [slot="drag"] {
-      all: unset;
       width: 15px;
       text-align: center;
 
