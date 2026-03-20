@@ -1,0 +1,73 @@
+@import "../theme.css";
+
+.big-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.sublabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.alinea-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-left {
+  min-width: 256px;
+  height: 100%;
+}
+
+.medIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.main {
+  width: 100%;
+  border: lightgrey solid;
+  border-width: 0 1px 0 1px;
+
+  .content {
+    background-color: #f9fafb;
+    height: 100%;
+    padding: 8px 16px;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.bar {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 47px;
+  border-bottom: 1px lightgray solid;
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    height: 32px;
+  }
+  .tabs {
+    /* height: 32px; */
+  }
+}
+
+.sidebar-right {
+  min-width: 353px;
+}

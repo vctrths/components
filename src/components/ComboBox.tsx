@@ -54,10 +54,12 @@ function ComboBoxTrigger<T extends object>({
   return (
     <div className="alinea-rac-ComboboxTrigger">
       <Input className="alinea-rac-ComboboxTrigger-input" />
-      <Button className="alinea-rac-ComboboxTrigger-button">
-        <IcRoundKeyboardArrowDown className="alinea-rac-ComboboxTrigger-button-arrow" />
-      </Button>
-      {hasClear && <ComboBoxClear />}
+      <div className="alinea-rac-ComboboxTrigger-actions">
+        <Button className="alinea-rac-ComboboxTrigger-button">
+          <IcRoundKeyboardArrowDown className="alinea-rac-ComboboxTrigger-button-arrow" />
+        </Button>
+        {hasClear && <ComboBoxClear />}
+      </div>
     </div>
   )
 }
@@ -74,6 +76,7 @@ function ComboBoxPopover<T extends object>(props: ComboBoxProps<T>) {
       <ListBox
         items={props.items}
         className="alinea-rac-ComboboxPopover-listbox"
+        selectionMode={props.selectionMode}
       >
         {props.children}
       </ListBox>
@@ -83,6 +86,7 @@ function ComboBoxPopover<T extends object>(props: ComboBoxProps<T>) {
 
 function ComboBoxClear() {
   const state = useContext(ComboBoxStateContext)
+  console.log(state)
   if (!state?.inputValue) return null
   return (
     <Button
