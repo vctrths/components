@@ -126,7 +126,8 @@
   width: 100%;
 }
 
-.divider {
+.divider,
+.boxheader {
   border-bottom: solid 1px var(--figma-border-default);
   height: 40px;
   display: flex;

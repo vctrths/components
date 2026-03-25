@@ -73,13 +73,21 @@ export function Home() {
                   </TabList>
                 </Tabs>
                 <div className="divider label">
-                  <h3 className="label">Blocks</h3>{' '}
+                  <h3 className="label">Blocks</h3>
                   <h3 className="label">Fold</h3>
                 </div>
                 <div className="boxcontent">
                   <div className="inputbox">
                     <TextField label="Title" />
                     <TextField label="Path" />
+                  </div>
+
+                  <div className="contentbox">
+                    <div className="boxheader">Items</div>
+                    <div className="divider">Item</div>
+                    <div className="boxcontent">
+                      <TextField label="Text" />
+                    </div>
                   </div>
                 </div>
               </div>
