@@ -1,8 +1,12 @@
 import {useState} from 'react'
 import './Update.css'
+import {Breadcrumb} from 'react-aria-components'
 import {Button} from '../components/Button.tsx'
+import {Link} from '../components/Link.tsx'
 import {Select, SelectItem} from '../components/Select.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
+import {TextField} from '../components/TextField.tsx'
+import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
 import {IcRoundKeyboardTab} from './icons/IcRoundKeyboardTab.tsx'
 import {IcRoundSearch} from './icons/IcRoundSearch.tsx'
 
@@ -38,11 +42,49 @@ export function Home() {
           </div>
         </div>
         <div className="bar">
-          <p className="sublabel">Parent / Page</p>
+          <Breadcrumbs>
+            <Breadcrumb>
+              <Link>Parent</Link>
+            </Breadcrumb>
+            <Breadcrumb>
+              <Link>Parent</Link>
+            </Breadcrumb>
+          </Breadcrumbs>
           <p className="sublabel">draft</p>
         </div>
         <section className="content">
-          <p>test</p>
+          <div className="contentbox">
+            <Tabs variant="line" className="tabs">
+              <TabList>
+                <Tab id="document">Document</Tab>
+                <Tab id="metadata">Metadata</Tab>
+              </TabList>
+            </Tabs>
+            <div className="boxcontent">
+              <div className="inputbox">
+                <TextField label="Title" />
+                <TextField label="Path" />
+              </div>
+              <div className="contentbox">
+                <Tabs variant="line" className="tabs">
+                  <TabList>
+                    <Tab id="blocks">Blocks</Tab>
+                    <Tab id="depricated">Depricated</Tab>
+                  </TabList>
+                </Tabs>
+                <div className="divider label">
+                  <h3 className="label">Blocks</h3>{' '}
+                  <h3 className="label">Fold</h3>
+                </div>
+                <div className="boxcontent">
+                  <div className="inputbox">
+                    <TextField label="Title" />
+                    <TextField label="Path" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       {!isRightSideBarCollapse}
@@ -51,7 +93,7 @@ export function Home() {
           <Button size="icon" appearance="outline" intent="secondary">
             <IcRoundKeyboardTab className="medIcon" />
           </Button>
-          <Tabs variant="enclosed" className="tabs">
+          <Tabs variant="subtle" className="tabs">
             <TabList>
               <Tab id="history">History</Tab>
               <Tab id="preview">Preview</Tab>

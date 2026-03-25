@@ -1,11 +1,34 @@
 @import "../theme.css";
 
+:root {
+  /* Imported from Figma variables (Design system + node 2010:16598) */
+  --figma-foreground-primary: #364153;
+  --figma-foreground-muted: #6a7282;
+  --figma-foreground-subtle: #99a1af;
+  --figma-foreground-brand-default: #5573eb;
+  --figma-foreground-success: #689f38;
+
+  --figma-surface-default: #ffffff;
+  --figma-surface-muted: #f3f4f6;
+  --figma-surface-subtle: #f9fafb;
+
+  --figma-border-default: #e5e7eb;
+  --figma-border-secondary: #d1d5dc;
+
+  --figma-background-brand-subtle: #eceffd;
+  --figma-background-success-subtle: #f1f8e9;
+}
+
 .big-title {
   font-size: 1rem;
   font-weight: 700;
 }
 .sublabel {
   font-size: 0.75rem;
+  font-weight: 400;
+}
+.label {
+  font-size: 0.8125rem;
   font-weight: 400;
 }
 
@@ -35,11 +58,11 @@
 
 .main {
   width: 100%;
-  border: lightgrey solid;
+  border: var(--figma-border-default) solid;
   border-width: 0 1px 0 1px;
 
   .content {
-    background-color: #f9fafb;
+    background-color: var(--figma-surface-subtle);
     height: 100%;
     padding: 8px 16px;
     p {
@@ -55,7 +78,7 @@
   justify-content: space-between;
   align-items: center;
   height: 47px;
-  border-bottom: 1px lightgray solid;
+  border-bottom: 1px var(--figma-border-default) solid;
 
   .buttons {
     display: flex;
@@ -63,11 +86,51 @@
     gap: 12px;
     height: 32px;
   }
-  .tabs {
-    /* height: 32px; */
-  }
 }
 
 .sidebar-right {
   min-width: 353px;
+}
+
+.tabs {
+  padding: 0 !important;
+}
+
+.contentbox {
+  border: 1px solid var(--figma-border-default);
+  border-radius: 6px;
+  padding: 0 !important;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+.contentbox > .tabs .alinea-rac-Tablist {
+  padding: 0;
+}
+
+.boxcontent {
+  padding: 8px;
+  background-color: var(--figma-surface-default);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.inputbox {
+  display: flex;
+  gap: 8px;
+}
+
+.inputbox > * {
+  width: 100%;
+}
+
+.divider {
+  border-bottom: solid 1px var(--figma-border-default);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
 }
