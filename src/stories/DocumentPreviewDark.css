@@ -1,0 +1,144 @@
+@import "../theme.css";
+
+.alinea-documentPreviewDark-story {
+  --dark-bg: #1d1e2b;
+  --dark-bg-mid: #292a35;
+  --dark-border: #393a4a;
+  --dark-text: #d2d3e0;
+  --dark-text-muted: #9ea1b5;
+  --dark-text-subtle: #7f839d;
+  --dark-brand: #6782ff;
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-story {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-leftbar,
+.alinea-documentPreviewDark-story .alinea-documentPreview-middle,
+.alinea-documentPreviewDark-story .alinea-documentPreview-rightbar {
+  background: var(--dark-bg);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-leftbar,
+.alinea-documentPreviewDark-story .alinea-documentPreview-middle {
+  border-right-color: var(--dark-border);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-leftbarTop,
+.alinea-documentPreviewDark-story .alinea-documentPreview-leftbarFilter,
+.alinea-documentPreviewDark-story .alinea-documentPreview-topbar,
+.alinea-documentPreviewDark-story .alinea-documentPreview-rightbarTop,
+.alinea-documentPreviewDark-story .alinea-documentPreview-rightbarTabs {
+  background: var(--dark-bg);
+  border-bottom-color: var(--dark-border);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-content,
+.alinea-documentPreviewDark-story .alinea-documentPreview-contentBox {
+  background: var(--dark-bg);
+  border-color: var(--dark-border);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-statusbar {
+  background: #143b36;
+  border-bottom-color: #2d5646;
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-published {
+  color: #56b889;
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-topbar h1,
+.alinea-documentPreviewDark-story .alinea-documentPreview-brandLabel,
+.alinea-documentPreviewDark-story .alinea-documentPreview-navLink,
+.alinea-documentPreviewDark-story .alinea-documentPreview-themeRow,
+.alinea-documentPreviewDark-story .alinea-documentPreview-logoutRow,
+.alinea-documentPreviewDark-story .alinea-documentPreview-profileRow {
+  color: var(--dark-text);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-leftbarBottom,
+.alinea-documentPreviewDark-story .alinea-documentPreview-profileRow {
+  border-top-color: var(--dark-border);
+}
+
+.alinea-documentPreviewDark-story .alinea-documentPreview-settingsCard,
+.alinea-documentPreviewDark-story .alinea-documentPreview-themeRow,
+.alinea-documentPreviewDark-story .alinea-documentPreview-logoutRow {
+  border-color: var(--dark-border);
+  background: var(--dark-bg);
+}
+
+.alinea-documentPreviewDark-story
+  .alinea-documentPreview-navLink[data-hovered] {
+  background: var(--dark-bg-mid);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Button {
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Button[data-appearance="solid"] {
+  background: var(--dark-brand);
+  border-color: var(--dark-brand);
+  color: #ffffff;
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Button[data-appearance="plain"] {
+  background: transparent;
+  border-color: transparent;
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-SelectTrigger-button,
+.alinea-documentPreviewDark-story .alinea-rac-TextField-input {
+  background: var(--dark-bg-mid);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-TextField-input::placeholder {
+  color: var(--dark-text-subtle);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Label-label,
+.alinea-documentPreviewDark-story .alinea-rac-Breadcrumb,
+.alinea-documentPreviewDark-story .alinea-rac-Link {
+  color: var(--dark-text-muted);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Tablist,
+.alinea-documentPreviewDark-story .alinea-rac-TabPanel {
+  background: var(--dark-bg);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Tablist-list {
+  border-bottom-color: var(--dark-border);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Tab {
+  color: var(--dark-text-subtle);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Tab[data-selected] {
+  color: var(--dark-brand);
+}
+
+.alinea-documentPreviewDark-story .alinea-rac-Tab[data-selected]::before {
+  background: var(--dark-brand);
+}
+
+.alinea-documentPreviewDark-story
+  .alinea-documentPreview-exampleBlocks.alinea-update-exampleBlocks {
+  --example-bg-default: #26293d;
+  --example-bg-muted: #1d1e2b;
+  --example-border: #393a4a;
+  --example-border-strong: #4a4d64;
+  --example-text-primary: #d2d3e0;
+  --example-text-muted: #9ea1b5;
+  --example-text-subtle: #7f839d;
+  --example-brand: #6782ff;
+  --example-brand-subtle: #2c3359;
+}

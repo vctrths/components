@@ -7,9 +7,10 @@ import {Tab, TabList, TabPanel, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
 import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
 import {ExampleBlocks} from './ExampleBlocks.tsx'
+import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
 import {IcRoundArrowBack} from './icons/IcRoundArrowBack.tsx'
 import {IcRoundArrowForward} from './icons/IcRoundArrowForward.tsx'
-import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
+import {IcRoundDescription} from './icons/IcRoundDescription.tsx'
 import {IcRoundHistory} from './icons/IcRoundHistory.tsx'
 import {IcRoundKeyboardArrowDown} from './icons/IcRoundKeyboardArrowDown.tsx'
 import {IcRoundKeyboardTab} from './icons/IcRoundKeyboardTab.tsx'
@@ -17,6 +18,7 @@ import {IcRoundMoreVert} from './icons/IcRoundMoreVert.tsx'
 import {IcRoundOpenInNew} from './icons/IcRoundOpenInNew.tsx'
 import {IcRoundRefresh} from './icons/IcRoundRefresh.tsx'
 import {IcRoundSearch} from './icons/IcRoundSearch.tsx'
+import {IcRoundViewModule} from './icons/IcRoundViewModule.tsx'
 import {IcRoundVisibility} from './icons/IcRoundVisibility.tsx'
 import './DocumentPreview.css'
 
@@ -153,8 +155,14 @@ function DocumentPreviewMiddle() {
         <div className="alinea-documentPreview-contentBox">
           <Tabs variant="line" defaultSelectedKey="document">
             <TabList>
-              <Tab id="document">Document</Tab>
-              <Tab id="metadata">Metadata</Tab>
+              <Tab id="document">
+                <IcRoundDescription className="alinea-documentPreview-miniIcon" />
+                Document
+              </Tab>
+              <Tab id="metadata">
+                <IcRoundViewModule className="alinea-documentPreview-miniIcon" />
+                Metadata
+              </Tab>
             </TabList>
 
             <TabPanel id="document">
@@ -168,7 +176,10 @@ function DocumentPreviewMiddle() {
             <TabPanel id="metadata">
               <div className="alinea-documentPreview-metadataFields">
                 <TextField label="SEO title" placeholder="Placeholder text" />
-                <TextField label="Canonical url" placeholder="Placeholder text" />
+                <TextField
+                  label="Canonical url"
+                  placeholder="Placeholder text"
+                />
               </div>
             </TabPanel>
           </Tabs>

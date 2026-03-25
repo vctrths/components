@@ -23,15 +23,20 @@
 }
 
 .alinea-update-exampleBlocks-tabs .alinea-rac-Tablist {
-  padding: 0;
+  padding: 0 8px;
   background: var(--example-bg-muted);
+  border-bottom: 1px solid var(--example-border);
 }
 
 .alinea-update-exampleBlocks-tabs .alinea-rac-Tablist-list {
-  border-bottom-color: var(--example-border);
+  border-bottom: 0;
+  background: var(--example-bg-muted);
 }
 
 .alinea-update-exampleBlocks-tabs .alinea-rac-Tab {
+  padding: 11px 8px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--example-text-subtle);
 }
 
@@ -77,6 +82,7 @@
   background: var(--example-bg-muted);
   border-bottom: 1px solid var(--example-border);
   color: var(--example-text-primary);
+  padding: 0 8px;
 }
 
 .alinea-update-exampleBlocks-rootItem,
@@ -106,7 +112,7 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .alinea-update-exampleBlocks-fields {
@@ -124,7 +130,13 @@
   font-size: 13px;
 }
 
+.alinea-update-exampleBlocks-input .alinea-rac-Label-header {
+  padding-bottom: 6px;
+}
+
 .alinea-update-exampleBlocks-input .alinea-rac-TextField-input {
+  height: 32px;
+  padding: 8px 10px;
   border-color: var(--example-border-strong);
   background: var(--example-bg-default);
   color: var(--example-text-primary);
@@ -159,9 +171,36 @@
 
 .alinea-update-exampleBlocks-controls .alinea-rac-Button {
   color: var(--example-text-muted);
+  min-width: 12px;
+  min-height: 12px;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.alinea-update-exampleBlocks-sectionRow .alinea-rac-Button {
+  color: var(--example-text-muted);
 }
 
 .alinea-update-exampleBlocks-controls .alinea-rac-Button[data-hovered] {
   background: var(--example-brand-subtle);
   color: var(--example-brand);
+}
+
+.alinea-update-exampleBlocks-foldButton {
+  min-height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--example-text-muted);
+  gap: 6px;
+}
+
+.alinea-update-exampleBlocks-foldButton .alinea-rac-Icon,
+.alinea-update-exampleBlocks-foldButton [data-slot="icon"] {
+  width: 12px;
+  height: 12px;
 }

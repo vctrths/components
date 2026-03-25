@@ -202,6 +202,7 @@
   overflow: auto;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .alinea-documentPreview-contentBox {
@@ -215,6 +216,7 @@
 
 .alinea-documentPreview-contentBox .alinea-rac-Tablist {
   padding: 0;
+  background: var(--doc-bg-muted);
 }
 
 .alinea-documentPreview-contentBox .alinea-rac-Tablist-list {
@@ -223,6 +225,9 @@
 }
 
 .alinea-documentPreview-contentBox .alinea-rac-Tab {
+  padding: 12px 8px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--doc-text-subtle);
 }
 
@@ -248,7 +253,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .alinea-documentPreview-exampleBlocks {

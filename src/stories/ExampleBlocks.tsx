@@ -118,7 +118,11 @@ function NestedItems({itemCount}: NestedItemsProps) {
       <ListItem
         className="alinea-update-exampleBlocks-sectionRow"
         trailing={
-          <Button appearance="plain" size="small">
+          <Button
+            appearance="plain"
+            size="small"
+            className="alinea-update-exampleBlocks-foldButton"
+          >
             Fold
             <IcRoundKeyboardArrowDown data-slot="icon" />
           </Button>
@@ -169,12 +173,13 @@ export function ExampleBlocks({className}: ExampleBlocksProps) {
                 <Button
                   appearance="plain"
                   size="small"
+                  className="alinea-update-exampleBlocks-foldButton"
                   onPress={() => setIsBlocksFolded(prev => !prev)}
                   aria-label={
                     isBlocksFolded ? 'Unfold all blocks' : 'Fold all blocks'
                   }
                 >
-                  {isBlocksFolded ? 'Unfold' : 'Fold'}
+                  Fold
                   <IcRoundKeyboardArrowDown data-slot="icon" />
                 </Button>
               }
