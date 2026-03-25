@@ -1,0 +1,167 @@
+@import "../theme.css";
+
+.alinea-update-exampleBlocks {
+  --example-bg-default: #ffffff;
+  --example-bg-muted: #f3f4f6;
+  --example-border: #e5e7eb;
+  --example-border-strong: #d1d5dc;
+  --example-text-primary: #364153;
+  --example-text-muted: #6a7282;
+  --example-text-subtle: #99a1af;
+  --example-brand: #5573eb;
+  --example-brand-subtle: #eceffd;
+  border: 1px solid var(--alinea-border-color);
+  border-radius: 6px;
+  overflow: clip;
+  width: 100%;
+  background: var(--example-bg-muted);
+  color: var(--example-text-primary);
+}
+
+.alinea-update-exampleBlocks-tabs {
+  display: block;
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tablist {
+  padding: 0;
+  background: var(--example-bg-muted);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tablist-list {
+  border-bottom-color: var(--example-border);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tab {
+  color: var(--example-text-subtle);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tab[data-hovered] {
+  color: var(--example-text-muted);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tab[data-selected] {
+  color: var(--example-brand);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-Tab[data-selected]::before {
+  background: var(--example-brand);
+}
+
+.alinea-update-exampleBlocks-tabs .alinea-rac-TabPanel {
+  margin: 0;
+  padding: 0;
+}
+
+.alinea-update-exampleBlocks-mainList,
+.alinea-update-exampleBlocks-blockList,
+.alinea-update-exampleBlocks-nestedList {
+  border: 0;
+  border-radius: 0;
+  background: var(--example-bg-muted);
+}
+
+.alinea-update-exampleBlocks-mainList
+  > .alinea-rac-ListItem
+  + .alinea-rac-ListItem,
+.alinea-update-exampleBlocks-blockList
+  > .alinea-rac-ListItem
+  + .alinea-rac-ListItem,
+.alinea-update-exampleBlocks-nestedList
+  > .alinea-rac-ListItem
+  + .alinea-rac-ListItem {
+  box-shadow: none;
+}
+
+.alinea-update-exampleBlocks-sectionRow > .alinea-rac-ListItem-header {
+  height: 40px;
+  background: var(--example-bg-muted);
+  border-bottom: 1px solid var(--example-border);
+  color: var(--example-text-primary);
+}
+
+.alinea-update-exampleBlocks-rootItem,
+.alinea-update-exampleBlocks-nestedItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.alinea-update-exampleBlocks-blockRow > .alinea-rac-ListItem-header {
+  height: 40px;
+  border-top: 1px solid var(--example-border);
+  border-bottom: 1px solid var(--example-border);
+  background: var(--example-bg-muted);
+  padding: 0 8px;
+  color: var(--example-text-primary);
+}
+
+.alinea-update-exampleBlocks-controls,
+.alinea-update-exampleBlocks-foldControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alinea-update-exampleBlocks-content {
+  background: var(--example-bg-default);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alinea-update-exampleBlocks-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alinea-update-exampleBlocks-input {
+  width: 100%;
+}
+
+.alinea-update-exampleBlocks-input .alinea-rac-Label-label {
+  color: var(--example-text-muted);
+  font-size: 13px;
+}
+
+.alinea-update-exampleBlocks-input .alinea-rac-TextField-input {
+  border-color: var(--example-border-strong);
+  background: var(--example-bg-default);
+  color: var(--example-text-primary);
+}
+
+.alinea-update-exampleBlocks-input .alinea-rac-TextField-input::placeholder {
+  color: var(--example-text-subtle);
+}
+
+.alinea-update-exampleBlocks-input .alinea-rac-TextField-input[data-focused] {
+  border-color: var(--example-brand);
+  outline-color: color-mix(in oklab, var(--example-brand) 18%, transparent);
+}
+
+.alinea-update-exampleBlocks-nestedList {
+  border: 1px solid var(--example-border);
+  border-radius: 6px;
+  overflow: clip;
+  background: var(--example-bg-muted);
+}
+
+.alinea-update-exampleBlocks-emptyState > .alinea-rac-ListItem-header {
+  height: 40px;
+  color: var(--example-text-subtle);
+}
+
+.alinea-update-exampleBlocks-smallIcon {
+  width: 12px;
+  height: 12px;
+  color: var(--example-text-primary);
+}
+
+.alinea-update-exampleBlocks-controls .alinea-rac-Button {
+  color: var(--example-text-muted);
+}
+
+.alinea-update-exampleBlocks-controls .alinea-rac-Button[data-hovered] {
+  background: var(--example-brand-subtle);
+  color: var(--example-brand);
+}

@@ -1,8 +1,12 @@
 import {useState} from 'react'
 import './Update.css'
+import {Breadcrumb} from 'react-aria-components'
 import {Button} from '../components/Button.tsx'
+import {Link} from '../components/Link.tsx'
 import {Select, SelectItem} from '../components/Select.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
+import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
+import {ExampleBlocks} from './ExampleBlocks.tsx'
 import {IcRoundKeyboardTab} from './icons/IcRoundKeyboardTab.tsx'
 import {IcRoundSearch} from './icons/IcRoundSearch.tsx'
 
@@ -38,11 +42,21 @@ export function Home() {
           </div>
         </div>
         <div className="bar">
-          <p className="sublabel">Parent / Page</p>
+          <Breadcrumbs>
+            <Breadcrumb>
+              <Link>Root</Link>
+            </Breadcrumb>
+            <Breadcrumb>
+              <Link>Parent</Link>
+            </Breadcrumb>
+            <Breadcrumb>
+              <Link>Page</Link>
+            </Breadcrumb>
+          </Breadcrumbs>
           <p className="sublabel">draft</p>
         </div>
         <section className="content">
-          <p>test</p>
+          <ExampleBlocks />
         </section>
       </main>
       {!isRightSideBarCollapse}
@@ -51,7 +65,7 @@ export function Home() {
           <Button size="icon" appearance="outline" intent="secondary">
             <IcRoundKeyboardTab className="medIcon" />
           </Button>
-          <Tabs variant="enclosed" className="tabs">
+          <Tabs variant="subtle" className="tabs">
             <TabList>
               <Tab id="history">History</Tab>
               <Tab id="preview">Preview</Tab>

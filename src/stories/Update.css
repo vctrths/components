@@ -35,7 +35,7 @@
 
 .main {
   width: 100%;
-  border: lightgrey solid;
+  border: #e5e7eb solid;
   border-width: 0 1px 0 1px;
 
   .content {
@@ -55,7 +55,7 @@
   justify-content: space-between;
   align-items: center;
   height: 47px;
-  border-bottom: 1px lightgray solid;
+  border-bottom: 1px #e5e7eb solid;
 
   .buttons {
     display: flex;
@@ -63,9 +63,9 @@
     gap: 12px;
     height: 32px;
   }
-  .tabs {
-    /* height: 32px; */
-  }
+}
+.bar + .bar {
+  border-top: none;
 }
 
 .sidebar-right {
