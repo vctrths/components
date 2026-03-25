@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import {useState} from 'react'
 import {Button} from '../components/Button.tsx'
 import {Icon} from '../components/Icon.tsx'
 import {List, ListItem} from '../components/List.tsx'
@@ -143,6 +144,8 @@ function NestedItems({itemCount}: NestedItemsProps) {
 }
 
 export function ExampleBlocks({className}: ExampleBlocksProps) {
+  const [isBlocksFolded, setIsBlocksFolded] = useState(false)
+
   return (
     <div
       className={clsx('alinea-update-exampleBlocks', className)}
@@ -163,8 +166,15 @@ export function ExampleBlocks({className}: ExampleBlocksProps) {
             <ListItem
               className="alinea-update-exampleBlocks-sectionRow"
               trailing={
-                <Button appearance="plain" size="small">
-                  Fold
+                <Button
+                  appearance="plain"
+                  size="small"
+                  onPress={() => setIsBlocksFolded(prev => !prev)}
+                  aria-label={
+                    isBlocksFolded ? 'Unfold all blocks' : 'Fold all blocks'
+                  }
+                >
+                  {isBlocksFolded ? 'Unfold' : 'Fold'}
                   <IcRoundKeyboardArrowDown data-slot="icon" />
                 </Button>
               }
@@ -182,16 +192,18 @@ export function ExampleBlocks({className}: ExampleBlocksProps) {
                     title={block.kind === 'text' ? 'Text' : 'Item'}
                   />
                 </List>
-                <div className="alinea-update-exampleBlocks-content">
-                  {block.withNestedItems ? (
-                    <TextInputRows withDescription />
-                  ) : (
-                    <TextInputRows />
-                  )}
-                  {block.withNestedItems && block.nestedItemCount ? (
-                    <NestedItems itemCount={block.nestedItemCount} />
-                  ) : null}
-                </div>
+                {!isBlocksFolded ? (
+                  <div className="alinea-update-exampleBlocks-content">
+                    {block.withNestedItems ? (
+                      <TextInputRows withDescription />
+                    ) : (
+                      <TextInputRows />
+                    )}
+                    {block.withNestedItems && block.nestedItemCount ? (
+                      <NestedItems itemCount={block.nestedItemCount} />
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
             ))}
           </List>
