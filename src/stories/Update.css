@@ -7,6 +7,7 @@
   --figma-foreground-subtle: #99a1af;
   --figma-foreground-brand-default: #5573eb;
   --figma-foreground-success: #689f38;
+  --figma-foreground-warning: #f57c00;
 
   --figma-surface-default: #ffffff;
   --figma-surface-muted: #f3f4f6;
@@ -17,6 +18,9 @@
 
   --figma-background-brand-subtle: #eceffd;
   --figma-background-success-subtle: #f1f8e9;
+  --figma-background-success-default: #aed581;
+  --figma-background-warning-subtle: #fff3e0;
+  --figma-background-warning-default: #ffb74d;
 }
 
 .big-title {
@@ -29,7 +33,7 @@
 }
 .label {
   font-size: 0.8125rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .alinea-view {
@@ -88,6 +92,51 @@
   }
 }
 
+.topbar-published {
+  background-color: var(--figma-background-success-subtle);
+  border-bottom-color: var(--figma-background-success-default);
+  height: 48px;
+}
+
+.topbar-published .react-aria-Breadcrumbs {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.topbar-published .react-aria-Breadcrumb:not(:last-child)::after {
+  content: "/";
+  padding: 0 6px;
+  color: var(--figma-background-success-default);
+}
+
+.topbar-published .alinea-rac-Link {
+  color: var(--figma-foreground-success);
+  text-decoration: none;
+}
+
+.topbar-published .alinea-rac-Link[data-hovered] {
+  color: var(--figma-foreground-success);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.published-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background-color: var(--figma-background-success-subtle);
+  color: var(--figma-foreground-success);
+}
+
+.published-badge .sublabel {
+  color: var(--figma-foreground-success);
+  font-size: 12px;
+  line-height: 1;
+  text-transform: none;
+}
+
 .sidebar-right {
   min-width: 353px;
 }
@@ -134,4 +183,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 8px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  gap: 6px;
+}
+
+.previewcontrols {
+  display: flex;
+  gap: 8px;
+}
+
+.dividerlabel {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

@@ -3,7 +3,10 @@ import {Stack} from '../stories/Stack.tsx'
 import {IcRoundAccountCircle} from '../stories/icons/IcRoundAccountCircle.tsx'
 import {IcRoundArchive} from '../stories/icons/IcRoundArchive.tsx'
 import {IcRoundClose} from '../stories/icons/IcRoundClose.tsx'
+import {IcRoundDescription} from '../stories/icons/IcRoundDescription.tsx'
 import {IcRoundHistory} from '../stories/icons/IcRoundHistory.tsx'
+import {IcRoundKeyboardArrowDown} from '../stories/icons/IcRoundKeyboardArrowDown.tsx'
+import {IcRoundKeyboardArrowUp} from '../stories/icons/IcRoundKeyboardArrowUp.tsx'
 import {IcRoundLanguage} from '../stories/icons/IcRoundLanguage.tsx'
 import {IcRoundRefresh} from '../stories/icons/IcRoundRefresh.tsx'
 import {IcRoundSearch} from '../stories/icons/IcRoundSearch.tsx'
@@ -262,6 +265,35 @@ export function IconSize() {
           <IcRoundSearch data-slot="icon" />
         </Button>
       </HStack>
+    </Stack>
+  )
+}
+
+export function LinkStyle() {
+  return (
+    <Stack style={{maxWidth: 130}}>
+      <Button appearance="link" intent="secondary">
+        <>
+          <span style={{display: 'inline-flex', alignItems: 'center', gap: 8}}>
+            <IcRoundDescription data-slot="icon" />
+            Label
+          </span>
+          <span data-slot="trailing">
+            <IcRoundKeyboardArrowDown data-slot="icon" />
+          </span>
+        </>
+      </Button>
+      <Button appearance="link" intent="secondary" isActive>
+        <>
+          <span style={{display: 'inline-flex', alignItems: 'center', gap: 8}}>
+            <IcRoundDescription data-slot="icon" />
+            Label
+          </span>
+          <span data-slot="trailing">
+            <IcRoundKeyboardArrowUp data-slot="icon" />
+          </span>
+        </>
+      </Button>
     </Stack>
   )
 }

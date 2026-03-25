@@ -324,4 +324,55 @@
     --alinea-button-hovered: transparent;
     --alinea-button-pressed: transparent;
   }
+
+  &[data-appearance="link"] {
+    --alinea-button-color: var(--alinea-gray-700);
+    --alinea-button-bg: transparent;
+    --alinea-button-border: transparent;
+    --alinea-button-hovered: var(--alinea-gray-100);
+    --alinea-button-pressed: var(--alinea-gray-100);
+
+    min-height: 32px;
+    padding: 8px;
+    border-radius: 6px;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    justify-content: space-between;
+    width: 100%;
+
+    [data-slot="icon"] {
+      font-size: 16px;
+    }
+
+    [data-slot="trailing"] {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--alinea-gray-600);
+    }
+
+    &[data-hovered],
+    &[data-pressed] {
+      --alinea-button-bg: var(--alinea-button-hovered);
+    }
+
+    &[data-active] {
+      --alinea-button-bg: var(--alinea-button-hovered);
+
+      [data-slot="trailing"] {
+        background-color: var(--alinea-gray-700);
+        color: var(--alinea-gray-50);
+      }
+    }
+
+    &[data-disabled] {
+      --alinea-button-color: var(--alinea-text-color-disabled);
+      --alinea-button-bg: transparent;
+    }
+  }
 }
