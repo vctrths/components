@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import {
   type ComponentType,
-  ReactElement,
+  type ReactElement,
   type SVGProps,
   cloneElement,
   isValidElement
@@ -27,6 +27,7 @@ export function Icon({
     'aria-label': ariaLabel,
     'aria-hidden': ariaLabel ? ariaHidden || undefined : true,
     role: 'img',
-    className: clsx('alinea-rac-Icon', props.className)
+    className: clsx('alinea-rac-Icon', props.className),
+    ...props
   })
 }

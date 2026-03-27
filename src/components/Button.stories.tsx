@@ -165,15 +165,8 @@ export function Icons() {
       <Button size="square-petite" appearance="plain" intent="secondary">
         <IcRoundRefresh data-slot="icon" />
       </Button>
-      <Button onPress={handlePress}>
-        <>
-          {isLoading ? (
-            <ProgressCircle isIndeterminate aria-label="Refreshing..." />
-          ) : (
-            <IcRoundRefresh data-slot="icon" />
-          )}
-          {isLoading ? 'Refreshing...' : 'Refresh'}
-        </>
+      <Button isPending={isLoading} icon={IcRoundRefresh} onPress={handlePress}>
+        {isLoading ? 'Refreshing...' : 'Refresh'}
       </Button>
       <Button onPress={handlePress}>
         <>
