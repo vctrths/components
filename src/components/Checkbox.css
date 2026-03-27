@@ -3,7 +3,7 @@
 .alinea-rac-Checkbox {
   --alinea-selected-color: var(--alinea-highlight-background);
   --alinea-checkmark-color: var(--alinea-highlight-foreground);
-
+  position: relative;
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;
