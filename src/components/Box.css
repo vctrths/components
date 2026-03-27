@@ -1,4 +1,4 @@
-.contentbox {
+.alinea-rac-Box {
   border: 1px solid var(--figma-border-default);
   border-radius: 6px;
   padding: 0 !important;
@@ -6,6 +6,41 @@
   overflow: hidden;
 }
 
-.contentbox > .tabs .alinea-rac-Tablist {
+.alinea-rac-Box > .tabs .alinea-rac-Tablist {
   padding: 0;
+}
+
+.alinea-rac-BoxRow {
+  border-bottom: solid 1px var(--figma-border-default);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  &.alinea-rac-BoxRow-start {
+    justify-content: start;
+  }
+  &.alinea-rac-BoxRow-middle {
+    justify-content: center;
+  }
+  &.alinea-rac-BoxRow-end {
+    justify-content: end;
+  }
+}
+
+:not(.alinea-rac-BoxRow, .alinea-rac-Tablist) + .alinea-rac-BoxRow {
+  border-top: solid 1px var(--figma-border-default);
+}
+
+.alinea-rac-BoxRow:last-child {
+  border-bottom: none;
+}
+
+.alinea-rac-BoxContent {
+  padding: 12px;
+  background-color: var(--figma-surface-default);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
 }

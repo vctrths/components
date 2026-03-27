@@ -1,8 +1,7 @@
 import './Update.css'
+import type {ReactNode} from 'react'
 import {Breadcrumb} from 'react-aria-components'
-import {Box} from '../components/Box.tsx'
-import {BoxContent} from '../components/BoxContent.tsx'
-import {BoxRow} from '../components/BoxRow.tsx'
+import {Box, BoxContent, BoxRow} from '../components/Box.tsx'
 import {Button} from '../components/Button.tsx'
 import {LeftBar} from '../components/LeftBar.tsx'
 import {Link} from '../components/Link.tsx'
@@ -10,43 +9,146 @@ import {RightBar} from '../components/RightBar.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
 import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
+import {IcRoundAdd} from './icons/IcRoundAdd.tsx'
 import {IcRoundClose} from './icons/IcRoundClose.tsx'
+import {IcRoundEdit} from './icons/IcRoundEdit.tsx'
+import {IcRoundLaunch} from './icons/IcRoundLaunch.tsx'
+import {IcRoundLink} from './icons/IcRoundLink.tsx'
 import {IcRoundRemoveRedEye} from './icons/IcRoundRemoveRedEye.tsx'
 import {IcRoundSettings} from './icons/IcRoundSettings.tsx'
-import {IcRoundTextFields} from './icons/IcRoundTextFields.tsx'
 import {IcRoundTextSnippet} from './icons/IcRoundTextSnippet.tsx'
 import {IcRoundUnfoldMore} from './icons/IcRoundUnfoldMore.tsx'
+
+function FoldControl() {
+  return (
+    <Button className="boxrow-fold" appearance="plain">
+      <h3 className="label">Fold</h3>
+      <IcRoundUnfoldMore />
+    </Button>
+  )
+}
+
+function Settings() {
+  return (
+    <div>
+      <Button size="icon" appearance="outline" intent="secondary">
+        <IcRoundSettings />
+      </Button>
+      <Button size="icon" appearance="outline" intent="secondary">
+        <IcRoundClose />
+      </Button>
+    </div>
+  )
+}
+
+interface RowProps {
+  label?: string
+  icon?: ReactNode
+  variant: 'fold' | 'settings'
+}
+
+function RowComp({label, icon, variant}: RowProps) {
+  const Action = variant === 'fold' ? FoldControl : Settings
+
+  return (
+    <BoxRow>
+      <div className="boxrow-label">
+        {icon}
+        <h3 className="label">{label}</h3>
+      </div>
+      <Action />
+    </BoxRow>
+  )
+}
+
+function Bar() {
+  return (
+    <>
+      <div className="bar">
+        <h1 className="big-title">
+          Flanders AI Conference @Wintercircus Gent MEI 2025
+        </h1>
+        <div className="buttons">
+          <Button appearance="solid">Publish</Button>
+          <Button appearance="solid" intent="secondary">
+            Save
+          </Button>
+        </div>
+      </div>
+      <div className="bar topbar-published">
+        <Breadcrumbs>
+          <Breadcrumb>
+            <Link>Pages</Link>
+          </Breadcrumb>
+          <Breadcrumb>
+            <Link>Parent</Link>
+          </Breadcrumb>
+        </Breadcrumbs>
+        <div className="published-badge">
+          <IcRoundRemoveRedEye />
+          <p className="sublabel">Published</p>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function TextBlock() {
+  return (
+    <>
+      <RowComp variant="settings" label="Text" />
+      <BoxContent>
+        <TextField label="Title" placeholder="Placeholder title" />
+        <Box>
+          <RowComp variant="fold" label="Item" icon={<IcRoundTextSnippet />} />
+          <BoxContent>
+            <TextField label="Text" placeholder="Placeholder text" />
+          </BoxContent>
+        </Box>
+      </BoxContent>
+    </>
+  )
+}
+
+function LinkBlock() {
+  return (
+    <>
+      <RowComp variant="settings" label="Link" />
+      <BoxContent>
+        <Box>
+          <BoxRow position="middle">
+            <IcRoundAdd />
+            <h3 className="sublabel">page link</h3>
+          </BoxRow>
+          <BoxRow>
+            <div className="boxrow-label">
+              <IcRoundLink />
+              <h3 className="sublabel">Content page</h3>
+            </div>
+            <div className="boxrow-label">
+              <Button size="icon" appearance="outline" intent="secondary">
+                <IcRoundLaunch />
+              </Button>
+              <Button size="icon" appearance="outline" intent="secondary">
+                <IcRoundEdit />
+              </Button>
+              <Button size="icon" appearance="outline" intent="secondary">
+                <IcRoundClose />
+              </Button>
+            </div>
+          </BoxRow>
+        </Box>
+      </BoxContent>
+    </>
+  )
+}
 
 export function Home() {
   return (
     <div className="alinea-view">
       <LeftBar />
       <main className="main">
-        <div className="bar">
-          <h1 className="big-title">
-            Flanders AI Conference @Wintercircus Gent MEI 2025
-          </h1>
-          <div className="buttons">
-            <Button appearance="solid">Publish</Button>
-            <Button appearance="solid" intent="secondary">
-              Save
-            </Button>
-          </div>
-        </div>
-        <div className="bar topbar-published">
-          <Breadcrumbs>
-            <Breadcrumb>
-              <Link>Pages</Link>
-            </Breadcrumb>
-            <Breadcrumb>
-              <Link>Parent</Link>
-            </Breadcrumb>
-          </Breadcrumbs>
-          <div className="published-badge">
-            <IcRoundRemoveRedEye />
-            <p className="sublabel">Published</p>
-          </div>
-        </div>
+        <Bar />
         <section className="content">
           <Box>
             <Tabs variant="line" className="tabs">
@@ -57,50 +159,20 @@ export function Home() {
             </Tabs>
             <BoxContent>
               <div className="inputbox">
-                <TextField label="Title" placeholder="Placeholder title" />
-                <TextField label="Path" placeholder="Placeholder path" />
+                <TextField label="Title" value="Contentpage" isRequired />
+                <TextField label="Path" value="contentpage" isRequired />
               </div>
               <Box>
                 <Tabs variant="line" className="tabs">
                   <TabList>
                     <Tab id="blocks">Blocks</Tab>
-                    <Tab id="depricated">Depricated</Tab>
+                    <Tab id="depricated">Deprecated</Tab>
                   </TabList>
                 </Tabs>
-                <BoxRow label="Blocks">
-                  <h3 className="label">Fold</h3>
-                  <IcRoundUnfoldMore />
-                </BoxRow>
-                <BoxRow label="Text" icon={<IcRoundTextFields />}>
-                  <Button size="icon" appearance="plain" intent="secondary">
-                    <IcRoundSettings />
-                  </Button>
-                  <Button size="icon" appearance="plain" intent="secondary">
-                    <IcRoundClose />
-                  </Button>
-                </BoxRow>
-                <BoxContent>
-                  <div className="inputbox">
-                    <TextField label="Title" placeholder="Placeholder title" />
-                  </div>
-                  <Box>
-                    <BoxRow label="Items">
-                      <h3 className="label">Fold</h3>
-                      <IcRoundUnfoldMore />
-                    </BoxRow>
-                    <BoxRow label="Item" icon={<IcRoundTextSnippet />}>
-                      <Button size="icon" appearance="plain" intent="secondary">
-                        <IcRoundSettings />
-                      </Button>
-                      <Button size="icon" appearance="plain" intent="secondary">
-                        <IcRoundClose />
-                      </Button>
-                    </BoxRow>
-                    <BoxContent>
-                      <TextField label="Text" placeholder="Placeholder text" />
-                    </BoxContent>
-                  </Box>
-                </BoxContent>
+                <RowComp variant="fold" label="Blocks" />
+                <TextBlock />
+                <TextBlock />
+                <LinkBlock />
               </Box>
             </BoxContent>
           </Box>
