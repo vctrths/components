@@ -1,0 +1,8 @@
+.boxcontent {
+  padding: 8px;
+  background-color: var(--figma-surface-default);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}

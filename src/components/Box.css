@@ -1,0 +1,11 @@
+.contentbox {
+  border: 1px solid var(--figma-border-default);
+  border-radius: 6px;
+  padding: 0 !important;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+.contentbox > .tabs .alinea-rac-Tablist {
+  padding: 0;
+}

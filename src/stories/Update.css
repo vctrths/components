@@ -44,16 +44,6 @@
   width: 100%;
 }
 
-.sidebar-left {
-  min-width: 256px;
-  height: 100%;
-}
-
-.medIcon {
-  width: 16px;
-  height: 16px;
-}
-
 .iconButton {
   width: 32px;
   height: 32px;
@@ -95,7 +85,6 @@
 .topbar-published {
   background-color: var(--figma-background-success-subtle);
   border-bottom-color: var(--figma-background-success-default);
-  height: 48px;
 }
 
 .topbar-published .react-aria-Breadcrumbs {
@@ -137,33 +126,8 @@
   text-transform: none;
 }
 
-.sidebar-right {
-  min-width: 353px;
-}
-
 .tabs {
   padding: 0 !important;
-}
-
-.contentbox {
-  border: 1px solid var(--figma-border-default);
-  border-radius: 6px;
-  padding: 0 !important;
-  background-color: #f3f4f6;
-  overflow: hidden;
-}
-
-.contentbox > .tabs .alinea-rac-Tablist {
-  padding: 0;
-}
-
-.boxcontent {
-  padding: 8px;
-  background-color: var(--figma-surface-default);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
 }
 
 .inputbox {
@@ -173,38 +137,4 @@
 
 .inputbox > * {
   width: 100%;
-}
-
-.divider,
-.boxheader {
-  border-bottom: solid 1px var(--figma-border-default);
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8px;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  padding: 6px;
-  gap: 6px;
-}
-
-.previewcontrols {
-  display: flex;
-  gap: 8px;
-}
-
-.dividerlabel {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }

@@ -1,79 +1,26 @@
-import {useState} from 'react'
 import './Update.css'
 import {Breadcrumb} from 'react-aria-components'
+import {Box} from '../components/Box.tsx'
+import {BoxContent} from '../components/BoxContent.tsx'
+import {BoxRow} from '../components/BoxRow.tsx'
 import {Button} from '../components/Button.tsx'
+import {LeftBar} from '../components/LeftBar.tsx'
 import {Link} from '../components/Link.tsx'
-import {Select, SelectItem} from '../components/Select.tsx'
+import {RightBar} from '../components/RightBar.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
 import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
-import {IcRoundAdd} from './icons/IcRoundAdd.tsx'
-import {IcRoundArrowBack} from './icons/IcRoundArrowBack.tsx'
-import {IcRoundArrowForward} from './icons/IcRoundArrowForward.tsx'
 import {IcRoundClose} from './icons/IcRoundClose.tsx'
-import {IcRoundKeyboardArrowDown} from './icons/IcRoundKeyboardArrowDown.tsx'
-import {IcRoundKeyboardTab} from './icons/IcRoundKeyboardTab.tsx'
-import {IcRoundLaunch} from './icons/IcRoundLaunch.tsx'
-import {IcRoundRefresh} from './icons/IcRoundRefresh.tsx'
 import {IcRoundRemoveRedEye} from './icons/IcRoundRemoveRedEye.tsx'
-import {IcRoundSearch} from './icons/IcRoundSearch.tsx'
 import {IcRoundSettings} from './icons/IcRoundSettings.tsx'
 import {IcRoundTextFields} from './icons/IcRoundTextFields.tsx'
 import {IcRoundTextSnippet} from './icons/IcRoundTextSnippet.tsx'
 import {IcRoundUnfoldMore} from './icons/IcRoundUnfoldMore.tsx'
 
 export function Home() {
-  const [isRightSideBarCollapse, setIsRightSidebarCollapsed] = useState(false)
   return (
     <div className="alinea-view">
-      <aside className="sidebar-left">
-        <div className="bar">
-          <h3>Alinea</h3>
-          <div className="bar">
-            <Select>
-              <SelectItem key="NL">NL</SelectItem>
-              <SelectItem key="FR">FR</SelectItem>
-              <SelectItem key="EN">EN</SelectItem>
-            </Select>
-          </div>
-          <Button size="icon" appearance="outline" intent="secondary">
-            <IcRoundSearch className="medIcon" />
-          </Button>
-        </div>
-        <div className="bar">
-          <Button size="icon" appearance="outline" intent="secondary">
-            <IcRoundArrowBack className="medIcon" />
-          </Button>
-          <Select>
-            <SelectItem key="pages">Pages</SelectItem>
-            <SelectItem key="'workspace'">Workspace</SelectItem>
-            <SelectItem key="media">Media</SelectItem>
-          </Select>
-          <Button size="icon" appearance="outline" intent="secondary">
-            <IcRoundAdd className="medIcon" />
-          </Button>
-        </div>
-        <div className="links">
-          <Button appearance="link" intent="secondary">
-            Home
-          </Button>
-          <Button appearance="link" intent="secondary">
-            About us
-          </Button>
-          <Button appearance="link" intent="secondary">
-            Services
-            <span data-slot="trailing">
-              <IcRoundKeyboardArrowDown data-slot="icon" />
-            </span>
-          </Button>
-          <Button appearance="link" intent="secondary">
-            Our team
-            <span data-slot="trailing">
-              <IcRoundKeyboardArrowDown data-slot="icon" />
-            </span>
-          </Button>
-        </div>
-      </aside>
+      <LeftBar />
       <main className="main">
         <div className="bar">
           <h1 className="big-title">
@@ -95,126 +42,71 @@ export function Home() {
               <Link>Parent</Link>
             </Breadcrumb>
           </Breadcrumbs>
-          <div className="dividerlabel">
+          <div className="published-badge">
             <IcRoundRemoveRedEye />
             <p className="sublabel">Published</p>
           </div>
         </div>
         <section className="content">
-          <div className="contentbox">
+          <Box>
             <Tabs variant="line" className="tabs">
               <TabList>
                 <Tab id="document">Document</Tab>
                 <Tab id="metadata">Metadata</Tab>
               </TabList>
             </Tabs>
-            <div className="boxcontent">
+            <BoxContent>
               <div className="inputbox">
                 <TextField label="Title" placeholder="Placeholder title" />
                 <TextField label="Path" placeholder="Placeholder path" />
               </div>
-              <div className="contentbox">
+              <Box>
                 <Tabs variant="line" className="tabs">
                   <TabList>
                     <Tab id="blocks">Blocks</Tab>
                     <Tab id="depricated">Depricated</Tab>
                   </TabList>
                 </Tabs>
-                <div className="divider">
-                  <h3 className="label">Blocks</h3>
-                  <div className="controls">
-                    <h3 className="label">Fold</h3>
-                    <IcRoundUnfoldMore />
-                  </div>
-                </div>
-                <div className="divider">
-                  <div className="dividerlabel">
-                    <IcRoundTextFields />
-                    <h3 className="label">Text</h3>
-                  </div>
-                  <div className="controls">
-                    <Button size="icon" appearance="plain" intent="secondary">
-                      <IcRoundSettings />
-                    </Button>
-                    <Button size="icon" appearance="plain" intent="secondary">
-                      <IcRoundClose />
-                    </Button>
-                  </div>
-                </div>
-                <div className="boxcontent">
+                <BoxRow label="Blocks">
+                  <h3 className="label">Fold</h3>
+                  <IcRoundUnfoldMore />
+                </BoxRow>
+                <BoxRow label="Text" icon={<IcRoundTextFields />}>
+                  <Button size="icon" appearance="plain" intent="secondary">
+                    <IcRoundSettings />
+                  </Button>
+                  <Button size="icon" appearance="plain" intent="secondary">
+                    <IcRoundClose />
+                  </Button>
+                </BoxRow>
+                <BoxContent>
                   <div className="inputbox">
                     <TextField label="Title" placeholder="Placeholder title" />
                   </div>
-                  <div className="contentbox">
-                    <div className="boxheader">
-                      <h3 className="label">Items</h3>
-                      <div className="controls">
-                        <h3 className="label">Fold</h3>
-                        <IcRoundUnfoldMore />
-                      </div>
-                    </div>
-                    <div className="divider">
-                      <div className="dividerlabel">
-                        <IcRoundTextSnippet />
-                        <h3 className="label">Item</h3>
-                      </div>
-                      <div className="controls">
-                        <Button
-                          size="icon"
-                          appearance="plain"
-                          intent="secondary"
-                        >
-                          <IcRoundSettings />
-                        </Button>
-                        <Button
-                          size="icon"
-                          appearance="plain"
-                          intent="secondary"
-                        >
-                          <IcRoundClose />
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="boxcontent">
+                  <Box>
+                    <BoxRow label="Items">
+                      <h3 className="label">Fold</h3>
+                      <IcRoundUnfoldMore />
+                    </BoxRow>
+                    <BoxRow label="Item" icon={<IcRoundTextSnippet />}>
+                      <Button size="icon" appearance="plain" intent="secondary">
+                        <IcRoundSettings />
+                      </Button>
+                      <Button size="icon" appearance="plain" intent="secondary">
+                        <IcRoundClose />
+                      </Button>
+                    </BoxRow>
+                    <BoxContent>
                       <TextField label="Text" placeholder="Placeholder text" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </BoxContent>
+                  </Box>
+                </BoxContent>
+              </Box>
+            </BoxContent>
+          </Box>
         </section>
       </main>
-      {!isRightSideBarCollapse}
-      <aside className="sidebar-right">
-        <div className="bar">
-          <Button size="icon" appearance="outline" intent="secondary">
-            <IcRoundKeyboardTab className="medIcon" />
-          </Button>
-          <Tabs variant="subtle" className="tabs">
-            <TabList>
-              <Tab id="history">History</Tab>
-              <Tab id="preview">Preview</Tab>
-            </TabList>
-          </Tabs>
-        </div>
-        <div className="bar">
-          <div className="previewcontrols">
-            <Button size="icon" appearance="outline" intent="secondary">
-              <IcRoundArrowBack />
-            </Button>
-            <Button size="icon" appearance="outline" intent="secondary">
-              <IcRoundArrowForward />
-            </Button>
-            <Button size="icon" appearance="outline" intent="secondary">
-              <IcRoundRefresh />
-            </Button>
-          </div>
-          <Button size="icon" appearance="outline" intent="secondary">
-            <IcRoundLaunch />
-          </Button>
-        </div>
-      </aside>
+      <RightBar />
     </div>
   )
 }

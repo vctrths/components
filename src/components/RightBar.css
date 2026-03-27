@@ -1,0 +1,13 @@
+.sidebar-right {
+  min-width: 353px;
+}
+
+.previewcontrols {
+  display: flex;
+  gap: 8px;
+}
+
+.medIcon {
+  width: 16px;
+  height: 16px;
+}
