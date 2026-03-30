@@ -81,51 +81,6 @@
   }
 }
 
-.topbar-published {
-  background-color: var(--figma-background-success-subtle);
-  border-bottom-color: var(--figma-background-success-default);
-}
-
-.topbar-published .react-aria-Breadcrumbs {
-  font-size: 12px;
-  line-height: 1;
-}
-
-.topbar-published .react-aria-Breadcrumb:not(:last-child)::after {
-  content: "/";
-  padding: 0 6px;
-  color: var(--figma-background-success-default);
-}
-
-.topbar-published .alinea-rac-Link {
-  color: var(--figma-foreground-success);
-  text-decoration: none;
-}
-
-.topbar-published .alinea-rac-Link[data-hovered] {
-  color: var(--figma-foreground-success);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.published-badge {
-  display: flex;
-  align-items: center;
-  align-self: normal;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 100px;
-  background-color: var(--figma-background-success-subtle);
-  color: var(--figma-foreground-success);
-}
-
-.published-badge .sublabel {
-  color: var(--figma-foreground-success);
-  font-size: 12px;
-  line-height: 1;
-  text-transform: none;
-}
-
 .tabs {
   padding: 0 !important;
 }

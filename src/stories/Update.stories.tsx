@@ -1,20 +1,17 @@
 import './Update.css'
 import type {ReactNode} from 'react'
-import {Breadcrumb} from 'react-aria-components'
 import {Box, BoxContent, BoxRow} from '../components/Box.tsx'
 import {Button} from '../components/Button.tsx'
 import {LeftBar} from '../components/LeftBar.tsx'
-import {Link} from '../components/Link.tsx'
 import {RightBar} from '../components/RightBar.tsx'
+import {Statusbar} from '../components/StatusBar.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
-import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
 import {IcRoundAdd} from './icons/IcRoundAdd.tsx'
 import {IcRoundClose} from './icons/IcRoundClose.tsx'
 import {IcRoundEdit} from './icons/IcRoundEdit.tsx'
 import {IcRoundLaunch} from './icons/IcRoundLaunch.tsx'
 import {IcRoundLink} from './icons/IcRoundLink.tsx'
-import {IcRoundRemoveRedEye} from './icons/IcRoundRemoveRedEye.tsx'
 import {IcRoundSettings} from './icons/IcRoundSettings.tsx'
 import {IcRoundTextSnippet} from './icons/IcRoundTextSnippet.tsx'
 import {IcRoundUnfoldMore} from './icons/IcRoundUnfoldMore.tsx'
@@ -75,20 +72,7 @@ function Bar() {
           </Button>
         </div>
       </div>
-      <div className="bar topbar-published">
-        <Breadcrumbs>
-          <Breadcrumb>
-            <Link>Pages</Link>
-          </Breadcrumb>
-          <Breadcrumb>
-            <Link>Parent</Link>
-          </Breadcrumb>
-        </Breadcrumbs>
-        <div className="published-badge">
-          <IcRoundRemoveRedEye />
-          <p className="sublabel">Published</p>
-        </div>
-      </div>
+      <Statusbar status={'published'} />
     </>
   )
 }

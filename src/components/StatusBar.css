@@ -1,0 +1,35 @@
+@import "../theme.css";
+
+.alinea-rac-Statusbar {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 47px;
+  border-bottom: 1px var(--figma-border-default) solid;
+}
+
+.alinea-rac-Statusbar-published {
+  background-color: var(--figma-background-success-subtle);
+  border-bottom-color: var(--figma-background-success-default);
+}
+
+.alinea-rac-Link {
+  color: var(--figma-foreground-success);
+}
+
+.alinea-rac-Link[data-hovered] {
+  color: var(--figma-background-success-default);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.alinea-rac-Link[data-disabled] {
+  cursor: default;
+  color: var(--figma-foreground-success);
+}
+
+.react-aria-Breadcrumbs {
+  color: var(--figma-background-success-default);
+}
