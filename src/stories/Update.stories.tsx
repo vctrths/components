@@ -179,7 +179,7 @@ export function Home() {
             </RailBody>
           </Rail>
         </Allotment.Pane>
-        <Allotment.Pane minSize={184} maxSize={512} preferredSize={332}>
+        <Allotment.Pane minSize={262} maxSize={512} preferredSize={332}>
           <RightBar />
         </Allotment.Pane>
       </Allotment>
