@@ -94,7 +94,7 @@ export const Basic = () => {
         items={softwareOptions}
         label="Design software"
         description="Initial selected key"
-        defaultSelectedKey={3}
+        defaultValue={3}
       >
         {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
       </Select>
@@ -128,6 +128,10 @@ export const Basic = () => {
       </Select>
 
       <Select label="Large option list" items={largeOptions}>
+        {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
+      </Select>
+
+      <Select label="clearable select" items={softwareOptions} clearable>
         {item => <SelectItem key={item.id}>{item.name}</SelectItem>}
       </Select>
 

@@ -1,34 +1,47 @@
-import clsx from 'clsx'
 import type {ComponentPropsWithoutRef} from 'react'
-
 import {IcRoundArrowBack} from '../stories/icons/IcRoundArrowBack.tsx'
 import {IcRoundArrowForward} from '../stories/icons/IcRoundArrowForward.tsx'
 import {IcRoundKeyboardTab} from '../stories/icons/IcRoundKeyboardTab.tsx'
 import {IcRoundLaunch} from '../stories/icons/IcRoundLaunch.tsx'
 import {IcRoundRefresh} from '../stories/icons/IcRoundRefresh.tsx'
 import {Button} from './Button.tsx'
+import {Rail, RailBody, RailHeader} from './Rail.tsx'
 import {Tab, TabList, Tabs} from './Tabs.tsx'
 
 import './RightBar.css'
+import {IcRoundHistory} from '../stories/icons/IcRoundHistory.tsx'
+import {IcRoundRemoveRedEye} from '../stories/icons/IcRoundRemoveRedEye.tsx'
 
 interface RightBarProps extends ComponentPropsWithoutRef<'aside'> {}
 
+function BarToggle() {
+  return (
+    <Tabs variant="subtle" className="tabs">
+      <TabList>
+        <Tab id="history">
+          <IcRoundHistory />
+          History
+        </Tab>
+        <Tab id="preview">
+          <IcRoundRemoveRedEye />
+          Preview
+        </Tab>
+      </TabList>
+    </Tabs>
+  )
+}
+
 export function RightBar({className, ...props}: RightBarProps) {
   return (
-    <aside {...props} className={clsx('sidebar-right', className)}>
-      <div className="bar">
+    <Rail className="alinea-rac-RightBar">
+      <RailHeader className="alinea-rac-RightBarPadding alinea-rac-RightBarTabControls">
         <Button size="icon" appearance="outline" intent="secondary">
           <IcRoundKeyboardTab className="medIcon" />
         </Button>
-        <Tabs variant="subtle" className="tabs">
-          <TabList>
-            <Tab id="history">History</Tab>
-            <Tab id="preview">Preview</Tab>
-          </TabList>
-        </Tabs>
-      </div>
-      <div className="bar">
-        <div className="previewcontrols">
+        <BarToggle />
+      </RailHeader>
+      <RailHeader className="alinea-rac-RightBarPadding">
+        <div className="alinea-rac-RightBarPreviewControls">
           <Button size="icon" appearance="outline" intent="secondary">
             <IcRoundArrowBack />
           </Button>
@@ -42,7 +55,8 @@ export function RightBar({className, ...props}: RightBarProps) {
         <Button size="icon" appearance="outline" intent="secondary">
           <IcRoundLaunch />
         </Button>
-      </div>
-    </aside>
+      </RailHeader>
+      <RailBody />
+    </Rail>
   )
 }

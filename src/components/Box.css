@@ -1,9 +1,11 @@
 .alinea-rac-Box {
   border: 1px solid var(--figma-border-default);
   border-radius: 6px;
-  padding: 0 !important;
+  /* padding: 0 !important; */
   background-color: #f3f4f6;
   overflow: hidden;
+  min-height: fit-content;
+  height: auto;
 }
 
 .alinea-rac-Box > .tabs .alinea-rac-Tablist {
@@ -28,7 +30,8 @@
   }
 }
 
-:not(.alinea-rac-BoxRow, .alinea-rac-Tablist) + .alinea-rac-BoxRow {
+:not(.alinea-rac-BoxRow, .alinea-rac-Tablist, .alinea-rac-Tabs)
+  + .alinea-rac-BoxRow {
   border-top: solid 1px var(--figma-border-default);
 }
 

@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Smart toggle CSS / TSX",
+            "type": "shell",
+            "command": "FILE=\"${file}\"; BASE=\"${fileDirname}/${fileBasenameNoExtension}\"; case \"$FILE\" in *.tsx) TARGET=\"$BASE.css\"; [ -f \"$TARGET\" ] || touch \"$TARGET\" ;; *.css) TARGET=\"$BASE.tsx\" ;; *) TARGET=\"$BASE.css\"; [ -f \"$TARGET\" ] || touch \"$TARGET\" ;; esac; code -r \"$TARGET\"",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "close": true
+            }
+        }
+    ]
+}

@@ -1,16 +1,48 @@
-.sidebar-left {
-  min-width: 256px;
-  height: 100%;
-}
-
-.links {
+.alinea-rac-LeftBarHeader {
   display: flex;
-  flex-direction: column;
-  padding: 6px;
-  gap: 6px;
+  justify-content: flex-start;
+  padding: 0 16px;
+  gap: 8px;
 }
 
-.medIcon {
-  width: 16px;
-  height: 16px;
+.alinea-rac-LeftBarHeader .alinea-rac-Select {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.alinea-rac-LeftBarFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alinea-rac-LeftBarBody {
+  padding: 16px 16px 8px;
+}
+
+.tempaicon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--figma-foreground-brand-default);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 8px;
+}
+
+.selectwidth {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.alinea-rac-LeftBarFooter {
+  padding: 0 16px;
+}
+
+.alinea-rac-LeftBarFooter-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

@@ -6,8 +6,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 47px;
-  border-bottom: 1px var(--figma-border-default) solid;
+  height: 56px;
+  /* border-bottom: 1px var(--figma-border-default) solid; */
+  width: 100%;
 }
 
 .alinea-rac-Statusbar-published {

@@ -23,17 +23,19 @@ export interface SelectProps<T extends object>
   extends Omit<SelectPrimitiveProps<T>, 'children'>,
     LabelSharedProps {
   items?: Iterable<T>
+  clearable?: boolean
   children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
 export function Select<T extends object>({
   className,
+  clearable = false,
   ...props
 }: SelectProps<T>) {
   const content = (
     <>
-      <SelectTrigger {...props} />
-      <SelectPopover {...props} />
+      <SelectTrigger clearable={clearable} {...props} />
+      <SelectPopover clearable={clearable} {...props} />
     </>
   )
 
@@ -50,10 +52,11 @@ export function Select<T extends object>({
 function SelectTrigger<T extends object>({
   children,
   items,
+  clearable = false,
   ...props
 }: SelectProps<T>) {
   const state = useContext(SelectStateContext)
-  const hasClear = Boolean(!props.isRequired && state?.selectedKey)
+  const hasClear = Boolean(clearable && !props.isRequired && state?.selectedKey)
   return (
     <div className="alinea-rac-SelectTrigger">
       <Button
@@ -64,14 +67,17 @@ function SelectTrigger<T extends object>({
         <SelectValue className="alinea-rac-SelectTrigger-button-value" />
         <IcRoundKeyboardArrowDown className="alinea-rac-SelectTrigger-button-arrow" />
       </Button>
-      {!props.isRequired && <SelectClear />}
+      {clearable && !props.isRequired && <SelectClear />}
     </div>
   )
 }
 
-function SelectPopover<T extends object>(props: SelectProps<T>) {
+function SelectPopover<T extends object>({
+  clearable = false,
+  ...props
+}: SelectProps<T>) {
   const state = useContext(SelectStateContext)
-  const hasClear = Boolean(!props.isRequired && state?.selectedKey)
+  const hasClear = Boolean(clearable && !props.isRequired && state?.selectedKey)
   return (
     <Popover
       className="alinea-rac-SelectPopover"

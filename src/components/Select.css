@@ -10,7 +10,7 @@
   border-radius: 6px;
   font-size: var(--alinea-font-size-base);
   line-height: 1.5;
-  min-width: 100px;
+  min-width: 0;
   text-align: left;
   color: var(--alinea-field-text-color);
   transition: var(--alinea-transition);
@@ -51,6 +51,7 @@
     text-align: left;
     padding: 8px 10px 8px 10px;
     gap: 8px;
+    min-width: 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -60,13 +61,23 @@
     }
 
     .alinea-rac-SelectTrigger-button-value {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
+      flex: 1 1 auto;
+      display: block;
+      min-width: 0;
+      max-width: 100%;
       color: var(--alinea-field-text-color);
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+
+      > * {
+        min-width: 0;
+        max-width: 100%;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
 
       &[data-placeholder] {
         color: var(--alinea-text-color-placeholder);

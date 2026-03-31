@@ -1,7 +1,3 @@
-.sidebar-right {
-  min-width: 353px;
-}
-
 .previewcontrols {
   display: flex;
   gap: 8px;
@@ -10,4 +6,23 @@
 .medIcon {
   width: 16px;
   height: 16px;
+}
+
+.alinea-rac-RightBarPadding {
+  padding: 0 16px;
+}
+.alinea-rac-RightBarPreviewControls {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.alinea-rac-RightBarTabControls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alinea-rac-Tab {
+  gap: 8px;
 }
