@@ -46,3 +46,13 @@
   align-items: center;
   gap: 8px;
 }
+
+.menuselect {
+  border-radius: 6px;
+  border: 1px solid var(--figma-border-default);
+  background-color: white;
+  padding: 8px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,12 +1,17 @@
 import './Update.css'
 import {Allotment} from 'allotment'
 import type {ReactNode} from 'react'
-import {Box, BoxContent, BoxRow} from '../components/Box.tsx'
+import {
+  Box,
+  BoxContent,
+  BoxHeader,
+  BoxRow,
+  type BoxRowProps
+} from '../components/Box.tsx'
 import {Button} from '../components/Button.tsx'
 import {LeftBar} from '../components/LeftBar.tsx'
 import {Rail, RailBody, RailHeader} from '../components/Rail.tsx'
 import {RightBar} from '../components/RightBar.tsx'
-import {} from '../components/Select.tsx'
 import {Statusbar} from '../components/StatusBar.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
@@ -20,6 +25,8 @@ import {IcRoundTextSnippet} from './icons/IcRoundTextSnippet.tsx'
 import {IcRoundUnfoldMore} from './icons/IcRoundUnfoldMore.tsx'
 
 import 'allotment/dist/style.css'
+import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
+import {IcRoundDragHandle} from './icons/IcRoundDragHandle.tsx'
 
 function FoldControl() {
   return (
@@ -42,22 +49,24 @@ function Settings() {
   )
 }
 
-interface RowProps {
-  label?: string
-  icon?: ReactNode
-  variant: 'fold' | 'settings'
+interface BoxHeaderProps {
+  children?: ReactNode
 }
 
-function RowComp({label, icon, variant}: RowProps) {
-  const Action = variant === 'fold' ? FoldControl : Settings
+interface RowProps extends Omit<BoxRowProps, 'children'> {
+  label?: string
+  icon?: ReactNode
+  action?: ReactNode
+}
 
+function RowComp({label, icon, action, ...rowProps}: RowProps) {
   return (
-    <BoxRow>
-      <div className="boxrow-label">
+    <BoxRow {...rowProps}>
+      <BoxHeader>
         {icon}
         <h3 className="label">{label}</h3>
-      </div>
-      <Action />
+      </BoxHeader>
+      {action}
     </BoxRow>
   )
 }
@@ -86,11 +95,15 @@ function TopBar() {
 function TextBlock() {
   return (
     <>
-      <RowComp variant="settings" label="Text" />
+      <RowComp label="Text" action={<Settings />} />
       <BoxContent>
         <TextField label="Title" placeholder="Placeholder title" />
         <Box>
-          <RowComp variant="fold" label="Item" icon={<IcRoundTextSnippet />} />
+          <RowComp
+            label="Item"
+            icon={<IcRoundTextSnippet />}
+            action={<FoldControl />}
+          />
           <BoxContent>
             <TextField label="Text" placeholder="Placeholder text" />
           </BoxContent>
@@ -103,7 +116,7 @@ function TextBlock() {
 function LinkBlock() {
   return (
     <>
-      <RowComp variant="settings" label="Link" />
+      <RowComp label="Link" action={<Settings />} />
       <BoxContent>
         <Box>
           <BoxRow position="middle">
@@ -154,7 +167,7 @@ function MiddleContent() {
               <Tab id="depricated">Deprecated</Tab>
             </TabList>
           </Tabs>
-          <RowComp variant="fold" label="Blocks" />
+          <RowComp label="Blocks" action={<FoldControl />} />
           <TextBlock />
           <TextBlock />
           <LinkBlock />
@@ -166,24 +179,103 @@ function MiddleContent() {
 
 export function Home() {
   return (
-    <div className="alinea-view">
-      <Allotment className="allotment" snap>
-        <Allotment.Pane minSize={179} maxSize={300} preferredSize={272}>
-          <LeftBar />
-        </Allotment.Pane>
-        <Allotment.Pane snap={false}>
-          <Rail className="content">
-            <TopBar />
-            <RailBody className="paddingMid">
-              <MiddleContent />
-            </RailBody>
-          </Rail>
-        </Allotment.Pane>
-        <Allotment.Pane minSize={262} maxSize={512} preferredSize={332}>
-          <RightBar />
-        </Allotment.Pane>
-      </Allotment>
-    </div>
+    <Allotment className="allotment" snap>
+      <Allotment.Pane minSize={179} maxSize={300} preferredSize={272}>
+        <LeftBar />
+      </Allotment.Pane>
+      <Allotment.Pane snap={false}>
+        <Rail className="content">
+          <TopBar />
+          <RailBody className="paddingMid">
+            <MiddleContent />
+          </RailBody>
+        </Rail>
+      </Allotment.Pane>
+      <Allotment.Pane minSize={262} maxSize={512} preferredSize={332}>
+        <RightBar />
+      </Allotment.Pane>
+    </Allotment>
+  )
+}
+
+export function FormBuilder() {
+  return (
+    <Allotment className="allotment" snap>
+      <Allotment.Pane minSize={179} maxSize={300} preferredSize={272}>
+        <LeftBar />
+      </Allotment.Pane>
+      <Allotment.Pane snap={false}>
+        <Rail className="content">
+          <TopBar />
+          <RailBody className="paddingMid">
+            <Box className="contentboxes">
+              <Tabs variant="line" className="tabs">
+                <TabList>
+                  <Tab id="document">Document</Tab>
+                  <Tab id="metadata">Metadata</Tab>
+                </TabList>
+              </Tabs>
+              <BoxContent>
+                <div className="inputbox">
+                  <TextField label="Title" value="Contentpage" isRequired />
+                  <TextField label="Path" value="contentpage" isRequired />
+                </div>
+                <Box>
+                  <Tabs variant="line" className="tabs">
+                    <TabList>
+                      <Tab id="form">Form</Tab>
+                      <Tab id="blocks">Blocks</Tab>
+                      <Tab id="depricated">Deprecated</Tab>
+                    </TabList>
+                  </Tabs>
+
+                  <RowComp label="Form" action={<Settings />} />
+                  <BoxRow>
+                    <BoxHeader>Form</BoxHeader>
+                    <Settings />
+                  </BoxRow>
+
+                  <RowComp label="Text" action={<FoldControl />} />
+                  <BoxContent>
+                    <TextField label="Label" value="first name" isRequired />
+                  </BoxContent>
+
+                  <RowComp label="Options" action={<Settings />} />
+
+                  <BoxContent className="borderbottom">
+                    <TextField value="label" />
+                  </BoxContent>
+
+                  <BoxContent className="contentrow">
+                    <IcRoundDragHandle className="noshrink" />
+                    <TextField value="Label" />
+                    <TextField value="Key" />
+                    <Button size="icon" appearance="outline" intent="secondary">
+                      <IcRoundClose />
+                    </Button>
+                  </BoxContent>
+
+                  <RowComp
+                    label="Add an option"
+                    icon={<IcRoundAddCircle />}
+                    className="centervalue"
+                  />
+
+                  <BoxRow className="centervalue">
+                    <BoxHeader>
+                      <IcRoundAddCircle /> Add an option
+                    </BoxHeader>
+                  </BoxRow>
+                </Box>
+              </BoxContent>
+            </Box>
+          </RailBody>
+        </Rail>
+      </Allotment.Pane>
+      <Allotment.Pane minSize={262} maxSize={512} preferredSize={332}>
+        <RightBar />
+      </Allotment.Pane>
+    </Allotment>
   )
 }
 

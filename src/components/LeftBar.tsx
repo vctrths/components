@@ -1,3 +1,4 @@
+import {Button as RacButton} from 'react-aria-components'
 import {IcRoundAdd} from '../stories/icons/IcRoundAdd.tsx'
 import {IcRoundArrowBack} from '../stories/icons/IcRoundArrowBack.tsx'
 import {IcRoundKeyboardArrowDown} from '../stories/icons/IcRoundKeyboardArrowDown.tsx'
@@ -5,10 +6,10 @@ import {IcRoundMoreVert} from '../stories/icons/IcRoundMoreVert.tsx'
 import {IcRoundSearch} from '../stories/icons/IcRoundSearch.tsx'
 import {Button} from './Button.tsx'
 import {Rail, RailBody, RailFooter, RailHeader} from './Rail.tsx'
-import {Select, SelectItem} from './Select.tsx'
 
 import './LeftBar.css'
 import {IcRoundAccountCircle} from '../stories/icons/IcRoundAccountCircle.tsx'
+import {Menu, MenuItem} from './Menu.tsx'
 
 function Tempaicon() {
   return (
@@ -23,17 +24,43 @@ export function LeftBar() {
     <Rail className="alinea-rac-LeftBar">
       <RailHeader className="alinea-rac-LeftBarHeader">
         <Tempaicon />
-        <Select className="selectwidth" defaultValue={1}>
-          <SelectItem id={1} key="NL">
+        <Menu
+          label={
+            <RacButton className="menuselect">
+              Workspace <IcRoundKeyboardArrowDown />
+            </RacButton>
+          }
+          className="selectwidth"
+        >
+          <MenuItem id={1} key="NL">
             NL
-          </SelectItem>
-          <SelectItem id={2} key="FR">
+          </MenuItem>
+          <MenuItem id={2} key="FR">
             FR
-          </SelectItem>
-          <SelectItem id={3} key="EN">
+          </MenuItem>
+          <MenuItem id={3} key="EN">
             EN
-          </SelectItem>
-        </Select>
+          </MenuItem>
+        </Menu>
+        <Menu
+          label={
+            <RacButton className="menuselect">
+              NL <IcRoundKeyboardArrowDown />
+            </RacButton>
+          }
+          className="selectwidth"
+        >
+          <MenuItem id="media" key="media">
+            NL
+          </MenuItem>
+          <MenuItem id="media" key="media">
+            FR
+          </MenuItem>
+          <MenuItem id="media" key="media">
+            EN
+          </MenuItem>
+        </Menu>
+
         <Button size="icon" appearance="outline" intent="secondary">
           <IcRoundSearch className="medIcon" />
         </Button>
@@ -43,17 +70,24 @@ export function LeftBar() {
         <Button size="icon" appearance="outline" intent="secondary">
           <IcRoundArrowBack className="medIcon" />
         </Button>
-        <Select className="selectwidth" defaultValue="pages">
-          <SelectItem id="pages" key="pages">
+        <Menu
+          label={
+            <RacButton className="menuselect">
+              Root <IcRoundKeyboardArrowDown />
+            </RacButton>
+          }
+          className="selectwidth"
+        >
+          <MenuItem id="pages" key="pages">
             Pages
-          </SelectItem>
-          <SelectItem id="workspace" key="workspace">
+          </MenuItem>
+          <MenuItem id="workspace" key="workspace">
             Workspace
-          </SelectItem>
-          <SelectItem id="media" key="media">
+          </MenuItem>
+          <MenuItem id="media" key="media">
             Media
-          </SelectItem>
-        </Select>
+          </MenuItem>
+        </Menu>
         <Button size="icon" appearance="outline" intent="secondary">
           <IcRoundAdd className="medIcon" />
         </Button>

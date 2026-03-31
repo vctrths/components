@@ -36,13 +36,6 @@
   font-weight: 500;
 }
 
-.alinea-view {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-}
-
 .inputbox {
   display: flex;
   gap: 8px;
@@ -50,12 +43,6 @@
 
 .inputbox > * {
   width: 100%;
-}
-
-.boxrow-label {
-  display: flex;
-  gap: 8px;
-  align-items: center;
 }
 
 .contentboxes {
@@ -85,4 +72,30 @@
 
 .allotment {
   --focus-border: var(--figma-foreground-brand-default);
+  height: 100dvh !important;
+}
+
+.borderbottom {
+  border-bottom: solid 1px var(--figma-border-default);
+}
+
+.centervalue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.alinea-rac-BoxContent.contentrow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+
+  .noshrink {
+    flex-shrink: 0;
+  }
+
+  .react-aria-TextField {
+    flex-grow: 1;
+  }
 }

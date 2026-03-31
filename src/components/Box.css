@@ -28,6 +28,16 @@
   &.alinea-rac-BoxRow-end {
     justify-content: end;
   }
+
+  &.alinea-rac-BoxRow-inline {
+    background-color: white;
+    justify-content: start;
+    padding: 8px;
+    height: auto;
+    & > * {
+      flex-grow: 1;
+    }
+  }
 }
 
 :not(.alinea-rac-BoxRow, .alinea-rac-Tablist, .alinea-rac-Tabs)
@@ -46,4 +56,15 @@
   flex-direction: column;
   gap: 16px;
   overflow: hidden;
+}
+
+.alinea-rac-BoxHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+
+  /* TEMP */
+  font-size: 0.8125rem;
+  font-weight: 500;
 }
