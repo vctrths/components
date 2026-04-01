@@ -15,7 +15,6 @@ import {RightBar} from '../components/RightBar.tsx'
 import {Statusbar} from '../components/StatusBar.tsx'
 import {Tab, TabList, Tabs} from '../components/Tabs.tsx'
 import {TextField} from '../components/TextField.tsx'
-import {IcRoundAdd} from './icons/IcRoundAdd.tsx'
 import {IcRoundClose} from './icons/IcRoundClose.tsx'
 import {IcRoundEdit} from './icons/IcRoundEdit.tsx'
 import {IcRoundLaunch} from './icons/IcRoundLaunch.tsx'
@@ -25,6 +24,13 @@ import {IcRoundTextSnippet} from './icons/IcRoundTextSnippet.tsx'
 import {IcRoundUnfoldMore} from './icons/IcRoundUnfoldMore.tsx'
 
 import 'allotment/dist/style.css'
+import {Breadcrumb, DialogTrigger} from 'react-aria-components'
+import {Button as UnstyledButton} from 'react-aria-components'
+import {Dialog} from '../components/Dialog.tsx'
+import {Link} from '../components/Link.tsx'
+import {Modal} from '../components/Modal.tsx'
+import {Select, SelectItem} from '../components/Select.tsx'
+import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
 import {IcRoundAddCircle} from './icons/IcRoundAddCircle.tsx'
 import {IcRoundDragHandle} from './icons/IcRoundDragHandle.tsx'
 
@@ -119,10 +125,7 @@ function LinkBlock() {
       <RowComp label="Link" action={<Settings />} />
       <BoxContent>
         <Box>
-          <BoxRow position="middle">
-            <IcRoundAdd />
-            <h3 className="sublabel">page link</h3>
-          </BoxRow>
+          <PageLink />
           <BoxRow>
             <div className="boxrow-label">
               <IcRoundLink />
@@ -180,7 +183,7 @@ function MiddleContent() {
 export function Home() {
   return (
     <Allotment className="allotment" snap>
-      <Allotment.Pane minSize={179} maxSize={300} preferredSize={272}>
+      <Allotment.Pane minSize={176} maxSize={300} preferredSize={272}>
         <LeftBar />
       </Allotment.Pane>
       <Allotment.Pane snap={false}>
@@ -201,7 +204,7 @@ export function Home() {
 export function FormBuilder() {
   return (
     <Allotment className="allotment" snap>
-      <Allotment.Pane minSize={179} maxSize={300} preferredSize={272}>
+      <Allotment.Pane minSize={176} maxSize={300} preferredSize={272}>
         <LeftBar />
       </Allotment.Pane>
       <Allotment.Pane snap={false}>
@@ -241,7 +244,6 @@ export function FormBuilder() {
                   </BoxContent>
 
                   <RowComp label="Options" action={<Settings />} />
-
                   <BoxContent className="borderbottom">
                     <TextField value="label" />
                   </BoxContent>
@@ -260,7 +262,6 @@ export function FormBuilder() {
                     icon={<IcRoundAddCircle />}
                     className="centervalue"
                   />
-
                   <BoxRow className="centervalue">
                     <BoxHeader>
                       <IcRoundAddCircle /> Add an option
@@ -276,6 +277,74 @@ export function FormBuilder() {
         <RightBar />
       </Allotment.Pane>
     </Allotment>
+  )
+}
+
+interface PopupProps {
+  title?: string
+  button: ReactNode
+  children: ReactNode
+}
+
+function Popup({button, children}: PopupProps) {
+  return (
+    <DialogTrigger>
+      {button}
+      <Modal>
+        <Dialog>
+          <BoxRow slot="title">
+            <Breadcrumbs>
+              <Breadcrumb>
+                <Link>Workspace</Link>
+              </Breadcrumb>
+              <Breadcrumb>
+                <Link>Root</Link>
+              </Breadcrumb>
+              <Breadcrumb>
+                <Link>Page</Link>
+              </Breadcrumb>
+              <Breadcrumb>
+                <Link>Child</Link>
+              </Breadcrumb>
+            </Breadcrumbs>
+          </BoxRow>
+          <BoxContent>{children}</BoxContent>
+          <BoxRow className="bottombuttons">
+            <Button slot="close" appearance="outline" intent="secondary">
+              Cancel
+            </Button>
+            <Button slot="close">Create</Button>
+          </BoxRow>
+        </Dialog>
+      </Modal>
+    </DialogTrigger>
+  )
+}
+
+function PageLinkButton() {
+  return (
+    <UnstyledButton className="unstyled fullwidth">
+      <BoxRow className="centervalue pageLinkRow">
+        <BoxHeader>
+          <IcRoundAddCircle />
+          Page link
+        </BoxHeader>
+      </BoxRow>
+    </UnstyledButton>
+  )
+}
+
+function PageLink() {
+  return (
+    <Popup button={<PageLinkButton />}>
+      <TextField label="Title" placeholder="placeholder title" />
+      <Select label="Select type">
+        <SelectItem>type1</SelectItem>
+      </Select>
+      <Box>
+        <PageLinkButton />
+      </Box>
+    </Popup>
   )
 }
 

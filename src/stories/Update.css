@@ -1,28 +1,5 @@
 @import "../theme.css";
 
-:root {
-  /* Imported from Figma variables (Design system + node 2010:16598) */
-  --figma-foreground-primary: #364153;
-  --figma-foreground-muted: #6a7282;
-  --figma-foreground-subtle: #99a1af;
-  --figma-foreground-brand-default: #5573eb;
-  --figma-foreground-success: #689f38;
-  --figma-foreground-warning: #f57c00;
-
-  --figma-surface-default: #ffffff;
-  --figma-surface-muted: #f3f4f6;
-  --figma-surface-subtle: #f9fafb;
-
-  --figma-border-default: #e5e7eb;
-  --figma-border-secondary: #d1d5dc;
-
-  --figma-background-brand-subtle: #eceffd;
-  --figma-background-success-subtle: #f1f8e9;
-  --figma-background-success-default: #aed581;
-  --figma-background-warning-subtle: #fff3e0;
-  --figma-background-warning-default: #ffb74d;
-}
-
 .big-title {
   font-size: 1rem;
   font-weight: 700;
@@ -71,18 +48,19 @@
 }
 
 .allotment {
-  --focus-border: var(--figma-foreground-brand-default);
+  --focus-border: var(--alinea-primary-500);
   height: 100dvh !important;
 }
 
 .borderbottom {
-  border-bottom: solid 1px var(--figma-border-default);
+  border-bottom: solid 1px var(--alinea-border-color);
 }
 
 .centervalue {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .alinea-rac-BoxContent.contentrow {
@@ -98,4 +76,51 @@
   .react-aria-TextField {
     flex-grow: 1;
   }
+}
+
+.alinea-rac-Modal {
+  min-width: 640px;
+  .alinea-rac-Dialog {
+    padding: 0;
+  }
+  .alinea-rac-BoxRow {
+    background-color: var(--alinea-field-background);
+
+    &.pageLinkRow {
+      background-color: var(--alinea-overlay-background);
+    }
+
+    .react-aria-Breadcrumbs {
+      color: var(--alinea-text-color);
+
+      .alinea-rac-Link {
+        color: var(--alinea-text-color-base);
+      }
+      .alinea-rac-Link[data-disabled] {
+        color: var(--alinea-text-color);
+      }
+    }
+  }
+  .alinea-rac-BoxContent {
+    background-color: var(--alinea-background-color);
+  }
+  .alinea-rac-BoxRow:not(.pageLinkRow),
+  .alinea-rac-BoxContent {
+    padding: 16px;
+  }
+  .bottombuttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.unstyled {
+  border: none;
+  padding: 0;
+  background-color: var(--alinea-overlay-background);
 }

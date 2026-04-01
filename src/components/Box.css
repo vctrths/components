@@ -1,8 +1,8 @@
 .alinea-rac-Box {
-  border: 1px solid var(--figma-border-default);
+  border: 1px solid var(--alinea-border-color);
   border-radius: 6px;
   /* padding: 0 !important; */
-  background-color: #f3f4f6;
+  background-color: var(--alinea-overlay-background);
   overflow: hidden;
   min-height: fit-content;
   height: auto;
@@ -13,12 +13,14 @@
 }
 
 .alinea-rac-BoxRow {
-  border-bottom: solid 1px var(--figma-border-default);
+  border-bottom: solid 1px var(--alinea-border-color);
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 8px;
+  background-color: var(--alinea-field-background);
+  color: var(--alinea-text-color);
   &.alinea-rac-BoxRow-start {
     justify-content: start;
   }
@@ -30,7 +32,7 @@
   }
 
   &.alinea-rac-BoxRow-inline {
-    background-color: white;
+    background-color: var(--alinea-field-background);
     justify-content: start;
     padding: 8px;
     height: auto;
@@ -42,7 +44,7 @@
 
 :not(.alinea-rac-BoxRow, .alinea-rac-Tablist, .alinea-rac-Tabs)
   + .alinea-rac-BoxRow {
-  border-top: solid 1px var(--figma-border-default);
+  border-top: solid 1px var(--alinea-border-color);
 }
 
 .alinea-rac-BoxRow:last-child {
@@ -51,7 +53,8 @@
 
 .alinea-rac-BoxContent {
   padding: 12px;
-  background-color: var(--figma-surface-default);
+  background-color: var(--alinea-field-background);
+  color: var(--alinea-text-color);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -67,4 +70,5 @@
   /* TEMP */
   font-size: 0.8125rem;
   font-weight: 500;
+  color: var(--alinea-text-color-disabled);
 }

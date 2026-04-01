@@ -6,21 +6,21 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 100px;
-  background-color: var(--figma-background-success-subtle);
+  background-color: var(--alinea-success-50);
 }
 
 .alinea-rac-Badge-succes {
-  background-color: var(--figma-background-success-subtle);
+  background-color: var(--alinea-success-50);
 }
 
 .alinea-rac-Badge-warning {
-  background-color: var(--figma-foreground-warning-default);
+  background-color: var(--alinea-warning-400);
 }
 
 .alinea-rac-Badge-neutral {
-  background-color: white;
+  background-color: var(--alinea-gray-0);
 }
 
 .alinea-rac-Badge-danger {
-  background-color: #fddfdd;
+  background-color: var(--alinea-danger-50);
 }

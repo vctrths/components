@@ -1,5 +1,6 @@
 /* primitives */
 :root {
+  --alinea-gray-0: #ffffff;
   --alinea-gray-50: #f9fafb;
   --alinea-gray-100: #f3f4f6;
   --alinea-gray-200: #e5e7eb;
@@ -10,6 +11,7 @@
   --alinea-gray-700: #364153;
   --alinea-gray-800: #1e2939;
   --alinea-gray-900: #101828;
+  --alinea-gray-1000: #000000;
 
   --alinea-blue-50: #eceffd;
   --alinea-blue-100: #d6ddfa;
@@ -22,23 +24,49 @@
   --alinea-blue-800: #3f61e8;
   --alinea-blue-900: #3652c5;
   --alinea-blue-950: #203174;
+  --alinea-blue-1200: #393a4a;
 
   --alinea-red-50: #ffebee;
   --alinea-red-100: #ffcdd2;
   --alinea-red-200: #ef9a9a;
+  --alinea-red-300: #e57373;
   --alinea-red-400: #ef5350;
   --alinea-red-500: #f44336;
   --alinea-red-600: #e53935;
-
-  --alinea-warning-50: #fff8e1;
+  --alinea-red-700: #d32f2f;
+  --alinea-red-800: #c62828;
+  --alinea-red-900: #b71c1c;
+  /* --alinea-warning-50: #fff8e1;
   --alinea-warning-100: #ffecb3;
   --alinea-warning-200: #ffe082;
   --alinea-warning-400: #ffca28;
   --alinea-warning-500: #ffc107;
-  --alinea-warning-600: #ffb300;
+  --alinea-warning-600: #ffb300; */
+
+  --alinea-orange-50: #fff3e0;
+  --alinea-orange-100: #ffe0b2;
+  --alinea-orange-200: #ffcc80;
+  --alinea-orange-300: #ffb74d;
+  --alinea-orange-400: #ffa726;
+  --alinea-orange-500: #ff9800;
+  --alinea-orange-600: #fb8c00;
+  --alinea-orange-700: #f57c00;
+  --alinea-orange-800: #ef6c00;
+  --alinea-orange-900: #e65100;
+
+  --alinea-green-50: #f1f8e9;
+  --alinea-green-100: #dcedc8;
+  --alinea-green-200: #c5e1a5;
+  --alinea-green-300: #aed581;
+  --alinea-green-400: #9ccc65;
+  --alinea-green-500: #8bc34a;
+  --alinea-green-600: #7cb342;
+  --alinea-green-700: #689f38;
+  --alinea-green-800: #558b2f;
+  --alinea-green-900: #33691e;
 }
 
-/* Aliasses */
+/* Aliases */
 :root {
   --alinea-primary-50: var(--alinea-blue-50);
   --alinea-primary-100: var(--alinea-blue-100);
@@ -62,6 +90,39 @@
   --alinea-surface-700: var(--alinea-gray-700);
   --alinea-surface-800: var(--alinea-gray-800);
   --alinea-surface-900: var(--alinea-gray-900);
+
+  --alinea-danger-50: var(--alinea-red-50);
+  --alinea-danger-100: var(--alinea-red-100);
+  --alinea-danger-200: var(--alinea-red-200);
+  --alinea-danger-300: var(--alinea-red-300);
+  --alinea-danger-400: var(--alinea-red-400);
+  --alinea-danger-500: var(--alinea-red-500);
+  --alinea-danger-600: var(--alinea-red-600);
+  --alinea-danger-700: var(--alinea-red-700);
+  --alinea-danger-800: var(--alinea-red-800);
+  --alinea-danger-900: var(--alinea-red-900);
+
+  --alinea-warning-50: var(--alinea-orange-50);
+  --alinea-warning-100: var(--alinea-orange-100);
+  --alinea-warning-200: var(--alinea-orange-200);
+  --alinea-warning-300: var(--alinea-orange-300);
+  --alinea-warning-400: var(--alinea-orange-400);
+  --alinea-warning-500: var(--alinea-orange-500);
+  --alinea-warning-600: var(--alinea-orange-600);
+  --alinea-warning-700: var(--alinea-orange-700);
+  --alinea-warning-800: var(--alinea-orange-800);
+  --alinea-warning-900: var(--alinea-orange-900);
+
+  --alinea-success-50: var(--alinea-green-50);
+  --alinea-success-100: var(--alinea-green-100);
+  --alinea-success-200: var(--alinea-green-200);
+  --alinea-success-300: var(--alinea-green-300);
+  --alinea-success-400: var(--alinea-green-400);
+  --alinea-success-500: var(--alinea-green-500);
+  --alinea-success-600: var(--alinea-green-600);
+  --alinea-success-700: var(--alinea-green-700);
+  --alinea-success-800: var(--alinea-green-800);
+  --alinea-success-900: var(--alinea-green-900);
 }
 /*  
     Shared -
@@ -74,19 +135,22 @@
   --alinea-highlight-background-pressed: var(--alinea-primary-900);
   --alinea-highlight-background-disabled: var(--alinea-primary-50);
   --alinea-highlight-border: var(--alinea-primary-500);
-  --alinea-highlight-background-invalid: #cc2000;
-  --alinea-highlight-foreground: white;
-  --alinea-highlight-foreground-pressed: #ddd;
+  --alinea-highlight-background-invalid: var(--alinea-danger-800);
+  --alinea-highlight-foreground: var(--alinea-gray-0);
+  --alinea-highlight-foreground-pressed: var(--alinea-gray-200);
   --alinea-highlight-foreground-disabled: var(--alinea-primary-400);
-  --alinea-highlight-overlay: rgb(from #3f61e8 r g b / 20%);
+  --alinea-highlight-overlay: rgb(from var(--alinea-primary-800) r g b / 20%);
   --alinea-selected-background: var(--alinea-primary-50);
   --alinea-selected-foreground: var(--alinea-primary-700);
   --alinea-invalid-color: var(--alinea-danger-500);
   --alinea-invalid-color-pressed: var(--alinea-danger-600);
-  --alinea-invalid-overlay: rgb(from #f44336 r g b / 20%);
+  --alinea-invalid-overlay: rgb(from var(--alinea-danger-500) r g b / 20%);
   --alinea-transition: 0.2s ease-out;
   --alinea-font-size-base: 0.8125rem;
-  --alinea-error-border-color-transparent: rgba(244, 67, 54, 0.5);
+  --alinea-error-border-color-transparent: rgb(
+    from var(--alinea-danger-500) r g b /
+    50%
+  );
 }
 
 /* Light */
@@ -104,7 +168,7 @@
   --alinea-border-color: var(--alinea-gray-200);
   --alinea-border-color-hover: var(--alinea-gray-400);
   --alinea-border-color-pressed: var(--alinea-gray-500);
-  --alinea-field-background: white;
+  --alinea-field-background: var(--alinea-gray-0);
   --alinea-field-background-disabled: var(--alinea-gray-50);
   --alinea-field-text-color: var(--alinea-gray-700);
   --alinea-overlay-background: var(--alinea-gray-50);
@@ -115,20 +179,26 @@
   --alinea-background-color-pressed: var(--alinea-gray-400);
   --alinea-box-shadow-color: var(--alinea-gray-200);
   --alinea-error-border-color: var(--alinea-danger-500);
-  --alinea-icon-background-color-active: rgb(from #3f61e8 r g b / 20%);
+  --alinea-icon-background-color-active: rgb(
+    from var(--alinea-primary-800) r g b /
+    20%
+  );
   --alinea-icon-color: var(--alinea-gray-600);
   --alinea-icon-color-plain: var(--alinea-gray-500);
   --alinea-icon-color-active: var(--alinea-primary-700);
   --alinea-tag-color-disabled: var(--alinea-gray-500);
   --alinea-tab-background-color: var(--alinea-gray-100);
-  --alinea-tab-background-color-active: rgb(from #abbaf5 r g b / 20%);
+  --alinea-tab-background-color-active: rgb(
+    from var(--alinea-primary-300) r g b /
+    20%
+  );
   --alinea-tab-color-active: var(--alinea-primary-800);
   --alinea-tab-color-base: var(--alinea-gray-500);
   --alinea-table-background-striped: var(--alinea-gray-50);
-  --alinea-table-color-selected: rgb(from #c1ccf8 r g b / 50%);
+  --alinea-table-color-selected: rgb(from var(--alinea-primary-200) r g b / 50%);
   --alinea-list-background: var(--alinea-gray-100);
-  --alinea-divider-top:
-    0 -1px 0 var(--alinea-border-color), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --alinea-divider-top: 0 -1px 0 var(--alinea-border-color), inset 0 1px 0
+    rgb(from var(--alinea-gray-0) r g b / 50%);
 }
 
 /* Dark */
@@ -161,17 +231,23 @@
   --alinea-text-color-readonly: var(--alinea-gray-50);
   --alinea-error-border-color: var(--alinea-danger-500);
   --alinea-icon-color-active: var(--alinea-primary-50);
-  --alinea-icon-background-color-active: rgb(from #3f61e8 r g b / 20%);
+  --alinea-icon-background-color-active: rgb(
+    from var(--alinea-primary-800) r g b /
+    20%
+  );
   --alinea-icon-color-plain: var(--alinea-gray-500);
   --alinea-tag-color-disabled: var(--alinea-gray-500);
   --alinea-tab-background-color: var(--alinea-gray-800);
-  --alinea-tab-background-color-active: rgb(from #3f61e8 r g b / 20%);
+  --alinea-tab-background-color-active: rgb(
+    from var(--alinea-primary-800) r g b /
+    20%
+  );
   --alinea-tab-color-active: var(--alinea-primary-300);
   --alinea-tab-color-base: var(--alinea-gray-300);
   --alinea-table-background-striped: var(--alinea-gray-900);
-  --alinea-table-color-selected: rgb(from #3f61e8 r g b / 30%);
+  --alinea-table-color-selected: rgb(from var(--alinea-primary-800) r g b / 30%);
   --alinea-list-background: var(--alinea-gray-800);
   --alinea-list-divider: var(--alinea-border-color);
-  --alinea-divider-top:
-    0 -1px 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 var(--alinea-border-color);
+  --alinea-divider-top: 0 -1px 0 rgb(from var(--alinea-gray-1000) r g b / 25%),
+    inset 0 1px 0 var(--alinea-border-color);
 }

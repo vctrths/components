@@ -23,12 +23,12 @@
 .tempaicon {
   width: 32px;
   height: 32px;
-  background-color: var(--figma-foreground-brand-default);
+  background-color: var(--alinea-primary-500);
   display: flex;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--alinea-gray-0);
   border-radius: 8px;
 }
 
@@ -49,8 +49,8 @@
 
 .menuselect {
   border-radius: 6px;
-  border: 1px solid var(--figma-border-default);
-  background-color: white;
+  border: 1px solid var(--alinea-border-color);
+  background-color: var(--alinea-field-background);
   padding: 8px;
   flex-grow: 1;
   display: flex;

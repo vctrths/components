@@ -12,25 +12,25 @@
 }
 
 .alinea-rac-Statusbar-published {
-  background-color: var(--figma-background-success-subtle);
-  border-bottom-color: var(--figma-background-success-default);
+  background-color: var(--alinea-success-50);
+  border-bottom-color: var(--alinea-success-500);
 }
 
 .alinea-rac-Link {
-  color: var(--figma-foreground-success);
+  color: var(--alinea-success-700);
 }
 
 .alinea-rac-Link[data-hovered] {
-  color: var(--figma-background-success-default);
+  color: var(--alinea-success-500);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .alinea-rac-Link[data-disabled] {
   cursor: default;
-  color: var(--figma-foreground-success);
+  color: var(--alinea-success-700);
 }
 
 .react-aria-Breadcrumbs {
-  color: var(--figma-background-success-default);
+  color: var(--alinea-success-500);
 }
