@@ -1,5 +1,5 @@
 import type {Key, Selection} from '@react-types/shared'
-import {useEffect, useState, useTransition} from 'react'
+import {useEffect, useMemo, useState, useTransition} from 'react'
 import {Collection, ListLayout, Virtualizer} from 'react-aria-components'
 import {Stack} from '../stories/Stack.tsx'
 import {IcOutlineDescription} from '../stories/icons/IcOutlineDescription.tsx'
@@ -33,8 +33,7 @@ const treeCountOptions: TreeCountOption[] = [
 ]
 
 function createGeneratedTree(
-  itemCount: number,
-  loadVersion: number
+  itemCount: number
 ): GeneratedTreeNode[] {
   const sections: GeneratedTreeNode[] = []
   let itemNumber = 1
@@ -57,21 +56,21 @@ function createGeneratedTree(
       ) {
         items.push({
           id: `item-${itemNumber}`,
-          title: `Item ${itemNumber} - Load ${loadVersion + 1}`
+          title: `Item ${itemNumber}`
         })
         itemNumber++
       }
 
       folders.push({
         id: `folder-${sectionNumber}-${folderNumber}`,
-        title: `Folder ${sectionNumber}.${folderNumber} - Load ${loadVersion + 1}`,
+        title: `Folder ${sectionNumber}.${folderNumber}`,
         children: items
       })
     }
 
     sections.push({
       id: `section-${sectionNumber}`,
-      title: `Section ${sectionNumber} - Load ${loadVersion + 1}`,
+      title: `Section ${sectionNumber}`,
       children: folders
     })
 
@@ -107,7 +106,12 @@ function renderGeneratedTreeNode(node: GeneratedTreeNode) {
       : 2
 
   return (
-    <TreeItem id={node.id} title={node.title} icon={getTreeIcon(node, level)}>
+    <TreeItem
+      id={node.id}
+      title={node.title}
+      icon={getTreeIcon(node, level)}
+      hasChildItems={Boolean(node.children?.length)}
+    >
       {node.children ? (
         <Collection items={node.children}>{renderGeneratedTreeNode}</Collection>
       ) : null}
@@ -207,16 +211,22 @@ function waitForTransition() {
 
 export function DynamicList() {
   const [selectedAmount, setSelectedAmount] = useState('100')
-  const [loadVersion, setLoadVersion] = useState(0)
+  const [transitionCount, setTransitionCount] = useState(0)
   const [isPending, startTransition] = useTransition()
   const itemCount =
     treeCountOptions.find(option => option.id === selectedAmount)?.amount ?? 100
-  const nodes = createGeneratedTree(itemCount, loadVersion)
-  const defaultExpandedKeys = [
-    nodes[0]?.id,
-    nodes[0]?.children?.[0]?.id
-  ].filter((key): key is string => Boolean(key))
-  const allExpandableKeys = collectExpandableKeys(nodes)
+  const nodes = useMemo(() => createGeneratedTree(itemCount), [itemCount])
+  const defaultExpandedKeys = useMemo(
+    () =>
+      [nodes[0]?.id, nodes[0]?.children?.[0]?.id].filter(
+        (key): key is string => Boolean(key)
+      ),
+    [nodes]
+  )
+  const allExpandableKeys = useMemo(
+    () => collectExpandableKeys(nodes),
+    [nodes]
+  )
   const [expandedKeys, setExpandedKeys] = useState<Set<Key>>(
     () => new Set(defaultExpandedKeys)
   )
@@ -251,7 +261,7 @@ export function DynamicList() {
     startTransition(async () => {
       await waitForTransition()
       update?.()
-      setLoadVersion(current => current + 1)
+      setTransitionCount(current => current + 1)
     })
   }
 
@@ -278,7 +288,7 @@ export function DynamicList() {
 
       return nextKeys.size ? nextKeys : new Set<Key>(defaultExpandedKeys)
     })
-  }, [selectedAmount])
+  }, [allExpandableKeys, defaultExpandedKeys, isExpandAllPreferred])
 
   return (
     <Stack align="normal" style={{width: 420, maxWidth: '100%'}}>
@@ -290,6 +300,10 @@ export function DynamicList() {
       >
         Simulate transition
       </Button>
+
+      <span style={{fontSize: 12, color: 'var(--alinea-text-color-base)'}}>
+        Transitions completed: {transitionCount}
+      </span>
 
       <Select
         items={treeCountOptions}

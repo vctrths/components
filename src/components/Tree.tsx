@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import {type ReactNode, memo, useMemo} from 'react'
 import {
   Tree as AriaTree,
   TreeItem as AriaTreeItem,
@@ -13,7 +14,6 @@ import {IcRoundKeyboardArrowRight} from '../stories/icons/IcRoundKeyboardArrowRi
 import {Checkbox} from './Checkbox.tsx'
 import {Icon, type IconProps} from './Icon.tsx'
 import './Tree.css'
-import type {ReactNode} from 'react'
 
 export function Tree<T extends object>(props: TreeProps<T>) {
   const {className, ...rest} = props
@@ -37,11 +37,28 @@ export interface TreeItemContentProps
   suffix?: ReactNode
 }
 
-export function TreeItemContent({
+export const TreeItemContent = memo(function TreeItemContent({
   icon,
   suffix,
   children
 }: TreeItemContentProps) {
+  const inner = useMemo(
+    () => (
+      <>
+        <Button slot="chevron">
+          <IcRoundKeyboardArrowRight />
+        </Button>
+        {icon && (
+          <span data-slot="icon">
+            <Icon icon={icon} />
+          </span>
+        )}
+        <span data-slot="label">{children}</span>
+        {suffix && <span data-slot="suffix">{suffix}</span>}
+      </>
+    ),
+    [children, icon, suffix]
+  )
   return (
     <AriaTreeItemContent>
       {({
@@ -54,21 +71,12 @@ export function TreeItemContent({
           {selectionBehavior === 'toggle' && selectionMode !== 'none' && (
             <Checkbox slot="selection" />
           )}
-          <Button slot="chevron">
-            <IcRoundKeyboardArrowRight />
-          </Button>
-          {icon && (
-            <span data-slot="icon">
-              <Icon icon={icon} />
-            </span>
-          )}
-          <span data-slot="label">{children}</span>
-          {suffix && <span data-slot="suffix">{suffix}</span>}
+          {inner}
         </>
       )}
     </AriaTreeItemContent>
   )
-}
+})
 
 export interface TreeItemProps extends Partial<AriaTreeItemProps> {
   title: string
@@ -82,12 +90,14 @@ export function TreeItem({
   suffix,
   children,
   className,
+  hasChildItems,
   ...rest
 }: TreeItemProps) {
   return (
     <AriaTreeItem
       textValue={title}
       {...rest}
+      hasChildItems={hasChildItems}
       className={renderProps =>
         clsx(
           'alinea-rac-TreeItem',
