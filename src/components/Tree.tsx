@@ -30,7 +30,7 @@ export function Tree<T extends object>(props: TreeProps<T>) {
   )
 }
 
-export interface TreeItemContentProps2
+export interface TreeItemContentProps
   extends Omit<AriaTreeItemContentProps, 'children'> {
   children?: ReactNode
   icon?: IconProps['icon']
@@ -41,7 +41,7 @@ export function TreeItemContent({
   icon,
   suffix,
   children
-}: TreeItemContentProps2) {
+}: TreeItemContentProps) {
   return (
     <AriaTreeItemContent>
       {({
