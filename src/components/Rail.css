@@ -5,7 +5,7 @@
 }
 
 .alinea-rac-Rail + .alinea-rac-Rail {
-  border-left: 1px solid red;
+  border-left: 1px solid var(--alinea-border-color);
 }
 
 .alinea-rac-Rail .is-main {
@@ -18,7 +18,7 @@
   align-items: center;
   height: 56px;
   flex-shrink: 0;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--alinea-border-color);
 }
 
 .alinea-rac-RailBody {
@@ -27,5 +27,5 @@
   flex-direction: column;
   min-height: 0;
   overflow: auto;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--alinea-border-color);
 }

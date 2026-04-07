@@ -1,3 +1,7 @@
+.alinea-rac-LeftBar {
+  background-color: var(--alinea-panel-background);
+}
+
 .alinea-rac-LeftBarHeader {
   display: flex;
   justify-content: flex-start;
@@ -23,7 +27,7 @@
 .tempaicon {
   width: 32px;
   height: 32px;
-  background-color: var(--alinea-primary-500);
+  background-color: var(--alinea-accent-default);
   display: flex;
   flex-shrink: 0;
   justify-content: center;

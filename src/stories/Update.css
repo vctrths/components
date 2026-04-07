@@ -11,6 +11,7 @@
 .label {
   font-size: 0.8125rem;
   font-weight: 500;
+  color: var(--alinea-text-color);
 }
 
 .inputbox {
@@ -26,6 +27,10 @@
   width: 100%;
 }
 
+.content {
+  background-color: var(--alinea-panel-background-secondary);
+}
+
 .paddingMid {
   padding: 12px;
   overflow-x: hidden !important;
@@ -35,6 +40,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 16px;
+  background-color: var(--alinea-panel-background);
 }
 
 .alinea-rac-TopBarButtons {
@@ -50,6 +56,10 @@
 .allotment {
   --focus-border: var(--alinea-primary-500);
   height: 100dvh !important;
+}
+
+.allotment [class*="splitViewView__"]:not(:first-child)::before {
+  background-color: var(--alinea-border-color) !important;
 }
 
 .borderbottom {
@@ -87,7 +97,7 @@
     background-color: var(--alinea-field-background);
 
     &.pageLinkRow {
-      background-color: var(--alinea-overlay-background);
+      background-color: var(--alinea-background-color);
     }
 
     .react-aria-Breadcrumbs {
@@ -122,5 +132,5 @@
 .unstyled {
   border: none;
   padding: 0;
-  background-color: var(--alinea-overlay-background);
+  background-color: var(--alinea-background-color);
 }

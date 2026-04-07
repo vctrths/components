@@ -26,3 +26,7 @@
 .alinea-rac-Tab {
   gap: 8px;
 }
+
+.alinea-rac-RightBar {
+  background-color: var(--alinea-panel-background);
+}

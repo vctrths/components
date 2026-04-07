@@ -46,8 +46,9 @@
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
-  transition: background var(--alinea-transition), color
-    var(--alinea-transition);
+  transition:
+    background var(--alinea-transition),
+    color var(--alinea-transition);
 
   [data-variant="line"] & {
     padding: 12px 8px;
@@ -166,11 +167,12 @@
       border-radius: 10px;
       gap: 2px;
       padding: 3px;
-      background-color: color-mix(
+      /* background-color: color-mix(
         in oklab,
         var(--alinea-background-color) 75%,
         white
-      );
+      ); */
+      background-color: transparent;
     }
 
     [data-variant="enclosed"] & {

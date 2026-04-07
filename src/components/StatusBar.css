@@ -12,25 +12,24 @@
 }
 
 .alinea-rac-Statusbar-published {
-  background-color: var(--alinea-success-50);
-  border-bottom-color: var(--alinea-success-500);
+  background-color: var(--alinea-status-success-background);
 }
 
 .alinea-rac-Link {
-  color: var(--alinea-success-700);
+  color: var(--alinea-text-dark);
 }
 
 .alinea-rac-Link[data-hovered] {
-  color: var(--alinea-success-500);
+  color: var(--alinea-text-dark);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .alinea-rac-Link[data-disabled] {
   cursor: default;
-  color: var(--alinea-success-700);
+  color: var(--alinea-text-dark);
 }
 
 .react-aria-Breadcrumbs {
-  color: var(--alinea-success-500);
+  color: var(--alinea-text-dark);
 }

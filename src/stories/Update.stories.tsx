@@ -152,7 +152,7 @@ function LinkBlock() {
 function MiddleContent() {
   return (
     <Box className="contentboxes">
-      <Tabs variant="line" className="tabs">
+      <Tabs variant="line">
         <TabList>
           <Tab id="document">Document</Tab>
           <Tab id="metadata">Metadata</Tab>
@@ -160,8 +160,8 @@ function MiddleContent() {
       </Tabs>
       <BoxContent>
         <div className="inputbox">
-          <TextField label="Title" value="Contentpage" isRequired />
-          <TextField label="Path" value="contentpage" isRequired />
+          <TextField label="Title" placeholder="Contentpage" isRequired />
+          <TextField label="Path" placeholder="contentpage" isRequired />
         </div>
         <Box>
           <Tabs variant="line" className="tabs">
@@ -220,8 +220,16 @@ export function FormBuilder() {
               </Tabs>
               <BoxContent>
                 <div className="inputbox">
-                  <TextField label="Title" value="Contentpage" isRequired />
-                  <TextField label="Path" value="contentpage" isRequired />
+                  <TextField
+                    label="Title"
+                    placeholder="Contentpage"
+                    isRequired
+                  />
+                  <TextField
+                    label="Path"
+                    placeholder="contentpage"
+                    isRequired
+                  />
                 </div>
                 <Box>
                   <Tabs variant="line" className="tabs">
@@ -232,7 +240,6 @@ export function FormBuilder() {
                     </TabList>
                   </Tabs>
 
-                  <RowComp label="Form" action={<Settings />} />
                   <BoxRow>
                     <BoxHeader>Form</BoxHeader>
                     <Settings />
@@ -240,28 +247,27 @@ export function FormBuilder() {
 
                   <RowComp label="Text" action={<FoldControl />} />
                   <BoxContent>
-                    <TextField label="Label" value="first name" isRequired />
+                    <TextField
+                      label="Label"
+                      placeholder="first name"
+                      isRequired
+                    />
                   </BoxContent>
 
                   <RowComp label="Options" action={<Settings />} />
                   <BoxContent className="borderbottom">
-                    <TextField value="label" />
+                    <TextField placeholder="label" />
                   </BoxContent>
 
                   <BoxContent className="contentrow">
                     <IcRoundDragHandle className="noshrink" />
-                    <TextField value="Label" />
-                    <TextField value="Key" />
+                    <TextField placeholder="Label" />
+                    <TextField placeholder="Key" />
                     <Button size="icon" appearance="outline" intent="secondary">
                       <IcRoundClose />
                     </Button>
                   </BoxContent>
 
-                  <RowComp
-                    label="Add an option"
-                    icon={<IcRoundAddCircle />}
-                    className="centervalue"
-                  />
                   <BoxRow className="centervalue">
                     <BoxHeader>
                       <IcRoundAddCircle /> Add an option
@@ -307,6 +313,14 @@ function Popup({button, children}: PopupProps) {
                 <Link>Child</Link>
               </Breadcrumb>
             </Breadcrumbs>
+            <Button
+              size="icon"
+              appearance="outline"
+              intent="secondary"
+              slot="close"
+            >
+              <IcRoundClose />
+            </Button>
           </BoxRow>
           <BoxContent>{children}</BoxContent>
           <BoxRow className="bottombuttons">

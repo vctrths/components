@@ -23,27 +23,12 @@ export function Statusbar({status}: StatusbarProps) {
           <Link>Parent</Link>
         </Breadcrumb>
       </Breadcrumbs>
-      {status === 'published' && (
-        <Badge
-          icon={<IcRoundRemoveRedEye />}
-          label="Published"
-          status="succes"
-        />
-      )}
-      {status === 'draft' && (
-        <Badge
-          icon={<IcRoundRemoveRedEye />}
-          label="Published"
-          status="warning"
-        />
-      )}
-      {status === 'archived' && (
-        <Badge
-          icon={<IcRoundRemoveRedEye />}
-          label="Published"
-          status="succes"
-        />
-      )}
+      <Badge
+        icon={<IcRoundRemoveRedEye />}
+        label="Published"
+        status="success"
+        appearence="plain"
+      />
     </div>
   )
 }

@@ -1,18 +1,30 @@
 import clsx from 'clsx'
-import type {ReactNode} from 'react'
+import type {ComponentPropsWithoutRef, ReactNode} from 'react'
 
 import './Badge.css'
 
-interface BadgeProps {
+interface BadgeProps extends ComponentPropsWithoutRef<'div'> {
   label: string
   icon: ReactNode
   iconpos?: 'left' | 'right'
-  status: 'succes' | 'warning' | 'neutral' | 'danger'
+  appearence?: 'background' | 'outline' | 'plain' | 'default'
+  status: 'success' | 'warning' | 'neutral' | 'danger'
 }
 
-export function Badge({label, icon, status, iconpos = 'left'}: BadgeProps) {
+export function Badge({
+  label,
+  icon,
+  status,
+  iconpos = 'left',
+  appearence = 'default',
+  ...props
+}: BadgeProps) {
   return (
-    <div className={clsx('alinea-rac-Badge', `alinea-rac-Badge-${status}`)}>
+    <div
+      data-status={status}
+      data-appearence={appearence}
+      className={clsx('alinea-rac-Badge', props.className)}
+    >
       {iconpos === 'left' && icon}
       <p className="sublabel">{label}</p>
       {iconpos === 'right' && icon}

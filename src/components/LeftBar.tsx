@@ -1,4 +1,9 @@
-import {Button as RacButton} from 'react-aria-components'
+import {
+  Collection,
+  Button as RacButton,
+  useDragAndDrop,
+  useTreeData
+} from 'react-aria-components'
 import {IcRoundAdd} from '../stories/icons/IcRoundAdd.tsx'
 import {IcRoundArrowBack} from '../stories/icons/IcRoundArrowBack.tsx'
 import {IcRoundKeyboardArrowDown} from '../stories/icons/IcRoundKeyboardArrowDown.tsx'
@@ -10,6 +15,7 @@ import {Rail, RailBody, RailFooter, RailHeader} from './Rail.tsx'
 import './LeftBar.css'
 import {IcRoundAccountCircle} from '../stories/icons/IcRoundAccountCircle.tsx'
 import {Menu, MenuItem} from './Menu.tsx'
+import {Tree, TreeItem} from './Tree.tsx'
 
 function Tempaicon() {
   return (
@@ -20,6 +26,60 @@ function Tempaicon() {
 }
 
 export function LeftBar() {
+  const tree = useTreeData({
+    initialItems: [
+      {
+        id: '1',
+        title: 'Documents',
+        type: 'directory',
+        children: [
+          {
+            id: '2',
+            title: 'Project',
+            type: 'directory',
+            children: [
+              {id: '3', title: 'Weekly Report', type: 'file', children: []},
+              {id: '4', title: 'Budget', type: 'file', children: []}
+            ]
+          }
+        ]
+      },
+      {
+        id: '5',
+        title: 'Photos',
+        type: 'directory',
+        children: [
+          {id: '6', title: 'Image 1', type: 'file', children: []},
+          {id: '7', title: 'Image 2', type: 'file', children: []}
+        ]
+      }
+    ]
+  })
+
+  const {dragAndDropHooks} = useDragAndDrop({
+    getItems: (keys, items: typeof tree.items) =>
+      items.map(item => ({'text/plain': item.value.title})),
+    onMove(e) {
+      if (e.target.dropPosition === 'before') {
+        tree.moveBefore(e.target.key, e.keys)
+      } else if (e.target.dropPosition === 'after') {
+        tree.moveAfter(e.target.key, e.keys)
+      } else if (e.target.dropPosition === 'on') {
+        // Move items to become children of the target
+        const targetNode = tree.getItem(e.target.key)
+        if (targetNode) {
+          const targetIndex = targetNode.children
+            ? targetNode.children.length
+            : 0
+          const keyArray = Array.from(e.keys)
+          for (let i = 0; i < keyArray.length; i++) {
+            tree.move(keyArray[i], e.target.key, targetIndex + i)
+          }
+        }
+      }
+    }
+  })
+
   return (
     <Rail className="alinea-rac-LeftBar">
       <RailHeader className="alinea-rac-LeftBarHeader">
@@ -94,6 +154,21 @@ export function LeftBar() {
       </RailHeader>
 
       <RailBody className="alinea-rac-LeftBarBody">
+        <Tree
+          aria-label="Tree with hierarchical drag and drop"
+          items={tree.items}
+          dragAndDropHooks={dragAndDropHooks}
+        >
+          {function renderItem(item) {
+            return (
+              <TreeItem title={item.value.title}>
+                {item.children && (
+                  <Collection items={item.children}>{renderItem}</Collection>
+                )}
+              </TreeItem>
+            )
+          }}
+        </Tree>
         <Button appearance="link" intent="secondary">
           Home
         </Button>

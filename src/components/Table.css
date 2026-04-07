@@ -54,7 +54,7 @@
 }
 
 .alinea-rac-TableHeader {
-  background-color: var(--alinea-header-background);
+  background-color: var(--alinea-field-background);
   font-weight: bold;
 }
 
