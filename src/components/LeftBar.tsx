@@ -57,8 +57,11 @@ export function LeftBar() {
   })
 
   const {dragAndDropHooks} = useDragAndDrop({
-    getItems: (keys, items: typeof tree.items) =>
-      items.map(item => ({'text/plain': item.value.title})),
+    getItems: keys =>
+      [...keys].map(key => {
+        const item = tree.getItem(key)
+        return {'text/plain': item.value.title}
+      }),
     onMove(e) {
       if (e.target.dropPosition === 'before') {
         tree.moveBefore(e.target.key, e.keys)
@@ -80,6 +83,11 @@ export function LeftBar() {
     }
   })
 
+  const treeLayoutOptions = {
+    rowHeight: 34,
+    padding: 0,
+    gap: 1
+  }
   return (
     <Rail className="alinea-rac-LeftBar">
       <RailHeader className="alinea-rac-LeftBarHeader">
@@ -161,7 +169,7 @@ export function LeftBar() {
         >
           {function renderItem(item) {
             return (
-              <TreeItem title={item.value.title}>
+              <TreeItem title={item.value.title} id={item.value.id}>
                 {item.children && (
                   <Collection items={item.children}>{renderItem}</Collection>
                 )}
@@ -169,22 +177,7 @@ export function LeftBar() {
             )
           }}
         </Tree>
-        <Button appearance="link" intent="secondary">
-          Home
-        </Button>
-        <Button appearance="link" intent="secondary">
-          About us
-        </Button>
-        <Button appearance="link" intent="secondary">
-          Services
-          <IcRoundKeyboardArrowDown data-slot="icon" />
-        </Button>
-        <Button appearance="link" intent="secondary">
-          Our team
-          <IcRoundKeyboardArrowDown data-slot="icon" />
-        </Button>
       </RailBody>
-
       <RailFooter className="alinea-rac-LeftBarFooter">
         <div className="alinea-rac-LeftBarFooter-profile">
           <IcRoundAccountCircle />

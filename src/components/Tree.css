@@ -38,6 +38,7 @@
     width: 100%;
     box-sizing: border-box;
     outline: none;
+    border-radius: 6px;
 
     /* Chevron */
 
@@ -109,6 +110,7 @@
 
     &[data-focus-visible] {
       outline: 2px solid var(--alinea-focus-ring-color);
+      background: var(--alinea-background-color);
       outline-offset: -2px;
     }
 
@@ -181,6 +183,10 @@
         box-shadow: none;
       }
     }
+
+    user-select: none;
+    -webkit-user-drag: element; /* Forceert Chrome om het als een versleepbaar element te zien */
+    touch-action: none;
   }
 
   /* Drop indicator */
@@ -207,4 +213,25 @@
   outline: 2px solid var(--alinea-highlight-background);
   outline-offset: -1px;
   background: var(--alinea-highlight-overlay);
+}
+
+.react-aria-Button[data-invisible="true"] {
+  opacity: 0 !important;
+  &:focus-visible {
+    opacity: 1 !important;
+    + .react-aria-Button[data-invisible="false"] {
+      opacity: 0 !important;
+    }
+  }
+}
+
+.alinea-rac-TreeItem-controls {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  & > * {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
 }
