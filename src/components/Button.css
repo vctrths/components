@@ -167,27 +167,15 @@
     }
 
     &[data-appearance="outline"] {
-      --alinea-button-color: light-dark(
-        var(--alinea-gray-700),
-        var(--alinea-gray-200)
-      );
       --alinea-button-bg: transparent;
-      --alinea-button-border: light-dark(
-        var(--alinea-gray-300),
-        var(--alinea-gray-600)
-      );
-      --alinea-button-hovered: light-dark(
-        var(--alinea-gray-50),
-        var(--alinea-gray-800)
-      );
-
-      &[data-hovered] {
-        --alinea-button-bg: var(--alinea-button-hovered);
-      }
+      --alinea-button-border: var(--alinea-selected-background);
     }
 
-    &[data-appearance="plain"] {
-      --alinea-button-color: var(--alinea-text-color);
+    &[data-appearance="outline"][data-hovered],
+    &[data-appearance="plain"][data-hovered] {
+      --alinea-button-color: var(--alinea-selected-foreground);
+      --alinea-button-bg: var(--alinea-selected-background);
+      --alinea-button-border: transparent;
     }
   }
 
@@ -279,6 +267,10 @@
     &[data-appearance="plain"] {
       --alinea-button-color: var(--alinea-danger-500);
     }
+
+    &[data-appearance="plain"][data-hovered] {
+      --alinea-button-color: var(--alinea-gray-50);
+    }
   }
 
   &[data-intent="warning"] {
@@ -314,6 +306,9 @@
 
     &[data-appearance="plain"] {
       --alinea-button-color: var(--alinea-warning-600);
+    }
+    &[data-appearance="plain"][data-hovered] {
+      --alinea-button-color: var(--alinea-gray-900);
     }
   }
 
