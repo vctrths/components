@@ -7,7 +7,7 @@ interface BadgeProps extends ComponentPropsWithoutRef<'div'> {
   label: string
   icon: ReactNode
   iconpos?: 'left' | 'right'
-  appearence?: 'background' | 'outline' | 'plain' | 'default'
+  appearance?: 'background' | 'outline' | 'plain' | 'default'
   status: 'success' | 'warning' | 'neutral' | 'danger'
 }
 
@@ -16,13 +16,13 @@ export function Badge({
   icon,
   status,
   iconpos = 'left',
-  appearence = 'default',
+  appearance = 'default',
   ...props
 }: BadgeProps) {
   return (
     <div
       data-status={status}
-      data-appearence={appearence}
+      data-appearance={appearance}
       className={clsx('alinea-rac-Badge', props.className)}
     >
       {iconpos === 'left' && icon}

@@ -1,9 +1,9 @@
 import {Breadcrumb} from 'react-aria-components'
-import {IcRoundRemoveRedEye} from '../stories/icons/IcRoundRemoveRedEye.tsx'
 import {Breadcrumbs} from '../todo/Breadcrumbs.tsx'
 import {Badge} from './Badge.tsx'
 import {Link} from './Link.tsx'
 import './DetailsBar.css'
+import {IcRoundVisibility} from '../stories/icons/IcRoundVisibility.tsx'
 
 interface DetailsBarProps {
   status: 'published' | 'draft' | 'archived'
@@ -21,10 +21,10 @@ export function DetailsBar({status}: DetailsBarProps) {
         </Breadcrumb>
       </Breadcrumbs>
       <Badge
-        icon={<IcRoundRemoveRedEye />}
+        icon={<IcRoundVisibility />}
         label="Published"
         status="success"
-        appearence="plain"
+        appearance="plain"
       />
     </div>
   )
