@@ -1,0 +1,63 @@
+@import "../theme.css";
+
+.alinea-rac-Box {
+  border: 1px solid var(--alinea-border-color);
+  border-radius: 6px;
+  background-color: var(--alinea-panel-background-secondary);
+  overflow: hidden;
+  min-height: fit-content;
+  height: auto;
+}
+
+.alinea-rac-Box > .tabs .alinea-rac-Tablist {
+  padding: 0;
+}
+
+.alinea-rac-BoxRow {
+  border-bottom: solid 1px var(--alinea-border-color);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  color: var(--alinea-text-color);
+  &.alinea-rac-BoxRow-start {
+    justify-content: start;
+  }
+  &.alinea-rac-BoxRow-middle {
+    justify-content: center;
+  }
+  &.alinea-rac-BoxRow-end {
+    justify-content: end;
+  }
+}
+
+:not(.alinea-rac-BoxRow, .alinea-rac-Tablist, .alinea-rac-Tabs)
+  + .alinea-rac-BoxRow {
+  border-top: solid 1px var(--alinea-border-color);
+}
+
+.alinea-rac-BoxRow:last-child {
+  border-bottom: none;
+}
+
+.alinea-rac-BoxContent {
+  padding: 12px;
+  background-color: var(--alinea-panel-background-tertiary);
+  color: var(--alinea-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.alinea-rac-BoxHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--alinea-text-color);
+}
