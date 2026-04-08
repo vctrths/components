@@ -1,0 +1,40 @@
+@import "../theme.css";
+
+.alinea-rac-DetailsBar {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+
+  &[data-status="published"] {
+    background-color: var(--alinea-status-success-background);
+  }
+  &[data-status="draft"] {
+    background-color: orange;
+  }
+  &[data-status="archived"] {
+    background-color: lightgray;
+  }
+}
+
+.alinea-rac-Link {
+  color: var(--alinea-text-dark);
+}
+
+.alinea-rac-Link[data-hovered] {
+  color: var(--alinea-text-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.alinea-rac-Link[data-disabled] {
+  cursor: default;
+  color: var(--alinea-text-dark);
+}
+
+.react-aria-Breadcrumbs {
+  color: var(--alinea-text-dark);
+}
