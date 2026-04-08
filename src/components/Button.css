@@ -149,8 +149,7 @@
     --alinea-button-pressed: var(--alinea-highlight-background-pressed);
 
     &[data-disabled] {
-      --alinea-button-color: var(--alinea-highlight-foreground-disabled);
-      --alinea-button-bg: var(--alinea-highlight-background-disabled);
+      opacity: 0.6;
     }
 
     &[data-hovered] {
@@ -180,6 +179,44 @@
   }
 
   &[data-intent="secondary"] {
+    --alinea-button-color: var(--alinea-selected-foreground);
+    --alinea-button-bg: var(--alinea-selected-background);
+
+    &[data-disabled] {
+      opacity: 0.6;
+    }
+
+    &[data-hovered] {
+      --alinea-button-color: var(--alinea-highlight-foreground);
+      --alinea-button-bg: var(--alinea-highlight-background);
+    }
+
+    &[data-appearance="outline"] {
+      --alinea-button-color: light-dark(
+        var(--alinea-gray-700),
+        var(--alinea-gray-200)
+      );
+      --alinea-button-bg: transparent;
+      --alinea-button-border: light-dark(
+        var(--alinea-gray-300),
+        var(--alinea-gray-600)
+      );
+      --alinea-button-hovered: light-dark(
+        var(--alinea-gray-50),
+        var(--alinea-gray-800)
+      );
+
+      &[data-hovered] {
+        --alinea-button-bg: var(--alinea-button-hovered);
+      }
+    }
+
+    &[data-appearance="plain"] {
+      --alinea-button-color: var(--alinea-text-color);
+    }
+  }
+
+  &[data-intent="tertiary"] {
     --alinea-button-color: light-dark(
       var(--alinea-gray-800),
       var(--alinea-gray-200)
