@@ -5,7 +5,6 @@
   --alinea-button-bg: var(--alinea-highlight-background);
   --alinea-button-border: transparent;
   --alinea-button-hovered: var(--alinea-highlight-background-hovered);
-  --alinea-button-pressed: var(--alinea-highlight-background-pressed);
 
   color: var(--alinea-button-color);
   font: inherit;
@@ -30,7 +29,7 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    pointer-events: none;
+    opacity: 0.5;
   }
 
   &[data-appearance="outline"] {
@@ -41,20 +40,10 @@
     outline: 2px solid var(--alinea-button-bg);
     outline-offset: 2px;
 
-    &[data-appearance="outline"] {
-      outline-color: var(--alinea-highlight-background);
-    }
-
+    &[data-appearance="outline"],
     &[data-appearance="plain"] {
-      outline-color: var(--alinea-background-color);
+      outline-color: var(--alinea-button-border);
     }
-  }
-
-  &[data-appearance="plain"] {
-    --alinea-button-color: var(--alinea-text-color);
-    --alinea-button-bg: transparent;
-    --alinea-button-hovered: var(--alinea-background-color);
-    --alinea-button-pressed: var(--alinea-background-color-hover);
   }
 
   &[data-size="small"] {
@@ -146,11 +135,6 @@
     --alinea-button-bg: var(--alinea-highlight-background);
     --alinea-button-border: transparent;
     --alinea-button-hovered: var(--alinea-highlight-background-hovered);
-    --alinea-button-pressed: var(--alinea-highlight-background-pressed);
-
-    &[data-disabled] {
-      opacity: 0.6;
-    }
 
     &[data-hovered] {
       --alinea-button-bg: var(--alinea-button-hovered);
@@ -160,31 +144,22 @@
       --alinea-button-color: var(--alinea-highlight-background);
       --alinea-button-bg: transparent;
       --alinea-button-border: var(--alinea-highlight-background);
-      --alinea-button-hovered: var(--alinea-primary-50);
-    }
-
-    &[data-appearance="outline"][data-disabled] {
-      --alinea-button-color: var(--alinea-primary-200);
-      --alinea-button-border: var(--alinea-primary-200);
-      --alinea-button-bg: transparent;
-    }
-
-    &[data-appearance="outline"][data-hovered] {
-      --alinea-button-bg: var(--alinea-button-hovered);
     }
 
     &[data-appearance="plain"] {
       --alinea-button-color: var(--alinea-highlight-background);
+    }
+
+    &[data-appearance="outline"][data-hovered],
+    &[data-appearance="plain"][data-hovered] {
+      --alinea-button-color: var(--alinea-highlight-foreground);
+      --alinea-button-bg: var(--alinea-highlight-background);
     }
   }
 
   &[data-intent="secondary"] {
     --alinea-button-color: var(--alinea-selected-foreground);
     --alinea-button-bg: var(--alinea-selected-background);
-
-    &[data-disabled] {
-      opacity: 0.6;
-    }
 
     &[data-hovered] {
       --alinea-button-color: var(--alinea-highlight-foreground);
@@ -228,10 +203,6 @@
     --alinea-button-hovered: light-dark(
       var(--alinea-gray-200),
       var(--alinea-gray-700)
-    );
-    --alinea-button-pressed: light-dark(
-      var(--alinea-gray-300),
-      var(--alinea-gray-600)
     );
 
     &[data-disabled] {
@@ -278,7 +249,6 @@
     --alinea-button-color: var(--alinea-gray-50);
     --alinea-button-bg: var(--alinea-danger-400);
     --alinea-button-hovered: var(--alinea-danger-500);
-    --alinea-button-pressed: var(--alinea-danger-600);
 
     &[data-disabled] {
       --alinea-button-color: var(--alinea-danger-400);
@@ -315,7 +285,6 @@
     --alinea-button-color: var(--alinea-gray-900);
     --alinea-button-bg: var(--alinea-warning-400);
     --alinea-button-hovered: var(--alinea-warning-500);
-    --alinea-button-pressed: var(--alinea-warning-600);
 
     &[data-disabled] {
       --alinea-button-color: var(--alinea-warning-400);
@@ -351,14 +320,11 @@
   &[data-appearance="plain"] {
     --alinea-button-bg: transparent;
     --alinea-button-border: transparent;
-    --alinea-button-hovered: var(--alinea-background-color);
-    --alinea-button-pressed: var(--alinea-background-color-hover);
   }
 
   &[data-appearance="plain"][data-disabled] {
     --alinea-button-color: var(--alinea-text-color-disabled);
     --alinea-button-bg: transparent;
     --alinea-button-hovered: transparent;
-    --alinea-button-pressed: transparent;
   }
 }
