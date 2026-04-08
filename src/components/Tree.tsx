@@ -47,16 +47,21 @@ export function TreeItemContent({
       {({
         selectionBehavior,
         selectionMode,
-        allowsDragging
+        allowsDragging,
+        isDragging
       }: TreeItemContentRenderProps) => (
         <>
-          {allowsDragging && <Button slot="drag">≡</Button>}
           {selectionBehavior === 'toggle' && selectionMode !== 'none' && (
             <Checkbox slot="selection" />
           )}
-          <Button slot="chevron">
-            <IcRoundKeyboardArrowRight />
-          </Button>
+          <div className="alinea-rac-TreeItem-controls">
+            <Button slot="drag" data-invisible={!isDragging}>
+              ≡
+            </Button>
+            <Button slot="chevron" data-invisible={isDragging}>
+              <IcRoundKeyboardArrowRight />
+            </Button>
+          </div>
           {icon && (
             <span data-slot="icon">
               <Icon icon={icon} />
