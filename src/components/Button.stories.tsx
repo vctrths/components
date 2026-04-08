@@ -126,9 +126,6 @@ export function Icons() {
       <Button size="square-petite" appearance="plain" intent="secondary">
         <IcRoundRefresh data-slot="icon" />
       </Button>
-      <Button size="square-petite" appearance="plain" intent="secondary">
-        <IcRoundRefresh data-slot="icon" />
-      </Button>
       <Button isPending={isLoading} icon={IcRoundRefresh} onPress={handlePress}>
         {isLoading ? 'Refreshing...' : 'Refresh'}
       </Button>
@@ -197,6 +194,14 @@ export function IconSize() {
         </Button>
         <Button size="icon" intent="secondary" appearance="plain">
           <IcRoundSearch data-slot="icon" />
+        </Button>
+      </HStack>
+      <HStack>
+        <Button size="icon" intent="warning">
+          <IcRoundClose data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="warning" appearance="outline">
+          <IcRoundClose data-slot="icon" />
         </Button>
         <Button size="icon" intent="danger">
           <IcRoundClose data-slot="icon" />
