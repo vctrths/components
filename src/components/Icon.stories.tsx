@@ -14,6 +14,8 @@ import {IcRoundContentCopy} from '../stories/icons/IcRoundContentCopy.tsx'
 import {IcRoundDelete} from '../stories/icons/IcRoundDelete.tsx'
 import {IcRoundDescription} from '../stories/icons/IcRoundDescription.tsx'
 import {IcRoundEdit} from '../stories/icons/IcRoundEdit.tsx'
+import {IcRoundFormatAlignLeft} from '../stories/icons/IcRoundFormatAlignLeft.tsx'
+import {IcRoundFormatBold} from '../stories/icons/IcRoundFormatBold.tsx'
 import {IcRoundGridView} from '../stories/icons/IcRoundGridView.tsx'
 import {IcRoundHistory} from '../stories/icons/IcRoundHistory.tsx'
 import {IcRoundHome} from '../stories/icons/IcRoundHome.tsx'
@@ -29,6 +31,7 @@ import {IcRoundLogout} from '../stories/icons/IcRoundLogout.tsx'
 import {IcRoundMoreVert} from '../stories/icons/IcRoundMoreVert.tsx'
 import {IcRoundOpenInNew} from '../stories/icons/IcRoundOpenInNew.tsx'
 import {IcRoundPermMedia} from '../stories/icons/IcRoundPermMedia.tsx'
+import {IcRoundRedo} from '../stories/icons/IcRoundRedo.tsx'
 import {IcRoundRefresh} from '../stories/icons/IcRoundRefresh.tsx'
 import {IcRoundSearch} from '../stories/icons/IcRoundSearch.tsx'
 import {IcRoundSettings} from '../stories/icons/IcRoundSettings.tsx'
@@ -36,6 +39,7 @@ import {IcRoundShare} from '../stories/icons/IcRoundShare.tsx'
 import {IcRoundTextFields} from '../stories/icons/IcRoundTextFields.tsx'
 import {IcRoundTranslate} from '../stories/icons/IcRoundTranslate.tsx'
 import {IcRoundUnarchive} from '../stories/icons/IcRoundUnarchive.tsx'
+import {IcRoundUndo} from '../stories/icons/IcRoundUndo.tsx'
 import {IcRoundUnfoldMore} from '../stories/icons/IcRoundUnfoldMore.tsx'
 import {IcRoundUnpublished} from '../stories/icons/IcRoundUnpublished.tsx'
 import {IcRoundUpload} from '../stories/icons/IcRoundUpload.tsx'
@@ -52,6 +56,7 @@ const icons = [
   {icon: IcRoundArchive, name: 'IcRoundArchive'},
   {icon: IcRoundArrowBack, name: 'IcRoundArrowBack'},
   {icon: IcRoundArrowForward, name: 'IcRoundArrowForward'},
+  {icon: IcRoundFormatBold, name: 'IcRoundFormatBold'},
   {icon: IcRoundBrightness, name: 'IcRoundBrightness'},
   {icon: IcRoundCancel, name: 'IcRoundCancel'},
   {icon: IcRoundCheck, name: 'IcRoundCheck'},
@@ -61,6 +66,7 @@ const icons = [
   {icon: IcRoundDelete, name: 'IcRoundDelete'},
   {icon: IcRoundDescription, name: 'IcRoundDescription'},
   {icon: IcRoundEdit, name: 'IcRoundEdit'},
+  {icon: IcRoundFormatAlignLeft, name: 'IcRoundFormatAlignLeft'},
   {icon: IcRoundGridView, name: 'IcRoundGridView'},
   {icon: IcRoundHistory, name: 'IcRoundHistory'},
   {icon: IcRoundHome, name: 'IcRoundHome'},
@@ -76,6 +82,7 @@ const icons = [
   {icon: IcRoundMoreVert, name: 'IcRoundMoreVert'},
   {icon: IcRoundOpenInNew, name: 'IcRoundOpenInNew'},
   {icon: IcRoundPermMedia, name: 'IcRoundPermMedia'},
+  {icon: IcRoundRedo, name: 'IcRoundRedo'},
   {icon: IcRoundRefresh, name: 'IcRoundRefresh'},
   {icon: IcRoundSearch, name: 'IcRoundSearch'},
   {icon: IcRoundSettings, name: 'IcRoundSettings'},
@@ -83,6 +90,7 @@ const icons = [
   {icon: IcRoundTextFields, name: 'IcRoundTextFields'},
   {icon: IcRoundTranslate, name: 'IcRoundTranslate'},
   {icon: IcRoundUnarchive, name: 'IcRoundUnarchive'},
+  {icon: IcRoundUndo, name: 'IcRoundUndo'},
   {icon: IcRoundUnfoldMore, name: 'IcRoundUnfoldMore'},
   {icon: IcRoundUnpublished, name: 'IcRoundUnpublished'},
   {icon: IcRoundUpload, name: 'IcRoundUpload'},
