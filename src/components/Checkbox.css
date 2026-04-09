@@ -30,9 +30,10 @@
   .alinea-rac-Checkbox-mark {
     width: 1rem;
     height: 1rem;
+    padding: 1px;
     fill: none;
     stroke: var(--alinea-checkmark-color);
-    stroke-width: 3px;
+    stroke-width: 2px;
     stroke-dasharray: 22px;
     stroke-dashoffset: 66;
     transition: var(--alinea-transition);
