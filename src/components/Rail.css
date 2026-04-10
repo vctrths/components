@@ -8,7 +8,7 @@
   border-left: 1px solid var(--alinea-border-color);
 }
 
-.alinea-rac-Rail .is-main {
+.alinea-rac-Rail[data-main="true"] {
   flex: 1;
   min-width: 0;
 }

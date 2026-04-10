@@ -10,7 +10,8 @@ export function Rail({main, className, ...props}: RailProps) {
   return (
     <div
       {...props}
-      className={clsx('alinea-rac-Rail', main && 'is-main', className)}
+      data-main={main}
+      className={clsx('alinea-rac-Rail', className)}
     />
   )
 }
