@@ -181,7 +181,10 @@ export function IconSize() {
         <Button size="icon" appearance="plain">
           <IcRoundRefresh data-slot="icon" />
         </Button>
-        <Button size="icon" appearance="active">
+        <Button size="icon" isDisabled>
+          <IcRoundRefresh data-slot="icon" />
+        </Button>
+        <Button size="icon" appearance="outline" isDisabled>
           <IcRoundRefresh data-slot="icon" />
         </Button>
       </HStack>
@@ -193,6 +196,29 @@ export function IconSize() {
           <IcRoundSearch data-slot="icon" />
         </Button>
         <Button size="icon" intent="secondary" appearance="plain">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="secondary" isDisabled>
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="secondary" appearance="outline" isDisabled>
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+      </HStack>
+      <HStack>
+        <Button size="icon" intent="tertiary">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="tertiary" appearance="outline">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="tertiary" appearance="plain">
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="tertiary" isDisabled>
+          <IcRoundSearch data-slot="icon" />
+        </Button>
+        <Button size="icon" intent="tertiary" appearance="outline" isDisabled>
           <IcRoundSearch data-slot="icon" />
         </Button>
       </HStack>
@@ -208,20 +234,6 @@ export function IconSize() {
         </Button>
         <Button size="icon" intent="danger" appearance="outline">
           <IcRoundClose data-slot="icon" />
-        </Button>
-      </HStack>
-      <HStack>
-        <Button size="icon" isDisabled>
-          <IcRoundRefresh data-slot="icon" />
-        </Button>
-        <Button size="icon" appearance="outline" isDisabled>
-          <IcRoundRefresh data-slot="icon" />
-        </Button>
-        <Button size="icon" appearance="plain" isDisabled>
-          <IcRoundRefresh data-slot="icon" />
-        </Button>
-        <Button size="icon" intent="secondary" appearance="outline" isDisabled>
-          <IcRoundSearch data-slot="icon" />
         </Button>
       </HStack>
     </Stack>

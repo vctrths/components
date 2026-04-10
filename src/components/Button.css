@@ -76,8 +76,8 @@
     }
 
     &[data-appearance="active"] {
-      background-color: var(--alinea-highlight-overlay);
-      color: var(--alinea-highlight-background);
+      background-color: var(--alinea-selected-background);
+      color: var(--alinea-selected-foreground);
     }
   }
 
