@@ -1,0 +1,31 @@
+.alinea-rac-Rail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.alinea-rac-Rail + .alinea-rac-Rail {
+  border-left: 1px solid var(--alinea-border-color);
+}
+
+.alinea-rac-Rail[data-main="true"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.alinea-rac-RailHeader {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--alinea-border-color);
+}
+
+.alinea-rac-RailBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: auto;
+  border-bottom: 1px solid var(--alinea-border-color);
+}
