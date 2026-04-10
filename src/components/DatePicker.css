@@ -63,6 +63,7 @@
     cursor: pointer;
     background: none;
     border: none;
+    padding: 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -92,12 +93,16 @@
       color: var(--alinea-icon-color);
 
       &:before {
-        background-color: var(--alinea-border-color);
+        background-color: var(--alinea-background-color);
       }
     }
 
     [data-open] & {
       color: var(--alinea-icon-color-active);
+
+      &:before {
+        background-color: var(--alinea-highlight-overlay);
+      }
     }
   }
 }
