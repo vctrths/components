@@ -4,6 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
+        "@radix-ui/colors": "^3.0.0",
         "allotment": "^1.20.5",
       },
       "devDependencies": {
@@ -216,6 +217,8 @@
     "@playwright/experimental-ct-react": ["@playwright/experimental-ct-react@1.57.0", "", { "dependencies": { "@playwright/experimental-ct-core": "1.57.0", "@vitejs/plugin-react": "^4.2.1" }, "bin": { "playwright": "cli.js" } }, "sha512-wNRmkLOxHEXA9OL7QggNYVHnqaGlMOTB5q9FhrnlcFHHRs+M8SH9mQy5//dGFoYKAkhuZf4GPA3poi9bBdkdfQ=="],
 
     "@playwright/test": ["@playwright/test@1.57.0", "", { "dependencies": { "playwright": "1.57.0" }, "bin": { "playwright": "cli.js" } }, "sha512-6TyEnHgd6SArQO8UO2OMTxshln3QMWBtPGrOCgs3wVEmQmwyuNtB10IZMfmYDE0riwNR1cu4q+pPcxMVtaG3TA=="],
+
+    "@radix-ui/colors": ["@radix-ui/colors@3.0.0", "", {}, "sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg=="],
 
     "@react-aria/autocomplete": ["@react-aria/autocomplete@3.0.0-rc.6", "", { "dependencies": { "@react-aria/combobox": "^3.15.0", "@react-aria/focus": "^3.21.5", "@react-aria/i18n": "^3.12.16", "@react-aria/interactions": "^3.27.1", "@react-aria/listbox": "^3.15.3", "@react-aria/searchfield": "^3.8.12", "@react-aria/textfield": "^3.18.5", "@react-aria/utils": "^3.33.1", "@react-stately/autocomplete": "3.0.0-beta.4", "@react-stately/combobox": "^3.13.0", "@react-types/autocomplete": "3.0.0-alpha.38", "@react-types/button": "^3.15.1", "@react-types/shared": "^3.33.1", "@swc/helpers": "^0.5.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1", "react-dom": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1" } }, "sha512-uymUNJ8NW+dX7lmgkHE+SklAbxwktycAJcI5lBBw6KPZyc0EdMHC+/Fc5CUz3enIAhNwd2oxxogcSHknquMzQA=="],
 

@@ -48,6 +48,7 @@
     "prepublishOnly": "bun package.ts"
   },
   "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
     "allotment": "^1.20.5"
   }
 }

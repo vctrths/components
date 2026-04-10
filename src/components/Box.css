@@ -3,7 +3,6 @@
 .alinea-rac-Box {
   border: 1px solid var(--alinea-border-color);
   border-radius: 6px;
-  /* padding: 0 !important; */
   background-color: var(--alinea-panel-background-secondary);
   overflow: hidden;
   min-height: fit-content;

@@ -141,7 +141,6 @@
 .alinea-rac-Tablist {
   overflow-x: auto;
   max-width: 100%;
-  padding: 2px;
   white-space: nowrap;
   scrollbar-width: thin;
   scrollbar-color: var(--alinea-border-color) transparent;

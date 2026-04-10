@@ -1,119 +1,98 @@
-/* primitives */
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/slate-dark.css";
+
+@import "@radix-ui/colors/pink.css";
+@import "@radix-ui/colors/pink-dark.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/amber.css";
+@import "@radix-ui/colors/amber-dark.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/green-dark.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/red-dark.css";
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/gray-dark.css";
+
+/* aliases */
 :root {
-  --alinea-gray-0: #ffffff;
-  --alinea-gray-50: #f9fafb;
-  --alinea-gray-100: #f3f4f6;
-  --alinea-gray-200: #e5e7eb;
-  --alinea-gray-300: #d1d5dc;
-  --alinea-gray-400: #99a1af;
-  --alinea-gray-500: #6a7282;
-  --alinea-gray-600: #4a5565;
-  --alinea-gray-700: #364153;
-  --alinea-gray-800: #1e2939;
-  --alinea-gray-900: #101828;
-  --alinea-gray-1000: #000000;
+  --alinea-primary-1: var(--blue-1);
+  --alinea-primary-2: var(--blue-2);
+  --alinea-primary-3: var(--blue-3);
+  --alinea-primary-4: var(--blue-4);
+  --alinea-primary-5: var(--blue-5);
+  --alinea-primary-6: var(--blue-6);
+  --alinea-primary-7: var(--blue-7);
+  --alinea-primary-8: var(--blue-8);
+  --alinea-primary-9: var(--blue-9);
+  --alinea-primary-10: var(--blue-10);
+  --alinea-primary-11: var(--blue-11);
+  --alinea-primary-12: var(--blue-12);
 
-  --alinea-blue-50: #eceffd;
-  --alinea-blue-100: #d6ddfa;
-  --alinea-blue-200: #c1ccf8;
-  --alinea-blue-300: #abbaf5;
-  --alinea-blue-400: #96a8f3;
-  --alinea-blue-500: #8096f0;
-  --alinea-blue-600: #6a84ed;
-  --alinea-blue-700: #5573eb;
-  --alinea-blue-800: #3f61e8;
-  --alinea-blue-900: #3652c5;
-  --alinea-blue-950: #203174;
-  --alinea-blue-1200: #393a4a;
+  --alinea-brand-1: var(--alinea-primary-1);
+  --alinea-brand-2: var(--alinea-primary-2);
+  --alinea-brand-3: var(--alinea-primary-3);
+  --alinea-brand-4: var(--alinea-primary-4);
+  --alinea-brand-5: var(--alinea-primary-5);
+  --alinea-brand-6: var(--alinea-primary-6);
+  --alinea-brand-7: var(--alinea-primary-7);
+  --alinea-brand-8: var(--alinea-primary-8);
+  --alinea-brand-9: var(--alinea-primary-9);
+  --alinea-brand-10: var(--alinea-primary-10);
+  --alinea-brand-11: var(--alinea-primary-11);
+  --alinea-brand-12: var(--alinea-primary-12);
 
-  --alinea-red-50: #ffebee;
-  --alinea-red-100: #ffcdd2;
-  --alinea-red-200: #ef9a9a;
-  --alinea-red-300: #e57373;
-  --alinea-red-400: #ef5350;
-  --alinea-red-500: #f44336;
-  --alinea-red-600: #e53935;
-  --alinea-red-700: #d32f2f;
-  --alinea-red-800: #c62828;
-  --alinea-red-900: #b71c1c;
+  --alinea-surface-1: var(--slate-1);
+  --alinea-surface-2: var(--slate-2);
+  --alinea-surface-3: var(--slate-3);
+  --alinea-surface-4: var(--slate-4);
+  --alinea-surface-5: var(--slate-5);
+  --alinea-surface-6: var(--slate-6);
+  --alinea-surface-7: var(--slate-7);
+  --alinea-surface-8: var(--slate-8);
+  --alinea-surface-9: var(--slate-9);
+  --alinea-surface-10: var(--slate-10);
+  --alinea-surface-11: var(--slate-11);
+  --alinea-surface-12: var(--slate-12);
 
-  --alinea-orange-50: #fff3e0;
-  --alinea-orange-100: #ffe0b2;
-  --alinea-orange-200: #ffcc80;
-  --alinea-orange-300: #ffb74d;
-  --alinea-orange-400: #ffa726;
-  --alinea-orange-500: #ff9800;
-  --alinea-orange-600: #fb8c00;
-  --alinea-orange-700: #f57c00;
-  --alinea-orange-800: #ef6c00;
-  --alinea-orange-900: #e65100;
+  --alinea-danger-1: var(--red-1);
+  --alinea-danger-2: var(--red-2);
+  --alinea-danger-3: var(--red-3);
+  --alinea-danger-4: var(--red-4);
+  --alinea-danger-5: var(--red-5);
+  --alinea-danger-6: var(--red-6);
+  --alinea-danger-7: var(--red-7);
+  --alinea-danger-8: var(--red-8);
+  --alinea-danger-9: var(--red-9);
+  --alinea-danger-10: var(--red-10);
+  --alinea-danger-11: var(--red-11);
+  --alinea-danger-12: var(--red-12);
 
-  --alinea-mint-200: #9de8ce;
-  --alinea-mint-300: #4fd5a7;
-  --alinea-mint-400: #2a946f;
+  --alinea-warning-1: var(--amber-1);
+  --alinea-warning-2: var(--amber-2);
+  --alinea-warning-3: var(--amber-3);
+  --alinea-warning-4: var(--amber-4);
+  --alinea-warning-5: var(--amber-5);
+  --alinea-warning-6: var(--amber-6);
+  --alinea-warning-7: var(--amber-7);
+  --alinea-warning-8: var(--amber-8);
+  --alinea-warning-9: var(--amber-9);
+  --alinea-warning-10: var(--amber-10);
+  --alinea-warning-11: var(--amber-11);
+  --alinea-warning-12: var(--amber-12);
 
-  --alinea-mint-200: #dcffec;
-  --alinea-danger-200: #fddfdd;
-  --alinea-success-200: #ffead3;
-}
-
-/* Aliases */
-:root {
-  --alinea-primary-50: var(--alinea-blue-50);
-  --alinea-primary-100: var(--alinea-blue-100);
-  --alinea-primary-200: var(--alinea-blue-200);
-  --alinea-primary-300: var(--alinea-blue-300);
-  --alinea-primary-400: var(--alinea-blue-400);
-  --alinea-primary-500: var(--alinea-blue-500);
-  --alinea-primary-600: var(--alinea-blue-600);
-  --alinea-primary-700: var(--alinea-blue-700);
-  --alinea-primary-800: var(--alinea-blue-800);
-  --alinea-primary-900: var(--alinea-blue-900);
-  --alinea-primary-950: var(--alinea-blue-950);
-
-  --alinea-surface-0: var(--alinea-gray-0);
-  --alinea-surface-50: var(--alinea-gray-50);
-  --alinea-surface-100: var(--alinea-gray-100);
-  --alinea-surface-200: var(--alinea-gray-200);
-  --alinea-surface-300: var(--alinea-gray-300);
-  --alinea-surface-400: var(--alinea-gray-400);
-  --alinea-surface-500: var(--alinea-gray-500);
-  --alinea-surface-600: var(--alinea-gray-600);
-  --alinea-surface-700: var(--alinea-gray-700);
-  --alinea-surface-800: var(--alinea-gray-800);
-
-  --alinea-danger-50: var(--alinea-red-50);
-  --alinea-danger-100: var(--alinea-red-100);
-  --alinea-danger-200: var(--alinea-red-200);
-  --alinea-danger-300: var(--alinea-red-300);
-  --alinea-danger-400: var(--alinea-red-400);
-  --alinea-danger-500: var(--alinea-red-500);
-  --alinea-danger-600: var(--alinea-red-600);
-  --alinea-danger-700: var(--alinea-red-700);
-  --alinea-danger-800: var(--alinea-red-800);
-  --alinea-danger-900: var(--alinea-red-900);
-
-  --alinea-warning-50: var(--alinea-orange-50);
-  --alinea-warning-100: var(--alinea-orange-100);
-  --alinea-warning-200: var(--alinea-orange-200);
-  --alinea-warning-300: var(--alinea-orange-300);
-  --alinea-warning-400: var(--alinea-orange-400);
-  --alinea-warning-500: var(--alinea-orange-500);
-  --alinea-warning-600: var(--alinea-orange-600);
-  --alinea-warning-700: var(--alinea-orange-700);
-  --alinea-warning-800: var(--alinea-orange-800);
-  --alinea-warning-900: var(--alinea-orange-900);
-
-  --alinea-success-50: var(--alinea-green-50);
-  --alinea-success-100: var(--alinea-green-100);
-  --alinea-success-200: var(--alinea-green-200);
-  --alinea-success-300: var(--alinea-green-300);
-  --alinea-success-400: var(--alinea-green-400);
-  --alinea-success-500: var(--alinea-green-500);
-  --alinea-success-600: var(--alinea-green-600);
-  --alinea-success-700: var(--alinea-green-700);
-  --alinea-success-800: var(--alinea-green-800);
-  --alinea-success-900: var(--alinea-green-900);
+  --alinea-success-1: var(--green-1);
+  --alinea-success-2: var(--green-2);
+  --alinea-success-3: var(--green-3);
+  --alinea-success-4: var(--green-4);
+  --alinea-success-5: var(--green-5);
+  --alinea-success-6: var(--green-6);
+  --alinea-success-7: var(--green-7);
+  --alinea-success-8: var(--green-8);
+  --alinea-success-9: var(--green-9);
+  --alinea-success-10: var(--green-10);
+  --alinea-success-11: var(--green-11);
+  --alinea-success-12: var(--green-12);
 }
 /*  
 Shared -
@@ -144,6 +123,7 @@ these colors are the same between light and dark themes
   /* Button-specific semantic tokens (secondary / outline) */
   --alinea-button-secondary-color: var(--alinea-surface-800);
   --alinea-button-secondary-background: var(--alinea-surface-100);
+  --alinea-button-secondary-bg: var(--alinea-button-secondary-background);
   --alinea-button-secondary-hover: var(--alinea-surface-200);
   --alinea-button-secondary-pressed: var(--alinea-surface-300);
   --alinea-button-secondary-disabled-color: var(--alinea-surface-400);
@@ -266,6 +246,7 @@ these colors are the same between light and dark themes
 
   /* dark overrides for button-specific tokens */
   --alinea-button-secondary-color: var(--alinea-surface-200);
+  --alinea-button-secondary-background: var(--alinea-surface-800);
   --alinea-button-secondary-bg: var(--alinea-surface-800);
   --alinea-button-secondary-hover: var(--alinea-surface-700);
   --alinea-button-secondary-pressed: var(--alinea-surface-600);
@@ -280,37 +261,14 @@ these colors are the same between light and dark themes
 }
 
 :root {
-  --alinea-accent-default: #5675e8;
-  --alinea-panel-background: var(--alinea-surface-0);
-  --alinea-panel-background-secondary: var(--alinea-surface-50);
-  --alinea-panel-background-tertiary: var(--alinea-surface-0);
+  --alinea-accent-default: var(--alinea-primary-8);
+  --alinea-panel-background: var(--alinea-surface-1);
+  --alinea-panel-background-secondary: var(--alinea-surface-2);
+  --alinea-panel-background-tertiary: var(--alinea-surface-1);
+  --alinea-border-color: var(--alinea-surface-3);
 }
 
-/* :root {
-  --gray-1100: #111113;
-  --gray-1000: #19191b;
-  --gray-900: #222325;
-  --gray-800: #292a2e;
-  --gray-700: #303136;
-  --gray-600: #393a40;
-  --gray-500: #46484f;
-  --gray-400: #5f606a;
-  --gray-300: #6c6e79;
-  --gray-200: #797b86;
-  --gray-100: #b2b3bd;
-  --gray-0: #eeeef0;
-} */
 /* :root[data-theme="dark"],
-.alinea-Viewport-is-dark {
-  --alinea-accent-default: #3185fc;
-  --alinea-panel-background: var(--gray-800);
-  --alinea-panel-background-secondary: var(--gray-1000);
-  --alinea-panel-background-tertiary: var(--gray-900);
-  --alinea-field-background: var(--gray-700);
-  --alinea-border-color: var(--gray-600);
-} */
-
-:root[data-theme="dark"],
 .alinea-Viewport-is-dark {
   --alinea-accent-default: var(--blue-10);
   --alinea-panel-background: var(--gray-2);
@@ -318,4 +276,4 @@ these colors are the same between light and dark themes
   --alinea-panel-background-tertiary: var(--gray-2);
   --alinea-field-background: var(--gray-2);
   --alinea-border-color: var(--gray-10);
-}
+} */
