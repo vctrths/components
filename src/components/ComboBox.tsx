@@ -24,7 +24,6 @@ export interface ComboBoxProps<T extends object>
     LabelSharedProps {
   items?: Iterable<T>
   children: React.ReactNode | ((item: T) => React.ReactNode)
-  selectionMode?: 'single' | 'multiple'
 }
 
 export function ComboBox<T extends object>({
