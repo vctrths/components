@@ -57,6 +57,14 @@ export const Basic = () => {
 
       <ComboBox
         items={softwareOptions}
+        label="ComboBox multiple select"
+        selectionMode="multiple"
+      >
+        {item => <ComboBoxItem key={item.id}>{item.name}</ComboBoxItem>}
+      </ComboBox>
+
+      <ComboBox
+        items={softwareOptions}
         label="ComboBoxItem: isDisabled"
         disabledKeys={[2, 4]}
       >

@@ -71,21 +71,68 @@
   }
 
   .alinea-rac-ComboboxTrigger-button {
-    appearance: none;
+    position: relative;
+    cursor: pointer;
     background: none;
+    width: 24px;
+    flex-shrink: 0;
+    align-self: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
+    color: var(--alinea-icon-color);
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      background-color: var(--alinea-background-color);
+      z-index: -1;
+      transition: var(--alinea-transition);
+      opacity: 0;
+      border: 1px solid transparent;
+      outline: 4px solid transparent;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+    &:focus:after {
+      background-color: transparent;
+      border-color: var(--alinea-highlight-border);
+      outline-color: var(--alinea-highlight-overlay);
+      opacity: 1;
+    }
+
+    /* appearance: none;
+    background-color: transparent;
     font: inherit;
     outline: none;
     border: none;
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 8px 10px 8px 10px;
-    gap: 20px;
+
+    align-self: center;
+    margin-right: 8px; */
+
+    /* &:hover {
+      background-color: var(--alinea-background-color);
+    }
 
     &[data-clear] {
       padding-right: 0;
-    }
+    } */
 
     .alinea-rac-ComboboxTrigger-button-value {
       flex-grow: 1;
@@ -122,11 +169,15 @@
   background-color: var(--alinea-field-background);
 }
 
+.alinea-rac-ComboboxTrigger-actions {
+  display: flex;
+  padding-right: 8px;
+}
 .alinea-rac-ComboboxClear {
   position: relative;
   cursor: pointer;
   background: none;
-  width: 40px;
+  width: 24px;
   flex-shrink: 0;
   padding: 0;
   display: flex;
