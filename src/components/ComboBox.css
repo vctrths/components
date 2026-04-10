@@ -15,10 +15,13 @@
   transition: var(--alinea-transition);
 
   &:has(> .alinea-rac-ComboboxTrigger-input[data-hovered]),
+  &:has(> .alinea-rac-ComboboxTrigger-actions:hover) {
+    border-color: var(--alinea-border-color-hover);
+    outline-color: var(--alinea-box-shadow-color);
+  }
+
   &:has(> .alinea-rac-ComboboxTrigger-input[data-focused]),
-  &:has(> .alinea-rac-ComboboxTrigger-input[aria-expanded="true"]),
-  &:has(> .alinea-rac-ComboboxTrigger-button[data-hovered]),
-  &:has(> .alinea-rac-ComboboxTrigger-button[data-open]) {
+  &:has(> .alinea-rac-ComboboxTrigger-input[aria-expanded="true"]) {
     border-color: var(--alinea-highlight-border);
     outline-color: var(--alinea-highlight-overlay);
   }
