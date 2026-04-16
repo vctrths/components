@@ -161,29 +161,8 @@
       }
     }
 
-    /* Action buttons */
-
-    button:not([slot]) {
-      margin-left: auto;
-      background: transparent;
-      border: none;
-      font-size: 1.05rem;
-      line-height: 1.2em;
-      padding: 4px 6px;
-      transition: background 200ms;
-
-      &[data-hovered] {
-        background: var(--alinea-highlight-hover);
-      }
-
-      &[data-pressed] {
-        background: var(--alinea-highlight-pressed);
-        box-shadow: none;
-      }
-    }
-
     user-select: none;
-    -webkit-user-drag: element; /* Forceert Chrome om het als een versleepbaar element te zien */
+    -webkit-user-drag: element;
     touch-action: none;
   }
 
@@ -224,12 +203,31 @@
   }
 }
 
-.alinea-rac-TreeItem-dragHandle[data-invisible="true"] {
-  opacity: 0 !important;
-  &:focus-visible {
-    opacity: 1 !important;
-    + .react-aria-Button[data-invisible="false"] {
-      opacity: 0 !important;
+.alinea-rac-TreeItem-dragHandle {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  line-height: 1.2em;
+  padding: 4px 6px;
+  transition: background 200ms;
+
+  &[data-hovered] {
+    background: var(--alinea-highlight-hover);
+  }
+
+  &[data-pressed] {
+    background: var(--alinea-highlight-pressed);
+    box-shadow: none;
+  }
+
+  &[data-invisible="true"] {
+    opacity: 0 !important;
+    &:focus-visible {
+      opacity: 1 !important;
+      + .react-aria-Button[data-invisible="false"] {
+        opacity: 0 !important;
+      }
     }
   }
 }
