@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import {type ReactNode, memo} from 'react'
 import {
   Tree as AriaTree,
   TreeItem as AriaTreeItem,
@@ -13,7 +14,6 @@ import {IcRoundKeyboardArrowRight} from '../stories/icons/IcRoundKeyboardArrowRi
 import {Checkbox} from './Checkbox.tsx'
 import {Icon, type IconProps} from './Icon.tsx'
 import './Tree.css'
-import type {ReactNode} from 'react'
 
 export function Tree<T extends object>(props: TreeProps<T>) {
   const {className, ...rest} = props
@@ -30,18 +30,18 @@ export function Tree<T extends object>(props: TreeProps<T>) {
   )
 }
 
-export interface TreeItemContentProps2
+export interface TreeItemContentProps
   extends Omit<AriaTreeItemContentProps, 'children'> {
   children?: ReactNode
   icon?: IconProps['icon']
   suffix?: ReactNode
 }
 
-export function TreeItemContent({
+export const TreeItemContent = memo(function TreeItemContent({
   icon,
   suffix,
   children
-}: TreeItemContentProps2) {
+}: TreeItemContentProps) {
   return (
     <AriaTreeItemContent>
       {({
@@ -73,7 +73,7 @@ export function TreeItemContent({
       )}
     </AriaTreeItemContent>
   )
-}
+})
 
 export interface TreeItemProps extends Partial<AriaTreeItemProps> {
   title: string
@@ -87,12 +87,14 @@ export function TreeItem({
   suffix,
   children,
   className,
+  hasChildItems,
   ...rest
 }: TreeItemProps) {
   return (
     <AriaTreeItem
       textValue={title}
       {...rest}
+      hasChildItems={hasChildItems}
       className={renderProps =>
         clsx(
           'alinea-rac-TreeItem',

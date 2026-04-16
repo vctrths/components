@@ -1,14 +1,15 @@
 import clsx from 'clsx'
 import {
   type ComponentType,
-  type ReactNode,
+  type ReactElement,
   type SVGProps,
-  cloneElement
+  cloneElement,
+  isValidElement
 } from 'react'
 import './Icon.css'
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
-  icon: ComponentType | ReactNode
+  icon: ComponentType | ReactElement
   'aria-label'?: string
   'aria-hidden'?: boolean | 'false' | 'true'
 }
@@ -19,12 +20,14 @@ export function Icon({
   'aria-hidden': ariaHidden,
   ...props
 }: IconProps) {
-  const view = typeof IconView === 'function' ? <IconView /> : <>{IconView}</>
+  const view = typeof IconView === 'function' ? <IconView /> : IconView
+  if (!isValidElement<SVGProps<SVGSVGElement>>(view)) return null
   return cloneElement(view, {
     focusable: 'false',
     'aria-label': ariaLabel,
     'aria-hidden': ariaLabel ? ariaHidden || undefined : true,
     role: 'img',
-    className: clsx('alinea-rac-Icon', props.className)
+    className: clsx('alinea-rac-Icon', props.className),
+    ...props
   })
 }

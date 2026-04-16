@@ -131,7 +131,6 @@
   }
 
   [slot="drag"] {
-    all: unset;
     width: 15px;
     text-align: center;
 

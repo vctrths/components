@@ -39,5 +39,5 @@ export function ToolbarButton({...props}: ToggleButtonProps) {
 }
 
 export function ToolbarSeparator(props: SeparatorProps) {
-  return <Separator className="alinea-rac-ToolbarSeparator" />
+  return <Separator className="alinea-rac-ToolbarSeparator" {...props} />
 }
