@@ -55,7 +55,11 @@ export const TreeItemContent = memo(function TreeItemContent({
             <Checkbox slot="selection" />
           )}
           <div className="alinea-rac-TreeItem-controls">
-            <Button slot="drag" data-invisible={!isDragging}>
+            <Button
+              slot="drag"
+              data-invisible={!isDragging}
+              className="alinea-rac-TreeItem-dragHandle"
+            >
               ≡
             </Button>
             <Button slot="chevron" data-invisible={isDragging}>

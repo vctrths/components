@@ -213,16 +213,6 @@
   background: var(--alinea-highlight-overlay);
 }
 
-.react-aria-Button[data-invisible="true"] {
-  opacity: 0 !important;
-  &:focus-visible {
-    opacity: 1 !important;
-    + .react-aria-Button[data-invisible="false"] {
-      opacity: 0 !important;
-    }
-  }
-}
-
 .alinea-rac-TreeItem-controls {
   position: relative;
   width: 16px;
@@ -231,5 +221,15 @@
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
+  }
+}
+
+.alinea-rac-TreeItem-dragHandle[data-invisible="true"] {
+  opacity: 0 !important;
+  &:focus-visible {
+    opacity: 1 !important;
+    + .react-aria-Button[data-invisible="false"] {
+      opacity: 0 !important;
+    }
   }
 }
