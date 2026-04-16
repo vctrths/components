@@ -44,6 +44,7 @@
     "release": "bun release.ts",
     "dev": "ladle serve",
     "build": "ladle build",
+    "test": "bunx playwright test",
     "package": "bun package.ts",
     "prepublishOnly": "bun package.ts"
   }
